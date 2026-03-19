@@ -151,7 +151,7 @@
   }
 
   .coach-overlay {
-    @apply absolute inset-0 opacity-0 transition-opacity duration-400;
+    @apply absolute inset-0 opacity-0 transition-opacity duration-300;
     background: hsl(var(--primary) / 0.4);
     mix-blend-mode: multiply;
   }
