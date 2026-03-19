@@ -1,96 +1,61 @@
+/* Fonts loaded via index.html <link> tags */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
-
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 220 13% 8%;
+    --foreground: 210 17% 95%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 220 13% 11%;
+    --card-foreground: 210 17% 95%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 220 13% 11%;
+    --popover-foreground: 210 17% 95%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 350 89% 45%;
+    --primary-foreground: 0 0% 98%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 220 13% 15%;
+    --secondary-foreground: 210 17% 95%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 220 13% 14%;
+    --muted-foreground: 210 10% 55%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 350 89% 45%;
+    --accent-foreground: 0 0% 98%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 220 13% 20%;
+    --input: 220 13% 20%;
+    --ring: 350 89% 45%;
 
-    --radius: 0.5rem;
+    --radius: 0.25rem;
 
-    --sidebar-background: 0 0% 98%;
+    /* Troy custom tokens */
+    --troy-red: hsl(350, 89%, 45%);
+    --troy-red-glow: hsl(350, 89%, 35%);
+    --troy-black: hsl(220, 13%, 6%);
+    --troy-iron: hsl(220, 13%, 14%);
+    --troy-bone: hsl(210, 17%, 95%);
+    --troy-muted: hsl(210, 10%, 55%);
 
-    --sidebar-foreground: 240 5.3% 26.1%;
+    --shadow-hard: 4px 4px 0px 0px rgba(0,0,0,1);
+    --shadow-red: 4px 4px 0px 0px hsl(350, 89%, 35%);
+    --ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
 
-    --sidebar-primary: 240 5.9% 10%;
-
+    --sidebar-background: 220 13% 8%;
+    --sidebar-foreground: 210 17% 95%;
+    --sidebar-primary: 350 89% 45%;
     --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-accent: 220 13% 14%;
+    --sidebar-accent-foreground: 210 17% 95%;
+    --sidebar-border: 220 13% 20%;
+    --sidebar-ring: 350 89% 45%;
   }
 }
 
@@ -101,5 +66,150 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    font-family: 'Geist', 'Inter', sans-serif;
+  }
+
+  h1, h2, h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: -0.01em;
+  }
+}
+
+@layer components {
+  .display-xl {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(5rem, 14vw, 14rem);
+    line-height: 0.88;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+  }
+
+  .display-lg {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(3rem, 7vw, 8rem);
+    line-height: 0.9;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+  }
+
+  .display-md {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(2rem, 4vw, 4.5rem);
+    line-height: 0.95;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+  }
+
+  .label-mono {
+    font-family: 'Geist Mono', monospace;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-8 py-4 font-bold uppercase text-sm tracking-widest;
+    font-family: 'Geist', sans-serif;
+    background-color: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+    clip-path: polygon(8% 0%, 100% 0%, 92% 100%, 0% 100%);
+    transition: all 0.3s var(--ease-out-expo);
+  }
+
+  .btn-primary:hover {
+    background-color: hsl(var(--primary) / 0.85);
+    transform: translateX(3px);
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center px-8 py-4 font-bold uppercase text-sm tracking-widest;
+    font-family: 'Geist', sans-serif;
+    border: 1px solid hsl(var(--foreground) / 0.3);
+    color: hsl(var(--foreground));
+    clip-path: polygon(8% 0%, 100% 0%, 92% 100%, 0% 100%);
+    transition: all 0.3s var(--ease-out-expo);
+  }
+
+  .btn-ghost:hover {
+    border-color: hsl(var(--primary));
+    color: hsl(var(--primary));
+    transform: translateX(3px);
+  }
+
+  .section-divider {
+    @apply border-t border-border;
+  }
+
+  .coach-card {
+    @apply relative overflow-hidden border border-white/10;
+    background-color: hsl(var(--muted));
+    transition: all 0.4s var(--ease-out-expo);
+  }
+
+  .coach-card:hover .coach-overlay {
+    opacity: 1;
+  }
+
+  .coach-overlay {
+    @apply absolute inset-0 opacity-0 transition-opacity duration-300;
+    background: hsl(var(--primary) / 0.4);
+    mix-blend-mode: multiply;
+  }
+
+  .stat-number {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(3rem, 6vw, 5.5rem);
+    line-height: 1;
+    font-variant-numeric: tabular-nums;
+    color: hsl(var(--primary));
+  }
+
+  .nav-link {
+    font-family: 'Geist', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    transition: color 0.2s ease;
+  }
+
+  .nav-link:hover {
+    color: hsl(var(--primary));
+  }
+
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .season-pill {
+    @apply px-5 py-2 text-xs font-semibold uppercase tracking-widest transition-all duration-200;
+    font-family: 'Geist', sans-serif;
+  }
+
+  .season-pill.active {
+    background-color: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+  }
+
+  .season-pill:not(.active) {
+    background-color: hsl(var(--muted));
+    color: hsl(var(--muted-foreground));
+  }
+
+  .season-pill:not(.active):hover {
+    background-color: hsl(var(--border));
+    color: hsl(var(--foreground));
+  }
+
+  .highlight-bar {
+    @apply relative inline-block;
+  }
+
+  .highlight-bar::after {
+    content: '';
+    @apply absolute bottom-0 left-0 h-0.5 w-full;
+    background: hsl(var(--primary));
   }
 }
