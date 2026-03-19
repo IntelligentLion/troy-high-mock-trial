@@ -47,6 +47,12 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        troy: {
+          red: "hsl(350, 89%, 45%)",
+          black: "hsl(220, 13%, 6%)",
+          iron: "hsl(220, 13%, 14%)",
+          bone: "hsl(210, 17%, 95%)",
+        },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
@@ -58,6 +64,11 @@ export default {
           ring: "hsl(var(--sidebar-ring))",
         },
       },
+      fontFamily: {
+        bebas: ["'Bebas Neue'", "sans-serif"],
+        geist: ["'Geist'", "sans-serif"],
+        mono: ["'Geist Mono'", "monospace"],
+      },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
@@ -65,25 +76,37 @@ export default {
       },
       keyframes: {
         "accordion-down": {
-          from: {
-            height: "0",
-          },
-          to: {
-            height: "var(--radix-accordion-content-height)",
-          },
+          from: { height: "0" },
+          to: { height: "var(--radix-accordion-content-height)" },
         },
         "accordion-up": {
-          from: {
-            height: "var(--radix-accordion-content-height)",
-          },
-          to: {
-            height: "0",
-          },
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0" },
+        },
+        "fade-up": {
+          from: { opacity: "0", transform: "translateY(30px)" },
+          to: { opacity: "1", transform: "translateY(0)" },
+        },
+        "fade-in": {
+          from: { opacity: "0" },
+          to: { opacity: "1" },
+        },
+        "slide-in-left": {
+          from: { opacity: "0", transform: "translateX(-40px)" },
+          to: { opacity: "1", transform: "translateX(0)" },
+        },
+        marquee: {
+          from: { transform: "translateX(0)" },
+          to: { transform: "translateX(-50%)" },
         },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "fade-up": "fade-up 0.7s cubic-bezier(0.19, 1, 0.22, 1) forwards",
+        "fade-in": "fade-in 0.6s ease forwards",
+        "slide-in-left": "slide-in-left 0.7s cubic-bezier(0.19, 1, 0.22, 1) forwards",
+        marquee: "marquee 20s linear infinite",
       },
     },
   },
