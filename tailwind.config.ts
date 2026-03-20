@@ -65,9 +65,10 @@ export default {
         },
       },
       fontFamily: {
-        bebas: ["'Bebas Neue'", "sans-serif"],
-        geist: ["'Geist'", "sans-serif"],
-        mono: ["'Geist Mono'", "monospace"],
+        playfair: ["'Playfair Display'", "Georgia", "serif"],
+        inter: ["'Inter'", "sans-serif"],
+        sans: ["'Inter'", "sans-serif"],
+        bebas: ["'Playfair Display'", "Georgia", "serif"],
       },
       borderRadius: {
         lg: "var(--radius)",
