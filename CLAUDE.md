@@ -7,45 +7,53 @@ Audience: prospective sponsors, alumni, competing students, judges, legal/academ
 
 ## Tech Stack
 
-- **Pure vanilla HTML/CSS/JS** — no React, no Vue, no npm, no build tools
-- Deployable to Netlify Drop, GitHub Pages, or Vercel with zero config
-- Every page must work as a static file served from any basic HTTP server
-- Google Fonts CDN is the only allowed external dependency
+- **React + Vite + TypeScript**
+- Tailwind CSS for styling (with CSS custom properties for design tokens)
+- React Router for client-side routing
+- Shadcn/ui component primitives where appropriate
+- Deployable to Netlify, GitHub Pages, or Vercel
 
 ## Architecture
 
 ```
 /
-├── index.html          # Home
-├── team.html           # 2025-2026 Roster
-├── alumni.html         # Alumni Honor Wall
-├── gallery.html        # Photo Gallery
-├── sponsors.html       # Sponsorship Tiers
-├── contact.html        # Contact + Interest Form
 ├── src/
+│   ├── pages/
+│   │   ├── Index.tsx       # Home
+│   │   ├── Team.tsx        # 2025-2026 Roster
+│   │   ├── Alumni.tsx      # Alumni Honor Wall
+│   │   ├── Gallery.tsx     # Photo Gallery
+│   │   ├── Sponsors.tsx    # Sponsorship Tiers
+│   │   └── Contact.tsx     # Contact + Interest Form
+│   ├── components/
+│   │   ├── Navbar.tsx
+│   │   ├── Footer.tsx
+│   │   ├── MemberCard.tsx
+│   │   ├── GalleryLightbox.tsx
+│   │   ├── YearTabBar.tsx
+│   │   ├── StatsCounter.tsx
+│   │   ├── SponsorTierCard.tsx
+│   │   └── MonogramAvatar.tsx
 │   ├── styles/
-│   │   ├── tokens.css      # Design tokens (colors, type, spacing)
-│   │   ├── global.css      # Base styles, resets
-│   │   └── components.css  # Reusable component styles
-│   └── js/
-│       ├── nav.js          # Fixed nav + mobile hamburger
-│       ├── gallery.js      # Lightbox (vanilla JS only)
-│       └── animations.js   # Intersection Observer animations
-├── assets/
-│   ├── images/             # Organized by year folder (2016/–2025/)
-│   │   └── members/        # Current member photos
-│   └── icons/
-└── data/
-    ├── site-content.json   # ALL dynamic content (loaded via fetch())
-    └── image-manifest.json # Image source URLs for manual retrieval
+│   │   ├── tokens.css      # CSS custom properties (colors, type, spacing)
+│   │   └── global.css      # Base styles, animations
+│   ├── hooks/
+│   │   └── useSiteContent.ts   # Fetch + cache site-content.json
+│   └── types/
+│       └── site-content.ts     # TypeScript types for JSON schema
+├── public/
+│   └── data/
+│       ├── site-content.json   # ALL dynamic content
+│       └── image-manifest.json # Image source URLs
+└── public/assets/images/       # Organized by year (2016/–2025/)
 ```
 
 ## Content Rules
 
-- **All dynamic content** (names, bios, awards, photos) comes from `fetch('/data/site-content.json')`
-- **No hallucinated data** — if a value is unknown, use `<!-- TODO: ADD [FIELD] -->` comments
-- **Photo fallback**: missing photos → monogram avatar (initials on `--color-navy` circle with `--color-gold` text)
-- Hard-coding in HTML is only acceptable for permanent structural copy (headlines, section descriptions)
+- **All dynamic content** (names, bios, awards, photos) loaded via `useSiteContent()` hook fetching `/data/site-content.json`
+- **No hallucinated data** — if a value is unknown, leave a `{/* TODO: ADD [FIELD] */}` comment
+- **Photo fallback**: missing photos → `<MonogramAvatar>` component (initials on `--color-navy` circle with `--color-gold` text)
+- Hard-coding in JSX is only acceptable for permanent structural copy (headlines, section descriptions)
 
 ## Design System
 

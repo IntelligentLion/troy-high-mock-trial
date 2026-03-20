@@ -1,415 +1,415 @@
-/* Fonts loaded via index.html <link> tags */
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* ─────────────────────────────────────────────
+   DESIGN TOKENS — "Chambers & Conviction"
+   ───────────────────────────────────────────── */
 @layer base {
   :root {
-    --background: 220 50% 8%;
-    --foreground: 210 17% 95%;
+    /* ── Shadcn/ui semantic tokens (navy/gold mapping) ── */
+    --background: 210 58% 10%;        /* --color-navy */
+    --foreground: 36 52% 95%;         /* near-cream */
 
-    --card: 220 40% 12%;
-    --card-foreground: 210 17% 95%;
+    --card: 210 47% 16%;              /* --color-charcoal */
+    --card-foreground: 36 52% 95%;
 
-    --popover: 220 40% 12%;
-    --popover-foreground: 210 17% 95%;
+    --popover: 210 47% 16%;
+    --popover-foreground: 36 52% 95%;
 
-    /* Gold */
-    --primary: 43 64% 54%;
-    --primary-foreground: 220 50% 8%;
+    --primary: 40 51% 54%;            /* --color-gold */
+    --primary-foreground: 210 58% 10%;
 
-    --secondary: 220 30% 18%;
-    --secondary-foreground: 210 17% 95%;
+    --secondary: 210 35% 20%;
+    --secondary-foreground: 36 52% 95%;
 
-    --muted: 220 35% 14%;
-    --muted-foreground: 210 15% 60%;
+    --muted: 210 35% 18%;
+    --muted-foreground: 210 20% 60%;  /* --color-muted */
 
-    --accent: 43 64% 54%;
-    --accent-foreground: 220 50% 8%;
+    --accent: 40 51% 54%;
+    --accent-foreground: 210 58% 10%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 65% 32%;         /* --color-red-accent */
+    --destructive-foreground: 36 52% 95%;
 
-    --border: 220 30% 22%;
-    --input: 220 30% 22%;
-    --ring: 43 64% 54%;
+    --border: 210 30% 22%;
+    --input:  210 30% 22%;
+    --ring:   40 51% 54%;             /* gold focus ring */
 
     --radius: 0.5rem;
 
-    /* Custom tokens */
-    --navy: hsl(220, 50%, 8%);
-    --navy-mid: hsl(220, 42%, 12%);
-    --gold: hsl(43, 64%, 54%);
-    --gold-light: hsl(43, 80%, 68%);
-    --cream: hsl(210, 17%, 95%);
-    --white: hsl(0, 0%, 100%);
+    /* ── Sidebar ── */
+    --sidebar-background: 210 58% 10%;
+    --sidebar-foreground: 36 52% 95%;
+    --sidebar-primary: 40 51% 54%;
+    --sidebar-primary-foreground: 210 58% 10%;
+    --sidebar-accent: 210 35% 18%;
+    --sidebar-accent-foreground: 36 52% 95%;
+    --sidebar-border: 210 30% 22%;
+    --sidebar-ring: 40 51% 54%;
 
-    --sidebar-background: 220 50% 8%;
-    --sidebar-foreground: 210 17% 95%;
-    --sidebar-primary: 43 64% 54%;
-    --sidebar-primary-foreground: 220 50% 8%;
-    --sidebar-accent: 220 35% 14%;
-    --sidebar-accent-foreground: 210 17% 95%;
-    --sidebar-border: 220 30% 22%;
-    --sidebar-ring: 43 64% 54%;
+    /* ── Brand color palette (raw hex, for direct use) ── */
+    --color-navy:       #0D1B2A;
+    --color-gold:       #C9A84C;
+    --color-gold-light: #E8C97A;
+    --color-cream:      #F7F3EC;
+    --color-slate:      #3D5A73;
+    --color-charcoal:   #1E2D3D;
+    --color-red-accent: #8B1A1A;
+    --color-white:      #FFFFFF;
+    --color-muted:      #8A9BB0;
+
+    /* ── Type scale ── */
+    --text-xs:   0.75rem;
+    --text-sm:   0.875rem;
+    --text-base: 1rem;
+    --text-lg:   1.125rem;
+    --text-xl:   1.25rem;
+    --text-2xl:  1.5rem;
+    --text-3xl:  2rem;
+    --text-4xl:  2.75rem;
+    --text-5xl:  3.75rem;
+    --text-6xl:  5rem;
+
+    /* ── Spacing ── */
+    --space-1:  0.25rem;
+    --space-2:  0.5rem;
+    --space-3:  0.75rem;
+    --space-4:  1rem;
+    --space-6:  1.5rem;
+    --space-8:  2rem;
+    --space-12: 3rem;
+    --space-16: 4rem;
+    --space-24: 6rem;
+    --space-32: 8rem;
+
+    /* ── Border radius ── */
+    --radius-sm:   4px;
+    --radius-md:   8px;
+    --radius-lg:   16px;
+    --radius-full: 9999px;
+
+    /* ── Shadows ── */
+    --shadow-sm:   0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    --shadow-md:   0 4px 12px rgba(0,0,0,0.15), 0 2px 4px rgba(0,0,0,0.12);
+    --shadow-lg:   0 10px 40px rgba(0,0,0,0.2);
+    --shadow-gold: 0 4px 20px rgba(201,168,76,0.25);
+
+    /* ── Motion ── */
+    --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+    --ease-in-out:   cubic-bezier(0.4, 0, 0.2, 1);
+    --duration-fast: 150ms;
+    --duration-base: 300ms;
+    --duration-slow: 600ms;
   }
 }
 
+/* ─────────────────────────────────────────────
+   GLOBAL BASE STYLES
+   ───────────────────────────────────────────── */
 @layer base {
-  * {
+  *, *::before, *::after {
     @apply border-border;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   body {
     @apply bg-background text-foreground;
-    font-family: 'Inter', 'Geist', sans-serif;
+    font-family: 'DM Sans', system-ui, sans-serif;
+    font-size: var(--text-base);
+    line-height: 1.6;
+    min-height: 100vh;
   }
 
-  h1, h2, h3, h4 {
-    font-family: 'Playfair Display', Georgia, serif;
-  }
-}
-
-@layer components {
-  .btn-primary {
-    @apply inline-flex items-center justify-center px-8 py-3 font-semibold rounded-full text-sm;
-    background: linear-gradient(135deg, hsl(var(--primary)), hsl(43, 80%, 68%));
-    color: hsl(var(--primary-foreground));
-    transition: all 0.2s ease;
-  }
-
-  .btn-primary:hover {
-    opacity: 0.9;
-    transform: translateY(-1px);
-    box-shadow: 0 8px 24px hsl(43 64% 54% / 0.35);
-  }
-
-  .btn-ghost {
-    @apply inline-flex items-center justify-center px-8 py-3 font-semibold rounded-full text-sm;
-    border: 2px solid hsl(var(--foreground) / 0.4);
-    color: hsl(var(--foreground));
-    transition: all 0.2s ease;
-  }
-
-  .btn-ghost:hover {
-    border-color: hsl(var(--foreground));
-    background: hsl(var(--foreground) / 0.08);
-  }
-
-  .nav-link {
-    font-size: 0.875rem;
-    font-weight: 500;
-    transition: color 0.2s ease;
-    font-family: 'Inter', sans-serif;
-  }
-
-  .nav-link:hover {
-    color: hsl(var(--primary));
-  }
-
-  .label-mono {
-    font-family: 'Inter', sans-serif;
-    font-size: 0.7rem;
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Cormorant Garamond', Georgia, serif;
     font-weight: 600;
-  }
-
-  .display-xl {
-    font-family: 'Playfair Display', Georgia, serif;
-    font-size: clamp(3rem, 8vw, 6rem);
-    line-height: 1.1;
-    font-weight: 700;
-  }
-
-  .display-lg {
-    font-family: 'Playfair Display', Georgia, serif;
-    font-size: clamp(2.5rem, 5vw, 4rem);
     line-height: 1.15;
-    font-weight: 700;
-  }
-
-  .display-md {
-    font-family: 'Playfair Display', Georgia, serif;
-    font-size: clamp(1.8rem, 3vw, 2.8rem);
-    line-height: 1.2;
-    font-weight: 700;
-  }
-
-  .stat-number {
-    font-family: 'Playfair Display', Georgia, serif;
-    font-size: clamp(2.5rem, 5vw, 3.5rem);
-    line-height: 1;
-    font-weight: 700;
-    color: hsl(var(--primary));
-  }
-
-  .section-card {
-    @apply rounded-xl border border-border bg-card p-6;
-  }
-
-  .gold-text {
-    background: linear-gradient(135deg, hsl(var(--primary)), hsl(43, 80%, 68%));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-
-  .gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 1.5rem;
-  }
-
-  .season-pill {
-    @apply px-5 py-2 text-xs font-semibold uppercase tracking-widest transition-all duration-200 rounded-full;
-    font-family: 'Inter', sans-serif;
-  }
-
-  .season-pill.active {
-    background: linear-gradient(135deg, hsl(var(--primary)), hsl(43, 80%, 68%));
-    color: hsl(var(--primary-foreground));
-  }
-
-  .season-pill:not(.active) {
-    background-color: hsl(var(--muted));
-    color: hsl(var(--muted-foreground));
-  }
-
-  .season-pill:not(.active):hover {
-    background-color: hsl(var(--border));
-    color: hsl(var(--foreground));
-  }
-
-  .coach-card {
-    @apply relative overflow-hidden border border-border rounded-xl;
-    background-color: hsl(var(--card));
-    transition: all 0.4s ease;
-  }
-
-  .coach-card:hover .coach-overlay {
-    opacity: 1;
-  }
-
-  .coach-overlay {
-    @apply absolute inset-0 opacity-0 transition-opacity duration-300;
-    background: hsl(var(--primary) / 0.3);
-    mix-blend-mode: multiply;
-  }
-
-  .font-playfair {
-    font-family: 'Playfair Display', Georgia, serif;
-  }
-}
-
-
-@layer base {
-  :root {
-    --background: 220 13% 8%;
-    --foreground: 210 17% 95%;
-
-    --card: 220 13% 11%;
-    --card-foreground: 210 17% 95%;
-
-    --popover: 220 13% 11%;
-    --popover-foreground: 210 17% 95%;
-
-    --primary: 350 89% 45%;
-    --primary-foreground: 0 0% 98%;
-
-    --secondary: 220 13% 15%;
-    --secondary-foreground: 210 17% 95%;
-
-    --muted: 220 13% 14%;
-    --muted-foreground: 210 10% 55%;
-
-    --accent: 350 89% 45%;
-    --accent-foreground: 0 0% 98%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 220 13% 20%;
-    --input: 220 13% 20%;
-    --ring: 350 89% 45%;
-
-    --radius: 0.25rem;
-
-    /* Troy custom tokens */
-    --troy-red: hsl(350, 89%, 45%);
-    --troy-red-glow: hsl(350, 89%, 35%);
-    --troy-black: hsl(220, 13%, 6%);
-    --troy-iron: hsl(220, 13%, 14%);
-    --troy-bone: hsl(210, 17%, 95%);
-    --troy-muted: hsl(210, 10%, 55%);
-
-    --shadow-hard: 4px 4px 0px 0px rgba(0,0,0,1);
-    --shadow-red: 4px 4px 0px 0px hsl(350, 89%, 35%);
-    --ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
-
-    --sidebar-background: 220 13% 8%;
-    --sidebar-foreground: 210 17% 95%;
-    --sidebar-primary: 350 89% 45%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 220 13% 14%;
-    --sidebar-accent-foreground: 210 17% 95%;
-    --sidebar-border: 220 13% 20%;
-    --sidebar-ring: 350 89% 45%;
-  }
-}
-
-@layer base {
-  * {
-    @apply border-border;
-  }
-
-  body {
-    @apply bg-background text-foreground;
-    font-family: 'Geist', 'Inter', sans-serif;
-  }
-
-  h1, h2, h3 {
-    font-family: 'Bebas Neue', sans-serif;
     letter-spacing: -0.01em;
   }
+
+  /* Visible, styled focus rings — gold, not browser default */
+  :focus-visible {
+    outline: 2px solid var(--color-gold);
+    outline-offset: 3px;
+    border-radius: var(--radius-sm);
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
 }
 
+/* ─────────────────────────────────────────────
+   TYPOGRAPHY UTILITIES
+   ───────────────────────────────────────────── */
 @layer components {
   .display-xl {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(5rem, 14vw, 14rem);
-    line-height: 0.88;
-    text-transform: uppercase;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(3rem, 8vw, var(--text-6xl));
+    font-weight: 700;
+    line-height: 1.05;
     letter-spacing: -0.02em;
   }
 
   .display-lg {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(3rem, 7vw, 8rem);
-    line-height: 0.9;
-    text-transform: uppercase;
-    letter-spacing: -0.01em;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(2.25rem, 5vw, var(--text-5xl));
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.015em;
   }
 
   .display-md {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(2rem, 4vw, 4.5rem);
-    line-height: 0.95;
-    text-transform: uppercase;
-    letter-spacing: -0.01em;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(1.75rem, 3.5vw, var(--text-4xl));
+    font-weight: 600;
+    line-height: 1.2;
+  }
+
+  .pull-quote {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(1.25rem, 2.5vw, var(--text-3xl));
+    font-style: italic;
+    font-weight: 400;
+    color: var(--color-gold);
+    line-height: 1.4;
   }
 
   .label-mono {
-    font-family: 'Geist Mono', monospace;
-    font-size: 0.7rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: var(--text-xs);
     text-transform: uppercase;
-    letter-spacing: 0.18em;
-  }
-
-  .btn-primary {
-    @apply inline-flex items-center justify-center px-8 py-4 font-bold uppercase text-sm tracking-widest;
-    font-family: 'Geist', sans-serif;
-    background-color: hsl(var(--primary));
-    color: hsl(var(--primary-foreground));
-    clip-path: polygon(8% 0%, 100% 0%, 92% 100%, 0% 100%);
-    transition: all 0.3s var(--ease-out-expo);
-  }
-
-  .btn-primary:hover {
-    background-color: hsl(var(--primary) / 0.85);
-    transform: translateX(3px);
-  }
-
-  .btn-ghost {
-    @apply inline-flex items-center justify-center px-8 py-4 font-bold uppercase text-sm tracking-widest;
-    font-family: 'Geist', sans-serif;
-    border: 1px solid hsl(var(--foreground) / 0.3);
-    color: hsl(var(--foreground));
-    clip-path: polygon(8% 0%, 100% 0%, 92% 100%, 0% 100%);
-    transition: all 0.3s var(--ease-out-expo);
-  }
-
-  .btn-ghost:hover {
-    border-color: hsl(var(--primary));
-    color: hsl(var(--primary));
-    transform: translateX(3px);
-  }
-
-  .section-divider {
-    @apply border-t border-border;
-  }
-
-  .coach-card {
-    @apply relative overflow-hidden border border-white/10;
-    background-color: hsl(var(--muted));
-    transition: all 0.4s var(--ease-out-expo);
-  }
-
-  .coach-card:hover .coach-overlay {
-    opacity: 1;
-  }
-
-  .coach-overlay {
-    @apply absolute inset-0 opacity-0 transition-opacity duration-300;
-    background: hsl(var(--primary) / 0.4);
-    mix-blend-mode: multiply;
+    letter-spacing: 0.14em;
+    font-weight: 500;
   }
 
   .stat-number {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(3rem, 6vw, 5.5rem);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: clamp(2.5rem, 5vw, var(--text-5xl));
+    font-weight: 500;
     line-height: 1;
     font-variant-numeric: tabular-nums;
-    color: hsl(var(--primary));
+    color: var(--color-gold);
   }
 
-  .nav-link {
-    font-family: 'Geist', sans-serif;
-    font-size: 0.75rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.14em;
-    transition: color 0.2s ease;
+  /* Gold gradient text */
+  .gold-text {
+    background: linear-gradient(135deg, var(--color-gold), var(--color-gold-light));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
+/* ─────────────────────────────────────────────
+   BUTTON UTILITIES
+   ───────────────────────────────────────────── */
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 px-8 py-3 font-semibold rounded-full text-sm transition-all;
+    background: var(--color-gold);
+    color: var(--color-navy);
+    font-family: 'DM Sans', sans-serif;
+    box-shadow: var(--shadow-gold);
+    transition: all var(--duration-base) var(--ease-out-expo);
   }
 
-  .nav-link:hover {
-    color: hsl(var(--primary));
+  .btn-primary:hover {
+    background: var(--color-gold-light);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(201,168,76,0.4);
   }
 
-  .gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 1.5rem;
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 px-8 py-3 font-semibold rounded-full text-sm;
+    border: 2px solid var(--color-gold);
+    color: var(--color-gold);
+    font-family: 'DM Sans', sans-serif;
+    transition: all var(--duration-base) var(--ease-out-expo);
   }
 
-  .season-pill {
-    @apply px-5 py-2 text-xs font-semibold uppercase tracking-widest transition-all duration-200;
-    font-family: 'Geist', sans-serif;
+  .btn-outline:hover {
+    background: var(--color-gold);
+    color: var(--color-navy);
+    transform: translateY(-2px);
+  }
+}
+
+/* ─────────────────────────────────────────────
+   LAYOUT UTILITIES
+   ───────────────────────────────────────────── */
+@layer components {
+  .section-container {
+    @apply max-w-7xl mx-auto px-4 md:px-8;
   }
 
-  .season-pill.active {
-    background-color: hsl(var(--primary));
-    color: hsl(var(--primary-foreground));
+  .section-padding {
+    @apply py-16 md:py-24;
   }
 
-  .season-pill:not(.active) {
-    background-color: hsl(var(--muted));
-    color: hsl(var(--muted-foreground));
+  /* Gold horizontal rule above section titles */
+  .gold-rule {
+    width: 3rem;
+    height: 3px;
+    background: var(--color-gold);
+    margin-bottom: var(--space-4);
   }
 
-  .season-pill:not(.active):hover {
-    background-color: hsl(var(--border));
-    color: hsl(var(--foreground));
+  .gold-rule-double {
+    position: relative;
+    width: 4rem;
+    height: 6px;
+    margin-bottom: var(--space-6);
   }
 
-  .highlight-bar {
-    @apply relative inline-block;
-  }
-
-  .highlight-bar::after {
+  .gold-rule-double::before,
+  .gold-rule-double::after {
     content: '';
-    @apply absolute bottom-0 left-0 h-0.5 w-full;
-    background: hsl(var(--primary));
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--color-gold);
+  }
+
+  .gold-rule-double::before { top: 0; }
+  .gold-rule-double::after  { top: 4px; }
+
+  /* Diagonal rule-line hero texture (CSS only) */
+  .hero-texture {
+    background-image: repeating-linear-gradient(
+      -45deg,
+      transparent,
+      transparent 40px,
+      rgba(201, 168, 76, 0.03) 40px,
+      rgba(201, 168, 76, 0.03) 41px
+    );
+  }
+}
+
+/* ─────────────────────────────────────────────
+   NAVIGATION
+   ───────────────────────────────────────────── */
+@layer components {
+  .nav-link {
+    font-family: 'DM Sans', sans-serif;
+    font-size: var(--text-sm);
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    transition: color var(--duration-fast) ease;
+    position: relative;
+    padding-bottom: 2px;
+  }
+
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--color-gold);
+    transition: width var(--duration-base) var(--ease-out-expo);
+  }
+
+  .nav-link:hover,
+  .nav-link.active {
+    color: var(--color-gold);
+  }
+
+  .nav-link.active::after,
+  .nav-link:hover::after {
+    width: 100%;
+  }
+}
+
+/* ─────────────────────────────────────────────
+   CARDS & BADGES
+   ───────────────────────────────────────────── */
+@layer components {
+  /* Monogram avatar — shown when member photo is missing */
+  .monogram-avatar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-navy);
+    color: var(--color-gold);
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    border-radius: 50%;
+    border: 2px solid var(--color-charcoal);
+    user-select: none;
+  }
+
+  .pill {
+    @apply inline-flex items-center px-3 py-1 text-xs font-medium rounded-full;
+    font-family: 'DM Sans', sans-serif;
+    background: rgba(201,168,76,0.12);
+    color: var(--color-gold-light);
+    border: 1px solid rgba(201,168,76,0.25);
+  }
+
+  .award-badge {
+    @apply inline-flex items-center gap-1 px-3 py-1 text-xs font-medium;
+    font-family: 'DM Sans', sans-serif;
+    background: rgba(139,26,26,0.15);
+    color: #E07070;
+    border: 1px solid rgba(139,26,26,0.3);
+    border-radius: var(--radius-sm);
+  }
+
+  .award-badge::before {
+    content: '★';
+    color: var(--color-gold);
+    font-size: 0.65rem;
+  }
+}
+
+/* ─────────────────────────────────────────────
+   SCROLL-REVEAL ANIMATION CLASSES
+   (toggled by Intersection Observer in React)
+   ───────────────────────────────────────────── */
+@layer utilities {
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity var(--duration-slow) var(--ease-out-expo),
+                transform var(--duration-slow) var(--ease-out-expo);
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .reveal-delay-1 { transition-delay: 100ms; }
+  .reveal-delay-2 { transition-delay: 200ms; }
+  .reveal-delay-3 { transition-delay: 300ms; }
+  .reveal-delay-4 { transition-delay: 400ms; }
+
+  /* Screen-reader only */
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    white-space: nowrap;
+    border-width: 0;
   }
 }

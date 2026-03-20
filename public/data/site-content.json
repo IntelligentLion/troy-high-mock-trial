@@ -1,0 +1,318 @@
+{
+  "team": {
+    "name": "Troy High School Mock Trial",
+    "founded": 2016,
+    "school": "Troy High School, Fullerton CA",
+    "description": "Troy Mock Trial is aimed at introducing students to the field of law, offering real-life trial experience, and fostering effective communication skills. With a variety of roles with a variety of responsibilities, members get to learn about multiple aspects of a trial. Troy Mock Trial allows students to foster teamwork and coordination with attorney-witness examinations, organize arguments through coordinated statements, and exercise logic with spontaneous decision making in trial.",
+    "coreValues": {
+      "legalStudies": "Troy Mock Trial helps students acquire a working knowledge of the judicial system through hypothetical cases.",
+      "competition": "Troy Mock Trial competes in the Constitutional Rights Foundation (CRF)'s Mock Trial program.",
+      "skills": "In Mock Trial students develop their presentation skills, analytic ability, and team cooperation."
+    },
+    "coaches": []
+  },
+  "alumni": [
+    {
+      "name": "Ashley Fan",
+      "graduationYear": "2018",
+      "years": ["2016-2017", "2017-2018"],
+      "role": "Founder and President (2016-2018)",
+      "college": "Yale University, Class of 2022",
+      "major": "Political Science",
+      "achievements": [
+        "Founder of Troy High School Mock Trial",
+        "President of Mock Trial (2016-2018)",
+        "Research and editorial work at Yale Law School"
+      ],
+      "photo": "https://thsmocktrial.weebly.com/uploads/1/3/8/2/138237874/editor/img-0161.jpeg"
+    },
+    {
+      "name": "Hayley Amo",
+      "graduationYear": "2018",
+      "years": ["2016-2017", "2017-2018"],
+      "role": "Founder; Opening Defense Attorney (Junior year), Closing Prosecuting Attorney (Senior year)",
+      "college": "UC Davis, Class of 2022",
+      "major": "Environmental Policy Planning and Analysis, Spanish minor",
+      "achievements": [
+        "Founder of Troy High School Mock Trial",
+        "Judicial extern at Santa Ana Courthouse (Summer 2020) under Judge Kimberly Menninger",
+        "Competed in Mock Trial at UC Davis as Plaintiff Opening Attorney and Defense Closing Attorney",
+        "UC Davis case: State of Midlands v. Jordan Ryder (2020, 2nd Place at UC Berkeley)",
+        "UC Davis case: Midlands Television Studios v. Danny Kosack (2019 - Negligence)",
+        "Troy cases: People v. Davidson (2018 - Murder/Fourth Amendment); People v. Awbrey (2017 - Human Trafficking/False Imprisonment)"
+      ],
+      "photo": "https://thsmocktrial.weebly.com/uploads/1/3/8/2/138237874/editor/unnamed.jpg"
+    },
+    {
+      "name": "Tiffany Hall",
+      "graduationYear": "2018",
+      "years": ["2016-2017", "2017-2018"],
+      "role": "Member",
+      "college": "Pepperdine University, Class of 2021",
+      "major": "Economics and Applied Mathematics",
+      "achievements": [
+        "Graduated magna cum laude from Pepperdine University",
+        "Vice President of Programming for Pepperdine Debate Team",
+        "Copy chief for newspaper",
+        "Vice President of Marketing for Seaver's Inter-Club Council",
+        "Member of Pepperdine Colleges Against Cancer",
+        "Case manager at personal injury law firm in Newport Beach, CA",
+        "Plans to attend law school"
+      ],
+      "photo": ""
+    },
+    {
+      "name": "Aisha Patel",
+      "graduationYear": "2019",
+      "years": ["2017-2018", "2018-2019"],
+      "role": "President (2018-2019)",
+      "college": "USC, Class of 2023",
+      "major": "Communication, Business minor",
+      "achievements": [
+        "President of Mock Trial (2018-2019)",
+        "Chief Copy Editor for Daily Trojan",
+        "Vice President for USC Muslim Student Union",
+        "Marketing Director at USC Photo Club",
+        "Brand marketing intern at Emerson Collective",
+        "Eight-month social media marketing internship for migrant student preparation program"
+      ],
+      "photo": "https://thsmocktrial.weebly.com/uploads/1/3/8/2/138237874/editor/226607554-424611252135074-3692196746412892758-n.jpg"
+    },
+    {
+      "name": "Lillian Lin",
+      "graduationYear": "2020",
+      "years": ["2018-2019", "2019-2020"],
+      "role": "Member",
+      "college": "USC, Class of 2024",
+      "major": "Cinema and Media Studies, International Relations minor",
+      "achievements": [
+        "Competitor on USC Trial Advocacy Program",
+        "Earned 1st place and top team awards in national mock trial invitationals",
+        "Editor in Chief of USC.LIVE",
+        "Screenwriter, cameraperson, and editor with High Five Productions in China"
+      ],
+      "photo": "https://thsmocktrial.weebly.com/uploads/1/3/8/2/138237874/editor/229037803-353817129711415-7742111024428353690-n.jpg"
+    },
+    {
+      "name": "Dominic Pak",
+      "graduationYear": "2020",
+      "years": ["2018-2019", "2019-2020"],
+      "role": "Member",
+      "college": "USC, Class of 2024",
+      "major": "B.S. Environmental Science and Health; B.A. Philosophy",
+      "achievements": [
+        "Honors student in Thematic Option, THV, and medical organizations at USC",
+        "Active in marching band, drumline, IB, and Mock Trial at Troy"
+      ],
+      "photo": "https://thsmocktrial.weebly.com/uploads/1/3/8/2/138237874/published/pakdominic-idpic.jpg"
+    },
+    {
+      "name": "John Pace",
+      "graduationYear": "2020",
+      "years": ["2018-2019", "2019-2020"],
+      "role": "President (2019-2020)",
+      "college": "USC, Class of 2024",
+      "major": "Computational Neuroscience",
+      "achievements": [
+        "President of Mock Trial (2019-2020)",
+        "Health Administrative Intern at PIH Health",
+        "Bioengineering research through Viterbi School of Engineering at USC",
+        "Pursuing joint bachelor's with Master's in Health Administration (M.H.A.) and Doctor of Medicine (M.D.)"
+      ],
+      "photo": "https://thsmocktrial.weebly.com/uploads/1/3/8/2/138237874/editor/229394242-3696924637073680-1555713338913380963-n.jpg"
+    },
+    {
+      "name": "Ishan Patel",
+      "graduationYear": "2021",
+      "years": ["2019-2020", "2020-2021"],
+      "role": "Member",
+      "college": "Georgetown University, Class of 2025",
+      "major": "Government and Economics",
+      "achievements": [
+        "Active in Speech and Debate, Mock Trial, FBLA, Varsity Wrestling, and Peer Tutoring at Troy",
+        "Co-founded podcast",
+        "Contributor to Medium"
+      ],
+      "photo": "https://thsmocktrial.weebly.com/uploads/1/3/8/2/138237874/editor/img-0243.jpg"
+    },
+    {
+      "name": "Dale Tran",
+      "graduationYear": "2021",
+      "years": ["2019-2020", "2020-2021"],
+      "role": "Co-President (2020-2021)",
+      "college": "University of Pennsylvania, Class of 2025",
+      "major": "Economics and Environmental Science",
+      "achievements": [
+        "Co-President of Mock Trial (2020-2021)",
+        "Intern with EPA Smartway Partnership Team",
+        "Consulting team member at Wharton Undergraduate Energy Group",
+        "Consulting team member at Penn Climate Venture"
+      ],
+      "photo": "https://thsmocktrial.weebly.com/uploads/1/3/8/2/138237874/editor/img-2578.jpeg"
+    }
+  ],
+  "gallery": {
+    "2016": [
+      {
+        "url": "https://thsmocktrial.weebly.com/uploads/1/3/8/2/138237874/229820041-348738150061900-2135584364717317013-n.jpg",
+        "caption": "2016-2017 Competition Season - First Troy Mock Trial Team"
+      },
+      {
+        "url": "https://thsmocktrial.weebly.com/uploads/1/3/8/2/138237874/231086369-269802581148429-1845351805443404859-n.jpg",
+        "caption": "2016-2017 Competition Season"
+      },
+      {
+        "url": "https://thsmocktrial.weebly.com/uploads/1/3/8/2/138237874/229142721-223311859567288-1558101259696699562-n.jpg",
+        "caption": "2016-2017 Competition Season"
+      },
+      {
+        "url": "https://thsmocktrial.weebly.com/uploads/1/3/8/2/138237874/227662920-2917574481843123-3770244622734624838-n.jpg",
+        "caption": "2016-2017 Competition Season"
+      }
+    ],
+    "2017": [
+      {
+        "url": "https://thsmocktrial.weebly.com/uploads/1/3/8/2/138237874/unnamed-1.jpg",
+        "caption": "2017-2018 Mock Trial Banquet"
+      },
+      {
+        "url": "https://thsmocktrial.weebly.com/uploads/1/3/8/2/138237874/unnamed.png",
+        "caption": "2017-2018 Mock Trial Team"
+      }
+    ],
+    "2018": [],
+    "2019": [
+      {
+        "url": "https://thsmocktrial.weebly.com/uploads/1/3/8/2/138237874/img-0602.jpg",
+        "caption": "2019-2020 Season"
+      },
+      {
+        "url": "https://thsmocktrial.weebly.com/uploads/1/3/8/2/138237874/img-7471.jpg",
+        "caption": "2019-2020 Season"
+      },
+      {
+        "url": "https://thsmocktrial.weebly.com/uploads/1/3/8/2/138237874/img-7726.jpg",
+        "caption": "2019-2020 Season"
+      },
+      {
+        "url": "https://thsmocktrial.weebly.com/uploads/1/3/8/2/138237874/img-7727.jpg",
+        "caption": "2019-2020 Season"
+      },
+      {
+        "url": "https://thsmocktrial.weebly.com/uploads/1/3/8/2/138237874/img-8806.jpg",
+        "caption": "2019-2020 Season"
+      },
+      {
+        "url": "https://thsmocktrial.weebly.com/uploads/1/3/8/2/138237874/img-8826.jpg",
+        "caption": "2019-2020 Season"
+      }
+    ],
+    "2020": [],
+    "2021": [],
+    "2022": [],
+    "2023": [],
+    "2024": [],
+    "2025": []
+  },
+  "currentYear": {
+    "season": "2021-2022",
+    "note": "Officer data reflects the most recent data found on the site (2021-2022 school year based on photo timestamps). No 2025-2026 officer data was found on the site.",
+    "officers": [
+      {
+        "name": "Kayla Nguyen",
+        "role": "Co-President",
+        "photo": "https://thsmocktrial.weebly.com/uploads/1/3/8/2/138237874/published/49125.jpg",
+        "competitions": [],
+        "awards": []
+      },
+      {
+        "name": "Timothy Kim",
+        "role": "Co-President",
+        "photo": "https://thsmocktrial.weebly.com/uploads/1/3/8/2/138237874/published/headshot-of-timothy-kim-1.png",
+        "competitions": [],
+        "awards": []
+      },
+      {
+        "name": "Diya Patel",
+        "role": "Vice President",
+        "photo": "https://thsmocktrial.weebly.com/uploads/1/3/8/2/138237874/published/img-2032.jpeg",
+        "competitions": [],
+        "awards": []
+      },
+      {
+        "name": "Ariana Perez",
+        "role": "Secretary",
+        "photo": "https://thsmocktrial.weebly.com/uploads/1/3/8/2/138237874/published/img-5151.jpg",
+        "competitions": [],
+        "awards": []
+      },
+      {
+        "name": "Ethan Wei",
+        "role": "Treasurer",
+        "photo": "https://thsmocktrial.weebly.com/uploads/1/3/8/2/138237874/published/img-5152.jpg",
+        "competitions": [],
+        "awards": []
+      },
+      {
+        "name": "Tyler Coker",
+        "role": "Public Relations",
+        "photo": "https://thsmocktrial.weebly.com/uploads/1/3/8/2/138237874/published/profile-pictures.jpg",
+        "competitions": [],
+        "awards": []
+      }
+    ],
+    "members": []
+  },
+  "competition": {
+    "organization": "Constitutional Rights Foundation (CRF)",
+    "programName": "CRF Mock Trial",
+    "resources": [
+      {
+        "name": "Mock Trial Finalized Team Document 2021-2022",
+        "url": "https://thsmocktrial.weebly.com/uploads/1/3/8/2/138237874/mock_trial_finalized_team_2021-2022.pdf",
+        "type": "PDF"
+      }
+    ],
+    "sections": [
+      "Competition Materials",
+      "2022-2023 Competition Calendar",
+      "Important Mock Trial Competition Info",
+      "Important Moot Court Competition Info"
+    ],
+    "results": []
+  },
+  "materials": {
+    "sections": [
+      {
+        "title": "Introductory Meeting Slides",
+        "description": "If you missed our first meeting, you can find all the introductory information below!"
+      },
+      {
+        "title": "Lawyer Overview",
+        "description": "Check out our slides on attorney tactics and skills! The pretrial attorneys presents an oral argument against the motion brought by the defense. Trial attorneys control the presentation of evidence at a trial and argue the merits of their side of the case."
+      },
+      {
+        "title": "Witness Overview",
+        "description": "Check out our slides on witness tactics and skills! The witness is used by the attorneys as unique stories that are able to convince the jury and judge that the attorney's argument has validity."
+      },
+      {
+        "title": "Mock Trial Objection Quizlet",
+        "description": "Practice mock trial objections with our Quizlet."
+      }
+    ]
+  },
+  "sponsors": [],
+  "achievements": [
+    "Lillian Lin (USC Trial Advocacy): 1st place and top team awards in national mock trial invitationals",
+    "Hayley Amo (UC Davis): 2nd Place at UC Berkeley invitational (State of Midlands v. Jordan Ryder, 2020)"
+  ],
+  "contact": {
+    "email": "",
+    "advisorName": "",
+    "advisorEmail": "",
+    "instagram": "https://www.instagram.com/ths_mocktrial/",
+    "instagramHandle": "@ths_mocktrial",
+    "linkedin": "https://www.linkedin.com/company/troy-high-school-mock-trial",
+    "address": "Troy High School, 2200 Dorothy Ln, Fullerton, CA 92831"
+  }
+}
