@@ -1,16 +1,21 @@
 import { motion } from "framer-motion";
 import { GraduationCap, Scale, Star, BookOpen, Users, Trophy } from "lucide-react";
+import { useSiteContent } from "@/hooks/useSiteContent";
 
 const pillars = [
   { icon: GraduationCap, title: "Mentorship Program", desc: "Senior members mentor newcomers, and alumni return each spring to share their legal journeys and coach current competitors." },
-  { icon: Scale, title: "Legal Outreach", desc: "We visit local middle schools to introduce students to mock trial and civic education — growing the next generation of advocates." },
+  { icon: Scale, title: "Legal Outreach", desc: "We compete in the CRF Mock Trial program — one of the most respected high school legal competitions in California." },
   { icon: Star, title: "Annual Banquet", desc: "Every season ends with a celebration of our athletes, coaches, sponsors, and alumni. All are welcome to attend." },
-  { icon: BookOpen, title: "Study Sessions", desc: "Weekly group study sessions keep members sharp on case law, legal reasoning, and trial procedure throughout the year." },
-  { icon: Users, title: "Team Bonding", desc: "From escape rooms to team dinners, we invest in the relationships that make us stronger in and out of the courtroom." },
+  { icon: BookOpen, title: "Case Preparation", desc: "Members develop presentation skills, analytic ability, and team cooperation through intensive case preparation each season." },
+  { icon: Users, title: "Team Bonding", desc: "From team dinners to study sessions, we invest in the relationships that make us stronger in and out of the courtroom." },
   { icon: Trophy, title: "Alumni Network", desc: "Our growing alumni network spans top universities and law programs — a lifelong community that opens doors for every member." },
 ];
 
 export default function CommunitySection() {
+  const { data } = useSiteContent();
+  const instagram = data?.contact?.instagram ?? "https://www.instagram.com/ths_mocktrial/";
+  const instagramHandle = data?.contact?.instagramHandle ?? "@ths_mocktrial";
+
   return (
     <section id="community" className="py-24 border-t border-border">
       <div className="max-w-7xl mx-auto px-6">
@@ -46,7 +51,7 @@ export default function CommunitySection() {
               className="bg-card rounded-xl border border-border p-6 flex flex-col gap-4 group hover:border-primary/40 transition-colors"
             >
               <div className="w-10 h-10 rounded-lg border border-primary/30 flex items-center justify-center bg-primary/10 group-hover:border-primary transition-colors">
-                <p.icon className="w-5 h-5 text-primary" strokeWidth={1.5} />
+                <p.icon className="w-5 h-5 text-primary" strokeWidth={1.5} aria-hidden="true" />
               </div>
               <h3 className="font-playfair text-lg font-semibold text-foreground">{p.title}</h3>
               <p className="text-muted-foreground text-sm leading-relaxed">{p.desc}</p>
@@ -63,14 +68,21 @@ export default function CommunitySection() {
           className="bg-card rounded-xl border border-border p-10 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6"
         >
           <div>
-            <h3 className="font-playfair text-2xl font-bold text-foreground mb-2">Interested in Joining?</h3>
+            <h3 className="font-playfair text-2xl font-bold text-foreground mb-2">
+              Interested in Joining?
+            </h3>
             <p className="text-muted-foreground text-sm max-w-sm">
-              Open to all students. No prior legal experience required
+              Open to all Troy High School students. No prior legal experience required
               — just curiosity and commitment.
             </p>
           </div>
-          <a href="mailto:mocktrial@westside.edu" className="btn-primary shrink-0">
-            Contact Us
+          <a
+            href={instagram}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-primary shrink-0"
+          >
+            {instagramHandle}
           </a>
         </motion.div>
       </div>

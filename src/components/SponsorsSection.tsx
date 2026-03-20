@@ -151,8 +151,17 @@ export default function SponsorsSection() {
           <div>
             <h3 className="font-playfair text-2xl font-bold text-foreground mb-4">Get in Touch</h3>
             <p className="text-muted-foreground text-sm leading-relaxed">
-              Interested in sponsoring our Mock Trial team? Fill out the form
-              and we'll reach out promptly.
+              Interested in sponsoring Troy High School's Mock Trial team?
+              Reach out via Instagram{" "}
+              <a
+                href="https://www.instagram.com/ths_mocktrial/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary hover:text-primary/80 transition-colors"
+              >
+                @ths_mocktrial
+              </a>{" "}
+              or fill out the form below.
             </p>
           </div>
           <div>

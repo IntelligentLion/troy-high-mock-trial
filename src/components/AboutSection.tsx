@@ -1,28 +1,6 @@
 import { motion } from "framer-motion";
-import { BookOpen, Users, GraduationCap, Heart } from "lucide-react";
-
-const pillars = [
-  {
-    icon: BookOpen,
-    title: "Legal Excellence",
-    desc: "We train with real case materials and compete at regional and state levels.",
-  },
-  {
-    icon: Users,
-    title: "Team Community",
-    desc: "A family built on mutual respect, mentorship, and shared passion.",
-  },
-  {
-    icon: GraduationCap,
-    title: "Academic Rigor",
-    desc: "We integrate legal studies, rhetoric, and civics into our practice.",
-  },
-  {
-    icon: Heart,
-    title: "Giving Back",
-    desc: "Alumni return each year to mentor current members and preserve our legacy.",
-  },
-];
+import { BookOpen, Users, GraduationCap } from "lucide-react";
+import { useSiteContent } from "@/hooks/useSiteContent";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
@@ -33,7 +11,14 @@ const fadeUp = {
   }),
 };
 
+const pillarIcons = [BookOpen, GraduationCap, Users];
+const pillarKeys = ["legalStudies", "competition", "skills"] as const;
+const pillarTitles = ["Legal Studies", "Competition", "Skills Development"];
+
 export default function AboutSection() {
+  const { data } = useSiteContent();
+  const team = data?.team;
+
   return (
     <section id="about" className="py-24 border-t border-border">
       <div className="max-w-7xl mx-auto px-6">
@@ -55,7 +40,7 @@ export default function AboutSection() {
               transition={{ duration: 0.7, ease: [0.19, 1, 0.22, 1] }}
               className="display-md text-foreground"
             >
-              Westside High School
+              Troy High School
               <br />
               <span className="gold-text">Mock Trial</span>
             </motion.h2>
@@ -67,49 +52,43 @@ export default function AboutSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7, delay: 0.15 }}
-              className="text-muted-foreground leading-relaxed mb-6"
-            >
-              The Westside High School Mock Trial Team was founded in 2016 by a small
-              group of passionate students and dedicated coaches who believed in the
-              power of legal education. What began as an after-school club has grown
-              into one of the most accomplished extracurricular teams in the district.
-            </motion.p>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.7, delay: 0.25 }}
               className="text-muted-foreground leading-relaxed"
             >
-              Over nine seasons, we have grown from 8 founding members to a thriving
-              program of 20+ competitors, coached by legal professionals who volunteer
-              their time to give back to the community.
+              {team?.description ??
+                "Troy Mock Trial is aimed at introducing students to the field of law, offering real-life trial experience, and fostering effective communication skills."}
             </motion.p>
           </div>
         </div>
 
-        {/* Pillars */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {pillars.map((p, i) => (
-            <motion.div
-              key={i}
-              custom={i}
-              variants={fadeUp}
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: true }}
-              className="bg-card rounded-xl border border-border p-6 flex flex-col gap-4 hover:border-primary/40 transition-colors"
-            >
-              <div className="w-10 h-10 rounded-lg border border-primary/30 flex items-center justify-center bg-primary/10">
-                <p.icon className="w-5 h-5 text-primary" strokeWidth={1.5} />
-              </div>
-              <h3 className="font-playfair text-lg font-semibold text-foreground">
-                {p.title}
-              </h3>
-              <p className="text-muted-foreground text-sm leading-relaxed">{p.desc}</p>
-            </motion.div>
-          ))}
-        </div>
+        {/* Pillars from core values */}
+        {team?.coreValues && (
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {pillarKeys.map((key, i) => {
+              const Icon = pillarIcons[i];
+              return (
+                <motion.div
+                  key={key}
+                  custom={i}
+                  variants={fadeUp}
+                  initial="hidden"
+                  whileInView="show"
+                  viewport={{ once: true }}
+                  className="bg-card rounded-xl border border-border p-6 flex flex-col gap-4 hover:border-primary/40 transition-colors"
+                >
+                  <div className="w-10 h-10 rounded-lg border border-primary/30 flex items-center justify-center bg-primary/10">
+                    <Icon className="w-5 h-5 text-primary" strokeWidth={1.5} />
+                  </div>
+                  <h3 className="font-playfair text-lg font-semibold text-foreground">
+                    {pillarTitles[i]}
+                  </h3>
+                  <p className="text-muted-foreground text-sm leading-relaxed">
+                    {team.coreValues[key]}
+                  </p>
+                </motion.div>
+              );
+            })}
+          </div>
+        )}
 
         {/* Mission strip */}
         <motion.div
@@ -120,11 +99,11 @@ export default function AboutSection() {
           className="mt-8 bg-card rounded-xl border border-primary/30 p-8"
           style={{ borderLeft: "4px solid hsl(var(--primary))" }}
         >
-          <span className="label-mono text-primary block mb-3">Our Mission</span>
+          <span className="label-mono text-primary block mb-3">Competing With</span>
           <p className="text-foreground leading-relaxed max-w-3xl">
-            To empower high school students with the knowledge of legal processes,
-            the art of advocacy, and the confidence to stand up and speak — in the
-            courtroom, the classroom, and the community.
+            The <strong className="text-primary">Constitutional Rights Foundation (CRF)</strong>'s
+            Mock Trial program — one of the most respected high school legal competition
+            programs in California.
           </p>
         </motion.div>
       </div>

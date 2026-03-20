@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 
 const navLinks = [
   { label: "About", href: "#about" },
-  { label: "2025–2026", href: "#season" },
+  { label: "2021–2022", href: "#season" },
   { label: "Team", href: "#team" },
   { label: "Gallery", href: "#gallery" },
   { label: "Alumni", href: "#alumni" },
@@ -36,12 +36,12 @@ export default function Navbar() {
             <Scale className="w-4 h-4 text-primary-foreground" strokeWidth={2} />
           </div>
           <span className="font-playfair font-bold text-base text-foreground tracking-wide">
-            Westside Mock Trial
+            Troy Mock Trial
           </span>
         </a>
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-6">
+        <nav className="hidden md:flex items-center gap-6" aria-label="Main navigation">
           {navLinks.map((l) => (
             <a key={l.href} href={l.href} className="nav-link text-foreground/70">
               {l.label}
@@ -59,6 +59,7 @@ export default function Navbar() {
           className="md:hidden text-foreground"
           onClick={() => setOpen(!open)}
           aria-label="Toggle menu"
+          aria-expanded={open}
         >
           {open ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
         </button>
@@ -66,7 +67,10 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {open && (
-        <div className="md:hidden bg-background border-b border-border px-6 py-6 flex flex-col gap-5">
+        <nav
+          className="md:hidden bg-background border-b border-border px-6 py-6 flex flex-col gap-5"
+          aria-label="Mobile navigation"
+        >
           {navLinks.map((l) => (
             <a
               key={l.href}
@@ -77,10 +81,14 @@ export default function Navbar() {
               {l.label}
             </a>
           ))}
-          <a href="#sponsors" className="btn-primary text-center mt-2">
+          <a
+            href="#sponsors"
+            className="btn-primary text-center mt-2"
+            onClick={() => setOpen(false)}
+          >
             Become a Sponsor
           </a>
-        </div>
+        </nav>
       )}
     </header>
   );

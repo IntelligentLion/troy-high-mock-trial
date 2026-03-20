@@ -1,6 +1,20 @@
 import { Scale } from "lucide-react";
+import { useSiteContent } from "@/hooks/useSiteContent";
+
+const navLinks = [
+  { label: "About", href: "#about" },
+  { label: "2021–2022 Season", href: "#season" },
+  { label: "Team", href: "#team" },
+  { label: "Gallery", href: "#gallery" },
+  { label: "Alumni", href: "#alumni" },
+  { label: "Sponsors", href: "#sponsors" },
+];
 
 export default function Footer() {
+  const { data } = useSiteContent();
+  const contact = data?.contact;
+  const currentYear = new Date().getFullYear();
+
   return (
     <footer className="border-t border-border py-16">
       <div className="max-w-7xl mx-auto px-6">
@@ -9,29 +23,52 @@ export default function Footer() {
           <div className="md:col-span-2">
             <div className="flex items-center gap-3 mb-4">
               <div className="w-7 h-7 flex items-center justify-center rounded-sm bg-primary">
-                <Scale className="w-4 h-4 text-primary-foreground" strokeWidth={2} />
+                <Scale className="w-4 h-4 text-primary-foreground" strokeWidth={2} aria-hidden="true" />
               </div>
               <span className="font-playfair font-bold text-base text-foreground">
-                Westside Mock Trial
+                Troy Mock Trial
               </span>
             </div>
-            <p className="text-muted-foreground text-sm leading-relaxed max-w-xs">
+            <p className="text-muted-foreground text-sm leading-relaxed max-w-xs mb-4">
               Preparing the next generation of lawyers, advocates, and critical thinkers
-              since 2016.
+              at Troy High School, Fullerton CA — since 2016.
             </p>
+            {/* Social links */}
+            <div className="flex gap-3">
+              {contact?.instagram && (
+                <a
+                  href={contact.instagram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="label-mono text-muted-foreground hover:text-primary transition-colors text-[0.65rem]"
+                >
+                  Instagram
+                </a>
+              )}
+              {contact?.linkedin && (
+                <a
+                  href={contact.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="label-mono text-muted-foreground hover:text-primary transition-colors text-[0.65rem]"
+                >
+                  LinkedIn
+                </a>
+              )}
+            </div>
           </div>
 
           {/* Quick links */}
           <div>
             <span className="label-mono text-muted-foreground block mb-4">Navigation</span>
             <ul className="flex flex-col gap-2">
-              {["About", "2025–2026 Season", "Team", "Gallery", "Alumni", "Sponsors"].map((l) => (
-                <li key={l}>
+              {navLinks.map((l) => (
+                <li key={l.href}>
                   <a
-                    href={`#${l.toLowerCase().replace(/[^a-z]/g, "")}`}
+                    href={l.href}
                     className="text-sm text-muted-foreground hover:text-primary transition-colors"
                   >
-                    {l}
+                    {l.label}
                   </a>
                 </li>
               ))}
@@ -42,20 +79,33 @@ export default function Footer() {
           <div>
             <span className="label-mono text-muted-foreground block mb-4">Contact</span>
             <ul className="flex flex-col gap-2 text-sm text-muted-foreground">
-              <li>Westside High School</li>
-              <li>Mock Trial Program</li>
-              <li>
-                <a href="mailto:mocktrial@westside.edu" className="hover:text-primary transition-colors">
-                  mocktrial@westside.edu
-                </a>
-              </li>
+              {contact?.address ? (
+                <li>{contact.address}</li>
+              ) : (
+                <>
+                  <li>Troy High School</li>
+                  <li>2200 Dorothy Ln, Fullerton, CA 92831</li>
+                </>
+              )}
+              {contact?.instagram && (
+                <li>
+                  <a
+                    href={contact.instagram}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-primary transition-colors"
+                  >
+                    {contact.instagramHandle ?? "@ths_mocktrial"}
+                  </a>
+                </li>
+              )}
             </ul>
           </div>
         </div>
 
         <div className="border-t border-border pt-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
           <span className="label-mono text-muted-foreground text-[0.65rem]">
-            © 2025 Westside High School Mock Trial Team — All rights reserved.
+            © {currentYear} Troy High School Mock Trial Team — All rights reserved.
           </span>
           <span className="label-mono text-muted-foreground text-[0.65rem]">
             Founded 2016 · Legacy is Earned.
