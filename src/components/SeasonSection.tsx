@@ -16,14 +16,13 @@ const schedule = [
 
 export default function SeasonSection() {
   return (
-    <section id="season" className="py-32 border-t border-border">
+    <section id="season" className="py-24 border-t border-border">
       <div className="max-w-7xl mx-auto px-6">
-        {/* Header */}
         <motion.span
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="label-mono text-primary block mb-4"
+          className="label-mono text-primary block mb-3"
         >
           Current Season
         </motion.span>
@@ -31,8 +30,8 @@ export default function SeasonSection() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.7, ease: [0.19, 1, 0.22, 1] }}
-          className="display-lg text-foreground mb-4"
+          transition={{ duration: 0.7 }}
+          className="display-lg text-foreground mb-3"
         >
           2025–2026
         </motion.h2>
@@ -41,26 +40,26 @@ export default function SeasonSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7, delay: 0.1 }}
-          className="text-muted-foreground mb-16 max-w-xl"
+          className="text-muted-foreground mb-12 max-w-xl"
         >
           Follow our journey this year — events, updates, and milestones.
         </motion.p>
 
         {/* Milestone cards */}
-        <div className="grid sm:grid-cols-3 gap-px bg-border mb-px">
+        <div className="grid sm:grid-cols-3 gap-5 mb-8">
           {results.map((r, i) => (
             <motion.div
               key={i}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: i * 0.1, ease: [0.19, 1, 0.22, 1] }}
-              className="bg-background p-8"
+              transition={{ duration: 0.6, delay: i * 0.1 }}
+              className="bg-card rounded-xl border border-border p-6"
             >
-              <span className="label-mono text-muted-foreground block mb-3">{r.date}</span>
-              <h3 className="font-bebas text-2xl text-foreground mb-2">{r.label}</h3>
+              <span className="label-mono text-muted-foreground block mb-2">{r.date}</span>
+              <h3 className="font-playfair text-xl font-semibold text-foreground mb-2">{r.label}</h3>
               <span
-                className={`label-mono text-sm ${
+                className={`label-mono text-sm font-semibold ${
                   r.done ? "text-primary" : "text-muted-foreground"
                 }`}
               >
@@ -71,8 +70,8 @@ export default function SeasonSection() {
         </div>
 
         {/* Schedule table */}
-        <div className="bg-muted border border-border">
-          <div className="px-8 py-4 border-b border-border">
+        <div className="bg-card rounded-xl border border-border overflow-hidden">
+          <div className="px-6 py-4 border-b border-border">
             <span className="label-mono text-muted-foreground">Schedule & Results</span>
           </div>
           {schedule.map((s, i) => (
@@ -81,15 +80,15 @@ export default function SeasonSection() {
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.07, ease: [0.19, 1, 0.22, 1] }}
-              className="flex items-center justify-between px-8 py-5 border-b border-border/50 last:border-0 hover:bg-background/50 transition-colors"
+              transition={{ duration: 0.5, delay: i * 0.07 }}
+              className="flex items-center justify-between px-6 py-4 border-b border-border/50 last:border-0 hover:bg-muted/40 transition-colors"
             >
               <div className="flex items-center gap-6">
-                <span className="label-mono text-muted-foreground w-24 shrink-0">{s.date}</span>
+                <span className="label-mono text-muted-foreground w-28 shrink-0 text-[0.65rem]">{s.date}</span>
                 <span className="text-foreground text-sm">{s.event}</span>
               </div>
               <span
-                className={`label-mono text-xs shrink-0 ml-4 ${
+                className={`label-mono text-xs shrink-0 ml-4 font-semibold ${
                   s.done ? "text-primary" : "text-muted-foreground"
                 }`}
               >

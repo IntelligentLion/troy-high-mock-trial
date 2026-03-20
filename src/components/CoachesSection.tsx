@@ -23,24 +23,24 @@ const coaches = [
 
 export default function CoachesSection() {
   return (
-    <section id="coaches" className="py-32 border-t border-border">
+    <section id="coaches" className="py-24 border-t border-border">
       <div className="max-w-7xl mx-auto px-6">
         {/* Header */}
-        <div className="flex items-end justify-between mb-16 flex-wrap gap-6">
+        <div className="flex items-end justify-between mb-12 flex-wrap gap-6">
           <div>
             <motion.span
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
-              className="label-mono text-primary block mb-4"
+              className="label-mono text-primary block mb-3"
             >
-              Technical Leadership
+              Legal Leadership
             </motion.span>
             <motion.h2
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.7, ease: [0.19, 1, 0.22, 1] }}
+              transition={{ duration: 0.7 }}
               className="display-lg text-foreground"
             >
               The Coaches
@@ -58,32 +58,28 @@ export default function CoachesSection() {
         </div>
 
         {/* Coach cards */}
-        <div className="grid md:grid-cols-2 gap-px bg-border">
+        <div className="grid md:grid-cols-2 gap-6">
           {coaches.map((coach, i) => (
             <motion.div
               key={i}
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{
-                duration: 0.8,
-                delay: i * 0.15,
-                ease: [0.19, 1, 0.22, 1],
-              }}
-              className="coach-card group bg-background"
+              transition={{ duration: 0.8, delay: i * 0.15 }}
+              className="coach-card group"
             >
               {/* Photo block */}
-              <div className="relative overflow-hidden" style={{ aspectRatio: "3/4", maxHeight: 480 }}>
+              <div className="relative overflow-hidden" style={{ aspectRatio: "3/4", maxHeight: 440 }}>
                 <img
                   src={coach.img}
                   alt={coach.name}
                   className="w-full h-full object-cover object-top grayscale transition-transform duration-700 group-hover:scale-105"
                 />
-                {/* Red overlay on hover */}
+                {/* Gold overlay on hover */}
                 <div className="coach-overlay" />
                 {/* Name overlay at bottom */}
                 <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent">
-                  <h3 className="font-bebas text-3xl text-foreground tracking-wide leading-tight">
+                  <h3 className="font-playfair text-2xl font-bold text-white leading-tight">
                     {coach.name}
                   </h3>
                   <span className="label-mono text-primary text-[0.65rem]">{coach.role}</span>
@@ -91,7 +87,7 @@ export default function CoachesSection() {
               </div>
 
               {/* Info block */}
-              <div className="p-8 flex flex-col gap-5">
+              <div className="p-6 flex flex-col gap-4">
                 <div className="flex items-center gap-3">
                   <span className="w-6 h-px bg-primary" />
                   <span className="label-mono text-muted-foreground text-[0.65rem]">{coach.tenure}</span>
@@ -99,7 +95,7 @@ export default function CoachesSection() {
 
                 <p className="text-muted-foreground text-sm leading-relaxed">{coach.bio}</p>
 
-                <div className="border-t border-border pt-5">
+                <div className="border-t border-border pt-4">
                   <span className="label-mono text-primary block mb-3 text-[0.65rem]">Credentials</span>
                   <ul className="flex flex-col gap-2">
                     {coach.credentials.map((c, j) => (

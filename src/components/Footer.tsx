@@ -8,11 +8,11 @@ export default function Footer() {
           {/* Brand */}
           <div className="md:col-span-2">
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-7 h-7 flex items-center justify-center bg-primary">
+              <div className="w-7 h-7 flex items-center justify-center rounded-sm bg-primary">
                 <Scale className="w-4 h-4 text-primary-foreground" strokeWidth={2} />
               </div>
-              <span className="font-bebas text-xl tracking-widest text-foreground">
-                Troy High School Mock Trial
+              <span className="font-playfair font-bold text-base text-foreground">
+                Westside Mock Trial
               </span>
             </div>
             <p className="text-muted-foreground text-sm leading-relaxed max-w-xs">
@@ -25,7 +25,7 @@ export default function Footer() {
           <div>
             <span className="label-mono text-muted-foreground block mb-4">Navigation</span>
             <ul className="flex flex-col gap-2">
-              {["About", "2025–2026 Season", "Leadership", "Gallery", "Alumni", "Sponsors"].map((l) => (
+              {["About", "2025–2026 Season", "Team", "Gallery", "Alumni", "Sponsors"].map((l) => (
                 <li key={l}>
                   <a
                     href={`#${l.toLowerCase().replace(/[^a-z]/g, "")}`}
@@ -42,11 +42,11 @@ export default function Footer() {
           <div>
             <span className="label-mono text-muted-foreground block mb-4">Contact</span>
             <ul className="flex flex-col gap-2 text-sm text-muted-foreground">
-              <li>Troy High School</li>
+              <li>Westside High School</li>
               <li>Mock Trial Program</li>
               <li>
-                <a href="mailto:mocktrial@troy.edu" className="hover:text-primary transition-colors">
-                  mocktrial@troy.edu
+                <a href="mailto:mocktrial@westside.edu" className="hover:text-primary transition-colors">
+                  mocktrial@westside.edu
                 </a>
               </li>
             </ul>
@@ -55,7 +55,7 @@ export default function Footer() {
 
         <div className="border-t border-border pt-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
           <span className="label-mono text-muted-foreground text-[0.65rem]">
-            © 2025 Troy High School Mock Trial Team — All rights reserved.
+            © 2025 Westside High School Mock Trial Team — All rights reserved.
           </span>
           <span className="label-mono text-muted-foreground text-[0.65rem]">
             Founded 2016 · Legacy is Earned.

@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ChevronDown } from "lucide-react";
+import { Scale, ChevronDown } from "lucide-react";
 
 const stats = [
   { value: "9", label: "Seasons Strong" },
@@ -7,103 +7,106 @@ const stats = [
   { value: "100+", label: "Alumni" },
 ];
 
-export default function Hero() {
+export default function HeroSection() {
   return (
-    <section className="relative min-h-screen flex flex-col justify-end pb-20 overflow-hidden bg-background">
-      {/* Background texture lines */}
-      <div
-        className="absolute inset-0 opacity-5 pointer-events-none"
-        style={{
-          backgroundImage:
-            "repeating-linear-gradient(0deg, transparent, transparent 80px, hsl(var(--foreground)/0.5) 80px, hsl(var(--foreground)/0.5) 81px)",
-        }}
-      />
+    <section
+      className="relative flex flex-col items-center justify-center text-center pt-24 pb-20 px-4 min-h-screen overflow-hidden"
+      style={{
+        background: "linear-gradient(160deg, hsl(var(--navy)) 0%, hsl(220, 42%, 12%) 60%, hsl(220, 38%, 16%) 100%)",
+      }}
+    >
+      {/* Ambient glow blobs */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none" style={{ opacity: 0.04 }}>
+        <div
+          className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full"
+          style={{ background: "hsl(var(--gold))", filter: "blur(80px)" }}
+        />
+        <div
+          className="absolute bottom-1/4 right-1/4 w-64 h-64 rounded-full"
+          style={{ background: "hsl(var(--gold))", filter: "blur(60px)" }}
+        />
+      </div>
 
-      {/* Red accent slash */}
-      <div
-        className="absolute top-0 right-0 w-1/3 h-full opacity-10 pointer-events-none"
-        style={{
-          background:
-            "linear-gradient(135deg, transparent 40%, hsl(var(--primary)) 100%)",
-        }}
-      />
-
-      <div className="relative max-w-7xl mx-auto px-6 w-full">
-        {/* Eyebrow */}
+      <div className="relative max-w-4xl mx-auto">
+        {/* Eyebrow pill */}
         <motion.div
-          initial={{ opacity: 0, x: -20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.6, delay: 0.2, ease: [0.19, 1, 0.22, 1] }}
-          className="mb-6 flex items-center gap-4"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold mb-8"
+          style={{
+            background: "rgba(201, 168, 76, 0.15)",
+            border: "1px solid rgba(201, 168, 76, 0.4)",
+            color: "hsl(var(--gold-light))",
+          }}
         >
-          <span className="block w-10 h-px bg-primary" />
-          <span className="label-mono text-primary">
-            Founded 2016 · Est. Excellence
-          </span>
+          <Scale className="w-3.5 h-3.5" />
+          Founded 2016 · Est. Excellence
         </motion.div>
 
         {/* Main headline */}
-        <div className="overflow-hidden mb-2">
-          <motion.h1
-            initial={{ y: 120, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.9, delay: 0.3, ease: [0.19, 1, 0.22, 1] }}
-            className="display-xl text-foreground"
-            style={{ lineHeight: 0.88 }}
-          >
-            Troy High
-          </motion.h1>
-        </div>
-        <div className="overflow-hidden mb-8">
-          <motion.h1
-            initial={{ y: 120, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.9, delay: 0.45, ease: [0.19, 1, 0.22, 1] }}
-            className="display-xl text-primary"
-            style={{ lineHeight: 0.88 }}
-          >
-            Mock Trial
-          </motion.h1>
-        </div>
+        <motion.h1
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="text-5xl md:text-7xl font-bold mb-6 leading-tight"
+          style={{ color: "hsl(var(--white))", fontFamily: "'Playfair Display', Georgia, serif" }}
+        >
+          Westside High School
+          <br />
+          <span className="gold-text">Mock Trial Team</span>
+        </motion.h1>
 
-        {/* Sub-headline */}
+        {/* Quote */}
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.7, ease: [0.19, 1, 0.22, 1] }}
-          className="text-muted-foreground text-base max-w-xl mb-10 leading-relaxed"
+          transition={{ duration: 0.8, delay: 0.35 }}
+          className="text-xl md:text-2xl mb-4 font-light italic"
+          style={{ color: "rgba(255,255,255,0.75)" }}
         >
-          "Justice is the foundation of every great society." Preparing the
-          next generation of lawyers, advocates, and critical thinkers since
-          2016. We compete, we learn, we grow — together.
+          "Justice is the foundation of every great society."
+        </motion.p>
+
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.45 }}
+          className="text-base md:text-lg mb-12 max-w-2xl mx-auto"
+          style={{ color: "rgba(255,255,255,0.55)" }}
+        >
+          Preparing the next generation of lawyers, advocates, and critical thinkers
+          since 2016. We compete, we learn, we grow — together.
         </motion.p>
 
         {/* Buttons */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.85, ease: [0.19, 1, 0.22, 1] }}
-          className="flex flex-wrap gap-4 mb-20"
+          transition={{ duration: 0.8, delay: 0.55 }}
+          className="flex flex-wrap gap-4 justify-center mb-20"
         >
-          <a href="#sponsors" className="btn-primary">
+          <a href="#sponsors" className="btn-primary px-8 py-3">
             Become a Sponsor
           </a>
-          <a href="#about" className="btn-ghost">
+          <a href="#about" className="btn-ghost px-8 py-3">
             Learn About Us
           </a>
         </motion.div>
 
-        {/* Stats bar */}
+        {/* Stats */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 1.1 }}
-          className="grid grid-cols-3 border-t border-border pt-8 gap-4"
+          transition={{ duration: 0.8, delay: 0.7 }}
+          className="grid grid-cols-3 gap-8"
         >
           {stats.map((s, i) => (
-            <div key={i} className="flex flex-col gap-1">
+            <div key={i} className="flex flex-col items-center gap-1">
               <span className="stat-number">{s.value}</span>
-              <span className="label-mono text-muted-foreground">{s.label}</span>
+              <span className="text-sm font-medium" style={{ color: "rgba(255,255,255,0.55)" }}>
+                {s.label}
+              </span>
             </div>
           ))}
         </motion.div>
@@ -111,17 +114,17 @@ export default function Hero() {
 
       {/* Scroll indicator */}
       <motion.div
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-muted-foreground"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
+        style={{ color: "rgba(255,255,255,0.4)" }}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 1.4 }}
+        transition={{ delay: 1.2 }}
       >
-        <span className="label-mono text-[0.6rem]">Scroll</span>
         <motion.div
           animate={{ y: [0, 6, 0] }}
           transition={{ repeat: Infinity, duration: 1.5 }}
         >
-          <ChevronDown className="w-4 h-4" />
+          <ChevronDown className="w-5 h-5" />
         </motion.div>
       </motion.div>
     </section>

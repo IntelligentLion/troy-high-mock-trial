@@ -1,11 +1,10 @@
-import { motion } from "framer-motion";
 import { Scale, Menu, X } from "lucide-react";
 import { useState, useEffect } from "react";
 
 const navLinks = [
   { label: "About", href: "#about" },
   { label: "2025–2026", href: "#season" },
-  { label: "Leadership", href: "#coaches" },
+  { label: "Team", href: "#team" },
   { label: "Gallery", href: "#gallery" },
   { label: "Alumni", href: "#alumni" },
   { label: "Sponsors", href: "#sponsors" },
@@ -23,38 +22,35 @@ export default function Navbar() {
   }, []);
 
   return (
-    <motion.header
-      initial={{ y: -80, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.6, ease: [0.19, 1, 0.22, 1] }}
+    <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-background/95 backdrop-blur-sm border-b border-border"
+          ? "bg-background/95 backdrop-blur-sm border-b border-border shadow-md"
           : "bg-transparent"
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
         {/* Logo */}
-        <a href="#" className="flex items-center gap-3">
-          <div className="w-7 h-7 flex items-center justify-center bg-primary">
+        <a href="#" className="flex items-center gap-2">
+          <div className="w-7 h-7 flex items-center justify-center rounded-sm bg-primary">
             <Scale className="w-4 h-4 text-primary-foreground" strokeWidth={2} />
           </div>
-          <span className="font-bebas text-lg tracking-widest text-foreground">
-            Troy Mock Trial
+          <span className="font-playfair font-bold text-base text-foreground tracking-wide">
+            Westside Mock Trial
           </span>
         </a>
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-7">
+        <nav className="hidden md:flex items-center gap-6">
           {navLinks.map((l) => (
-            <a key={l.href} href={l.href} className="nav-link text-muted-foreground">
+            <a key={l.href} href={l.href} className="nav-link text-foreground/70">
               {l.label}
             </a>
           ))}
         </nav>
 
         {/* CTA */}
-        <a href="#sponsors" className="hidden md:block btn-primary text-xs px-6 py-3">
+        <a href="#sponsors" className="hidden md:block btn-primary text-xs px-5 py-2">
           Become a Sponsor
         </a>
 
@@ -70,16 +66,12 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {open && (
-        <motion.div
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="md:hidden bg-background border-b border-border px-6 py-6 flex flex-col gap-5"
-        >
+        <div className="md:hidden bg-background border-b border-border px-6 py-6 flex flex-col gap-5">
           {navLinks.map((l) => (
             <a
               key={l.href}
               href={l.href}
-              className="nav-link text-muted-foreground"
+              className="nav-link text-foreground/80"
               onClick={() => setOpen(false)}
             >
               {l.label}
@@ -88,8 +80,8 @@ export default function Navbar() {
           <a href="#sponsors" className="btn-primary text-center mt-2">
             Become a Sponsor
           </a>
-        </motion.div>
+        </div>
       )}
-    </motion.header>
+    </header>
   );
 }
