@@ -11,13 +11,13 @@ const alumni = [
 
 export default function AlumniSection() {
   return (
-    <section id="alumni" className="py-32 border-t border-border">
+    <section id="alumni" className="py-24 border-t border-border">
       <div className="max-w-7xl mx-auto px-6">
         <motion.span
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="label-mono text-primary block mb-4"
+          className="label-mono text-primary block mb-3"
         >
           Alumni Honor Roll
         </motion.span>
@@ -25,28 +25,28 @@ export default function AlumniSection() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.7, ease: [0.19, 1, 0.22, 1] }}
-          className="display-lg text-foreground mb-4"
+          transition={{ duration: 0.7 }}
+          className="display-lg text-foreground mb-3"
         >
           Our Legacy
         </motion.h2>
-        <p className="text-muted-foreground mb-16 max-w-xl">
-          We celebrate every graduate who helped build what Troy Mock Trial is today.
+        <p className="text-muted-foreground mb-12 max-w-xl">
+          We celebrate every graduate who helped build what our program is today.
           Their legacy lives on in every case we argue.
         </p>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-border mb-px">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-6">
           {alumni.map((a, i) => (
             <motion.div
               key={i}
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: i * 0.07, ease: [0.19, 1, 0.22, 1] }}
-              className="bg-background p-8 flex flex-col gap-4 group hover:bg-muted transition-colors duration-300"
+              transition={{ duration: 0.6, delay: i * 0.07 }}
+              className="bg-card rounded-xl border border-border p-6 flex flex-col gap-4 group hover:border-primary/40 transition-colors"
             >
               <div>
-                <h3 className="font-bebas text-2xl text-foreground tracking-wide group-hover:text-primary transition-colors">
+                <h3 className="font-playfair text-xl font-semibold text-foreground group-hover:text-primary transition-colors">
                   {a.name}
                 </h3>
                 <span className="label-mono text-primary text-[0.65rem]">{a.role}</span>
@@ -70,13 +70,16 @@ export default function AlumniSection() {
         </div>
 
         {/* Quote strip */}
-        <div className="bg-primary p-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
-          <blockquote className="font-bebas text-3xl text-primary-foreground tracking-wide">
+        <div
+          className="rounded-xl p-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6"
+          style={{ background: "linear-gradient(135deg, hsl(var(--primary)), hsl(43, 80%, 68%))" }}
+        >
+          <blockquote className="font-playfair text-2xl font-bold italic" style={{ color: "hsl(var(--primary-foreground))" }}>
             "Once a Warrior, Always a Warrior."
           </blockquote>
-          <div className="flex flex-col gap-2 text-primary-foreground/80 text-sm max-w-xs">
+          <div className="flex flex-col gap-2 text-sm max-w-xs" style={{ color: "hsl(var(--primary-foreground) / 0.85)" }}>
             <span>Are you an alumnus not listed? Reach out so we can add your legacy to our honor roll.</span>
-            <a href="mailto:mocktrial@troy.edu" className="label-mono text-primary-foreground underline text-[0.65rem]">
+            <a href="mailto:mocktrial@westside.edu" className="label-mono underline text-[0.65rem]" style={{ color: "hsl(var(--primary-foreground))" }}>
               Contact Us →
             </a>
           </div>

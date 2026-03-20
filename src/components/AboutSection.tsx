@@ -35,10 +35,10 @@ const fadeUp = {
 
 export default function AboutSection() {
   return (
-    <section id="about" className="py-32 border-t border-border">
+    <section id="about" className="py-24 border-t border-border">
       <div className="max-w-7xl mx-auto px-6">
         {/* Header */}
-        <div className="grid md:grid-cols-12 gap-12 mb-20">
+        <div className="grid md:grid-cols-12 gap-12 mb-16">
           <div className="md:col-span-5">
             <motion.span
               initial={{ opacity: 0 }}
@@ -55,9 +55,9 @@ export default function AboutSection() {
               transition={{ duration: 0.7, ease: [0.19, 1, 0.22, 1] }}
               className="display-md text-foreground"
             >
-              Troy High School
+              Westside High School
               <br />
-              <span className="text-primary">Mock Trial</span>
+              <span className="gold-text">Mock Trial</span>
             </motion.h2>
           </div>
 
@@ -66,10 +66,10 @@ export default function AboutSection() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.7, delay: 0.15, ease: [0.19, 1, 0.22, 1] }}
+              transition={{ duration: 0.7, delay: 0.15 }}
               className="text-muted-foreground leading-relaxed mb-6"
             >
-              The Troy High School Mock Trial Team was founded in 2016 by a small
+              The Westside High School Mock Trial Team was founded in 2016 by a small
               group of passionate students and dedicated coaches who believed in the
               power of legal education. What began as an after-school club has grown
               into one of the most accomplished extracurricular teams in the district.
@@ -78,7 +78,7 @@ export default function AboutSection() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.7, delay: 0.25, ease: [0.19, 1, 0.22, 1] }}
+              transition={{ duration: 0.7, delay: 0.25 }}
               className="text-muted-foreground leading-relaxed"
             >
               Over nine seasons, we have grown from 8 founding members to a thriving
@@ -89,7 +89,7 @@ export default function AboutSection() {
         </div>
 
         {/* Pillars */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-border">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {pillars.map((p, i) => (
             <motion.div
               key={i}
@@ -98,12 +98,12 @@ export default function AboutSection() {
               initial="hidden"
               whileInView="show"
               viewport={{ once: true }}
-              className="bg-background p-8 flex flex-col gap-4"
+              className="bg-card rounded-xl border border-border p-6 flex flex-col gap-4 hover:border-primary/40 transition-colors"
             >
-              <div className="w-10 h-10 border border-primary/30 flex items-center justify-center">
+              <div className="w-10 h-10 rounded-lg border border-primary/30 flex items-center justify-center bg-primary/10">
                 <p.icon className="w-5 h-5 text-primary" strokeWidth={1.5} />
               </div>
-              <h3 className="font-bebas text-xl tracking-wide text-foreground">
+              <h3 className="font-playfair text-lg font-semibold text-foreground">
                 {p.title}
               </h3>
               <p className="text-muted-foreground text-sm leading-relaxed">{p.desc}</p>
@@ -116,8 +116,9 @@ export default function AboutSection() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.7, ease: [0.19, 1, 0.22, 1] }}
-          className="mt-px bg-muted p-8 border-l-4 border-primary"
+          transition={{ duration: 0.7 }}
+          className="mt-8 bg-card rounded-xl border border-primary/30 p-8"
+          style={{ borderLeft: "4px solid hsl(var(--primary))" }}
         >
           <span className="label-mono text-primary block mb-3">Our Mission</span>
           <p className="text-foreground leading-relaxed max-w-3xl">

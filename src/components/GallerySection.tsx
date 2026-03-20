@@ -67,11 +67,7 @@ const galleryData: Record<Season, { headline: string; items: GalleryItem[] }> = 
 
 const containerVariants = {
   hidden: {},
-  show: {
-    transition: {
-      staggerChildren: 0.08,
-    },
-  },
+  show: { transition: { staggerChildren: 0.08 } },
 };
 
 const itemVariants = {
@@ -84,14 +80,13 @@ export default function GallerySection() {
   const data = galleryData[activeSeason];
 
   return (
-    <section id="gallery" className="py-32 border-t border-border">
+    <section id="gallery" className="py-24 border-t border-border">
       <div className="max-w-7xl mx-auto px-6">
-        {/* Header */}
         <motion.span
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="label-mono text-primary block mb-4"
+          className="label-mono text-primary block mb-3"
         >
           Photo Gallery
         </motion.span>
@@ -99,22 +94,22 @@ export default function GallerySection() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.7, ease: [0.19, 1, 0.22, 1] }}
-          className="display-lg text-foreground mb-4"
+          transition={{ duration: 0.7 }}
+          className="display-lg text-foreground mb-3"
         >
-          Every Season, <span className="text-primary">Documented</span>
+          Every Season, <span className="gold-text">Documented</span>
         </motion.h2>
         <motion.p
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="text-muted-foreground mb-12 max-w-xl"
+          className="text-muted-foreground mb-10 max-w-xl"
         >
           A visual journey through every season since our founding in 2016.
         </motion.p>
 
-        {/* Season selector — sticky segmented control */}
-        <div className="sticky top-16 z-30 bg-background/95 backdrop-blur-sm py-4 mb-12 -mx-6 px-6 border-b border-border">
+        {/* Season selector */}
+        <div className="sticky top-16 z-30 bg-background/95 backdrop-blur-sm py-4 mb-10 -mx-6 px-6 border-b border-border">
           <div className="flex flex-wrap gap-2">
             {seasons.map((s) => (
               <button
@@ -135,10 +130,10 @@ export default function GallerySection() {
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: 20 }}
-            transition={{ duration: 0.4, ease: [0.19, 1, 0.22, 1] }}
-            className="mb-8"
+            transition={{ duration: 0.4 }}
+            className="mb-6"
           >
-            <h3 className="font-bebas text-3xl text-foreground">{data.headline}</h3>
+            <h3 className="font-playfair text-2xl font-semibold text-foreground">{data.headline}</h3>
           </motion.div>
         </AnimatePresence>
 
@@ -153,17 +148,15 @@ export default function GallerySection() {
             exit={{ opacity: 0 }}
           >
             {data.items.map((item, i) => (
-              <motion.div key={i} variants={itemVariants} className="group relative overflow-hidden border border-border bg-muted">
+              <motion.div
+                key={i}
+                variants={itemVariants}
+                className="group relative overflow-hidden rounded-xl border border-border bg-card"
+              >
                 {item.comingSoon ? (
-                  <div
-                    className="aspect-[4/3] flex flex-col items-center justify-center gap-3"
-                    style={{ background: "hsl(var(--muted))" }}
-                  >
-                    <span
-                      className="font-bebas text-4xl tracking-widest"
-                      style={{ color: "hsl(var(--border))" }}
-                    >
-                      COMING SOON
+                  <div className="aspect-[4/3] flex flex-col items-center justify-center gap-3 bg-muted">
+                    <span className="font-playfair text-2xl font-bold tracking-wide text-border">
+                      Coming Soon
                     </span>
                     <span className="label-mono text-muted-foreground text-[0.6rem]">{item.label}</span>
                   </div>
@@ -186,7 +179,7 @@ export default function GallerySection() {
           </motion.div>
         </AnimatePresence>
 
-        <p className="label-mono text-muted-foreground mt-8 text-[0.65rem]">
+        <p className="label-mono text-muted-foreground mt-6 text-[0.65rem]">
           * Photo placeholders — replace with actual team photos.
         </p>
       </div>

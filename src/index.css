@@ -6,6 +6,206 @@
 
 @layer base {
   :root {
+    --background: 220 50% 8%;
+    --foreground: 210 17% 95%;
+
+    --card: 220 40% 12%;
+    --card-foreground: 210 17% 95%;
+
+    --popover: 220 40% 12%;
+    --popover-foreground: 210 17% 95%;
+
+    /* Gold */
+    --primary: 43 64% 54%;
+    --primary-foreground: 220 50% 8%;
+
+    --secondary: 220 30% 18%;
+    --secondary-foreground: 210 17% 95%;
+
+    --muted: 220 35% 14%;
+    --muted-foreground: 210 15% 60%;
+
+    --accent: 43 64% 54%;
+    --accent-foreground: 220 50% 8%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 30% 22%;
+    --input: 220 30% 22%;
+    --ring: 43 64% 54%;
+
+    --radius: 0.5rem;
+
+    /* Custom tokens */
+    --navy: hsl(220, 50%, 8%);
+    --navy-mid: hsl(220, 42%, 12%);
+    --gold: hsl(43, 64%, 54%);
+    --gold-light: hsl(43, 80%, 68%);
+    --cream: hsl(210, 17%, 95%);
+    --white: hsl(0, 0%, 100%);
+
+    --sidebar-background: 220 50% 8%;
+    --sidebar-foreground: 210 17% 95%;
+    --sidebar-primary: 43 64% 54%;
+    --sidebar-primary-foreground: 220 50% 8%;
+    --sidebar-accent: 220 35% 14%;
+    --sidebar-accent-foreground: 210 17% 95%;
+    --sidebar-border: 220 30% 22%;
+    --sidebar-ring: 43 64% 54%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', 'Geist', sans-serif;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Playfair Display', Georgia, serif;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-8 py-3 font-semibold rounded-full text-sm;
+    background: linear-gradient(135deg, hsl(var(--primary)), hsl(43, 80%, 68%));
+    color: hsl(var(--primary-foreground));
+    transition: all 0.2s ease;
+  }
+
+  .btn-primary:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+    box-shadow: 0 8px 24px hsl(43 64% 54% / 0.35);
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center px-8 py-3 font-semibold rounded-full text-sm;
+    border: 2px solid hsl(var(--foreground) / 0.4);
+    color: hsl(var(--foreground));
+    transition: all 0.2s ease;
+  }
+
+  .btn-ghost:hover {
+    border-color: hsl(var(--foreground));
+    background: hsl(var(--foreground) / 0.08);
+  }
+
+  .nav-link {
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: color 0.2s ease;
+    font-family: 'Inter', sans-serif;
+  }
+
+  .nav-link:hover {
+    color: hsl(var(--primary));
+  }
+
+  .label-mono {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-weight: 600;
+  }
+
+  .display-xl {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(3rem, 8vw, 6rem);
+    line-height: 1.1;
+    font-weight: 700;
+  }
+
+  .display-lg {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    line-height: 1.15;
+    font-weight: 700;
+  }
+
+  .display-md {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(1.8rem, 3vw, 2.8rem);
+    line-height: 1.2;
+    font-weight: 700;
+  }
+
+  .stat-number {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    line-height: 1;
+    font-weight: 700;
+    color: hsl(var(--primary));
+  }
+
+  .section-card {
+    @apply rounded-xl border border-border bg-card p-6;
+  }
+
+  .gold-text {
+    background: linear-gradient(135deg, hsl(var(--primary)), hsl(43, 80%, 68%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .season-pill {
+    @apply px-5 py-2 text-xs font-semibold uppercase tracking-widest transition-all duration-200 rounded-full;
+    font-family: 'Inter', sans-serif;
+  }
+
+  .season-pill.active {
+    background: linear-gradient(135deg, hsl(var(--primary)), hsl(43, 80%, 68%));
+    color: hsl(var(--primary-foreground));
+  }
+
+  .season-pill:not(.active) {
+    background-color: hsl(var(--muted));
+    color: hsl(var(--muted-foreground));
+  }
+
+  .season-pill:not(.active):hover {
+    background-color: hsl(var(--border));
+    color: hsl(var(--foreground));
+  }
+
+  .coach-card {
+    @apply relative overflow-hidden border border-border rounded-xl;
+    background-color: hsl(var(--card));
+    transition: all 0.4s ease;
+  }
+
+  .coach-card:hover .coach-overlay {
+    opacity: 1;
+  }
+
+  .coach-overlay {
+    @apply absolute inset-0 opacity-0 transition-opacity duration-300;
+    background: hsl(var(--primary) / 0.3);
+    mix-blend-mode: multiply;
+  }
+
+  .font-playfair {
+    font-family: 'Playfair Display', Georgia, serif;
+  }
+}
+
+
+@layer base {
+  :root {
     --background: 220 13% 8%;
     --foreground: 210 17% 95%;
 

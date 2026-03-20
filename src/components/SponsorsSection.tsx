@@ -59,13 +59,13 @@ export default function SponsorsSection() {
   };
 
   return (
-    <section id="sponsors" className="py-32 border-t border-border">
+    <section id="sponsors" className="py-24 border-t border-border">
       <div className="max-w-7xl mx-auto px-6">
         <motion.span
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="label-mono text-primary block mb-4"
+          className="label-mono text-primary block mb-3"
         >
           Partner With Us
         </motion.span>
@@ -73,41 +73,50 @@ export default function SponsorsSection() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.7, ease: [0.19, 1, 0.22, 1] }}
-          className="display-lg text-foreground mb-4"
+          transition={{ duration: 0.7 }}
+          className="display-lg text-foreground mb-3"
         >
           Support Excellence
         </motion.h2>
-        <p className="text-muted-foreground mb-16 max-w-xl">
+        <p className="text-muted-foreground mb-12 max-w-xl">
           Your sponsorship directly funds competition fees, travel, materials, and
           uniforms — giving students every opportunity to succeed.
         </p>
 
         {/* Tiers */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-border mb-16">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-12">
           {tiers.map((t, i) => (
             <motion.div
               key={i}
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: i * 0.1, ease: [0.19, 1, 0.22, 1] }}
-              className={`flex flex-col gap-4 p-8 ${
-                t.highlight ? "bg-primary" : "bg-background"
+              transition={{ duration: 0.6, delay: i * 0.1 }}
+              className={`flex flex-col gap-4 p-6 rounded-xl border ${
+                t.highlight
+                  ? "border-primary/60"
+                  : "border-border bg-card"
               }`}
+              style={
+                t.highlight
+                  ? { background: "linear-gradient(135deg, hsl(var(--primary)), hsl(43, 80%, 68%))" }
+                  : undefined
+              }
             >
               <div>
                 <h3
-                  className={`font-bebas text-2xl tracking-wide ${
-                    t.highlight ? "text-primary-foreground" : "text-foreground"
+                  className={`font-playfair text-xl font-bold ${
+                    t.highlight ? "" : "text-foreground"
                   }`}
+                  style={t.highlight ? { color: "hsl(var(--primary-foreground))" } : undefined}
                 >
                   {t.name}
                 </h3>
                 <span
-                  className={`label-mono text-sm ${
-                    t.highlight ? "text-primary-foreground/80" : "text-primary"
+                  className={`label-mono text-sm font-semibold ${
+                    t.highlight ? "" : "text-primary"
                   }`}
+                  style={t.highlight ? { color: "hsl(var(--primary-foreground) / 0.8)" } : undefined}
                 >
                   {t.amount}
                 </span>
@@ -116,11 +125,19 @@ export default function SponsorsSection() {
                 {t.perks.map((p, j) => (
                   <li
                     key={j}
-                    className={`text-xs flex items-start gap-2 ${
-                      t.highlight ? "text-primary-foreground/90" : "text-muted-foreground"
-                    }`}
+                    className={`text-xs flex items-start gap-2`}
+                    style={
+                      t.highlight
+                        ? { color: "hsl(var(--primary-foreground) / 0.9)" }
+                        : { color: "hsl(var(--muted-foreground))" }
+                    }
                   >
-                    <span className={t.highlight ? "text-primary-foreground" : "text-primary"}>✓</span>
+                    <span
+                      className="font-bold shrink-0"
+                      style={t.highlight ? { color: "hsl(var(--primary-foreground))" } : { color: "hsl(var(--primary))" }}
+                    >
+                      ✓
+                    </span>
                     {p}
                   </li>
                 ))}
@@ -130,11 +147,11 @@ export default function SponsorsSection() {
         </div>
 
         {/* Contact form */}
-        <div className="grid md:grid-cols-2 gap-16">
+        <div className="grid md:grid-cols-2 gap-12">
           <div>
-            <h3 className="font-bebas text-3xl text-foreground mb-4">Get in Touch</h3>
+            <h3 className="font-playfair text-2xl font-bold text-foreground mb-4">Get in Touch</h3>
             <p className="text-muted-foreground text-sm leading-relaxed">
-              Interested in sponsoring Troy High School Mock Trial? Fill out the form
+              Interested in sponsoring our Mock Trial team? Fill out the form
               and we'll reach out promptly.
             </p>
           </div>
@@ -143,9 +160,9 @@ export default function SponsorsSection() {
               <motion.div
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
-                className="border border-primary p-8 bg-muted"
+                className="rounded-xl border border-primary/40 p-8 bg-card"
               >
-                <h4 className="font-bebas text-2xl text-primary mb-2">Inquiry Received</h4>
+                <h4 className="font-playfair text-xl font-bold text-primary mb-2">Inquiry Received</h4>
                 <p className="text-muted-foreground text-sm">Thank you! We'll be in touch shortly.</p>
               </motion.div>
             ) : (
@@ -161,7 +178,7 @@ export default function SponsorsSection() {
                     <input
                       type={f.type}
                       required={f.required}
-                      className="bg-muted border border-border px-4 py-3 text-sm text-foreground focus:outline-none focus:border-primary transition-colors"
+                      className="bg-card border border-border rounded-lg px-4 py-3 text-sm text-foreground focus:outline-none focus:border-primary transition-colors"
                     />
                   </div>
                 ))}
@@ -169,7 +186,7 @@ export default function SponsorsSection() {
                   <label className="label-mono text-muted-foreground text-[0.65rem]">Message</label>
                   <textarea
                     rows={3}
-                    className="bg-muted border border-border px-4 py-3 text-sm text-foreground focus:outline-none focus:border-primary transition-colors resize-none"
+                    className="bg-card border border-border rounded-lg px-4 py-3 text-sm text-foreground focus:outline-none focus:border-primary transition-colors resize-none"
                   />
                 </div>
                 <button type="submit" className="btn-primary mt-2 self-start">
