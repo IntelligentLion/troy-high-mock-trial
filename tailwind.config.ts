@@ -53,6 +53,9 @@ export default {
           iron: "hsl(220, 13%, 14%)",
           bone: "hsl(210, 17%, 95%)",
         },
+        navy: "hsl(220, 50%, 8%)",
+        gold: "hsl(43, 64%, 54%)",
+        "gold-light": "hsl(43, 80%, 68%)",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
