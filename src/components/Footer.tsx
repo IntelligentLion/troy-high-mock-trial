@@ -1,13 +1,14 @@
 import { Scale } from "lucide-react";
+import { Link } from "react-router-dom";
 import { useSiteContent } from "@/hooks/useSiteContent";
 
 const navLinks = [
-  { label: "About", href: "#about" },
-  { label: "2021–2022 Season", href: "#season" },
-  { label: "Team", href: "#team" },
-  { label: "Gallery", href: "#gallery" },
-  { label: "Alumni", href: "#alumni" },
-  { label: "Sponsors", href: "#sponsors" },
+  { label: "Home", to: "/" },
+  { label: "Team", to: "/team" },
+  { label: "Gallery", to: "/gallery" },
+  { label: "Alumni", to: "/alumni" },
+  { label: "Sponsors", to: "/sponsors" },
+  { label: "Contact", to: "/contact" },
 ];
 
 export default function Footer() {
@@ -63,13 +64,13 @@ export default function Footer() {
             <span className="label-mono text-muted-foreground block mb-4">Navigation</span>
             <ul className="flex flex-col gap-2">
               {navLinks.map((l) => (
-                <li key={l.href}>
-                  <a
-                    href={l.href}
+                <li key={l.to}>
+                  <Link
+                    to={l.to}
                     className="text-sm text-muted-foreground hover:text-primary transition-colors"
                   >
                     {l.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>

@@ -1,0 +1,260 @@
+import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
+import { Instagram, Linkedin, Mail, MapPin } from "lucide-react";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import { useSiteContent } from "@/hooks/useSiteContent";
+
+const INTEREST_OPTIONS = [
+  { value: "join", label: "Join the Team" },
+  { value: "sponsor", label: "Become a Sponsor" },
+  { value: "alumni", label: "Alumni — Add Me to the Honor Wall" },
+  { value: "other", label: "Other" },
+];
+
+export default function Contact() {
+  const { data } = useSiteContent();
+  const contact = data?.contact;
+  const [submitted, setSubmitted] = useState(false);
+
+  useEffect(() => {
+    document.title = "Contact — Troy High School Mock Trial";
+  }, []);
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const form = e.currentTarget;
+    const name = (form.querySelector("#c-name") as HTMLInputElement)?.value ?? "";
+    const email = (form.querySelector("#c-email") as HTMLInputElement)?.value ?? "";
+    const interest = (form.querySelector("#c-interest") as HTMLSelectElement)?.value ?? "";
+    const message = (form.querySelector("#c-message") as HTMLTextAreaElement)?.value ?? "";
+
+    const subject = encodeURIComponent(`Troy Mock Trial — ${interest}`);
+    const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nInterest: ${interest}\n\n${message}`);
+    window.location.href = `mailto:ths.mocktrial@gmail.com?subject=${subject}&body=${body}`;
+    setSubmitted(true);
+  };
+
+  return (
+    <div className="min-h-screen bg-background text-foreground">
+      <Navbar />
+
+      {/* Page Hero */}
+      <header className="relative pt-32 pb-20 px-6 overflow-hidden">
+        <div
+          className="absolute inset-0 -z-10"
+          style={{ background: "linear-gradient(160deg, hsl(var(--background)) 60%, hsl(var(--primary) / 0.10))" }}
+        />
+        <div className="max-w-7xl mx-auto">
+          <motion.span initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="label-mono text-primary block mb-3">
+            Get in Touch
+          </motion.span>
+          <motion.h1
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+            className="display-xl text-foreground mb-4"
+          >
+            Contact Us
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.2 }}
+            className="text-muted-foreground max-w-xl text-lg"
+          >
+            Whether you're a prospective member, sponsor, or alumni — we'd love to hear from you.
+          </motion.p>
+        </div>
+      </header>
+
+      <main className="py-12">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid md:grid-cols-2 gap-12 items-start">
+            {/* Contact info */}
+            <div className="flex flex-col gap-8">
+              <section aria-labelledby="contact-info-heading">
+                <h2 id="contact-info-heading" className="display-md text-foreground mb-6">Reach Out</h2>
+
+                <div className="flex flex-col gap-5">
+                  {/* Email */}
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-lg bg-card border border-border flex items-center justify-center shrink-0">
+                      <Mail className="w-4 h-4 text-primary" aria-hidden="true" />
+                    </div>
+                    <div>
+                      <span className="label-mono text-muted-foreground text-[0.65rem] block mb-1">Email</span>
+                      <a
+                        href="mailto:ths.mocktrial@gmail.com"
+                        className="text-foreground hover:text-primary transition-colors text-sm"
+                      >
+                        ths.mocktrial@gmail.com
+                      </a>
+                    </div>
+                  </div>
+
+                  {/* Advisor */}
+                  {contact?.advisorName && (
+                    <div className="flex items-start gap-4">
+                      <div className="w-10 h-10 rounded-lg bg-card border border-border flex items-center justify-center shrink-0">
+                        <Mail className="w-4 h-4 text-primary" aria-hidden="true" />
+                      </div>
+                      <div>
+                        <span className="label-mono text-muted-foreground text-[0.65rem] block mb-1">Faculty Advisor</span>
+                        <span className="text-foreground text-sm block">{contact.advisorName}</span>
+                        {contact.advisorEmail && (
+                          <a
+                            href={`mailto:${contact.advisorEmail}`}
+                            className="text-muted-foreground hover:text-primary transition-colors text-xs"
+                          >
+                            {contact.advisorEmail}
+                          </a>
+                        )}
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Address */}
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-lg bg-card border border-border flex items-center justify-center shrink-0">
+                      <MapPin className="w-4 h-4 text-primary" aria-hidden="true" />
+                    </div>
+                    <div>
+                      <span className="label-mono text-muted-foreground text-[0.65rem] block mb-1">School</span>
+                      <span className="text-foreground text-sm">{contact?.address ?? "Troy High School, 2200 Dorothy Ln, Fullerton, CA 92831"}</span>
+                    </div>
+                  </div>
+
+                  {/* Instagram */}
+                  {contact?.instagram && (
+                    <div className="flex items-start gap-4">
+                      <div className="w-10 h-10 rounded-lg bg-card border border-border flex items-center justify-center shrink-0">
+                        <Instagram className="w-4 h-4 text-primary" aria-hidden="true" />
+                      </div>
+                      <div>
+                        <span className="label-mono text-muted-foreground text-[0.65rem] block mb-1">Instagram</span>
+                        <a
+                          href={contact.instagram}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-foreground hover:text-primary transition-colors text-sm"
+                        >
+                          {contact.instagramHandle}
+                        </a>
+                      </div>
+                    </div>
+                  )}
+
+                  {/* LinkedIn */}
+                  {contact?.linkedin && (
+                    <div className="flex items-start gap-4">
+                      <div className="w-10 h-10 rounded-lg bg-card border border-border flex items-center justify-center shrink-0">
+                        <Linkedin className="w-4 h-4 text-primary" aria-hidden="true" />
+                      </div>
+                      <div>
+                        <span className="label-mono text-muted-foreground text-[0.65rem] block mb-1">LinkedIn</span>
+                        <a
+                          href={contact.linkedin}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-foreground hover:text-primary transition-colors text-sm"
+                        >
+                          Troy High School Mock Trial
+                        </a>
+                      </div>
+                    </div>
+                  )}
+                </div>
+              </section>
+
+              {/* Map */}
+              <section aria-labelledby="map-heading">
+                <h2 id="map-heading" className="sr-only">Location Map</h2>
+                <div className="rounded-xl overflow-hidden border border-border h-64">
+                  <iframe
+                    title="Troy High School location map"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3311.5!2d-117.9251!3d33.8852!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80dcd7b8b5b5b5b5%3A0x0!2sTroy+High+School%2C+2200+Dorothy+Ln%2C+Fullerton%2C+CA+92831!5e0!3m2!1sen!2sus!4v1"
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0, filter: "grayscale(1) invert(0.8) contrast(0.9)" }}
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                  />
+                </div>
+              </section>
+            </div>
+
+            {/* Interest form */}
+            <section aria-labelledby="form-heading">
+              <h2 id="form-heading" className="display-md text-foreground mb-6">Send a Message</h2>
+
+              {submitted ? (
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  className="rounded-xl border border-primary/40 p-10 bg-card text-center"
+                >
+                  <h3 className="font-playfair text-2xl font-bold text-primary mb-3">Message Sent</h3>
+                  <p className="text-muted-foreground text-sm">Your email client should open shortly. We'll respond as soon as possible.</p>
+                </motion.div>
+              ) : (
+                <form onSubmit={handleSubmit} className="flex flex-col gap-4" aria-label="Contact interest form">
+                  <div className="flex flex-col gap-1">
+                    <label htmlFor="c-name" className="label-mono text-muted-foreground text-[0.65rem]">Full Name *</label>
+                    <input
+                      id="c-name"
+                      type="text"
+                      required
+                      className="bg-card border border-border rounded-lg px-4 py-3 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-primary/60 transition-all"
+                    />
+                  </div>
+
+                  <div className="flex flex-col gap-1">
+                    <label htmlFor="c-email" className="label-mono text-muted-foreground text-[0.65rem]">Email Address *</label>
+                    <input
+                      id="c-email"
+                      type="email"
+                      required
+                      className="bg-card border border-border rounded-lg px-4 py-3 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-primary/60 transition-all"
+                    />
+                  </div>
+
+                  <div className="flex flex-col gap-1">
+                    <label htmlFor="c-interest" className="label-mono text-muted-foreground text-[0.65rem]">I'm interested in… *</label>
+                    <select
+                      id="c-interest"
+                      required
+                      className="bg-card border border-border rounded-lg px-4 py-3 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-primary/60 transition-all"
+                    >
+                      <option value="">Select one…</option>
+                      {INTEREST_OPTIONS.map((o) => (
+                        <option key={o.value} value={o.label}>{o.label}</option>
+                      ))}
+                    </select>
+                  </div>
+
+                  <div className="flex flex-col gap-1">
+                    <label htmlFor="c-message" className="label-mono text-muted-foreground text-[0.65rem]">Message *</label>
+                    <textarea
+                      id="c-message"
+                      rows={5}
+                      required
+                      className="bg-card border border-border rounded-lg px-4 py-3 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-primary/60 transition-all resize-none"
+                    />
+                  </div>
+
+                  <button type="submit" className="btn-primary mt-2 self-start">
+                    Send Message
+                  </button>
+                </form>
+              )}
+            </section>
+          </div>
+        </div>
+      </main>
+
+      <Footer />
+    </div>
+  );
+}

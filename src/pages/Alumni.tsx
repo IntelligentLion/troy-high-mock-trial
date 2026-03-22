@@ -1,0 +1,237 @@
+import { useEffect, useState, useMemo } from "react";
+import { motion } from "framer-motion";
+import { Search } from "lucide-react";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import MonogramAvatar from "@/components/MonogramAvatar";
+import { useSiteContent } from "@/hooks/useSiteContent";
+
+const YEARS = [
+  "2016-2017","2017-2018","2018-2019","2019-2020",
+  "2020-2021","2021-2022","2022-2023","2023-2024","2024-2025","2025-2026",
+];
+
+export default function Alumni() {
+  const { data } = useSiteContent();
+  const alumni = data?.alumni ?? [];
+  const [query, setQuery] = useState("");
+  const [openYears, setOpenYears] = useState<Set<string>>(() => new Set(YEARS));
+
+  useEffect(() => {
+    document.title = "Alumni — Troy High School Mock Trial";
+  }, []);
+
+  const filtered = useMemo(() => {
+    const q = query.toLowerCase();
+    return q ? alumni.filter((a) => a.name.toLowerCase().includes(q)) : alumni;
+  }, [alumni, query]);
+
+  // Group by first year active
+  const byYear = useMemo(() => {
+    const map: Record<string, typeof filtered> = {};
+    YEARS.forEach((y) => { map[y] = []; });
+    filtered.forEach((a) => {
+      const firstYear = a.years[0] ?? "2016-2017";
+      if (map[firstYear]) map[firstYear].push(a);
+      else map[YEARS[0]].push(a);
+    });
+    return map;
+  }, [filtered]);
+
+  const toggleYear = (y: string) => {
+    setOpenYears((prev) => {
+      const next = new Set(prev);
+      if (next.has(y)) next.delete(y);
+      else next.add(y);
+      return next;
+    });
+  };
+
+  return (
+    <div className="min-h-screen bg-background text-foreground">
+      <Navbar />
+
+      {/* Page Hero */}
+      <header className="relative pt-32 pb-20 px-6 overflow-hidden">
+        <div
+          className="absolute inset-0 -z-10"
+          style={{ background: "linear-gradient(160deg, hsl(var(--background)) 60%, hsl(var(--primary) / 0.10))" }}
+        />
+        <div className="max-w-7xl mx-auto">
+          <motion.span
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            className="label-mono text-primary block mb-3"
+          >
+            Honor Wall
+          </motion.span>
+          <motion.h1
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+            className="display-xl text-foreground mb-4"
+          >
+            Those Who Came Before
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.2 }}
+            className="text-muted-foreground max-w-xl text-lg"
+          >
+            A permanent record of every student who shaped this program since 2016.
+            Their names belong on these walls.
+          </motion.p>
+        </div>
+      </header>
+
+      <main className="py-12">
+        <div className="max-w-7xl mx-auto px-6">
+          {/* Search */}
+          <div className="relative mb-12 max-w-md">
+            <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" aria-hidden="true" />
+            <input
+              type="search"
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              placeholder="Search alumni by name…"
+              className="w-full bg-card border border-border rounded-lg pl-11 pr-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/60 transition-all"
+              aria-label="Search alumni by name"
+            />
+          </div>
+
+          {/* Year sections */}
+          <div className="flex flex-col gap-8">
+            {YEARS.slice().reverse().map((year) => {
+              const people = byYear[year] ?? [];
+              const isOpen = openYears.has(year);
+
+              return (
+                <section key={year} aria-labelledby={`year-${year}`}>
+                  <button
+                    id={`year-${year}`}
+                    onClick={() => toggleYear(year)}
+                    className="w-full flex items-center justify-between gap-4 group mb-4"
+                    aria-expanded={isOpen}
+                    aria-controls={`panel-${year}`}
+                  >
+                    <div className="flex items-center gap-4 min-w-0">
+                      <h2 className="font-playfair text-2xl font-bold text-foreground group-hover:text-primary transition-colors">
+                        {year}
+                      </h2>
+                      <span className="label-mono text-muted-foreground text-xs">
+                        {people.length} {people.length === 1 ? "member" : "members"}
+                      </span>
+                    </div>
+                    <div className="flex items-center">
+                      <div className="h-px flex-1 bg-border mx-4 hidden sm:block" />
+                      <span className="text-muted-foreground text-lg transition-transform duration-200" style={{ transform: isOpen ? "rotate(180deg)" : "rotate(0deg)" }}>
+                        ↓
+                      </span>
+                    </div>
+                  </button>
+
+                  {isOpen && (
+                    <div id={`panel-${year}`} role="region" aria-labelledby={`year-${year}`}>
+                      {people.length > 0 ? (
+                        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                          {people.map((a, i) => (
+                            <motion.article
+                              key={i}
+                              initial={{ opacity: 0, y: 16 }}
+                              animate={{ opacity: 1, y: 0 }}
+                              transition={{ duration: 0.4, delay: i * 0.05 }}
+                              className="bg-card rounded-xl border border-border p-5 flex flex-col gap-3 hover:border-primary/40 transition-colors group"
+                            >
+                              <div className="flex items-center gap-3">
+                                {a.photo ? (
+                                  <img
+                                    src={a.photo}
+                                    alt={a.name}
+                                    loading="lazy"
+                                    className="w-12 h-12 rounded-full object-cover object-top shrink-0 grayscale"
+                                  />
+                                ) : (
+                                  <MonogramAvatar name={a.name} size={48} />
+                                )}
+                                <div className="min-w-0">
+                                  <h3 className="font-playfair text-base font-semibold text-foreground group-hover:text-primary transition-colors">
+                                    {a.name}
+                                  </h3>
+                                  <span className="label-mono text-primary text-[0.6rem] block">{a.role}</span>
+                                  <span className="label-mono text-muted-foreground text-[0.55rem] block">
+                                    Class of {a.graduationYear}
+                                  </span>
+                                </div>
+                              </div>
+
+                              {a.college && (
+                                <div className="text-xs text-foreground border-l-2 border-primary pl-3">
+                                  {a.college}
+                                  {a.major && (
+                                    <span className="block text-muted-foreground mt-0.5">{a.major}</span>
+                                  )}
+                                </div>
+                              )}
+
+                              {a.achievements.length > 0 && (
+                                <ul className="flex flex-col gap-1">
+                                  {a.achievements.slice(0, 2).map((ach, j) => (
+                                    <li key={j} className="text-[0.7rem] text-muted-foreground flex items-start gap-1.5">
+                                      <span className="text-primary shrink-0">—</span>
+                                      {ach}
+                                    </li>
+                                  ))}
+                                </ul>
+                              )}
+                            </motion.article>
+                          ))}
+                        </div>
+                      ) : (
+                        <div className="border border-dashed border-border rounded-xl p-8 text-center">
+                          <p className="text-muted-foreground text-sm">
+                            Records for this year are being collected. If you participated in {year}, reach out to be included.
+                          </p>
+                        </div>
+                      )}
+                    </div>
+                  )}
+                </section>
+              );
+            })}
+          </div>
+
+          {/* Quote strip */}
+          <div
+            className="mt-16 rounded-xl p-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6"
+            style={{ background: "linear-gradient(135deg, hsl(var(--primary)), hsl(43, 80%, 68%))" }}
+          >
+            <blockquote
+              className="font-playfair text-2xl font-bold italic"
+              style={{ color: "hsl(var(--primary-foreground))" }}
+            >
+              "Once a Warrior, Always a Warrior."
+            </blockquote>
+            <div
+              className="flex flex-col gap-2 text-sm max-w-xs"
+              style={{ color: "hsl(var(--primary-foreground) / 0.85)" }}
+            >
+              <span>Are you an alumnus not listed? Reach out so we can add your legacy to our honor roll.</span>
+              <a
+                href="https://www.instagram.com/ths_mocktrial/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="label-mono underline text-[0.65rem]"
+                style={{ color: "hsl(var(--primary-foreground))" }}
+              >
+                @ths_mocktrial →
+              </a>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <Footer />
+    </div>
+  );
+}
