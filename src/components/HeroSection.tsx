@@ -3,7 +3,7 @@ import { Scale, ChevronDown } from "lucide-react";
 
 const stats = [
   { value: "10", label: "Seasons Active" },
-  { value: "9+", label: "Alumni Placed" },
+  { value: "2nd", label: "Place — JSerra Championship" },
   { value: "~20", label: "Members Per Season" },
 ];
 
@@ -57,9 +57,9 @@ export default function HeroSection() {
           className="text-5xl md:text-7xl font-bold mb-6 leading-tight"
           style={{ color: "hsl(var(--white))", fontFamily: "'Playfair Display', Georgia, serif" }}
         >
-          Troy High School
+          Troy High
           <br />
-          <span className="gold-text">Mock Trial Team</span>
+          <span className="gold-text">Mock Trial</span>
         </motion.h1>
 
         {/* Description */}

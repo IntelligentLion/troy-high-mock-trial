@@ -13,7 +13,7 @@ const fadeUp = {
 
 const pillarIcons = [BookOpen, GraduationCap, Users];
 const pillarKeys = ["legalStudies", "competition", "skills"] as const;
-const pillarTitles = ["Legal Studies", "Competition", "Skills Development"];
+const pillarTitles = ["Legal Studies", "Competition", "Advocacy & Communication"];
 
 export default function AboutSection() {
   const { data } = useSiteContent();
@@ -99,11 +99,10 @@ export default function AboutSection() {
           className="mt-8 bg-card rounded-xl border border-primary/30 p-8"
           style={{ borderLeft: "4px solid hsl(var(--primary))" }}
         >
-          <span className="label-mono text-primary block mb-3">Competing With</span>
+          <span className="label-mono text-primary block mb-3">Competing In</span>
           <p className="text-foreground leading-relaxed max-w-3xl">
-            The <strong className="text-primary">Constitutional Rights Foundation (CRF)</strong>'s
-            Mock Trial program — one of the most respected high school legal competition
-            programs in California.
+            The <strong className="text-primary">Constitutional Rights Foundation – Orange County (CRF-OC)</strong> Mock Trial program and the{" "}
+            <strong className="text-primary">JSerra Catholic High School Mock Trial Tournament</strong> — competing annually against teams across Orange, Riverside, and Santa Clara counties.
           </p>
         </motion.div>
       </div>

@@ -44,6 +44,7 @@ export interface GalleryItem {
 export interface Officer {
   name: string;
   role: string;
+  description?: string;
   photo: string;
   competitions: string[];
   awards: string[];

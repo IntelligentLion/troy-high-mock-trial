@@ -4,7 +4,6 @@ import AboutSection from "@/components/AboutSection";
 import SeasonSection from "@/components/SeasonSection";
 import CoachesSection from "@/components/CoachesSection";
 import TeamSection from "@/components/TeamSection";
-import GallerySection from "@/components/GallerySection";
 import AlumniSection from "@/components/AlumniSection";
 import SponsorsSection from "@/components/SponsorsSection";
 import CommunitySection from "@/components/CommunitySection";
@@ -19,7 +18,6 @@ export default function Index() {
       <SeasonSection />
       <CoachesSection />
       <TeamSection />
-      <GallerySection />
       <AlumniSection />
       <SponsorsSection />
       <CommunitySection />

@@ -5,7 +5,7 @@ import MonogramAvatar from "@/components/MonogramAvatar";
 export default function SeasonSection() {
   const { data } = useSiteContent();
   const current = data?.currentYear;
-  const season = current?.season ?? "2021–2022";
+  const season = current?.season ?? "2025–2026";
   const officers = current?.officers ?? [];
 
   return (
@@ -17,17 +17,25 @@ export default function SeasonSection() {
           viewport={{ once: true }}
           className="label-mono text-primary block mb-3"
         >
-          Latest Season
+          Current Season
         </motion.span>
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="display-lg text-foreground mb-3"
+          className="display-lg text-foreground mb-1"
         >
           {season}
         </motion.h2>
+        <motion.p
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          className="label-mono text-primary text-sm mb-3"
+        >
+          Student Leadership
+        </motion.p>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -35,10 +43,7 @@ export default function SeasonSection() {
           transition={{ duration: 0.7, delay: 0.1 }}
           className="text-muted-foreground mb-10 max-w-xl text-sm"
         >
-          Officers and leadership from our most recently documented season.
-          {current?.note && (
-            <span className="block mt-2 italic opacity-70">{current.note}</span>
-          )}
+          Current season leadership as of 2025-2026.
         </motion.p>
 
         {/* Officer cards */}
@@ -51,33 +56,37 @@ export default function SeasonSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: i * 0.08 }}
-                className="bg-card rounded-xl border border-border p-5 flex items-center gap-4 hover:border-primary/40 transition-colors"
+                className="bg-card rounded-xl border border-border p-5 flex flex-col gap-3 hover:border-primary/40 transition-colors"
               >
-                {officer.photo ? (
-                  <img
-                    src={officer.photo}
-                    alt={officer.name}
-                    loading="lazy"
-                    className="w-12 h-12 rounded-full object-cover object-top shrink-0"
-                  />
-                ) : (
-                  <MonogramAvatar name={officer.name} size={48} />
-                )}
-                <div>
-                  <h3 className="font-playfair text-base font-semibold text-foreground">
-                    {officer.name}
-                  </h3>
-                  <span className="label-mono text-primary text-[0.65rem]">{officer.role}</span>
-                  {officer.awards.length > 0 && (
-                    <p className="text-xs text-muted-foreground mt-1">{officer.awards[0]}</p>
+                <div className="flex items-center gap-3">
+                  {officer.photo ? (
+                    <img
+                      src={officer.photo}
+                      alt={officer.name}
+                      loading="lazy"
+                      className="w-12 h-12 rounded-full object-cover object-top shrink-0"
+                    />
+                  ) : (
+                    <MonogramAvatar name={officer.name} size={48} />
                   )}
+                  <div>
+                    <h3 className="font-playfair text-base font-semibold text-foreground">
+                      {officer.name}
+                    </h3>
+                    <span className="label-mono text-primary text-[0.65rem]">{officer.role}</span>
+                  </div>
                 </div>
+                {officer.description && (
+                  <p className="text-muted-foreground text-xs leading-relaxed border-t border-border pt-3">
+                    {officer.description}
+                  </p>
+                )}
               </motion.div>
             ))}
           </div>
         )}
 
-        {/* Competition link */}
+        {/* Competition resources */}
         {data?.competition?.resources?.length ? (
           <div className="mt-8 bg-card rounded-xl border border-border p-6">
             <span className="label-mono text-muted-foreground block mb-3">Competition Materials</span>
