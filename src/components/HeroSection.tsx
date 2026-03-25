@@ -2,9 +2,9 @@ import { motion } from "framer-motion";
 import { Scale, ChevronDown } from "lucide-react";
 
 const stats = [
-  { value: "9+", label: "Seasons Strong" },
-  { value: "9+", label: "Alumni" },
-  { value: "2016", label: "Year Founded" },
+  { value: "10", label: "Seasons Active" },
+  { value: "9+", label: "Alumni Placed" },
+  { value: "~20", label: "Members Per Season" },
 ];
 
 export default function HeroSection() {
@@ -81,11 +81,11 @@ export default function HeroSection() {
           transition={{ duration: 0.8, delay: 0.5 }}
           className="flex flex-wrap gap-4 justify-center mb-20"
         >
-          <a href="#sponsors" className="btn-primary px-8 py-3">
+          <a href="/sponsors" className="btn-primary px-8 py-3">
             Become a Sponsor
           </a>
-          <a href="#about" className="btn-ghost px-8 py-3">
-            Learn About Us
+          <a href="/team" className="btn-ghost px-8 py-3">
+            Meet the Team
           </a>
         </motion.div>
 

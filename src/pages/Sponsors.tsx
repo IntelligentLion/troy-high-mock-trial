@@ -6,52 +6,54 @@ import Footer from "@/components/Footer";
 
 const tiers = [
   {
-    name: "Partner",
-    subtitle: "Gold",
-    amount: "$2,500+",
+    name: "Platinum",
+    subtitle: "Top Tier",
+    amount: "$5,000+",
     perks: [
-      "Premier logo placement on team banner & uniforms",
-      "Featured sponsor spotlight on website & social media",
-      "Recognition at all competitions and events",
-      "Invitation to season banquet",
-      "Personalized thank-you letter from the team",
-      "Tax-deductible donation receipt",
+      "Direct meetings with students",
+      "Find out talent before your competitors",
+      "Recognition in all press releases",
+      "3 dedicated social media posts",
+      "Promotional video feature",
+      "Logo on team apparel",
+      "Logo on team website",
+      "Recognition on social media",
     ],
     highlight: true,
   },
   {
-    name: "Associate",
-    subtitle: "Silver",
-    amount: "$1,000–$2,499",
+    name: "Gold",
+    subtitle: "Partner",
+    amount: "$2,000–$5,000",
     perks: [
-      "Logo on team banner & website",
-      "Social media shoutout",
-      "Recognition at regional competitions",
-      "Invitation to season banquet",
-      "Tax-deductible donation receipt",
+      "3 dedicated social media posts",
+      "Promotional video feature",
+      "Logo on team apparel",
+      "Logo on team website",
+      "Recognition on social media",
     ],
     highlight: false,
   },
   {
-    name: "Counsel",
-    subtitle: "Bronze",
-    amount: "$500–$999",
+    name: "Silver",
+    subtitle: "Associate",
+    amount: "$1,000–$2,000",
     perks: [
-      "Name on team website",
-      "Social media mention",
-      "Recognition at local events",
-      "Tax-deductible donation receipt",
+      "Promotional video feature",
+      "Logo on team apparel",
+      "Logo on team website",
+      "Recognition on social media",
     ],
     highlight: false,
   },
   {
-    name: "Friend",
-    subtitle: "Support",
-    amount: "$100–$499",
+    name: "Bronze",
+    subtitle: "Supporter",
+    amount: "Under $1,000",
     perks: [
-      "Name on team website",
-      "Thank-you recognition at banquet",
-      "Tax-deductible donation receipt",
+      "Logo on team apparel",
+      "Logo on team website",
+      "Recognition on social media",
     ],
     highlight: false,
   },
@@ -165,7 +167,7 @@ export default function Sponsors() {
                   </ul>
 
                   <a
-                    href={`mailto:ths.mocktrial@gmail.com?subject=Sponsorship Inquiry — ${t.name} Tier`}
+                    href={`mailto:shrikrishna0219@gmail.com?subject=Sponsorship Inquiry — ${t.name} Tier`}
                     className={`mt-2 text-center py-2.5 rounded-lg text-sm font-medium transition-colors label-mono ${
                       t.highlight
                         ? "bg-white/20 hover:bg-white/30 text-white"
@@ -204,7 +206,7 @@ export default function Sponsors() {
                   Reach out directly to discuss partnership opportunities, custom arrangements, or to learn more about our team's reach and impact.
                 </p>
                 <a
-                  href="mailto:ths.mocktrial@gmail.com?subject=Sponsorship Inquiry"
+                  href="mailto:shrikrishna0219@gmail.com?subject=Sponsorship Inquiry"
                   className="inline-flex items-center gap-2 btn-primary"
                 >
                   <Mail className="w-4 h-4" aria-hidden="true" />

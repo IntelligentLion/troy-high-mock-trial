@@ -3,13 +3,32 @@
     "name": "Troy High School Mock Trial",
     "founded": 2016,
     "school": "Troy High School, Fullerton CA",
-    "description": "Troy Mock Trial is aimed at introducing students to the field of law, offering real-life trial experience, and fostering effective communication skills. With a variety of roles with a variety of responsibilities, members get to learn about multiple aspects of a trial. Troy Mock Trial allows students to foster teamwork and coordination with attorney-witness examinations, organize arguments through coordinated statements, and exercise logic with spontaneous decision making in trial.",
+    "description": "Troy Mock Trial is focused on building a strong generation of advocates, public speakers, and critical thinkers while fostering a community of advancement. We introduce students to the field of law, offering real-life trial experience and fostering effective communication skills. Members develop public speaking, critical thinking, legal practices, and advocacy — competing in the Constitutional Rights Foundation's Mock Trial program since 2016.",
     "coreValues": {
-      "legalStudies": "Troy Mock Trial helps students acquire a working knowledge of the judicial system through hypothetical cases.",
-      "competition": "Troy Mock Trial competes in the Constitutional Rights Foundation (CRF)'s Mock Trial program.",
-      "skills": "In Mock Trial students develop their presentation skills, analytic ability, and team cooperation."
+      "legalStudies": "Troy Mock Trial helps students acquire a working knowledge of the judicial system through hypothetical cases, research of actual case law, and preparation of original legal arguments.",
+      "competition": "Troy Mock Trial competes in the CRF-OC (Constitutional Rights Foundation – Orange County) and the JSerra Catholic High School Mock Trial Tournament annually.",
+      "skills": "Members develop public speaking, critical thinking, legal reasoning, and professional advocacy skills that carry into college and careers in law and beyond."
     },
-    "coaches": []
+    "coaches": [
+      {
+        "name": "Mrs. Cook",
+        "role": "Faculty Advisor",
+        "photo": "",
+        "bio": "Faculty advisor and program director at Troy High School, guiding the Mock Trial program since its founding."
+      },
+      {
+        "name": "Coach Davis",
+        "role": "Competition Coach",
+        "photo": "",
+        "bio": "Provides constant feedback and support regarding all competition materials, keeping student leadership in check and aiding in smooth program management."
+      },
+      {
+        "name": "Coach Harold",
+        "role": "Competition Coach",
+        "photo": "",
+        "bio": "Provides constant feedback and support regarding all competition materials, working alongside Coach Davis to develop student advocates."
+      }
+    ]
   },
   "alumni": [
     {
@@ -38,7 +57,6 @@
         "Judicial extern at Santa Ana Courthouse (Summer 2020) under Judge Kimberly Menninger",
         "Competed in Mock Trial at UC Davis as Plaintiff Opening Attorney and Defense Closing Attorney",
         "UC Davis case: State of Midlands v. Jordan Ryder (2020, 2nd Place at UC Berkeley)",
-        "UC Davis case: Midlands Television Studios v. Danny Kosack (2019 - Negligence)",
         "Troy cases: People v. Davidson (2018 - Murder/Fourth Amendment); People v. Awbrey (2017 - Human Trafficking/False Imprisonment)"
       ],
       "photo": "https://thsmocktrial.weebly.com/uploads/1/3/8/2/138237874/editor/unnamed.jpg"
@@ -53,9 +71,6 @@
       "achievements": [
         "Graduated magna cum laude from Pepperdine University",
         "Vice President of Programming for Pepperdine Debate Team",
-        "Copy chief for newspaper",
-        "Vice President of Marketing for Seaver's Inter-Club Council",
-        "Member of Pepperdine Colleges Against Cancer",
         "Case manager at personal injury law firm in Newport Beach, CA",
         "Plans to attend law school"
       ],
@@ -72,9 +87,7 @@
         "President of Mock Trial (2018-2019)",
         "Chief Copy Editor for Daily Trojan",
         "Vice President for USC Muslim Student Union",
-        "Marketing Director at USC Photo Club",
-        "Brand marketing intern at Emerson Collective",
-        "Eight-month social media marketing internship for migrant student preparation program"
+        "Brand marketing intern at Emerson Collective"
       ],
       "photo": "https://thsmocktrial.weebly.com/uploads/1/3/8/2/138237874/editor/226607554-424611252135074-3692196746412892758-n.jpg"
     },
@@ -151,165 +164,191 @@
       "photo": "https://thsmocktrial.weebly.com/uploads/1/3/8/2/138237874/editor/img-2578.jpeg"
     }
   ],
-  "gallery": {
-    "2016": [
-      {
-        "url": "https://thsmocktrial.weebly.com/uploads/1/3/8/2/138237874/229820041-348738150061900-2135584364717317013-n.jpg",
-        "caption": "2016-2017 Competition Season - First Troy Mock Trial Team"
-      },
-      {
-        "url": "https://thsmocktrial.weebly.com/uploads/1/3/8/2/138237874/231086369-269802581148429-1845351805443404859-n.jpg",
-        "caption": "2016-2017 Competition Season"
-      },
-      {
-        "url": "https://thsmocktrial.weebly.com/uploads/1/3/8/2/138237874/229142721-223311859567288-1558101259696699562-n.jpg",
-        "caption": "2016-2017 Competition Season"
-      },
-      {
-        "url": "https://thsmocktrial.weebly.com/uploads/1/3/8/2/138237874/227662920-2917574481843123-3770244622734624838-n.jpg",
-        "caption": "2016-2017 Competition Season"
-      }
-    ],
-    "2017": [
-      {
-        "url": "https://thsmocktrial.weebly.com/uploads/1/3/8/2/138237874/unnamed-1.jpg",
-        "caption": "2017-2018 Mock Trial Banquet"
-      },
-      {
-        "url": "https://thsmocktrial.weebly.com/uploads/1/3/8/2/138237874/unnamed.png",
-        "caption": "2017-2018 Mock Trial Team"
-      }
-    ],
-    "2018": [],
-    "2019": [
-      {
-        "url": "https://thsmocktrial.weebly.com/uploads/1/3/8/2/138237874/img-0602.jpg",
-        "caption": "2019-2020 Season"
-      },
-      {
-        "url": "https://thsmocktrial.weebly.com/uploads/1/3/8/2/138237874/img-7471.jpg",
-        "caption": "2019-2020 Season"
-      },
-      {
-        "url": "https://thsmocktrial.weebly.com/uploads/1/3/8/2/138237874/img-7726.jpg",
-        "caption": "2019-2020 Season"
-      },
-      {
-        "url": "https://thsmocktrial.weebly.com/uploads/1/3/8/2/138237874/img-7727.jpg",
-        "caption": "2019-2020 Season"
-      },
-      {
-        "url": "https://thsmocktrial.weebly.com/uploads/1/3/8/2/138237874/img-8806.jpg",
-        "caption": "2019-2020 Season"
-      },
-      {
-        "url": "https://thsmocktrial.weebly.com/uploads/1/3/8/2/138237874/img-8826.jpg",
-        "caption": "2019-2020 Season"
-      }
-    ],
-    "2020": [],
-    "2021": [],
-    "2022": [],
-    "2023": [],
-    "2024": [],
-    "2025": []
-  },
+  "gallery": [
+    {
+      "url": "https://thsmocktrial.weebly.com/uploads/1/3/8/2/138237874/229820041-348738150061900-2135584364717317013-n.jpg",
+      "year": "2016",
+      "season": "2016-2017",
+      "caption": "2016-2017 Competition Season — First Troy Mock Trial Team",
+      "category": "gallery",
+      "downloaded": true,
+      "localPath": "assets/images/2016/229820041-348738150061900-2135584364717317013-n.jpg"
+    },
+    {
+      "url": "https://thsmocktrial.weebly.com/uploads/1/3/8/2/138237874/231086369-269802581148429-1845351805443404859-n.jpg",
+      "year": "2016",
+      "season": "2016-2017",
+      "caption": "2016-2017 Competition Season",
+      "category": "gallery",
+      "downloaded": true,
+      "localPath": "assets/images/2016/231086369-269802581148429-1845351805443404859-n.jpg"
+    },
+    {
+      "url": "https://thsmocktrial.weebly.com/uploads/1/3/8/2/138237874/229142721-223311859567288-1558101259696699562-n.jpg",
+      "year": "2016",
+      "season": "2016-2017",
+      "caption": "2016-2017 Competition Season",
+      "category": "gallery",
+      "downloaded": true,
+      "localPath": "assets/images/2016/229142721-223311859567288-1558101259696699562-n.jpg"
+    },
+    {
+      "url": "https://thsmocktrial.weebly.com/uploads/1/3/8/2/138237874/227662920-2917574481843123-3770244622734624838-n.jpg",
+      "year": "2016",
+      "season": "2016-2017",
+      "caption": "2016-2017 Competition Season",
+      "category": "gallery",
+      "downloaded": true,
+      "localPath": "assets/images/2016/227662920-2917574481843123-3770244622734624838-n.jpg"
+    },
+    {
+      "url": "https://thsmocktrial.weebly.com/uploads/1/3/8/2/138237874/unnamed-1.jpg",
+      "year": "2017",
+      "season": "2017-2018",
+      "caption": "2017-2018 Mock Trial Banquet",
+      "category": "gallery",
+      "downloaded": true,
+      "localPath": "assets/images/2017/unnamed-1.jpg"
+    },
+    {
+      "url": "https://thsmocktrial.weebly.com/uploads/1/3/8/2/138237874/unnamed.png",
+      "year": "2017",
+      "season": "2017-2018",
+      "caption": "2017-2018 Mock Trial Team",
+      "category": "gallery",
+      "downloaded": true,
+      "localPath": "assets/images/2017/unnamed.png"
+    },
+    {
+      "url": "https://thsmocktrial.weebly.com/uploads/1/3/8/2/138237874/img-0602.jpg",
+      "year": "2019",
+      "season": "2019-2020",
+      "caption": "2019-2020 Season",
+      "category": "gallery",
+      "downloaded": true,
+      "localPath": "assets/images/2019/img-0602.jpg"
+    },
+    {
+      "url": "https://thsmocktrial.weebly.com/uploads/1/3/8/2/138237874/img-7471.jpg",
+      "year": "2019",
+      "season": "2019-2020",
+      "caption": "2019-2020 Season",
+      "category": "gallery",
+      "downloaded": true,
+      "localPath": "assets/images/2019/img-7471.jpg"
+    },
+    {
+      "url": "https://thsmocktrial.weebly.com/uploads/1/3/8/2/138237874/img-7726.jpg",
+      "year": "2019",
+      "season": "2019-2020",
+      "caption": "2019-2020 Season",
+      "category": "gallery",
+      "downloaded": true,
+      "localPath": "assets/images/2019/img-7726.jpg"
+    },
+    {
+      "url": "https://thsmocktrial.weebly.com/uploads/1/3/8/2/138237874/img-7727.jpg",
+      "year": "2019",
+      "season": "2019-2020",
+      "caption": "2019-2020 Season",
+      "category": "gallery",
+      "downloaded": true,
+      "localPath": "assets/images/2019/img-7727.jpg"
+    },
+    {
+      "url": "https://thsmocktrial.weebly.com/uploads/1/3/8/2/138237874/img-8806.jpg",
+      "year": "2019",
+      "season": "2019-2020",
+      "caption": "2019-2020 Season",
+      "category": "gallery",
+      "downloaded": true,
+      "localPath": "assets/images/2019/img-8806.jpg"
+    },
+    {
+      "url": "https://thsmocktrial.weebly.com/uploads/1/3/8/2/138237874/img-8826.jpg",
+      "year": "2019",
+      "season": "2019-2020",
+      "caption": "2019-2020 Season",
+      "category": "gallery",
+      "downloaded": true,
+      "localPath": "assets/images/2019/img-8826.jpg"
+    }
+  ],
   "currentYear": {
-    "season": "2021-2022",
-    "note": "Officer data reflects the most recent data found on the site (2021-2022 school year based on photo timestamps). No 2025-2026 officer data was found on the site.",
+    "season": "2025-2026",
+    "note": "Current season leadership as of 2025-2026.",
     "officers": [
       {
-        "name": "Kayla Nguyen",
+        "name": "Rey Elizabeth Del Valle",
         "role": "Co-President",
-        "photo": "https://thsmocktrial.weebly.com/uploads/1/3/8/2/138237874/published/49125.jpg",
-        "competitions": [],
+        "photo": "",
+        "competitions": ["CRF-OC", "JSerra Invitational"],
         "awards": []
       },
       {
-        "name": "Timothy Kim",
+        "name": "Kate Berger",
         "role": "Co-President",
-        "photo": "https://thsmocktrial.weebly.com/uploads/1/3/8/2/138237874/published/headshot-of-timothy-kim-1.png",
-        "competitions": [],
+        "photo": "",
+        "competitions": ["CRF-OC", "JSerra Invitational"],
         "awards": []
       },
       {
-        "name": "Diya Patel",
+        "name": "Grant Park",
         "role": "Vice President",
-        "photo": "https://thsmocktrial.weebly.com/uploads/1/3/8/2/138237874/published/img-2032.jpeg",
-        "competitions": [],
+        "photo": "",
+        "competitions": ["CRF-OC"],
         "awards": []
       },
       {
-        "name": "Ariana Perez",
+        "name": "Nima Rezai",
         "role": "Secretary",
-        "photo": "https://thsmocktrial.weebly.com/uploads/1/3/8/2/138237874/published/img-5151.jpg",
-        "competitions": [],
+        "photo": "",
+        "competitions": ["CRF-OC"],
         "awards": []
       },
       {
-        "name": "Ethan Wei",
+        "name": "Shri Krishna Sivakumar",
         "role": "Treasurer",
-        "photo": "https://thsmocktrial.weebly.com/uploads/1/3/8/2/138237874/published/img-5152.jpg",
-        "competitions": [],
+        "photo": "",
+        "competitions": ["CRF-OC"],
         "awards": []
       },
       {
-        "name": "Tyler Coker",
-        "role": "Public Relations",
-        "photo": "https://thsmocktrial.weebly.com/uploads/1/3/8/2/138237874/published/profile-pictures.jpg",
-        "competitions": [],
+        "name": "Ellen Tan",
+        "role": "Publicity Commissioner",
+        "photo": "",
+        "competitions": ["CRF-OC"],
         "awards": []
       }
     ],
     "members": []
   },
   "competition": {
-    "organization": "Constitutional Rights Foundation (CRF)",
+    "organization": "Constitutional Rights Foundation – Orange County (CRF-OC)",
     "programName": "CRF Mock Trial",
-    "resources": [
-      {
-        "name": "Mock Trial Finalized Team Document 2021-2022",
-        "url": "https://thsmocktrial.weebly.com/uploads/1/3/8/2/138237874/mock_trial_finalized_team_2021-2022.pdf",
-        "type": "PDF"
-      }
-    ],
+    "resources": [],
     "sections": [
-      "Competition Materials",
-      "2022-2023 Competition Calendar",
-      "Important Mock Trial Competition Info",
-      "Important Moot Court Competition Info"
+      "CRF-OC Competition",
+      "JSerra Catholic High School Mock Trial Tournament"
     ],
-    "results": []
-  },
-  "materials": {
-    "sections": [
-      {
-        "title": "Introductory Meeting Slides",
-        "description": "If you missed our first meeting, you can find all the introductory information below!"
-      },
-      {
-        "title": "Lawyer Overview",
-        "description": "Check out our slides on attorney tactics and skills! The pretrial attorneys presents an oral argument against the motion brought by the defense. Trial attorneys control the presentation of evidence at a trial and argue the merits of their side of the case."
-      },
-      {
-        "title": "Witness Overview",
-        "description": "Check out our slides on witness tactics and skills! The witness is used by the attorneys as unique stories that are able to convince the jury and judge that the attorney's argument has validity."
-      },
-      {
-        "title": "Mock Trial Objection Quizlet",
-        "description": "Practice mock trial objections with our Quizlet."
-      }
+    "results": [
+      "2nd Place — JSerra Catholic High School Mock Trial Championship",
+      "Growing upward trend since program founding in 2016"
     ]
   },
+  "materials": [],
   "sponsors": [],
   "achievements": [
+    "2nd Place — JSerra Catholic High School Mock Trial Championship",
     "Lillian Lin (USC Trial Advocacy): 1st place and top team awards in national mock trial invitationals",
-    "Hayley Amo (UC Davis): 2nd Place at UC Berkeley invitational (State of Midlands v. Jordan Ryder, 2020)"
+    "Hayley Amo (UC Davis): 2nd Place at UC Berkeley invitational (State of Midlands v. Jordan Ryder, 2020)",
+    "Alumni at Yale University, UC Davis, USC, University of Pennsylvania, and United States Air Force",
+    "Consistent upward trajectory since founding in 2016 — competing in CRF-OC and JSerra annually"
   ],
   "contact": {
-    "email": "",
-    "advisorName": "",
-    "advisorEmail": "",
+    "email": "shrikrishna0219@gmail.com",
+    "advisorName": "Mrs. Cook",
+    "advisorEmail": "shrikrishna0219@gmail.com",
     "instagram": "https://www.instagram.com/ths_mocktrial/",
     "instagramHandle": "@ths_mocktrial",
     "linkedin": "https://www.linkedin.com/company/troy-high-school-mock-trial",

@@ -52,7 +52,7 @@ export default function TeamSection() {
                       src={m.photo}
                       alt={m.name}
                       loading="lazy"
-                      className="w-12 h-12 rounded-full object-cover object-top shrink-0 grayscale"
+                      className="w-12 h-12 rounded-full object-cover object-top shrink-0"
                     />
                   ) : (
                     <MonogramAvatar name={m.name} size={48} />

@@ -58,7 +58,7 @@ export default function SeasonSection() {
                     src={officer.photo}
                     alt={officer.name}
                     loading="lazy"
-                    className="w-12 h-12 rounded-full object-cover object-top shrink-0 grayscale"
+                    className="w-12 h-12 rounded-full object-cover object-top shrink-0"
                   />
                 ) : (
                   <MonogramAvatar name={officer.name} size={48} />

@@ -57,7 +57,7 @@ export default function CoachesSection() {
                     src={coach.photo}
                     alt={coach.name}
                     loading="lazy"
-                    className="w-16 h-16 rounded-full object-cover object-top shrink-0 grayscale"
+                    className="w-16 h-16 rounded-full object-cover object-top shrink-0"
                   />
                 ) : (
                   <MonogramAvatar name={coach.name} size={64} />

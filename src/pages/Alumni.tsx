@@ -149,7 +149,7 @@ export default function Alumni() {
                                     src={a.photo}
                                     alt={a.name}
                                     loading="lazy"
-                                    className="w-12 h-12 rounded-full object-cover object-top shrink-0 grayscale"
+                                    className="w-12 h-12 rounded-full object-cover object-top shrink-0"
                                   />
                                 ) : (
                                   <MonogramAvatar name={a.name} size={48} />

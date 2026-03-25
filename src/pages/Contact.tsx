@@ -31,7 +31,7 @@ export default function Contact() {
 
     const subject = encodeURIComponent(`Troy Mock Trial — ${interest}`);
     const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nInterest: ${interest}\n\n${message}`);
-    window.location.href = `mailto:ths.mocktrial@gmail.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:shrikrishna0219@gmail.com?subject=${subject}&body=${body}`;
     setSubmitted(true);
   };
 
@@ -85,10 +85,10 @@ export default function Contact() {
                     <div>
                       <span className="label-mono text-muted-foreground text-[0.65rem] block mb-1">Email</span>
                       <a
-                        href="mailto:ths.mocktrial@gmail.com"
+                        href="mailto:shrikrishna0219@gmail.com"
                         className="text-foreground hover:text-primary transition-colors text-sm"
                       >
-                        ths.mocktrial@gmail.com
+                        shrikrishna0219@gmail.com
                       </a>
                     </div>
                   </div>

@@ -79,7 +79,7 @@ export default function Team() {
                             src={m.photo}
                             alt={m.name}
                             loading="lazy"
-                            className="w-16 h-16 rounded-full object-cover object-top shrink-0 grayscale ring-2 ring-primary/60"
+                            className="w-16 h-16 rounded-full object-cover object-top shrink-0 ring-2 ring-primary/60"
                           />
                         ) : (
                           <MonogramAvatar name={m.name} size={64} />
