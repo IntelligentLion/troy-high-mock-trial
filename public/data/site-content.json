@@ -283,7 +283,7 @@
         "role": "President",
         "description": "Responsible for overall management of Defense and Prosecution teams respectively. Coordinates meets, timelines, communication with coaches, while ensuring timeliness of all other leadership responsibilities. Keeps the entire program running.",
         "photo": "",
-        "competitions": ["CRF-OC", "JSerra Invitational"],
+        "competitions": ["CRF-OC", "JSerra"],
         "awards": []
       },
       {
@@ -291,7 +291,7 @@
         "role": "Vice President",
         "description": "Responsible for overall management of team weaknesses. Mentors members in need of help, ensuring the team is ready to perform at the most competitive level consistently.",
         "photo": "",
-        "competitions": ["CRF-OC"],
+        "competitions": ["CRF-OC", "JSerra"],
         "awards": []
       },
       {
@@ -299,7 +299,7 @@
         "role": "Secretary",
         "description": "Ensures meeting logs are recorded keeping track of team progress, allowing for modifications towards structure — keeps our consistent upward trend towards program development.",
         "photo": "",
-        "competitions": ["CRF-OC"],
+        "competitions": ["CRF-OC", "JSerra"],
         "awards": []
       },
       {
@@ -307,7 +307,7 @@
         "role": "Treasurer",
         "description": "Responsible for financial planning including sponsor contact, budget — ensures a stable and fair structure for members.",
         "photo": "",
-        "competitions": ["CRF-OC"],
+        "competitions": ["CRF-OC", "JSerra"],
         "awards": []
       },
       {
@@ -315,29 +315,29 @@
         "role": "Publicity Commissioner",
         "description": "Responsible for social media presence and outreach. Manages posts of competitions, practices, and others — allows room for expansion of team as the program develops.",
         "photo": "",
-        "competitions": ["CRF-OC"],
+        "competitions": ["CRF-OC", "JSerra"],
         "awards": []
       }
     ],
     "members": [
-      { "name": "Grant Park", "role": "Member", "photo": "", "competitions": ["CRF-OC"], "awards": [] },
-      { "name": "Nima Rezaei", "role": "Member", "photo": "", "competitions": ["CRF-OC"], "awards": [] },
-      { "name": "Shri Krishna Sivakumar", "role": "Member", "photo": "", "competitions": ["CRF-OC"], "awards": [] },
-      { "name": "Ellen Tan", "role": "Member", "photo": "", "competitions": ["CRF-OC"], "awards": [] },
-      { "name": "Annabelle Ye", "role": "Member", "photo": "", "competitions": ["CRF-OC"], "awards": [] },
-      { "name": "Anny Jiao", "role": "Member", "photo": "", "competitions": ["CRF-OC"], "awards": [] },
-      { "name": "Avril Hang", "role": "Member", "photo": "", "competitions": ["CRF-OC"], "awards": [] },
-      { "name": "Christopher Harika", "role": "Member", "photo": "", "competitions": ["CRF-OC"], "awards": [] },
-      { "name": "Daniel Chien", "role": "Member", "photo": "", "competitions": ["CRF-OC"], "awards": [] },
-      { "name": "Elise Kim", "role": "Member", "photo": "", "competitions": ["CRF-OC"], "awards": [] },
-      { "name": "Ella Xu", "role": "Member", "photo": "", "competitions": ["CRF-OC"], "awards": [] },
-      { "name": "Kathryn Anderson", "role": "Member", "photo": "", "competitions": ["CRF-OC"], "awards": [] },
-      { "name": "Manha Baqai", "role": "Member", "photo": "", "competitions": ["CRF-OC"], "awards": [] },
-      { "name": "Minnah Vakil", "role": "Member", "photo": "", "competitions": ["CRF-OC"], "awards": [] },
-      { "name": "Mohammad Tanatra", "role": "Member", "photo": "", "competitions": ["CRF-OC"], "awards": [] },
-      { "name": "Reanne Elizabeth Del Valle", "role": "Member", "photo": "", "competitions": ["CRF-OC"], "awards": [] },
-      { "name": "Tiger Liu", "role": "Member", "photo": "", "competitions": ["CRF-OC"], "awards": [] },
-      { "name": "Yatee Nagpal", "role": "Member", "photo": "", "competitions": ["CRF-OC"], "awards": [] }
+      { "name": "Grant Park", "role": "Member", "photo": "", "competitions": ["CRF-OC", "JSerra"], "awards": [] },
+      { "name": "Nima Rezaei", "role": "Member", "photo": "", "competitions": ["CRF-OC", "JSerra"], "awards": [] },
+      { "name": "Shri Krishna Sivakumar", "role": "Member", "photo": "", "competitions": ["CRF-OC", "JSerra"], "awards": [] },
+      { "name": "Ellen Tan", "role": "Member", "photo": "", "competitions": ["CRF-OC", "JSerra"], "awards": [] },
+      { "name": "Annabelle Ye", "role": "Member", "photo": "", "competitions": ["CRF-OC", "JSerra"], "awards": [] },
+      { "name": "Anny Jiao", "role": "Member", "photo": "", "competitions": ["CRF-OC", "JSerra"], "awards": [] },
+      { "name": "Avril Hang", "role": "Member", "photo": "", "competitions": ["JSerra"], "awards": [] },
+      { "name": "Christopher Harika", "role": "Member", "photo": "", "competitions": ["CRF-OC", "JSerra"], "awards": [] },
+      { "name": "Daniel Chien", "role": "Member", "photo": "", "competitions": ["CRF-OC", "JSerra"], "awards": [] },
+      { "name": "Elise Kim", "role": "Member", "photo": "", "competitions": ["CRF-OC", "JSerra"], "awards": [] },
+      { "name": "Ella Xu", "role": "Member", "photo": "", "competitions": ["CRF-OC", "JSerra"], "awards": [] },
+      { "name": "Kathryn Anderson", "role": "Member", "photo": "", "competitions": ["CRF-OC", "JSerra"], "awards": [] },
+      { "name": "Manha Baqai", "role": "Member", "photo": "", "competitions": ["CRF-OC", "JSerra"], "awards": [] },
+      { "name": "Minnah Vakil", "role": "Member", "photo": "", "competitions": ["CRF-OC", "JSerra"], "awards": [] },
+      { "name": "Mohammad Tanatra", "role": "Member", "photo": "", "competitions": ["CRF-OC", "JSerra"], "awards": [] },
+      { "name": "Reanne Elizabeth Del Valle", "role": "Member", "photo": "", "competitions": ["CRF-OC", "JSerra"], "awards": [] },
+      { "name": "Tiger Liu", "role": "Member", "photo": "", "competitions": ["JSerra"], "awards": [] },
+      { "name": "Yatee Nagpal", "role": "Member", "photo": "", "competitions": ["CRF-OC", "JSerra"], "awards": [] }
     ]
   },
   "competition": {

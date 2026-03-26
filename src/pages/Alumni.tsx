@@ -6,16 +6,10 @@ import Footer from "@/components/Footer";
 import MonogramAvatar from "@/components/MonogramAvatar";
 import { useSiteContent } from "@/hooks/useSiteContent";
 
-const YEARS = [
-  "2016-2017","2017-2018","2018-2019","2019-2020",
-  "2020-2021","2021-2022","2022-2023","2023-2024","2024-2025","2025-2026",
-];
-
 export default function Alumni() {
   const { data } = useSiteContent();
   const alumni = data?.alumni ?? [];
   const [query, setQuery] = useState("");
-  const [openYears, setOpenYears] = useState<Set<string>>(() => new Set(YEARS));
 
   useEffect(() => {
     document.title = "Alumni — Troy High School Mock Trial";
@@ -26,23 +20,26 @@ export default function Alumni() {
     return q ? alumni.filter((a) => a.name.toLowerCase().includes(q)) : alumni;
   }, [alumni, query]);
 
-  // Group by first year active
-  const byYear = useMemo(() => {
+  // Group by first year active; only expose years that have data
+  const { byYear, years } = useMemo(() => {
     const map: Record<string, typeof filtered> = {};
-    YEARS.forEach((y) => { map[y] = []; });
     filtered.forEach((a) => {
       const firstYear = a.years[0] ?? "2016-2017";
-      if (map[firstYear]) map[firstYear].push(a);
-      else map[YEARS[0]].push(a);
+      if (!map[firstYear]) map[firstYear] = [];
+      map[firstYear].push(a);
     });
-    return map;
+    const sortedYears = Object.keys(map).sort((a, b) => b.localeCompare(a));
+    return { byYear: map, years: sortedYears };
   }, [filtered]);
 
+  const [openYears, setOpenYears] = useState<Set<string>>(() => new Set());
+
+  // openYears tracks *collapsed* years; sections are open by default
   const toggleYear = (y: string) => {
     setOpenYears((prev) => {
       const next = new Set(prev);
-      if (next.has(y)) next.delete(y);
-      else next.add(y);
+      if (next.has(y)) next.delete(y); // re-open
+      else next.add(y); // collapse
       return next;
     });
   };
@@ -102,9 +99,9 @@ export default function Alumni() {
 
           {/* Year sections */}
           <div className="flex flex-col gap-8">
-            {YEARS.slice().reverse().map((year) => {
+            {years.map((year) => {
               const people = byYear[year] ?? [];
-              const isOpen = openYears.has(year);
+              const isOpen = !openYears.has(year); // default open
 
               return (
                 <section key={year} aria-labelledby={`year-${year}`}>

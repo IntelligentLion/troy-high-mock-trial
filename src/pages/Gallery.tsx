@@ -1,6 +1,6 @@
 import { useEffect, useState, useRef, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, ChevronLeft, ChevronRight } from "lucide-react";
+import { X, ChevronLeft, ChevronRight, ZoomIn } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { useSiteContent } from "@/hooks/useSiteContent";
@@ -139,32 +139,37 @@ export default function Gallery() {
             {filtered.length > 0 ? (
               <motion.div
                 key={activeSeason}
-                className="gallery-grid"
+                className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3"
                 variants={containerVariants}
                 initial="hidden"
                 animate="show"
                 exit={{ opacity: 0 }}
               >
                 {filtered.map((item, i) => (
-                  <motion.div key={i} variants={itemVariants} className="group relative overflow-hidden rounded-xl border border-border bg-card">
+                  <motion.div key={i} variants={itemVariants} className="group">
                     <button
-                      className="w-full text-left"
+                      className="w-full text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-lg"
                       onClick={(e) => openLightbox(i, e.currentTarget)}
                       aria-label={`View full-size photo: ${item.caption || `Photo ${i + 1}`}`}
                     >
-                      <div className="relative overflow-hidden aspect-[4/3]">
+                      <div className="relative overflow-hidden rounded-lg aspect-[4/3] border border-border bg-card">
                         <img
                           src={`/${item.localPath}`}
                           alt={item.caption || `${item.season} photo`}
                           loading="lazy"
                           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                        {/* Hover overlay */}
+                        <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-250 flex flex-col items-center justify-center gap-1.5">
+                          <ZoomIn className="w-6 h-6 text-white" aria-hidden="true" />
+                          <span className="text-white text-xs font-medium tracking-wide">View Photo</span>
+                        </div>
                       </div>
-                      <div className="px-4 py-3 flex items-center justify-between">
-                        <span className="text-sm text-foreground font-medium line-clamp-1">{item.caption}</span>
-                        <span className="label-mono text-muted-foreground text-[0.6rem] shrink-0 ml-2">{item.season}</span>
-                      </div>
+                      {item.caption && (
+                        <p className="mt-1.5 px-0.5 text-xs text-muted-foreground line-clamp-1 group-hover:text-foreground transition-colors">
+                          {item.caption}
+                        </p>
+                      )}
                     </button>
                   </motion.div>
                 ))}
