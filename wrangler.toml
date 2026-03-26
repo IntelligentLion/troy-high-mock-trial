@@ -2,8 +2,8 @@ name = "troy-high-mock-trial"
 compatibility_date = "2024-09-23"
 
 routes = [
-  { pattern = "troymocktrial.org/*", custom_domain = true },
-  { pattern = "www.troymocktrial.org/*", custom_domain = true }
+  { pattern = "troymocktrial.org", custom_domain = true },
+  { pattern = "www.troymocktrial.org", custom_domain = true }
 ]
 
 [assets]
