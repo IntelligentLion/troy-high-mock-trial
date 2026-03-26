@@ -1,11 +1,11 @@
 import { motion } from "framer-motion";
-import { GraduationCap, Scale, Star, BookOpen, Users, Trophy } from "lucide-react";
+import { GraduationCap, Scale, Star, BookOpen, Users, Trophy, Mail } from "lucide-react";
 import { useSiteContent } from "@/hooks/useSiteContent";
 
 const pillars = [
   { icon: GraduationCap, title: "Mentorship Program", desc: "Senior members mentor newcomers, and alumni return each spring to share their legal journeys and coach current competitors." },
   { icon: Scale, title: "Legal Outreach", desc: "We compete in the CRF Mock Trial program — one of the most respected high school legal competitions in California." },
-  { icon: Star, title: "Annual Banquet", desc: "Every season ends with a celebration of our athletes, coaches, sponsors, and alumni. All are welcome to attend." },
+  { icon: Star, title: "Annual Banquet", desc: "Every season ends with a celebration of coaches, members, and graduates. All are welcome to attend — especially sponsors." },
   { icon: BookOpen, title: "Case Preparation", desc: "Members develop presentation skills, analytic ability, and team cooperation through intensive case preparation each season." },
   { icon: Users, title: "Team Bonding", desc: "From team dinners to study sessions, we invest in the relationships that make us stronger in and out of the courtroom." },
   { icon: Trophy, title: "Alumni Network", desc: "Our growing alumni network spans top universities and law programs — a lifelong community that opens doors for every member." },
@@ -69,21 +69,30 @@ export default function CommunitySection() {
         >
           <div>
             <h3 className="font-playfair text-2xl font-bold text-foreground mb-2">
-              Interested in Joining?
+              Interested in Joining? Contact us.
             </h3>
             <p className="text-muted-foreground text-sm max-w-sm">
               Open to all Troy High School students. No prior legal experience required
               — just curiosity and commitment.
             </p>
           </div>
-          <a
-            href={instagram}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-primary shrink-0"
-          >
-            {instagramHandle}
-          </a>
+          <div className="flex flex-wrap gap-3 shrink-0">
+            <a
+              href="mailto:shrikrishna0219@gmail.com?subject=Joining Troy Mock Trial"
+              className="btn-primary inline-flex items-center gap-2"
+            >
+              <Mail className="w-4 h-4" aria-hidden="true" />
+              Email
+            </a>
+            <a
+              href={instagram}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-ghost"
+            >
+              {instagramHandle}
+            </a>
+          </div>
         </motion.div>
       </div>
     </section>

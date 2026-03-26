@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Scale, ChevronDown } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const stats = [
   { value: "10", label: "Seasons Active" },
@@ -81,12 +82,12 @@ export default function HeroSection() {
           transition={{ duration: 0.8, delay: 0.5 }}
           className="flex flex-wrap gap-4 justify-center mb-20"
         >
-          <a href="/sponsors" className="btn-primary px-8 py-3">
+          <Link to="/sponsors" className="btn-primary px-8 py-3">
             Become a Sponsor
-          </a>
-          <a href="/team" className="btn-ghost px-8 py-3">
+          </Link>
+          <Link to="/team" className="btn-ghost px-8 py-3">
             Meet the Team
-          </a>
+          </Link>
         </motion.div>
 
         {/* Stats */}
@@ -108,13 +109,14 @@ export default function HeroSection() {
       </div>
 
       {/* Scroll indicator */}
-      <motion.div
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
+      <motion.button
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 cursor-pointer bg-transparent border-0 p-2"
         style={{ color: "rgba(255,255,255,0.4)" }}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.2 }}
-        aria-hidden="true"
+        onClick={() => document.getElementById("about")?.scrollIntoView({ behavior: "smooth" })}
+        aria-label="Scroll to next section"
       >
         <motion.div
           animate={{ y: [0, 6, 0] }}
@@ -122,7 +124,7 @@ export default function HeroSection() {
         >
           <ChevronDown className="w-5 h-5" />
         </motion.div>
-      </motion.div>
+      </motion.button>
     </section>
   );
 }

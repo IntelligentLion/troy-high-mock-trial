@@ -320,6 +320,10 @@
       }
     ],
     "members": [
+      { "name": "Grant Park", "role": "Member", "photo": "", "competitions": ["CRF-OC"], "awards": [] },
+      { "name": "Nima Rezaei", "role": "Member", "photo": "", "competitions": ["CRF-OC"], "awards": [] },
+      { "name": "Shri Krishna Sivakumar", "role": "Member", "photo": "", "competitions": ["CRF-OC"], "awards": [] },
+      { "name": "Ellen Tan", "role": "Member", "photo": "", "competitions": ["CRF-OC"], "awards": [] },
       { "name": "Annabelle Ye", "role": "Member", "photo": "", "competitions": ["CRF-OC"], "awards": [] },
       { "name": "Anny Jiao", "role": "Member", "photo": "", "competitions": ["CRF-OC"], "awards": [] },
       { "name": "Avril Hang", "role": "Member", "photo": "", "competitions": ["CRF-OC"], "awards": [] },
@@ -327,15 +331,11 @@
       { "name": "Daniel Chien", "role": "Member", "photo": "", "competitions": ["CRF-OC"], "awards": [] },
       { "name": "Elise Kim", "role": "Member", "photo": "", "competitions": ["CRF-OC"], "awards": [] },
       { "name": "Ella Xu", "role": "Member", "photo": "", "competitions": ["CRF-OC"], "awards": [] },
-      { "name": "Ellen Tan", "role": "Member", "photo": "", "competitions": ["CRF-OC"], "awards": [] },
-      { "name": "Grant Park", "role": "Member", "photo": "", "competitions": ["CRF-OC"], "awards": [] },
       { "name": "Kathryn Anderson", "role": "Member", "photo": "", "competitions": ["CRF-OC"], "awards": [] },
       { "name": "Manha Baqai", "role": "Member", "photo": "", "competitions": ["CRF-OC"], "awards": [] },
       { "name": "Minnah Vakil", "role": "Member", "photo": "", "competitions": ["CRF-OC"], "awards": [] },
       { "name": "Mohammad Tanatra", "role": "Member", "photo": "", "competitions": ["CRF-OC"], "awards": [] },
-      { "name": "Nima Rezaei", "role": "Member", "photo": "", "competitions": ["CRF-OC"], "awards": [] },
       { "name": "Reanne Elizabeth Del Valle", "role": "Member", "photo": "", "competitions": ["CRF-OC"], "awards": [] },
-      { "name": "Shri Krishna Sivakumar", "role": "Member", "photo": "", "competitions": ["CRF-OC"], "awards": [] },
       { "name": "Tiger Liu", "role": "Member", "photo": "", "competitions": ["CRF-OC"], "awards": [] },
       { "name": "Yatee Nagpal", "role": "Member", "photo": "", "competitions": ["CRF-OC"], "awards": [] }
     ]
