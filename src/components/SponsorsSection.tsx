@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Mail } from "lucide-react";
+import { ArrowRight, Download, Mail } from "lucide-react";
 
 export default function SponsorsSection() {
   return (
@@ -53,13 +53,23 @@ export default function SponsorsSection() {
             </a>
           </div>
 
-          <a
-            href="/sponsors"
-            className="btn-primary shrink-0 inline-flex items-center gap-2 px-8 py-3"
-          >
-            View Sponsorship Tiers
-            <ArrowRight className="w-4 h-4" aria-hidden="true" />
-          </a>
+          <div className="flex flex-col gap-3 shrink-0">
+            <a
+              href="/sponsors"
+              className="btn-primary inline-flex items-center gap-2 px-8 py-3"
+            >
+              View Sponsorship Tiers
+              <ArrowRight className="w-4 h-4" aria-hidden="true" />
+            </a>
+            <a
+              href="/Troy_Sponsorship_Packet.pdf"
+              download="Troy_Sponsorship_Packet.pdf"
+              className="inline-flex items-center justify-center gap-2 px-8 py-3 rounded-lg text-sm font-semibold border border-primary text-primary hover:bg-primary/10 transition-colors"
+            >
+              <Download className="w-4 h-4" aria-hidden="true" />
+              Download Prospectus
+            </a>
+          </div>
         </motion.div>
       </div>
     </section>

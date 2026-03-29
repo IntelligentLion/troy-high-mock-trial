@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { Check, Mail } from "lucide-react";
+import { Check, Download, Mail } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+
+const PROSPECTUS_PATH = "/Troy_Sponsorship_Packet.pdf";
 
 const tiers = [
   {
@@ -107,6 +109,40 @@ export default function Sponsors() {
       </header>
 
       <main>
+        {/* Sponsorship Prospectus */}
+        <section className="py-20 border-t border-border" aria-labelledby="prospectus-heading">
+          <div className="max-w-7xl mx-auto px-6">
+            <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-6">
+              <div>
+                <span className="label-mono text-muted-foreground block mb-2">2025–26 Season</span>
+                <h2 id="prospectus-heading" className="display-lg text-foreground">Sponsorship Prospectus</h2>
+              </div>
+              <a
+                href={PROSPECTUS_PATH}
+                download="Troy_Sponsorship_Packet.pdf"
+                className="inline-flex items-center gap-2 btn-primary shrink-0 self-start sm:self-auto"
+              >
+                <Download className="w-4 h-4" aria-hidden="true" />
+                Download PDF
+              </a>
+            </div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="rounded-xl overflow-hidden border border-border"
+            >
+              <iframe
+                src={PROSPECTUS_PATH}
+                title="Troy Mock Trial Sponsorship Prospectus 2025–26"
+                className="w-full"
+                style={{ height: "780px" }}
+              />
+            </motion.div>
+          </div>
+        </section>
+
         {/* Tiers */}
         <section className="py-20 border-t border-border" aria-labelledby="tiers-heading">
           <div className="max-w-7xl mx-auto px-6">
