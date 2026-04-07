@@ -84,7 +84,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
-            className="flex flex-wrap gap-4 mb-14"
+            className="flex flex-wrap gap-4 mb-14 justify-center lg:justify-start"
           >
             <Link to="/sponsors" className="btn-primary px-8 py-3">
               Become a Sponsor
