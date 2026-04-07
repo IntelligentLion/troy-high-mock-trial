@@ -37,7 +37,7 @@ export default function HeroSection() {
       <div className="relative w-full max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
 
         {/* Left — text */}
-        <div className="flex flex-col items-start text-left">
+        <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
           {/* Eyebrow pill */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -117,7 +117,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, x: 40 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.9, delay: 0.4, ease: [0.19, 1, 0.22, 1] }}
-          className="relative hidden lg:block"
+          className="relative"
         >
           {/* Gold glow behind photo */}
           <div
