@@ -1,9 +1,10 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { Instagram, Linkedin, Mail, MapPin, Loader2 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { useSiteContent } from "@/hooks/useSiteContent";
+import { useSeo } from "@/hooks/useSeo";
 
 const INTEREST_OPTIONS = [
   { value: "join", label: "Join the Team" },
@@ -18,9 +19,12 @@ export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
 
-  useEffect(() => {
-    document.title = "Contact — Troy High School Mock Trial";
-  }, []);
+  useSeo({
+    title: "Contact — Troy High School Mock Trial",
+    description:
+      "Get in touch with Troy High School Mock Trial — prospective members, sponsors, and alumni are all welcome to reach out.",
+    path: "/contact",
+  });
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();

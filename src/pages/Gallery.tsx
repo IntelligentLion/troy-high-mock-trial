@@ -4,6 +4,7 @@ import { X, ChevronLeft, ChevronRight, ZoomIn } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { useSiteContent } from "@/hooks/useSiteContent";
+import { useSeo } from "@/hooks/useSeo";
 
 const containerVariants = {
   hidden: {},
@@ -26,9 +27,12 @@ export default function Gallery() {
   const triggerRef = useRef<HTMLButtonElement | null>(null);
   const lightboxRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    document.title = "Gallery — Troy High School Mock Trial";
-  }, []);
+  useSeo({
+    title: "Gallery — Troy High School Mock Trial",
+    description:
+      "A visual journey through every Troy High School Mock Trial season since the program's founding in 2016.",
+    path: "/gallery",
+  });
 
   const filtered = activeSeason === "all" ? gallery : gallery.filter((g) => g.season === activeSeason);
 

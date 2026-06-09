@@ -1,4 +1,4 @@
-import { useEffect, useState, useMemo } from "react";
+import { useState, useMemo } from "react";
 import { motion } from "framer-motion";
 import { Search, ChevronDown } from "lucide-react";
 import Navbar from "@/components/Navbar";
@@ -6,15 +6,19 @@ import Footer from "@/components/Footer";
 import MonogramAvatar from "@/components/MonogramAvatar";
 import { CardGridSkeleton } from "@/components/CardSkeleton";
 import { useSiteContent } from "@/hooks/useSiteContent";
+import { useSeo } from "@/hooks/useSeo";
 
 export default function Alumni() {
   const { data, isLoading } = useSiteContent();
   const alumni = data?.alumni ?? [];
   const [query, setQuery] = useState("");
 
-  useEffect(() => {
-    document.title = "Alumni — Troy High School Mock Trial";
-  }, []);
+  useSeo({
+    title: "Alumni — Troy High School Mock Trial",
+    description:
+      "An honor wall of every student who has shaped Troy High School Mock Trial since 2016 — and where their paths have led.",
+    path: "/alumni",
+  });
 
   const filtered = useMemo(() => {
     const q = query.toLowerCase();

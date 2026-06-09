@@ -1,8 +1,8 @@
-import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { ExternalLink, Scale, Users, Trophy, Mic, BookOpen, Briefcase } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { useSeo } from "@/hooks/useSeo";
 
 const FORM_URL =
   "https://docs.google.com/forms/d/e/1FAIpQLSd1R5LAGbsbXUDEIflfxjKfmNFpfs2NrOf9yQw2JLcFODozGA/viewform?usp=publish-editor";
@@ -41,9 +41,12 @@ const reasons = [
 ];
 
 export default function JoinUs() {
-  useEffect(() => {
-    document.title = "Join Us — Troy High School Mock Trial";
-  }, []);
+  useSeo({
+    title: "Join Us — Troy High School Mock Trial",
+    description:
+      "Interested in competing with Troy Mock Trial in 2026–27? See why students join — no legal background required — and fill out our interest form.",
+    path: "/join",
+  });
 
   return (
     <div className="min-h-screen bg-background text-foreground">

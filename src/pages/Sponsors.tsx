@@ -1,8 +1,9 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { Check, Download, Mail, Loader2 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { useSeo } from "@/hooks/useSeo";
 
 const PROSPECTUS_PATH = "/Troy_Sponsorship_Packet.pdf";
 
@@ -65,9 +66,12 @@ export default function Sponsors() {
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
 
-  useEffect(() => {
-    document.title = "Sponsors — Troy High School Mock Trial";
-  }, []);
+  useSeo({
+    title: "Sponsors — Troy High School Mock Trial",
+    description:
+      "Partner with Troy High School Mock Trial and invest in the next generation of advocates. View sponsorship tiers and download the prospectus.",
+    path: "/sponsors",
+  });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();

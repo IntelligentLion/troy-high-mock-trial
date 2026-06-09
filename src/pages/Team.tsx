@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { Trophy } from "lucide-react";
 import Navbar from "@/components/Navbar";
@@ -6,6 +5,7 @@ import Footer from "@/components/Footer";
 import MonogramAvatar from "@/components/MonogramAvatar";
 import { CardGridSkeleton } from "@/components/CardSkeleton";
 import { useSiteContent } from "@/hooks/useSiteContent";
+import { useSeo } from "@/hooks/useSeo";
 
 export default function Team() {
   const { data, isLoading } = useSiteContent();
@@ -14,9 +14,12 @@ export default function Team() {
   const coaches = data?.team?.coaches ?? [];
   const season = data?.currentYear?.season ?? "2025–2026";
 
-  useEffect(() => {
-    document.title = `Team — Troy High School Mock Trial`;
-  }, []);
+  useSeo({
+    title: "Team — Troy High School Mock Trial",
+    description:
+      "Meet the 2025–26 officers, members, coaches, and faculty advisors representing Troy High School Mock Trial in competition.",
+    path: "/team",
+  });
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -74,7 +77,6 @@ export default function Team() {
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, delay: i * 0.08 }}
                     className="bg-card rounded-xl border border-primary/30 p-6 flex flex-col gap-4 hover:border-primary/60 transition-colors"
-                    style={{ boxShadow: "0 4px 20px rgba(201,168,76,0.08)" }}
                   >
                     <div className="flex items-center gap-4">
                       <div className="relative">

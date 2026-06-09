@@ -1,9 +1,9 @@
-import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { ExternalLink } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import MonogramAvatar from "@/components/MonogramAvatar";
+import { useSeo } from "@/hooks/useSeo";
 
 const FORM_URL =
   "https://docs.google.com/forms/d/e/1FAIpQLSd1R5LAGbsbXUDEIflfxjKfmNFpfs2NrOf9yQw2JLcFODozGA/viewform?usp=publish-editor";
@@ -18,9 +18,12 @@ const leadership = [
 ];
 
 export default function TeamRecruit() {
-  useEffect(() => {
-    document.title = "2026–27 Team — Troy High School Mock Trial";
-  }, []);
+  useSeo({
+    title: "2026–27 Team — Troy High School Mock Trial",
+    description:
+      "Meet the incoming 2026–27 leadership of Troy High School Mock Trial and find out how to join the team for the new season.",
+    path: "/team/2026-27",
+  });
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -76,7 +79,6 @@ export default function TeamRecruit() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: i * 0.08 }}
                   className="bg-card rounded-xl border border-primary/30 p-6 flex items-center gap-4 hover:border-primary/60 transition-colors"
-                  style={{ boxShadow: "0 4px 20px rgba(201,168,76,0.08)" }}
                 >
                   <MonogramAvatar name={officer.name} size={56} />
                   <div className="min-w-0">
