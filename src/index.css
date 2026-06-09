@@ -121,14 +121,14 @@
 
   body {
     @apply bg-background text-foreground;
-    font-family: 'DM Sans', system-ui, sans-serif;
+    font-family: 'Lato', system-ui, sans-serif;
     font-size: var(--text-base);
     line-height: 1.6;
     min-height: 100vh;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-family: 'Playfair Display', Georgia, serif;
     font-weight: 600;
     line-height: 1.15;
     letter-spacing: -0.01em;
@@ -157,7 +157,7 @@
    ───────────────────────────────────────────── */
 @layer components {
   .display-xl {
-    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-family: 'Playfair Display', Georgia, serif;
     font-size: clamp(3rem, 8vw, var(--text-6xl));
     font-weight: 700;
     line-height: 1.05;
@@ -165,7 +165,7 @@
   }
 
   .display-lg {
-    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-family: 'Playfair Display', Georgia, serif;
     font-size: clamp(2.25rem, 5vw, var(--text-5xl));
     font-weight: 700;
     line-height: 1.1;
@@ -173,14 +173,14 @@
   }
 
   .display-md {
-    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-family: 'Playfair Display', Georgia, serif;
     font-size: clamp(1.75rem, 3.5vw, var(--text-4xl));
     font-weight: 600;
     line-height: 1.2;
   }
 
   .pull-quote {
-    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-family: 'Playfair Display', Georgia, serif;
     font-size: clamp(1.25rem, 2.5vw, var(--text-3xl));
     font-style: italic;
     font-weight: 400;
@@ -222,7 +222,7 @@
     @apply inline-flex items-center justify-center gap-2 px-8 py-3 font-semibold rounded-full text-sm transition-all;
     background: var(--color-gold);
     color: var(--color-navy);
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'Lato', sans-serif;
     box-shadow: var(--shadow-gold);
     transition: all var(--duration-base) var(--ease-out-expo);
   }
@@ -237,7 +237,7 @@
     @apply inline-flex items-center justify-center gap-2 px-8 py-3 font-semibold rounded-full text-sm;
     border: 2px solid var(--color-gold);
     color: var(--color-gold);
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'Lato', sans-serif;
     transition: all var(--duration-base) var(--ease-out-expo);
   }
 
@@ -305,7 +305,7 @@
    ───────────────────────────────────────────── */
 @layer components {
   .nav-link {
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'Lato', sans-serif;
     font-size: var(--text-sm);
     font-weight: 500;
     letter-spacing: 0.02em;
@@ -347,7 +347,7 @@
     justify-content: center;
     background: var(--color-navy);
     color: var(--color-gold);
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Playfair Display', serif;
     font-weight: 600;
     border-radius: 50%;
     border: 2px solid var(--color-charcoal);
@@ -356,7 +356,7 @@
 
   .pill {
     @apply inline-flex items-center px-3 py-1 text-xs font-medium rounded-full;
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'Lato', sans-serif;
     background: rgba(201,168,76,0.12);
     color: var(--color-gold-light);
     border: 1px solid rgba(201,168,76,0.25);
@@ -364,7 +364,7 @@
 
   .award-badge {
     @apply inline-flex items-center gap-1 px-3 py-1 text-xs font-medium;
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'Lato', sans-serif;
     background: rgba(139,26,26,0.15);
     color: #E07070;
     border: 1px solid rgba(139,26,26,0.3);

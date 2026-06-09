@@ -69,10 +69,11 @@ export default {
         "color-muted": "#8A9BB0",
       },
       fontFamily: {
-        display: ["'Cormorant Garamond'", "Georgia", "serif"],
-        body:    ["'DM Sans'", "system-ui", "sans-serif"],
-        mono:    ["'JetBrains Mono'", "monospace"],
-        sans:    ["'DM Sans'", "system-ui", "sans-serif"],
+        display:  ["'Playfair Display'", "Georgia", "serif"],
+        playfair: ["'Playfair Display'", "Georgia", "serif"],
+        body:     ["'Lato'", "system-ui", "sans-serif"],
+        mono:     ["'JetBrains Mono'", "monospace"],
+        sans:     ["'Lato'", "system-ui", "sans-serif"],
       },
       fontSize: {
         xs:   ["0.75rem",  { lineHeight: "1rem" }],
