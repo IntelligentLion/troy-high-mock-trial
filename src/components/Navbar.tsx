@@ -7,7 +7,6 @@ const navLinks = [
   { label: "Alumni", to: "/alumni" },
   { label: "Gallery", to: "/gallery" },
   { label: "Sponsors", to: "/sponsors" },
-  { label: "Join Us", to: "/join" },
   { label: "Contact", to: "/contact" },
 ];
 
@@ -141,8 +140,8 @@ export default function Navbar() {
         </nav>
 
         {/* CTA */}
-        <Link to="/sponsors" className="hidden md:block btn-primary text-xs px-5 py-2">
-          Become a Sponsor
+        <Link to="/join" className="hidden md:block btn-primary text-xs px-5 py-2">
+          Join Us
         </Link>
 
         {/* Mobile toggle */}
@@ -214,8 +213,8 @@ export default function Navbar() {
               {l.label}
             </Link>
           ))}
-          <Link to="/sponsors" className="btn-primary text-center mt-2">
-            Become a Sponsor
+          <Link to="/join" className="btn-primary text-center mt-2">
+            Join Us
           </Link>
         </nav>
       )}
