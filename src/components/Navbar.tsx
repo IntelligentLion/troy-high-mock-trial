@@ -140,8 +140,8 @@ export default function Navbar() {
         </nav>
 
         {/* CTA */}
-        <Link to="/join" className="hidden md:block btn-primary text-xs px-5 py-2">
-          Join Us
+        <Link to="/sponsors" className="hidden md:block btn-primary text-xs px-5 py-2">
+          Become a Sponsor
         </Link>
 
         {/* Mobile toggle */}
@@ -213,8 +213,8 @@ export default function Navbar() {
               {l.label}
             </Link>
           ))}
-          <Link to="/join" className="btn-primary text-center mt-2">
-            Join Us
+          <Link to="/sponsors" className="btn-primary text-center mt-2">
+            Become a Sponsor
           </Link>
         </nav>
       )}
