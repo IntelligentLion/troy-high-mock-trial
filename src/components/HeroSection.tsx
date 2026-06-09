@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import { Scale, ChevronDown, Trophy } from "lucide-react";
 import { Link } from "react-router-dom";
 
@@ -39,10 +38,7 @@ export default function HeroSection() {
         {/* Left — text */}
         <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
           {/* Eyebrow pill */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
+          <div
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold mb-8"
             style={{
               background: "rgba(201, 168, 76, 0.15)",
@@ -52,55 +48,39 @@ export default function HeroSection() {
           >
             <Scale className="w-3.5 h-3.5" aria-hidden="true" />
             Founded 2016 · Fullerton, CA
-          </motion.div>
+          </div>
 
           {/* Main headline */}
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+          <h1
             className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight"
             style={{ color: "hsl(var(--white))", fontFamily: "Georgia, serif", fontStyle: "italic" }}
           >
             Troy High
             <br />
             <span className="gold-text">Mock Trial</span>
-          </motion.h1>
+          </h1>
 
           {/* Description */}
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.35 }}
+          <p
             className="text-base md:text-lg mb-10 max-w-lg"
             style={{ color: "rgba(255,255,255,0.65)" }}
           >
             Introducing students to the field of law through real-life trial experience,
             competing in the Constitutional Rights Foundation's Mock Trial program since 2016.
-          </motion.p>
+          </p>
 
           {/* Buttons */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.5 }}
-            className="flex flex-wrap gap-4 mb-14 justify-center lg:justify-start"
-          >
+          <div className="flex flex-wrap gap-4 mb-14 justify-center lg:justify-start">
             <Link to="/join" className="btn-primary px-8 py-3">
               Join Us
             </Link>
             <Link to="/team/2026-27" className="btn-ghost px-8 py-3">
               Meet the Team
             </Link>
-          </motion.div>
+          </div>
 
           {/* Stats */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.7 }}
-            className="grid grid-cols-3 gap-6 w-full max-w-lg"
-          >
+          <div className="grid grid-cols-3 gap-6 w-full max-w-lg">
             {stats.map((s, i) => (
               <div key={i} className="flex flex-col gap-1">
                 <span className="stat-number">{s.value}</span>
@@ -109,16 +89,11 @@ export default function HeroSection() {
                 </span>
               </div>
             ))}
-          </motion.div>
+          </div>
         </div>
 
         {/* Right — trophy photo */}
-        <motion.div
-          initial={{ opacity: 0, x: 40 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.9, delay: 0.4, ease: [0.19, 1, 0.22, 1] }}
-          className="relative"
-        >
+        <div className="relative">
           {/* Gold glow behind photo */}
           <div
             className="absolute inset-0 rounded-2xl"
@@ -167,27 +142,19 @@ export default function HeroSection() {
               </div>
             </div>
           </div>
-        </motion.div>
+        </div>
 
       </div>
 
       {/* Scroll indicator */}
-      <motion.button
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 cursor-pointer bg-transparent border-0 p-2"
+      <button
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 cursor-pointer bg-transparent border-0 p-2 transition-colors hover:text-white"
         style={{ color: "rgba(255,255,255,0.4)" }}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.2 }}
         onClick={() => document.getElementById("about")?.scrollIntoView({ behavior: "smooth" })}
         aria-label="Scroll to next section"
       >
-        <motion.div
-          animate={{ y: [0, 6, 0] }}
-          transition={{ repeat: Infinity, duration: 1.5 }}
-        >
-          <ChevronDown className="w-5 h-5" />
-        </motion.div>
-      </motion.button>
+        <ChevronDown className="w-5 h-5" />
+      </button>
     </section>
   );
 }

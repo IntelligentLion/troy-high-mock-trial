@@ -1,5 +1,4 @@
 import { useState, useMemo } from "react";
-import { motion } from "framer-motion";
 import { Search, ChevronDown } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -60,30 +59,16 @@ export default function Alumni() {
           style={{ background: "linear-gradient(160deg, hsl(var(--background)) 60%, hsl(var(--primary) / 0.10))" }}
         />
         <div className="max-w-7xl mx-auto">
-          <motion.span
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            className="label-mono text-primary block mb-3"
-          >
+          <span className="label-mono text-primary block mb-3">
             Honor Wall
-          </motion.span>
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
-            className="display-xl text-foreground mb-4"
-          >
+          </span>
+          <h1 className="display-xl text-foreground mb-4">
             Those Who Came Before
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.2 }}
-            className="text-muted-foreground max-w-xl text-lg"
-          >
+          </h1>
+          <p className="text-muted-foreground max-w-xl text-lg">
             A permanent record of every student who shaped this program since 2016.
             Their names belong on these walls.
-          </motion.p>
+          </p>
         </div>
       </header>
 
@@ -143,11 +128,8 @@ export default function Alumni() {
                       {people.length > 0 ? (
                         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
                           {people.map((a, i) => (
-                            <motion.article
+                            <article
                               key={i}
-                              initial={{ opacity: 0, y: 16 }}
-                              animate={{ opacity: 1, y: 0 }}
-                              transition={{ duration: 0.4, delay: i * 0.05 }}
                               className="bg-card rounded-xl border border-border p-5 flex flex-col gap-3 hover:border-primary/40 transition-colors group"
                             >
                               <div className="flex items-center gap-3">
@@ -191,7 +173,7 @@ export default function Alumni() {
                                   ))}
                                 </ul>
                               )}
-                            </motion.article>
+                            </article>
                           ))}
                         </div>
                       ) : (

@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import { useSiteContent } from "@/hooks/useSiteContent";
 import MonogramAvatar from "@/components/MonogramAvatar";
 import { CardGridSkeleton } from "@/components/CardSkeleton";
@@ -13,33 +12,17 @@ export default function CoachesSection() {
         {/* Header */}
         <div className="flex items-end justify-between mb-12 flex-wrap gap-6">
           <div>
-            <motion.span
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              className="label-mono text-primary block mb-3"
-            >
+            <span className="label-mono text-primary block mb-3">
               Legal Leadership
-            </motion.span>
-            <motion.h2
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.7 }}
-              className="display-lg text-foreground"
-            >
+            </span>
+            <h2 className="display-lg text-foreground">
               The Coaches
-            </motion.h2>
+            </h2>
           </div>
-          <motion.p
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            className="text-muted-foreground max-w-sm text-sm leading-relaxed"
-          >
+          <p className="text-muted-foreground max-w-sm text-sm leading-relaxed">
             Legal professionals volunteering their time to build the next generation
             of advocates at Troy High School, Fullerton CA.
-          </motion.p>
+          </p>
         </div>
 
         {isLoading ? (
@@ -47,12 +30,8 @@ export default function CoachesSection() {
         ) : coaches.length > 0 ? (
           <div className="grid md:grid-cols-2 gap-6">
             {coaches.map((coach, i) => (
-              <motion.div
+              <div
                 key={i}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8, delay: i * 0.15 }}
                 className="bg-card rounded-xl border border-border p-6 flex items-start gap-5 hover:border-primary/40 transition-colors"
               >
                 {coach.photo ? (
@@ -74,16 +53,11 @@ export default function CoachesSection() {
                     <p className="text-muted-foreground text-sm leading-relaxed">{coach.bio}</p>
                   )}
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
         ) : (
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="bg-card rounded-xl border border-border p-10 text-center"
-          >
+          <div className="bg-card rounded-xl border border-border p-10 text-center">
             <p className="text-muted-foreground text-sm">
               Coach information not available in public records.
               Contact us at{" "}
@@ -97,7 +71,7 @@ export default function CoachesSection() {
               </a>{" "}
               to get in touch.
             </p>
-          </motion.div>
+          </div>
         )}
       </div>
     </section>

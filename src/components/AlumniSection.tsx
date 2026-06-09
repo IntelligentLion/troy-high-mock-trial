@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useSiteContent } from "@/hooks/useSiteContent";
@@ -14,23 +13,12 @@ export default function AlumniSection() {
   return (
     <section id="alumni" className="py-24 border-t border-border">
       <div className="max-w-7xl mx-auto px-6">
-        <motion.span
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          className="label-mono text-primary block mb-3"
-        >
+        <span className="label-mono text-primary block mb-3">
           Alumni Honor Roll
-        </motion.span>
-        <motion.h2
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
-          className="display-lg text-foreground mb-3"
-        >
+        </span>
+        <h2 className="display-lg text-foreground mb-3">
           Our Founders
-        </motion.h2>
+        </h2>
         <p className="text-muted-foreground mb-12 max-w-xl">
           Troy Mock Trial was founded in 2016 by two students whose vision built everything
           that followed.
@@ -43,12 +31,8 @@ export default function AlumniSection() {
         ) : (
         <div className="grid sm:grid-cols-2 gap-6 mb-8">
           {founders.map((a, i) => (
-            <motion.div
+            <div
               key={i}
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: i * 0.1 }}
               className="bg-card rounded-xl border border-border p-6 flex flex-col gap-4 group hover:border-primary/40 transition-colors"
             >
               <div className="flex items-center gap-3">
@@ -80,7 +64,7 @@ export default function AlumniSection() {
                   )}
                 </div>
               )}
-            </motion.div>
+            </div>
           ))}
         </div>
         )}

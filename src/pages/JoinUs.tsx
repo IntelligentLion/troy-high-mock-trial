@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import { ExternalLink, Scale, Users, Trophy, Mic, BookOpen, Briefcase } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -59,34 +58,16 @@ export default function JoinUs() {
           style={{ background: "linear-gradient(160deg, hsl(var(--background)) 60%, hsl(var(--primary) / 0.12))" }}
         />
         <div className="max-w-7xl mx-auto">
-          <motion.span
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            className="label-mono text-primary block mb-3"
-          >
+          <span className="label-mono text-primary block mb-3">
             2026–2027 Recruitment
-          </motion.span>
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
-            className="display-xl text-foreground mb-6"
-          >
+          </span>
+          <h1 className="display-xl text-foreground mb-6">
             Join Troy Mock Trial
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.2 }}
-            className="text-muted-foreground max-w-xl text-lg mb-8"
-          >
+          </h1>
+          <p className="text-muted-foreground max-w-xl text-lg mb-8">
             No legal background required — just the drive to argue, advocate, and win.
-          </motion.p>
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.35 }}
-          >
+          </p>
+          <div>
             <a
               href={FORM_URL}
               target="_blank"
@@ -96,7 +77,7 @@ export default function JoinUs() {
               <ExternalLink className="w-4 h-4" aria-hidden="true" />
               Fill Out the Interest Form
             </a>
-          </motion.div>
+          </div>
         </div>
       </header>
 
@@ -104,35 +85,19 @@ export default function JoinUs() {
         {/* Why Join Us */}
         <section className="py-20 border-t border-border" aria-labelledby="why-heading">
           <div className="max-w-7xl mx-auto px-6">
-            <motion.span
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              className="label-mono text-primary block mb-3"
-            >
+            <span className="label-mono text-primary block mb-3">
               The Case For Joining
-            </motion.span>
-            <motion.h2
-              id="why-heading"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.7 }}
-              className="display-lg text-foreground mb-12"
-            >
+            </span>
+            <h2 id="why-heading" className="display-lg text-foreground mb-12">
               Why Join Us?
-            </motion.h2>
+            </h2>
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {reasons.map((r, i) => {
                 const Icon = r.icon;
                 return (
-                  <motion.div
+                  <div
                     key={i}
-                    initial={{ opacity: 0, y: 24 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6, delay: i * 0.08 }}
                     className="bg-card rounded-xl border border-border p-6 flex flex-col gap-4 hover:border-primary/40 transition-colors"
                   >
                     <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
@@ -142,7 +107,7 @@ export default function JoinUs() {
                       <h3 className="font-playfair text-lg font-semibold text-foreground mb-2">{r.title}</h3>
                       <p className="text-muted-foreground text-sm leading-relaxed">{r.body}</p>
                     </div>
-                  </motion.div>
+                  </div>
                 );
               })}
             </div>
@@ -152,30 +117,14 @@ export default function JoinUs() {
         {/* CTA */}
         <section className="py-20 border-t border-border">
           <div className="max-w-7xl mx-auto px-6 text-center">
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.7 }}
-              className="display-lg text-foreground mb-4"
-            >
+            <h2 className="display-lg text-foreground mb-4">
               Ready to Make Your Case?
-            </motion.h2>
-            <motion.p
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              className="text-muted-foreground max-w-lg mx-auto text-base mb-8"
-            >
+            </h2>
+            <p className="text-muted-foreground max-w-lg mx-auto text-base mb-8">
               Fill out our interest form and we'll reach out with details about tryouts and
               informational meetings for the 2026–27 season.
-            </motion.p>
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-            >
+            </p>
+            <div>
               <a
                 href={FORM_URL}
                 target="_blank"
@@ -185,7 +134,7 @@ export default function JoinUs() {
                 <ExternalLink className="w-4 h-4" aria-hidden="true" />
                 Interest Form
               </a>
-            </motion.div>
+            </div>
           </div>
         </section>
       </main>

@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import { GraduationCap, Scale, Star, BookOpen, Users, Trophy, Mail } from "lucide-react";
 import { useSiteContent } from "@/hooks/useSiteContent";
 
@@ -19,35 +18,20 @@ export default function CommunitySection() {
   return (
     <section id="community" className="py-24 border-t border-border">
       <div className="max-w-7xl mx-auto px-6">
-        <motion.span
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          className="label-mono text-primary block mb-3"
-        >
+        <span className="label-mono text-primary block mb-3">
           Our Community
-        </motion.span>
-        <motion.h2
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
-          className="display-lg text-foreground mb-3"
-        >
+        </span>
+        <h2 className="display-lg text-foreground mb-3">
           Beyond the Courtroom
-        </motion.h2>
+        </h2>
         <p className="text-muted-foreground mb-12 max-w-xl">
           Beyond competition — we build bonds, give back, and lift each other up.
         </p>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
           {pillars.map((p, i) => (
-            <motion.div
+            <div
               key={i}
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: i * 0.08 }}
               className="bg-card rounded-xl border border-border p-6 flex flex-col gap-4 group hover:border-primary/40 transition-colors"
             >
               <div className="w-10 h-10 rounded-xl border border-primary/30 flex items-center justify-center bg-primary/10 group-hover:border-primary transition-colors">
@@ -55,18 +39,12 @@ export default function CommunitySection() {
               </div>
               <h3 className="font-playfair text-lg font-semibold text-foreground">{p.title}</h3>
               <p className="text-muted-foreground text-sm leading-relaxed">{p.desc}</p>
-            </motion.div>
+            </div>
           ))}
         </div>
 
         {/* CTA join strip */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
-          className="bg-card rounded-xl border border-border p-10 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6"
-        >
+        <div className="bg-card rounded-xl border border-border p-10 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
           <div>
             <h3 className="font-playfair text-2xl font-bold text-foreground mb-2">
               Interested in Joining? Contact us.
@@ -93,7 +71,7 @@ export default function CommunitySection() {
               {instagramHandle}
             </a>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

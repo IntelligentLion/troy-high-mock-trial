@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { motion } from "framer-motion";
 import { Instagram, Linkedin, Mail, MapPin, Loader2 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -56,25 +55,15 @@ export default function Contact() {
           style={{ background: "linear-gradient(160deg, hsl(var(--background)) 60%, hsl(var(--primary) / 0.10))" }}
         />
         <div className="max-w-7xl mx-auto">
-          <motion.span initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="label-mono text-primary block mb-3">
+          <span className="label-mono text-primary block mb-3">
             Get in Touch
-          </motion.span>
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
-            className="display-xl text-foreground mb-4"
-          >
+          </span>
+          <h1 className="display-xl text-foreground mb-4">
             Contact Us
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.2 }}
-            className="text-muted-foreground max-w-xl text-lg"
-          >
+          </h1>
+          <p className="text-muted-foreground max-w-xl text-lg">
             Whether you're a prospective member, sponsor, or alumni — we'd love to hear from you.
-          </motion.p>
+          </p>
         </div>
       </header>
 
@@ -200,14 +189,10 @@ export default function Contact() {
               <h2 id="form-heading" className="display-md text-foreground mb-6">Send a Message</h2>
 
               {submitted ? (
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  className="rounded-xl border border-primary/40 p-10 bg-card text-center"
-                >
+                <div className="rounded-xl border border-primary/40 p-10 bg-card text-center">
                   <h3 className="font-playfair text-2xl font-bold text-primary mb-3">Message Sent</h3>
                   <p className="text-muted-foreground text-sm">Your email client should open shortly. We'll respond as soon as possible.</p>
-                </motion.div>
+                </div>
               ) : (
                 <form onSubmit={handleSubmit} className="flex flex-col gap-4" aria-label="Contact interest form">
                   <div className="flex flex-col gap-1">

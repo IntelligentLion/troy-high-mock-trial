@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import { Trophy } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -32,29 +31,15 @@ export default function Team() {
           style={{ background: "linear-gradient(160deg, hsl(var(--background)) 60%, hsl(var(--primary) / 0.12))" }}
         />
         <div className="max-w-7xl mx-auto">
-          <motion.span
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            className="label-mono text-primary block mb-3"
-          >
+          <span className="label-mono text-primary block mb-3">
             {season} Season
-          </motion.span>
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
-            className="display-xl text-foreground mb-4"
-          >
+          </span>
+          <h1 className="display-xl text-foreground mb-4">
             2025–2026 Team
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.2 }}
-            className="text-muted-foreground max-w-xl text-lg"
-          >
+          </h1>
+          <p className="text-muted-foreground max-w-xl text-lg">
             Meet the officers and members representing Troy High School in competition this season.
-          </motion.p>
+          </p>
         </div>
       </header>
 
@@ -70,12 +55,8 @@ export default function Team() {
             ) : officers.length > 0 ? (
               <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 {officers.map((m, i) => (
-                  <motion.article
+                  <article
                     key={i}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6, delay: i * 0.08 }}
                     className="bg-card rounded-xl border border-primary/30 p-6 flex flex-col gap-4 hover:border-primary/60 transition-colors"
                   >
                     <div className="flex items-center gap-4">
@@ -117,7 +98,7 @@ export default function Team() {
                         ))}
                       </ul>
                     )}
-                  </motion.article>
+                  </article>
                 ))}
               </div>
             ) : (
@@ -139,12 +120,8 @@ export default function Team() {
             ) : members.length > 0 ? (
               <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
                 {members.map((m, i) => (
-                  <motion.article
+                  <article
                     key={i}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: i * 0.05 }}
                     className="bg-card rounded-xl border border-border p-4 flex items-center gap-3 hover:border-primary/40 transition-colors"
                   >
                     <MonogramAvatar name={m.name} size={40} />
@@ -158,7 +135,7 @@ export default function Team() {
                         </span>
                       )}
                     </div>
-                  </motion.article>
+                  </article>
                 ))}
               </div>
             ) : (
@@ -182,12 +159,8 @@ export default function Team() {
             ) : coaches.length > 0 ? (
               <div className="grid md:grid-cols-2 gap-6">
                 {coaches.map((coach, i) => (
-                  <motion.article
+                  <article
                     key={i}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6, delay: i * 0.1 }}
                     className="bg-card rounded-xl border border-border p-6 flex items-start gap-5 hover:border-primary/40 transition-colors"
                   >
                     {coach.photo ? (
@@ -204,7 +177,7 @@ export default function Team() {
                       <h3 className="font-playfair text-xl font-bold text-foreground mb-1">{coach.name}</h3>
                       <span className="label-mono text-primary text-[0.65rem] block">{coach.role}</span>
                     </div>
-                  </motion.article>
+                  </article>
                 ))}
               </div>
             ) : (

@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { motion } from "framer-motion";
 import { Check, Download, Mail, Loader2 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -92,28 +91,18 @@ export default function Sponsors() {
         style={{ background: "linear-gradient(160deg, hsl(var(--background)) 40%, hsl(var(--primary) / 0.14))" }}
       >
         <div className="max-w-7xl mx-auto">
-          <motion.span initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="label-mono text-primary block mb-3">
+          <span className="label-mono text-primary block mb-3">
             Partnership
-          </motion.span>
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
-            className="display-xl text-foreground mb-4"
-          >
+          </span>
+          <h1 className="display-xl text-foreground mb-4">
             Invest in Tomorrow's
             <br />
             <span className="gold-text">Advocates</span>
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.2 }}
-            className="text-muted-foreground max-w-xl text-lg"
-          >
+          </h1>
+          <p className="text-muted-foreground max-w-xl text-lg">
             Troy Mock Trial has produced future lawyers, judges, journalists, and
             civic leaders since 2016. Your sponsorship makes the next cohort possible.
-          </motion.p>
+          </p>
         </div>
       </header>
 
@@ -135,20 +124,14 @@ export default function Sponsors() {
                 Download PDF
               </a>
             </div>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="rounded-xl overflow-hidden border border-border"
-            >
+            <div className="rounded-xl overflow-hidden border border-border">
               <iframe
                 src={PROSPECTUS_PATH}
                 title="Troy Mock Trial Sponsorship Prospectus 2025–26"
                 className="w-full"
                 style={{ height: "780px" }}
               />
-            </motion.div>
+            </div>
           </div>
         </section>
 
@@ -160,12 +143,8 @@ export default function Sponsors() {
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {tiers.map((t, i) => (
-                <motion.div
+                <div
                   key={i}
-                  initial={{ opacity: 0, y: 24 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: i * 0.1 }}
                   className={`flex flex-col gap-5 p-6 rounded-xl border ${
                     t.highlight ? "border-primary/60" : "border-border bg-card"
                   } relative overflow-hidden`}
@@ -221,7 +200,7 @@ export default function Sponsors() {
                   >
                     Become a {t.name} Sponsor
                   </a>
-                </motion.div>
+                </div>
               ))}
             </div>
           </div>
@@ -261,14 +240,10 @@ export default function Sponsors() {
 
               <div>
                 {submitted ? (
-                  <motion.div
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    className="rounded-xl border border-primary/40 p-8 bg-card"
-                  >
+                  <div className="rounded-xl border border-primary/40 p-8 bg-card">
                     <h3 className="font-playfair text-xl font-bold text-primary mb-2">Inquiry Received</h3>
                     <p className="text-muted-foreground text-sm">Thank you for your interest! We'll be in touch shortly.</p>
-                  </motion.div>
+                  </div>
                 ) : (
                   <form onSubmit={handleSubmit} className="flex flex-col gap-4" aria-label="Sponsorship inquiry form">
                     {[

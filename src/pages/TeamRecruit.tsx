@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import { ExternalLink } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -36,29 +35,15 @@ export default function TeamRecruit() {
           style={{ background: "linear-gradient(160deg, hsl(var(--background)) 60%, hsl(var(--primary) / 0.12))" }}
         />
         <div className="max-w-7xl mx-auto">
-          <motion.span
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            className="label-mono text-primary block mb-3"
-          >
+          <span className="label-mono text-primary block mb-3">
             2026–2027 Season
-          </motion.span>
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
-            className="display-xl text-foreground mb-4"
-          >
+          </span>
+          <h1 className="display-xl text-foreground mb-4">
             2026–2027 Team
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.2 }}
-            className="text-muted-foreground max-w-xl text-lg"
-          >
+          </h1>
+          <p className="text-muted-foreground max-w-xl text-lg">
             Meet the incoming leadership and learn how to join Troy Mock Trial for the 2026–27 season.
-          </motion.p>
+          </p>
         </div>
       </header>
 
@@ -72,12 +57,8 @@ export default function TeamRecruit() {
             </h2>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {leadership.map((officer, i) => (
-                <motion.article
+                <article
                   key={i}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: i * 0.08 }}
                   className="bg-card rounded-xl border border-primary/30 p-6 flex items-center gap-4 hover:border-primary/60 transition-colors"
                 >
                   <MonogramAvatar name={officer.name} size={56} />
@@ -87,7 +68,7 @@ export default function TeamRecruit() {
                     </h3>
                     <span className="label-mono text-primary text-[0.65rem]">{officer.role}</span>
                   </div>
-                </motion.article>
+                </article>
               ))}
             </div>
           </div>
