@@ -112,7 +112,7 @@ export default function Gallery() {
 
       <main>
         {/* Sticky year tab bar */}
-        <div className="sticky top-16 z-30 bg-background/95 backdrop-blur-sm border-b border-border">
+        <div className="sticky top-16 z-30 bg-background border-b border-border">
           <div className="max-w-7xl mx-auto px-6 py-3 overflow-x-auto">
             <div className="flex gap-2 min-w-max" role="tablist" aria-label="Filter by season">
               <button
