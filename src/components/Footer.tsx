@@ -8,6 +8,7 @@ const navLinks = [
   { label: "Gallery", to: "/gallery" },
   { label: "Alumni", to: "/alumni" },
   { label: "Sponsors", to: "/sponsors" },
+  { label: "Join Us", to: "/join" },
   { label: "Contact", to: "/contact" },
 ];
 
@@ -23,7 +24,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="md:col-span-2">
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-7 h-7 flex items-center justify-center rounded-sm bg-primary">
+              <div className="w-7 h-7 flex items-center justify-center rounded-md bg-primary">
                 <Scale className="w-4 h-4 text-primary-foreground" strokeWidth={2} aria-hidden="true" />
               </div>
               <span className="font-playfair font-bold text-base text-foreground">

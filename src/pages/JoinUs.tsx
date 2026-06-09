@@ -132,7 +132,7 @@ export default function JoinUs() {
                     transition={{ duration: 0.6, delay: i * 0.08 }}
                     className="bg-card rounded-xl border border-border p-6 flex flex-col gap-4 hover:border-primary/40 transition-colors"
                   >
-                    <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
+                    <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
                       <Icon className="w-5 h-5 text-primary" aria-hidden="true" />
                     </div>
                     <div>

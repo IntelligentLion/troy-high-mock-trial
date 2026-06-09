@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Scale, ChevronDown } from "lucide-react";
+import { Scale, ChevronDown, Trophy } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const stats = [
@@ -155,10 +155,12 @@ export default function HeroSection() {
             />
             {/* Achievement badge */}
             <div
-              className="absolute bottom-4 left-4 right-4 flex items-center gap-3 px-4 py-2.5 rounded-lg backdrop-blur-sm"
+              className="absolute bottom-4 left-4 right-4 flex items-center gap-3 px-4 py-2.5 rounded-xl backdrop-blur-sm"
               style={{ background: "rgba(13,27,42,0.75)", border: "1px solid rgba(201,168,76,0.4)" }}
             >
-              <span className="text-xl">🏆</span>
+              <span className="w-9 h-9 rounded-full bg-primary/15 border border-primary/40 flex items-center justify-center shrink-0">
+                <Trophy className="w-4 h-4 text-primary" aria-hidden="true" />
+              </span>
               <div>
                 <p className="text-white text-xs font-semibold leading-tight">2nd Place — JSerra Championship</p>
                 <p className="text-[0.65rem]" style={{ color: "hsl(var(--gold-light))" }}>March 2026</p>

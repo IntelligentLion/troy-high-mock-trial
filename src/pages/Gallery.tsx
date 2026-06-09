@@ -15,7 +15,7 @@ const itemVariants = {
 };
 
 export default function Gallery() {
-  const { data } = useSiteContent();
+  const { data, isLoading } = useSiteContent();
   const gallery = data?.gallery ?? [];
 
   const seasons = Array.from(new Set(gallery.map((g) => g.season))).sort((a, b) => b.localeCompare(a));
@@ -136,7 +136,20 @@ export default function Gallery() {
 
         <div className="max-w-7xl mx-auto px-6 py-12">
           <AnimatePresence mode="wait">
-            {filtered.length > 0 ? (
+            {isLoading ? (
+              <div
+                key="loading"
+                className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3"
+                aria-hidden="true"
+              >
+                {Array.from({ length: 8 }).map((_, i) => (
+                  <div
+                    key={i}
+                    className="aspect-[4/3] rounded-xl border border-border bg-muted animate-pulse"
+                  />
+                ))}
+              </div>
+            ) : filtered.length > 0 ? (
               <motion.div
                 key={activeSeason}
                 className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3"
@@ -148,11 +161,11 @@ export default function Gallery() {
                 {filtered.map((item, i) => (
                   <motion.div key={i} variants={itemVariants} className="group">
                     <button
-                      className="w-full text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-lg"
+                      className="w-full text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-xl"
                       onClick={(e) => openLightbox(i, e.currentTarget)}
                       aria-label={`View full-size photo: ${item.caption || `Photo ${i + 1}`}`}
                     >
-                      <div className="relative overflow-hidden rounded-lg aspect-[4/3] border border-border bg-card">
+                      <div className="relative overflow-hidden rounded-xl aspect-[4/3] border border-border bg-card">
                         <img
                           src={`/${item.localPath}`}
                           alt={item.caption || `${item.season} photo`}
@@ -160,7 +173,7 @@ export default function Gallery() {
                           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                         />
                         {/* Hover overlay */}
-                        <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-250 flex flex-col items-center justify-center gap-1.5">
+                        <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center gap-1.5">
                           <ZoomIn className="w-6 h-6 text-white" aria-hidden="true" />
                           <span className="text-white text-xs font-medium tracking-wide">View Photo</span>
                         </div>
@@ -238,7 +251,7 @@ export default function Gallery() {
                 <img
                   src={`/${filtered[lightboxIdx].localPath}`}
                   alt={filtered[lightboxIdx].caption || `Photo ${lightboxIdx + 1}`}
-                  className="max-h-[75vh] w-auto max-w-full rounded-lg object-contain"
+                  className="max-h-[75vh] w-auto max-w-full rounded-xl object-contain"
                 />
                 {filtered[lightboxIdx].caption && (
                   <p className="text-white/80 text-sm text-center">{filtered[lightboxIdx].caption}</p>

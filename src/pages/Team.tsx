@@ -4,10 +4,11 @@ import { Trophy } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import MonogramAvatar from "@/components/MonogramAvatar";
+import { CardGridSkeleton } from "@/components/CardSkeleton";
 import { useSiteContent } from "@/hooks/useSiteContent";
 
 export default function Team() {
-  const { data } = useSiteContent();
+  const { data, isLoading } = useSiteContent();
   const officers = data?.currentYear?.officers ?? [];
   const members = data?.currentYear?.members ?? [];
   const coaches = data?.team?.coaches ?? [];
@@ -61,7 +62,9 @@ export default function Team() {
             <span className="label-mono text-muted-foreground block mb-2">Leadership</span>
             <h2 id="officers-heading" className="display-lg text-foreground mb-10">Officers</h2>
 
-            {officers.length > 0 ? (
+            {isLoading ? (
+              <CardGridSkeleton count={6} />
+            ) : officers.length > 0 ? (
               <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 {officers.map((m, i) => (
                   <motion.article
@@ -129,7 +132,9 @@ export default function Team() {
             <span className="label-mono text-muted-foreground block mb-2">Roster</span>
             <h2 id="members-heading" className="display-lg text-foreground mb-10">Team Members</h2>
 
-            {members.length > 0 ? (
+            {isLoading ? (
+              <CardGridSkeleton count={8} gridClassName="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4" compact />
+            ) : members.length > 0 ? (
               <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
                 {members.map((m, i) => (
                   <motion.article
@@ -170,7 +175,9 @@ export default function Team() {
               Coaches &amp; Faculty Advisors
             </h2>
 
-            {coaches.length > 0 ? (
+            {isLoading ? (
+              <CardGridSkeleton count={3} gridClassName="grid md:grid-cols-2 gap-6" compact />
+            ) : coaches.length > 0 ? (
               <div className="grid md:grid-cols-2 gap-6">
                 {coaches.map((coach, i) => (
                   <motion.article

@@ -64,7 +64,7 @@ export default function SponsorsSection() {
             <a
               href="/Troy_Sponsorship_Packet.pdf"
               download="Troy_Sponsorship_Packet.pdf"
-              className="inline-flex items-center justify-center gap-2 px-8 py-3 rounded-lg text-sm font-semibold border border-primary text-primary hover:bg-primary/10 transition-colors"
+              className="btn-secondary"
             >
               <Download className="w-4 h-4" aria-hidden="true" />
               Download Prospectus

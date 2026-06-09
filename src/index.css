@@ -24,7 +24,7 @@
     --secondary-foreground: 36 52% 95%;
 
     --muted: 210 35% 18%;
-    --muted-foreground: 210 20% 60%;  /* --color-muted */
+    --muted-foreground: 210 22% 70%;  /* lifted for WCAG AA on navy */
 
     --accent: 40 51% 54%;
     --accent-foreground: 210 58% 10%;
@@ -127,9 +127,10 @@
     min-height: 100vh;
   }
 
+  /* Upright by default; italic is reserved for the .display-* utilities */
   h1, h2, h3, h4, h5, h6 {
     font-family: Georgia, serif;
-    font-style: italic;
+    font-style: normal;
     font-weight: 600;
     line-height: 1.15;
     letter-spacing: -0.01em;
@@ -250,6 +251,46 @@
     color: var(--color-navy);
     transform: translateY(-2px);
   }
+
+  /* Secondary action — gold-bordered pill on light/dark surfaces */
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 px-8 py-3 font-semibold rounded-full text-sm;
+    border: 1px solid var(--color-gold);
+    color: var(--color-gold);
+    background: transparent;
+    font-family: 'Lato', sans-serif;
+    transition: all var(--duration-base) var(--ease-out-expo);
+  }
+
+  .btn-secondary:hover {
+    background: rgba(201, 168, 76, 0.10);
+    transform: translateY(-2px);
+  }
+
+  /* Ghost action — for use over the dark navy hero */
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 px-8 py-3 font-semibold rounded-full text-sm;
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    color: var(--color-white);
+    background: transparent;
+    font-family: 'Lato', sans-serif;
+    transition: all var(--duration-base) var(--ease-out-expo);
+  }
+
+  .btn-ghost:hover {
+    border-color: var(--color-gold);
+    color: var(--color-gold);
+    transform: translateY(-2px);
+  }
+
+  /* Buttons in a loading state */
+  .btn-primary:disabled,
+  .btn-secondary:disabled,
+  .btn-ghost:disabled {
+    opacity: 0.7;
+    pointer-events: none;
+    transform: none;
+  }
 }
 
 /* ─────────────────────────────────────────────
@@ -337,6 +378,28 @@
   .nav-link.active::after,
   .nav-link:hover::after {
     width: 100%;
+  }
+
+  /* Season filter tabs (gallery) — pill, gold-fill when active */
+  .season-pill {
+    @apply inline-flex items-center whitespace-nowrap px-4 py-2 rounded-full text-xs font-medium;
+    font-family: 'JetBrains Mono', monospace;
+    letter-spacing: 0.08em;
+    border: 1px solid var(--color-slate);
+    color: var(--color-muted);
+    background: transparent;
+    transition: all var(--duration-fast) var(--ease-in-out);
+  }
+
+  .season-pill:hover {
+    border-color: var(--color-gold);
+    color: var(--color-gold);
+  }
+
+  .season-pill.active {
+    background: var(--color-gold);
+    border-color: var(--color-gold);
+    color: var(--color-navy);
   }
 }
 

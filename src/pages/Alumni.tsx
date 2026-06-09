@@ -1,13 +1,14 @@
 import { useEffect, useState, useMemo } from "react";
 import { motion } from "framer-motion";
-import { Search } from "lucide-react";
+import { Search, ChevronDown } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import MonogramAvatar from "@/components/MonogramAvatar";
+import { CardGridSkeleton } from "@/components/CardSkeleton";
 import { useSiteContent } from "@/hooks/useSiteContent";
 
 export default function Alumni() {
-  const { data } = useSiteContent();
+  const { data, isLoading } = useSiteContent();
   const alumni = data?.alumni ?? [];
   const [query, setQuery] = useState("");
 
@@ -92,12 +93,15 @@ export default function Alumni() {
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               placeholder="Search alumni by name…"
-              className="w-full bg-card border border-border rounded-lg pl-11 pr-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/60 transition-all"
+              className="w-full bg-card border border-border rounded-xl pl-11 pr-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/60 transition-all"
               aria-label="Search alumni by name"
             />
           </div>
 
           {/* Year sections */}
+          {isLoading ? (
+            <CardGridSkeleton count={6} gridClassName="grid sm:grid-cols-2 lg:grid-cols-3 gap-4" />
+          ) : (
           <div className="flex flex-col gap-8">
             {years.map((year) => {
               const people = byYear[year] ?? [];
@@ -122,9 +126,11 @@ export default function Alumni() {
                     </div>
                     <div className="flex items-center">
                       <div className="h-px flex-1 bg-border mx-4 hidden sm:block" />
-                      <span className="text-muted-foreground text-lg transition-transform duration-200" style={{ transform: isOpen ? "rotate(180deg)" : "rotate(0deg)" }}>
-                        ↓
-                      </span>
+                      <ChevronDown
+                        className="w-5 h-5 text-muted-foreground transition-transform duration-200"
+                        style={{ transform: isOpen ? "rotate(180deg)" : "rotate(0deg)" }}
+                        aria-hidden="true"
+                      />
                     </div>
                   </button>
 
@@ -197,6 +203,7 @@ export default function Alumni() {
               );
             })}
           </div>
+          )}
 
           {/* Quote strip */}
           <div

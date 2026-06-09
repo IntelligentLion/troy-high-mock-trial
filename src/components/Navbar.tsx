@@ -60,7 +60,7 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2">
-          <div className="w-7 h-7 flex items-center justify-center rounded-sm bg-primary">
+          <div className="w-7 h-7 flex items-center justify-center rounded-md bg-primary">
             <Scale className="w-4 h-4 text-primary-foreground" strokeWidth={2} />
           </div>
           <span className="font-playfair font-bold text-base text-foreground tracking-wide">
@@ -106,7 +106,7 @@ export default function Navbar() {
                 className="absolute top-full left-1/2 -translate-x-1/2 pt-2"
                 role="menu"
               >
-                <div className="bg-background border border-border rounded-lg shadow-lg overflow-hidden min-w-[140px]">
+                <div className="bg-background border border-border rounded-xl shadow-lg overflow-hidden min-w-[140px]">
                   {teamDropdown.map((item) => (
                     <Link
                       key={item.to}

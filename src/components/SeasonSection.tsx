@@ -50,7 +50,7 @@ export default function SeasonSection() {
           Incoming leadership for the 2026–27 season.
         </motion.p>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {leadership2627.map((officer, i) => (
             <motion.div
               key={i}

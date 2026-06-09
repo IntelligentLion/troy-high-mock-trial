@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { Instagram, Linkedin, Mail, MapPin } from "lucide-react";
+import { Instagram, Linkedin, Mail, MapPin, Loader2 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { useSiteContent } from "@/hooks/useSiteContent";
@@ -16,6 +16,7 @@ export default function Contact() {
   const { data } = useSiteContent();
   const contact = data?.contact;
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
 
   useEffect(() => {
     document.title = "Contact — Troy High School Mock Trial";
@@ -31,8 +32,13 @@ export default function Contact() {
 
     const subject = encodeURIComponent(`Troy Mock Trial — ${interest}`);
     const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nInterest: ${interest}\n\n${message}`);
-    window.location.href = `mailto:shrikrishna0219@gmail.com?subject=${subject}&body=${body}`;
-    setSubmitted(true);
+
+    setSubmitting(true);
+    window.setTimeout(() => {
+      window.location.href = `mailto:shrikrishna0219@gmail.com?subject=${subject}&body=${body}`;
+      setSubmitting(false);
+      setSubmitted(true);
+    }, 600);
   };
 
   return (
@@ -79,7 +85,7 @@ export default function Contact() {
                 <div className="flex flex-col gap-5">
                   {/* Email */}
                   <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-lg bg-card border border-border flex items-center justify-center shrink-0">
+                    <div className="w-10 h-10 rounded-xl bg-card border border-border flex items-center justify-center shrink-0">
                       <Mail className="w-4 h-4 text-primary" aria-hidden="true" />
                     </div>
                     <div>
@@ -96,7 +102,7 @@ export default function Contact() {
                   {/* Advisor */}
                   {contact?.advisorName && (
                     <div className="flex items-start gap-4">
-                      <div className="w-10 h-10 rounded-lg bg-card border border-border flex items-center justify-center shrink-0">
+                      <div className="w-10 h-10 rounded-xl bg-card border border-border flex items-center justify-center shrink-0">
                         <Mail className="w-4 h-4 text-primary" aria-hidden="true" />
                       </div>
                       <div>
@@ -116,7 +122,7 @@ export default function Contact() {
 
                   {/* Address */}
                   <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-lg bg-card border border-border flex items-center justify-center shrink-0">
+                    <div className="w-10 h-10 rounded-xl bg-card border border-border flex items-center justify-center shrink-0">
                       <MapPin className="w-4 h-4 text-primary" aria-hidden="true" />
                     </div>
                     <div>
@@ -128,7 +134,7 @@ export default function Contact() {
                   {/* Instagram */}
                   {contact?.instagram && (
                     <div className="flex items-start gap-4">
-                      <div className="w-10 h-10 rounded-lg bg-card border border-border flex items-center justify-center shrink-0">
+                      <div className="w-10 h-10 rounded-xl bg-card border border-border flex items-center justify-center shrink-0">
                         <Instagram className="w-4 h-4 text-primary" aria-hidden="true" />
                       </div>
                       <div>
@@ -148,7 +154,7 @@ export default function Contact() {
                   {/* LinkedIn */}
                   {contact?.linkedin && (
                     <div className="flex items-start gap-4">
-                      <div className="w-10 h-10 rounded-lg bg-card border border-border flex items-center justify-center shrink-0">
+                      <div className="w-10 h-10 rounded-xl bg-card border border-border flex items-center justify-center shrink-0">
                         <Linkedin className="w-4 h-4 text-primary" aria-hidden="true" />
                       </div>
                       <div>
@@ -206,7 +212,7 @@ export default function Contact() {
                       id="c-name"
                       type="text"
                       required
-                      className="bg-card border border-border rounded-lg px-4 py-3 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-primary/60 transition-all"
+                      className="bg-card border border-border rounded-xl px-4 py-3 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-primary/60 transition-all"
                     />
                   </div>
 
@@ -216,7 +222,7 @@ export default function Contact() {
                       id="c-email"
                       type="email"
                       required
-                      className="bg-card border border-border rounded-lg px-4 py-3 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-primary/60 transition-all"
+                      className="bg-card border border-border rounded-xl px-4 py-3 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-primary/60 transition-all"
                     />
                   </div>
 
@@ -225,7 +231,7 @@ export default function Contact() {
                     <select
                       id="c-interest"
                       required
-                      className="bg-card border border-border rounded-lg px-4 py-3 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-primary/60 transition-all"
+                      className="bg-card border border-border rounded-xl px-4 py-3 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-primary/60 transition-all"
                     >
                       <option value="">Select one…</option>
                       {INTEREST_OPTIONS.map((o) => (
@@ -240,12 +246,19 @@ export default function Contact() {
                       id="c-message"
                       rows={5}
                       required
-                      className="bg-card border border-border rounded-lg px-4 py-3 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-primary/60 transition-all resize-none"
+                      className="bg-card border border-border rounded-xl px-4 py-3 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-primary/60 transition-all resize-none"
                     />
                   </div>
 
-                  <button type="submit" className="btn-primary mt-2 self-start">
-                    Send Message
+                  <button type="submit" className="btn-primary mt-2 self-start" disabled={submitting}>
+                    {submitting ? (
+                      <>
+                        <Loader2 className="w-4 h-4 animate-spin" aria-hidden="true" />
+                        Sending…
+                      </>
+                    ) : (
+                      "Send Message"
+                    )}
                   </button>
                 </form>
               )}

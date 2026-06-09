@@ -75,7 +75,7 @@ export default function AboutSection() {
                   viewport={{ once: true }}
                   className="bg-card rounded-xl border border-border p-6 flex flex-col gap-4 hover:border-primary/40 transition-colors"
                 >
-                  <div className="w-10 h-10 rounded-lg border border-primary/30 flex items-center justify-center bg-primary/10">
+                  <div className="w-10 h-10 rounded-xl border border-primary/30 flex items-center justify-center bg-primary/10">
                     <Icon className="w-5 h-5 text-primary" strokeWidth={1.5} />
                   </div>
                   <h3 className="font-playfair text-lg font-semibold text-foreground">

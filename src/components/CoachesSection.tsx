@@ -1,9 +1,10 @@
 import { motion } from "framer-motion";
 import { useSiteContent } from "@/hooks/useSiteContent";
 import MonogramAvatar from "@/components/MonogramAvatar";
+import { CardGridSkeleton } from "@/components/CardSkeleton";
 
 export default function CoachesSection() {
-  const { data } = useSiteContent();
+  const { data, isLoading } = useSiteContent();
   const coaches = data?.team?.coaches ?? [];
 
   return (
@@ -41,7 +42,9 @@ export default function CoachesSection() {
           </motion.p>
         </div>
 
-        {coaches.length > 0 ? (
+        {isLoading ? (
+          <CardGridSkeleton count={3} gridClassName="grid md:grid-cols-2 gap-6" />
+        ) : coaches.length > 0 ? (
           <div className="grid md:grid-cols-2 gap-6">
             {coaches.map((coach, i) => (
               <motion.div

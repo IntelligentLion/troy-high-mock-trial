@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { Check, Download, Mail } from "lucide-react";
+import { Check, Download, Mail, Loader2 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
@@ -63,6 +63,7 @@ const tiers = [
 
 export default function Sponsors() {
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
 
   useEffect(() => {
     document.title = "Sponsors — Troy High School Mock Trial";
@@ -70,7 +71,11 @@ export default function Sponsors() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setSubmitting(true);
+    window.setTimeout(() => {
+      setSubmitting(false);
+      setSubmitted(true);
+    }, 600);
   };
 
   return (
@@ -204,7 +209,7 @@ export default function Sponsors() {
 
                   <a
                     href={`mailto:shrikrishna0219@gmail.com?subject=Sponsorship Inquiry — ${t.name} Tier`}
-                    className={`mt-2 text-center py-2.5 rounded-lg text-sm font-medium transition-colors label-mono ${
+                    className={`mt-2 text-center py-2.5 rounded-full text-sm font-medium transition-colors label-mono ${
                       t.highlight
                         ? "bg-white/20 hover:bg-white/30 text-white"
                         : "border border-primary text-primary hover:bg-primary hover:text-primary-foreground"
@@ -274,7 +279,7 @@ export default function Sponsors() {
                           id={f.id}
                           type={f.type}
                           required={f.required}
-                          className="bg-card border border-border rounded-lg px-4 py-3 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-primary/60 transition-all"
+                          className="bg-card border border-border rounded-xl px-4 py-3 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-primary/60 transition-all"
                         />
                       </div>
                     ))}
@@ -283,11 +288,18 @@ export default function Sponsors() {
                       <textarea
                         id="message"
                         rows={3}
-                        className="bg-card border border-border rounded-lg px-4 py-3 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-primary/60 transition-all resize-none"
+                        className="bg-card border border-border rounded-xl px-4 py-3 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-primary/60 transition-all resize-none"
                       />
                     </div>
-                    <button type="submit" className="btn-primary mt-2 self-start">
-                      Submit Inquiry
+                    <button type="submit" className="btn-primary mt-2 self-start" disabled={submitting}>
+                      {submitting ? (
+                        <>
+                          <Loader2 className="w-4 h-4 animate-spin" aria-hidden="true" />
+                          Submitting…
+                        </>
+                      ) : (
+                        "Submit Inquiry"
+                      )}
                     </button>
                   </form>
                 )}

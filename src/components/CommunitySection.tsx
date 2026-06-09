@@ -40,7 +40,7 @@ export default function CommunitySection() {
           Beyond competition — we build bonds, give back, and lift each other up.
         </p>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
           {pillars.map((p, i) => (
             <motion.div
               key={i}
@@ -50,7 +50,7 @@ export default function CommunitySection() {
               transition={{ duration: 0.6, delay: i * 0.08 }}
               className="bg-card rounded-xl border border-border p-6 flex flex-col gap-4 group hover:border-primary/40 transition-colors"
             >
-              <div className="w-10 h-10 rounded-lg border border-primary/30 flex items-center justify-center bg-primary/10 group-hover:border-primary transition-colors">
+              <div className="w-10 h-10 rounded-xl border border-primary/30 flex items-center justify-center bg-primary/10 group-hover:border-primary transition-colors">
                 <p.icon className="w-5 h-5 text-primary" strokeWidth={1.5} aria-hidden="true" />
               </div>
               <h3 className="font-playfair text-lg font-semibold text-foreground">{p.title}</h3>
@@ -79,7 +79,7 @@ export default function CommunitySection() {
           <div className="flex flex-col gap-3 shrink-0 min-w-[180px]">
             <a
               href="mailto:shrikrishna0219@gmail.com?subject=Joining Troy Mock Trial"
-              className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg text-sm font-semibold border border-primary text-primary hover:bg-primary/10 transition-colors"
+              className="btn-secondary"
             >
               <Mail className="w-4 h-4" aria-hidden="true" />
               Email Us
@@ -88,7 +88,7 @@ export default function CommunitySection() {
               href={instagram}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg text-sm font-semibold border border-primary text-primary hover:bg-primary/10 transition-colors"
+              className="btn-secondary"
             >
               {instagramHandle}
             </a>

@@ -3,11 +3,12 @@ import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useSiteContent } from "@/hooks/useSiteContent";
 import MonogramAvatar from "@/components/MonogramAvatar";
+import { CardGridSkeleton } from "@/components/CardSkeleton";
 
 const FOUNDER_NAMES = ["Ashley Fan", "Hayley Amo"];
 
 export default function AlumniSection() {
-  const { data } = useSiteContent();
+  const { data, isLoading } = useSiteContent();
   const founders = (data?.alumni ?? []).filter((a) => FOUNDER_NAMES.includes(a.name));
 
   return (
@@ -35,7 +36,12 @@ export default function AlumniSection() {
           that followed.
         </p>
 
-        <div className="grid sm:grid-cols-2 gap-5 mb-8">
+        {isLoading ? (
+          <div className="mb-8">
+            <CardGridSkeleton count={2} gridClassName="grid sm:grid-cols-2 gap-6" compact />
+          </div>
+        ) : (
+        <div className="grid sm:grid-cols-2 gap-6 mb-8">
           {founders.map((a, i) => (
             <motion.div
               key={i}
@@ -77,6 +83,7 @@ export default function AlumniSection() {
             </motion.div>
           ))}
         </div>
+        )}
 
         <Link
           to="/alumni"
