@@ -24,7 +24,7 @@ export default function MonogramAvatar({ name, size = 48, className = "" }: Mono
         border: "2px solid var(--color-gold)",
         color: "var(--color-gold)",
         fontSize: size * 0.36,
-        fontFamily: "'Playfair Display', 'Lato', sans-serif",
+        fontFamily: "Georgia, serif",
       }}
       aria-hidden="true"
     >

@@ -128,7 +128,8 @@
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Playfair Display', Georgia, serif;
+    font-family: Georgia, serif;
+    font-style: italic;
     font-weight: 600;
     line-height: 1.15;
     letter-spacing: -0.01em;
@@ -157,7 +158,8 @@
    ───────────────────────────────────────────── */
 @layer components {
   .display-xl {
-    font-family: 'Playfair Display', Georgia, serif;
+    font-family: Georgia, serif;
+    font-style: italic;
     font-size: clamp(3rem, 8vw, var(--text-6xl));
     font-weight: 700;
     line-height: 1.05;
@@ -165,7 +167,8 @@
   }
 
   .display-lg {
-    font-family: 'Playfair Display', Georgia, serif;
+    font-family: Georgia, serif;
+    font-style: italic;
     font-size: clamp(2.25rem, 5vw, var(--text-5xl));
     font-weight: 700;
     line-height: 1.1;
@@ -173,14 +176,15 @@
   }
 
   .display-md {
-    font-family: 'Playfair Display', Georgia, serif;
+    font-family: Georgia, serif;
+    font-style: italic;
     font-size: clamp(1.75rem, 3.5vw, var(--text-4xl));
     font-weight: 600;
     line-height: 1.2;
   }
 
   .pull-quote {
-    font-family: 'Playfair Display', Georgia, serif;
+    font-family: Georgia, serif;
     font-size: clamp(1.25rem, 2.5vw, var(--text-3xl));
     font-style: italic;
     font-weight: 400;
@@ -347,7 +351,7 @@
     justify-content: center;
     background: var(--color-navy);
     color: var(--color-gold);
-    font-family: 'Playfair Display', serif;
+    font-family: Georgia, serif;
     font-weight: 600;
     border-radius: 50%;
     border: 2px solid var(--color-charcoal);

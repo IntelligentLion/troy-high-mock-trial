@@ -69,8 +69,8 @@ export default {
         "color-muted": "#8A9BB0",
       },
       fontFamily: {
-        display:  ["'Playfair Display'", "Georgia", "serif"],
-        playfair: ["'Playfair Display'", "Georgia", "serif"],
+        display:  ["Georgia", "serif"],
+        playfair: ["Georgia", "serif"],
         body:     ["'Lato'", "system-ui", "sans-serif"],
         mono:     ["'JetBrains Mono'", "monospace"],
         sans:     ["'Lato'", "system-ui", "sans-serif"],
