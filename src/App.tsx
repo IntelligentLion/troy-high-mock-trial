@@ -6,6 +6,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import Index from "./pages/Index.tsx";
 import Team from "./pages/Team.tsx";
+import TeamRecruit from "./pages/TeamRecruit.tsx";
 import Alumni from "./pages/Alumni.tsx";
 import Gallery from "./pages/Gallery.tsx";
 import Sponsors from "./pages/Sponsors.tsx";
@@ -30,6 +31,7 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/team" element={<Team />} />
+          <Route path="/team/2026-27" element={<TeamRecruit />} />
           <Route path="/alumni" element={<Alumni />} />
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/sponsors" element={<Sponsors />} />
