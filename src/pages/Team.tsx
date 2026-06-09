@@ -10,6 +10,7 @@ export default function Team() {
   const { data } = useSiteContent();
   const officers = data?.currentYear?.officers ?? [];
   const members = data?.currentYear?.members ?? [];
+  const coaches = data?.team?.coaches ?? [];
   const season = data?.currentYear?.season ?? "2025–2026";
 
   useEffect(() => {
@@ -156,6 +157,53 @@ export default function Team() {
             ) : (
               <div className="bg-card rounded-xl border border-border p-10 text-center">
                 <p className="text-muted-foreground text-sm">Roster information for this season is coming soon.</p>
+              </div>
+            )}
+          </div>
+        </section>
+
+        {/* Coaches & Faculty Advisors */}
+        <section className="py-16 border-t border-border" aria-labelledby="coaches-heading">
+          <div className="max-w-7xl mx-auto px-6">
+            <span className="label-mono text-muted-foreground block mb-2">Program Support</span>
+            <h2 id="coaches-heading" className="display-lg text-foreground mb-10">
+              Coaches &amp; Faculty Advisors
+            </h2>
+
+            {coaches.length > 0 ? (
+              <div className="grid md:grid-cols-2 gap-6">
+                {coaches.map((coach, i) => (
+                  <motion.article
+                    key={i}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: i * 0.1 }}
+                    className="bg-card rounded-xl border border-border p-6 flex items-start gap-5 hover:border-primary/40 transition-colors"
+                  >
+                    {coach.photo ? (
+                      <img
+                        src={coach.photo}
+                        alt={coach.name}
+                        loading="lazy"
+                        className="w-16 h-16 rounded-full object-cover object-top shrink-0"
+                      />
+                    ) : (
+                      <MonogramAvatar name={coach.name} size={64} />
+                    )}
+                    <div>
+                      <h3 className="font-playfair text-xl font-bold text-foreground mb-1">{coach.name}</h3>
+                      <span className="label-mono text-primary text-[0.65rem] block mb-3">{coach.role}</span>
+                      {coach.bio && (
+                        <p className="text-muted-foreground text-sm leading-relaxed">{coach.bio}</p>
+                      )}
+                    </div>
+                  </motion.article>
+                ))}
+              </div>
+            ) : (
+              <div className="bg-card rounded-xl border border-border p-10 text-center">
+                <p className="text-muted-foreground text-sm">Coach information is coming soon.</p>
               </div>
             )}
           </div>

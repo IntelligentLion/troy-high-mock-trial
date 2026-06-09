@@ -65,7 +65,7 @@ export default function TeamRecruit() {
           <div className="max-w-7xl mx-auto px-6">
             <span className="label-mono text-muted-foreground block mb-2">Leadership</span>
             <h2 id="leadership-heading" className="display-lg text-foreground mb-10">
-              2026–27 Officers
+              Officers
             </h2>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {leadership.map((officer, i) => (

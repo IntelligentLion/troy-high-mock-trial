@@ -7,12 +7,13 @@ const navLinks = [
   { label: "Alumni", to: "/alumni" },
   { label: "Gallery", to: "/gallery" },
   { label: "Sponsors", to: "/sponsors" },
+  { label: "Join Us", to: "/join" },
   { label: "Contact", to: "/contact" },
 ];
 
 const teamDropdown = [
-  { label: "2025–26", to: "/team" },
   { label: "2026–27", to: "/team/2026-27" },
+  { label: "2025–26", to: "/team" },
 ];
 
 export default function Navbar() {
