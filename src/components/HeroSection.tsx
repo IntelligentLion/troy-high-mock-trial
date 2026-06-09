@@ -86,11 +86,11 @@ export default function HeroSection() {
             transition={{ duration: 0.8, delay: 0.5 }}
             className="flex flex-wrap gap-4 mb-14 justify-center lg:justify-start"
           >
-            <Link to="/team" className="btn-primary px-8 py-3">
-              Meet the Team
-            </Link>
-            <Link to="/join" className="btn-ghost px-8 py-3">
+            <Link to="/join" className="btn-primary px-8 py-3">
               Join Us
+            </Link>
+            <Link to="/team/2026-27" className="btn-ghost px-8 py-3">
+              Meet the Team
             </Link>
           </motion.div>
 
