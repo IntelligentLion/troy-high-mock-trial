@@ -193,10 +193,7 @@ export default function Team() {
                     )}
                     <div>
                       <h3 className="font-playfair text-xl font-bold text-foreground mb-1">{coach.name}</h3>
-                      <span className="label-mono text-primary text-[0.65rem] block mb-3">{coach.role}</span>
-                      {coach.bio && (
-                        <p className="text-muted-foreground text-sm leading-relaxed">{coach.bio}</p>
-                      )}
+                      <span className="label-mono text-primary text-[0.65rem] block">{coach.role}</span>
                     </div>
                   </motion.article>
                 ))}
