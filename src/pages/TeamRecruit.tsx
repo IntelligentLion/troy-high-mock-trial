@@ -7,12 +7,12 @@ import { useSeo } from "@/hooks/useSeo";
 const FORM_URL =
   "https://docs.google.com/forms/d/e/1FAIpQLSd1R5LAGbsbXUDEIflfxjKfmNFpfs2NrOf9yQw2JLcFODozGA/viewform?usp=publish-editor";
 
-const leadership = [
+const leadership: { role: string; name: string; photo?: string }[] = [
   { role: "Co-President", name: "Reanne Elizabeth Del Valle" },
   { role: "Co-President", name: "Shri Krishna Sivakumar" },
   { role: "Vice President", name: "Yatee Nagpal" },
   { role: "Secretary", name: "Ella Xu" },
-  { role: "Treasurer", name: "Annabelle Ye" },
+  { role: "Treasurer", name: "Annabelle Ye", photo: "/assets/images/members/annabelle-ye.jpg" },
   { role: "Publicity Commissioner", name: "Anny Jiao" },
 ];
 
@@ -61,7 +61,18 @@ export default function TeamRecruit() {
                   key={i}
                   className="bg-card rounded-xl border border-primary/30 p-6 flex items-center gap-4 hover:border-primary/60 transition-colors"
                 >
-                  <MonogramAvatar name={officer.name} size={56} />
+                  {officer.photo ? (
+                    <img
+                      src={officer.photo}
+                      alt={`Headshot of ${officer.name}`}
+                      width={56}
+                      height={56}
+                      loading="lazy"
+                      className="w-14 h-14 rounded-full object-cover flex-shrink-0"
+                    />
+                  ) : (
+                    <MonogramAvatar name={officer.name} size={56} />
+                  )}
                   <div className="min-w-0">
                     <h3 className="font-playfair text-lg font-semibold text-foreground leading-tight">
                       {officer.name}
