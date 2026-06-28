@@ -192,7 +192,7 @@ export default function Sponsors() {
 
                   <a
                     href={`mailto:contact@troymocktrial.org?subject=Sponsorship Inquiry — ${t.name} Tier`}
-                    className={`mt-2 text-center py-2.5 rounded-full text-sm font-medium transition-colors label-mono ${
+                    className={`mt-2 text-center px-4 py-2.5 rounded-full text-sm font-semibold transition-colors ${
                       t.highlight
                         ? "bg-white/20 hover:bg-white/30 text-white"
                         : "border border-primary text-primary hover:bg-primary hover:text-primary-foreground"
