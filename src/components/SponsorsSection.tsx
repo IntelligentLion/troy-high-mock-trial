@@ -29,11 +29,11 @@ export default function SponsorsSection() {
               apparel, and social media.
             </p>
             <a
-              href="mailto:shrikrishna0219@gmail.com?subject=Sponsorship Inquiry"
+              href="mailto:contact@troymocktrial.org?subject=Sponsorship Inquiry"
               className="inline-flex items-center gap-2 text-sm text-primary hover:text-primary/80 transition-colors"
             >
               <Mail className="w-4 h-4" aria-hidden="true" />
-              shrikrishna0219@gmail.com
+              contact@troymocktrial.org
             </a>
           </div>
 

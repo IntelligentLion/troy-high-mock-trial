@@ -191,7 +191,7 @@ export default function Sponsors() {
                   </ul>
 
                   <a
-                    href={`mailto:shrikrishna0219@gmail.com?subject=Sponsorship Inquiry — ${t.name} Tier`}
+                    href={`mailto:contact@troymocktrial.org?subject=Sponsorship Inquiry — ${t.name} Tier`}
                     className={`mt-2 text-center py-2.5 rounded-full text-sm font-medium transition-colors label-mono ${
                       t.highlight
                         ? "bg-white/20 hover:bg-white/30 text-white"
@@ -230,7 +230,7 @@ export default function Sponsors() {
                   Reach out directly to discuss partnership opportunities, custom arrangements, or to learn more about our team's reach and impact.
                 </p>
                 <a
-                  href="mailto:shrikrishna0219@gmail.com?subject=Sponsorship Inquiry"
+                  href="mailto:contact@troymocktrial.org?subject=Sponsorship Inquiry"
                   className="inline-flex items-center gap-2 btn-primary"
                 >
                   <Mail className="w-4 h-4" aria-hidden="true" />

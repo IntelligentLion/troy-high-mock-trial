@@ -38,7 +38,7 @@ export default function Contact() {
 
     setSubmitting(true);
     window.setTimeout(() => {
-      window.location.href = `mailto:shrikrishna0219@gmail.com?subject=${subject}&body=${body}`;
+      window.location.href = `mailto:contact@troymocktrial.org?subject=${subject}&body=${body}`;
       setSubmitting(false);
       setSubmitted(true);
     }, 600);
@@ -84,10 +84,10 @@ export default function Contact() {
                     <div>
                       <span className="label-mono text-muted-foreground text-[0.65rem] block mb-1">Email</span>
                       <a
-                        href="mailto:shrikrishna0219@gmail.com"
+                        href="mailto:contact@troymocktrial.org"
                         className="text-foreground hover:text-primary transition-colors text-sm"
                       >
-                        shrikrishna0219@gmail.com
+                        contact@troymocktrial.org
                       </a>
                     </div>
                   </div>

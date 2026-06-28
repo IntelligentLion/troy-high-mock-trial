@@ -56,7 +56,7 @@ export default function CommunitySection() {
           </div>
           <div className="flex flex-col gap-3 shrink-0 min-w-[180px]">
             <a
-              href="mailto:shrikrishna0219@gmail.com?subject=Joining Troy Mock Trial"
+              href="mailto:contact@troymocktrial.org?subject=Joining Troy Mock Trial"
               className="btn-secondary"
             >
               <Mail className="w-4 h-4" aria-hidden="true" />
