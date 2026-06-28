@@ -206,19 +206,6 @@ export default function Sponsors() {
           </div>
         </section>
 
-        {/* Current Sponsors */}
-        <section className="py-16 border-t border-border" aria-labelledby="current-sponsors-heading">
-          <div className="max-w-7xl mx-auto px-6">
-            <span className="label-mono text-muted-foreground block mb-2">Our Partners</span>
-            <h2 id="current-sponsors-heading" className="display-lg text-foreground mb-10">Current Sponsors</h2>
-            <div className="border border-dashed border-border rounded-xl p-12 text-center">
-              <p className="text-muted-foreground text-sm italic">
-                Be the first to partner with us this season.
-              </p>
-            </div>
-          </div>
-        </section>
-
         {/* Contact strip + form */}
         <section className="py-16 border-t border-border" aria-labelledby="sponsor-contact-heading">
           <div className="max-w-7xl mx-auto px-6">
