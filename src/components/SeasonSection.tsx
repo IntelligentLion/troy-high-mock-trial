@@ -41,7 +41,7 @@ export default function SeasonSection() {
         </div>
 
         <div className="mt-8">
-          <Link to="/team/2026-27" className="btn-primary inline-block">
+          <Link to="/team" className="btn-primary inline-block">
             Learn More &amp; Join
           </Link>
         </div>

@@ -14,10 +14,10 @@ export default function Team() {
   const season = data?.currentYear?.season ?? "2025–2026";
 
   useSeo({
-    title: "Team — Troy High School Mock Trial",
+    title: "2025–26 Team — Troy High School Mock Trial",
     description:
       "Meet the 2025–26 officers, members, coaches, and faculty advisors representing Troy High School Mock Trial in competition.",
-    path: "/team",
+    path: "/team/2025-26",
   });
 
   return (

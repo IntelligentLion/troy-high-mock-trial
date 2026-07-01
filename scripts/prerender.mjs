@@ -24,6 +24,7 @@ const ROUTES = [
   "/",
   "/about",
   "/team",
+  "/team/2025-26",
   "/team/2026-27",
   "/join",
   "/alumni",
