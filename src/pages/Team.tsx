@@ -25,11 +25,7 @@ export default function Team() {
       <Navbar />
 
       {/* Page Hero */}
-      <header className="relative pt-32 pb-20 px-6 overflow-hidden">
-        <div
-          className="absolute inset-0 -z-10"
-          style={{ background: "linear-gradient(160deg, hsl(var(--background)) 60%, hsl(var(--primary) / 0.12))" }}
-        />
+      <header className="relative pt-32 pb-20 px-6 overflow-hidden border-b border-border">
         <div className="max-w-7xl mx-auto">
           <span className="label-mono text-primary block mb-3">
             {season} Season

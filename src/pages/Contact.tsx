@@ -49,11 +49,7 @@ export default function Contact() {
       <Navbar />
 
       {/* Page Hero */}
-      <header className="relative pt-32 pb-20 px-6 overflow-hidden">
-        <div
-          className="absolute inset-0 -z-10"
-          style={{ background: "linear-gradient(160deg, hsl(var(--background)) 60%, hsl(var(--primary) / 0.10))" }}
-        />
+      <header className="relative pt-32 pb-20 px-6 overflow-hidden border-b border-border">
         <div className="max-w-7xl mx-auto">
           <span className="label-mono text-primary block mb-3">
             Get in Touch
@@ -172,10 +168,10 @@ export default function Contact() {
                 <div className="rounded-xl overflow-hidden border border-border h-64">
                   <iframe
                     title="Troy High School location map"
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3311.5!2d-117.9251!3d33.8852!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80dcd7b8b5b5b5b5%3A0x0!2sTroy+High+School%2C+2200+Dorothy+Ln%2C+Fullerton%2C+CA+92831!5e0!3m2!1sen!2sus!4v1"
+                    src="https://maps.google.com/maps?q=Troy+High+School,+2200+Dorothy+Ln,+Fullerton,+CA+92831&output=embed&z=17"
                     width="100%"
                     height="100%"
-                    style={{ border: 0, filter: "grayscale(1) invert(0.8) contrast(0.9)" }}
+                    style={{ border: 0 }}
                     allowFullScreen
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"

@@ -86,10 +86,7 @@ export default function Sponsors() {
       <Navbar />
 
       {/* Page Hero */}
-      <header
-        className="relative pt-32 pb-24 px-6 overflow-hidden"
-        style={{ background: "linear-gradient(160deg, hsl(var(--background)) 40%, hsl(var(--primary) / 0.14))" }}
-      >
+      <header className="relative pt-32 pb-24 px-6 overflow-hidden border-b border-border">
         <div className="max-w-7xl mx-auto">
           <span className="label-mono text-primary block mb-3">
             Partnership
@@ -145,44 +142,30 @@ export default function Sponsors() {
               {tiers.map((t, i) => (
                 <div
                   key={i}
-                  className={`flex flex-col gap-5 p-6 rounded-xl border ${
-                    t.highlight ? "border-primary/60" : "border-border bg-card"
-                  } relative overflow-hidden`}
-                  style={t.highlight
-                    ? { background: "linear-gradient(135deg, hsl(var(--primary)), hsl(43, 80%, 68%))" }
-                    : undefined}
+                  className="flex flex-col gap-5 p-6 rounded-xl border border-border bg-card relative"
+                  style={t.highlight ? { borderTopColor: "var(--color-gold)", borderTopWidth: "2px" } : undefined}
                 >
                   {t.highlight && (
-                    <span className="absolute top-4 right-4 label-mono text-[0.6rem] px-2 py-0.5 rounded-full bg-white/20 text-white">
-                      Featured
+                    <span className="absolute top-4 right-4 label-mono text-[0.6rem] px-2 py-0.5 rounded-full text-primary"
+                      style={{ background: "rgba(201,168,76,0.12)", border: "1px solid rgba(201,168,76,0.25)" }}>
+                      Top Tier
                     </span>
                   )}
 
                   <div>
-                    <h3
-                      className="font-playfair text-2xl font-bold"
-                      style={{ color: t.highlight ? "hsl(var(--primary-foreground))" : "hsl(var(--foreground))" }}
-                    >
+                    <h3 className="font-playfair text-2xl font-bold text-foreground">
                       {t.name}
                     </h3>
-                    <span
-                      className="label-mono text-xs font-semibold"
-                      style={{ color: t.highlight ? "hsl(var(--primary-foreground) / 0.75)" : "hsl(var(--primary))" }}
-                    >
+                    <span className="label-mono text-xs font-semibold text-primary">
                       {t.subtitle} · {t.amount}
                     </span>
                   </div>
 
                   <ul className="flex flex-col gap-2.5 flex-1">
                     {t.perks.map((p, j) => (
-                      <li
-                        key={j}
-                        className="flex items-start gap-2 text-xs"
-                        style={{ color: t.highlight ? "hsl(var(--primary-foreground) / 0.9)" : "hsl(var(--muted-foreground))" }}
-                      >
+                      <li key={j} className="flex items-start gap-2 text-xs text-muted-foreground">
                         <Check
-                          className="w-3.5 h-3.5 shrink-0 mt-0.5"
-                          style={{ color: t.highlight ? "hsl(var(--primary-foreground))" : "hsl(var(--primary))" }}
+                          className="w-3.5 h-3.5 shrink-0 mt-0.5 text-primary"
                           aria-hidden="true"
                         />
                         {p}
@@ -192,11 +175,7 @@ export default function Sponsors() {
 
                   <a
                     href={`mailto:contact@troymocktrial.org?subject=Sponsorship Inquiry — ${t.name} Tier`}
-                    className={`mt-2 text-center px-4 py-2.5 rounded-full text-sm font-semibold transition-colors ${
-                      t.highlight
-                        ? "bg-white/20 hover:bg-white/30 text-white"
-                        : "border border-primary text-primary hover:bg-primary hover:text-primary-foreground"
-                    }`}
+                    className="mt-2 text-center px-4 py-2.5 rounded-full text-sm font-semibold transition-colors border border-primary text-primary hover:bg-primary hover:text-primary-foreground"
                   >
                     Become a {t.name} Sponsor
                   </a>

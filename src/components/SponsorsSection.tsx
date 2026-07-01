@@ -16,8 +16,8 @@ export default function SponsorsSection() {
         </p>
 
         <div
-          className="rounded-xl border border-primary/30 p-10 flex flex-col md:flex-row md:items-center justify-between gap-8"
-          style={{ background: "linear-gradient(135deg, hsl(var(--card)), hsl(var(--primary) / 0.08))" }}
+          className="bg-card rounded-xl border border-primary/30 p-10 flex flex-col md:flex-row md:items-center justify-between gap-8"
+          style={{ borderLeft: "3px solid var(--color-gold)" }}
         >
           <div className="max-w-lg">
             <h3 className="font-playfair text-2xl font-bold text-foreground mb-3">

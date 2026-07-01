@@ -60,13 +60,13 @@ export default function AboutSection() {
 
         {/* Mission strip */}
         <div
-          className="mt-8 bg-card rounded-xl border border-primary/30 p-8"
-          style={{ borderLeft: "4px solid hsl(var(--primary))" }}
+          className="mt-8 bg-card rounded-xl border border-border p-8"
+          style={{ borderLeft: "3px solid var(--color-gold)" }}
         >
           <span className="label-mono text-primary block mb-3">Competing In</span>
           <p className="text-foreground leading-relaxed max-w-3xl">
-            The <strong className="text-primary">Constitutional Rights Foundation – Orange County (CRF-OC)</strong> Mock Trial program and the{" "}
-            <strong className="text-primary">JSerra Catholic High School Mock Trial Tournament</strong> — competing annually against teams across Orange, Riverside, and Santa Clara counties.
+            The <strong>Constitutional Rights Foundation – Orange County (CRF-OC)</strong> Mock Trial program and the{" "}
+            <strong>JSerra Catholic High School Mock Trial Tournament</strong> — competing annually against teams across Orange, Riverside, and Santa Clara counties.
           </p>
         </div>
       </div>

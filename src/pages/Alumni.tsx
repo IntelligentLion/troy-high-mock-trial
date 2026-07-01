@@ -53,11 +53,7 @@ export default function Alumni() {
       <Navbar />
 
       {/* Page Hero */}
-      <header className="relative pt-32 pb-20 px-6 overflow-hidden">
-        <div
-          className="absolute inset-0 -z-10"
-          style={{ background: "linear-gradient(160deg, hsl(var(--background)) 60%, hsl(var(--primary) / 0.10))" }}
-        />
+      <header className="relative pt-32 pb-20 px-6 overflow-hidden border-b border-border">
         <div className="max-w-7xl mx-auto">
           <span className="label-mono text-primary block mb-3">
             Honor Wall
@@ -193,26 +189,19 @@ export default function Alumni() {
 
           {/* Quote strip */}
           <div
-            className="mt-16 rounded-xl p-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6"
-            style={{ background: "linear-gradient(135deg, hsl(var(--primary)), hsl(43, 80%, 68%))" }}
+            className="mt-16 bg-card rounded-xl border border-border p-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6"
+            style={{ borderLeft: "3px solid var(--color-gold)" }}
           >
-            <blockquote
-              className="font-playfair text-2xl font-bold italic"
-              style={{ color: "hsl(var(--primary-foreground))" }}
-            >
+            <blockquote className="font-playfair text-2xl font-semibold text-foreground">
               "Once a Warrior, Always a Warrior."
             </blockquote>
-            <div
-              className="flex flex-col gap-2 text-sm max-w-xs"
-              style={{ color: "hsl(var(--primary-foreground) / 0.85)" }}
-            >
-              <span>Are you an alumnus not listed? Reach out so we can add your legacy to our honor roll.</span>
+            <div className="flex flex-col gap-2 text-sm max-w-xs text-muted-foreground">
+              <span>Not listed? Reach out — your legacy belongs on this wall.</span>
               <a
                 href="https://www.instagram.com/ths_mocktrial/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="label-mono underline text-[0.65rem]"
-                style={{ color: "hsl(var(--primary-foreground))" }}
+                className="label-mono text-primary hover:text-primary/80 transition-colors text-[0.65rem]"
               >
                 @ths_mocktrial →
               </a>
