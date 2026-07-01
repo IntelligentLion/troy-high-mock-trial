@@ -63,33 +63,43 @@ export default function Navbar() {
           <div className="w-7 h-7 flex items-center justify-center rounded-md bg-primary">
             <Scale className="w-4 h-4 text-primary-foreground" strokeWidth={2} />
           </div>
-          <span className="font-playfair font-bold text-base text-foreground tracking-wide">
+          <span className="font-sans font-semibold text-base text-foreground tracking-wide">
             Troy Mock Trial
           </span>
         </Link>
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-6" aria-label="Main navigation">
+        <nav className="hidden md:flex items-center divide-x divide-white/10" aria-label="Main navigation">
           {/* Home */}
           <Link
             to="/"
-            className={`nav-link ${location.pathname === "/" ? "text-primary" : "text-foreground/70"}`}
+            className={`nav-link px-4 ${location.pathname === "/" ? "text-primary" : "text-foreground/70"}`}
             aria-current={location.pathname === "/" ? "page" : undefined}
           >
             Home
           </Link>
 
+          {/* About Us */}
+          <Link
+            to="/about"
+            className={`nav-link px-4 ${location.pathname === "/about" ? "text-primary" : "text-foreground/70"}`}
+            aria-current={location.pathname === "/about" ? "page" : undefined}
+          >
+            About Us
+          </Link>
+
           {/* Team dropdown */}
           <div
-            className="relative"
+            className={`relative px-4 nav-link flex items-center ${
+              isTeamActive ? "text-primary" : "text-foreground/70"
+            }`}
             ref={dropdownRef}
             onMouseEnter={() => setTeamOpen(true)}
             onMouseLeave={() => setTeamOpen(false)}
           >
             <button
-              className={`nav-link flex items-center gap-1 bg-transparent border-0 cursor-pointer ${
-                isTeamActive ? "text-primary" : "text-foreground/70"
-              }`}
+              className="flex items-center gap-1 bg-transparent border-0 cursor-pointer"
+              style={{ color: "inherit" }}
               aria-haspopup="true"
               aria-expanded={teamOpen}
               onClick={() => setTeamOpen((v) => !v)}
@@ -131,7 +141,7 @@ export default function Navbar() {
             <Link
               key={l.to}
               to={l.to}
-              className={`nav-link ${location.pathname === l.to ? "text-primary" : "text-foreground/70"}`}
+              className={`nav-link px-4 ${location.pathname === l.to ? "text-primary" : "text-foreground/70"}`}
               aria-current={location.pathname === l.to ? "page" : undefined}
             >
               {l.label}
@@ -169,6 +179,14 @@ export default function Navbar() {
             aria-current={location.pathname === "/" ? "page" : undefined}
           >
             Home
+          </Link>
+
+          <Link
+            to="/about"
+            className={`nav-link ${location.pathname === "/about" ? "text-primary" : "text-foreground/80"}`}
+            aria-current={location.pathname === "/about" ? "page" : undefined}
+          >
+            About Us
           </Link>
 
           {/* Mobile Team accordion */}

@@ -4,6 +4,7 @@ import { useSiteContent } from "@/hooks/useSiteContent";
 
 const navLinks = [
   { label: "Home", to: "/" },
+  { label: "About Us", to: "/about" },
   { label: "Team", to: "/team" },
   { label: "Gallery", to: "/gallery" },
   { label: "Alumni", to: "/alumni" },
@@ -27,7 +28,7 @@ export default function Footer() {
               <div className="w-7 h-7 flex items-center justify-center rounded-md bg-primary">
                 <Scale className="w-4 h-4 text-primary-foreground" strokeWidth={2} aria-hidden="true" />
               </div>
-              <span className="font-playfair font-bold text-base text-foreground">
+              <span className="font-sans font-semibold text-base text-foreground">
                 Troy Mock Trial
               </span>
             </div>

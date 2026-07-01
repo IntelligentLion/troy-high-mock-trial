@@ -22,6 +22,7 @@ const DIST = join(__dirname, "..", "dist");
 // Static routes declared in src/App.tsx (the catch-all "*" / NotFound is skipped).
 const ROUTES = [
   "/",
+  "/about",
   "/team",
   "/team/2026-27",
   "/join",

@@ -55,9 +55,6 @@ export default function Alumni() {
       {/* Page Hero */}
       <header className="relative pt-32 pb-20 px-6 overflow-hidden border-b border-border">
         <div className="max-w-7xl mx-auto">
-          <span className="label-mono text-primary block mb-3">
-            Honor Wall
-          </span>
           <h1 className="display-xl text-foreground mb-4">
             Those Who Came Before
           </h1>

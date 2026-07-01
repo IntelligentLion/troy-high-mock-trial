@@ -51,9 +51,6 @@ export default function Contact() {
       {/* Page Hero */}
       <header className="relative pt-32 pb-20 px-6 overflow-hidden border-b border-border">
         <div className="max-w-7xl mx-auto">
-          <span className="label-mono text-primary block mb-3">
-            Get in Touch
-          </span>
           <h1 className="display-xl text-foreground mb-4">
             Contact Us
           </h1>

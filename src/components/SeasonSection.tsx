@@ -14,15 +14,9 @@ export default function SeasonSection() {
   return (
     <section id="season" className="py-24 border-t border-border">
       <div className="max-w-7xl mx-auto px-6">
-        <span className="label-mono text-primary block mb-3">
-          Incoming Season
-        </span>
         <h2 className="display-lg text-foreground mb-1">
           2026–2027
         </h2>
-        <p className="label-mono text-primary text-sm mb-3">
-          Student Leadership
-        </p>
         <p className="text-muted-foreground mb-10 max-w-xl text-sm">
           Incoming leadership for the 2026–27 season.
         </p>

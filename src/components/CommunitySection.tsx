@@ -18,9 +18,6 @@ export default function CommunitySection() {
   return (
     <section id="community" className="py-24 border-t border-border">
       <div className="max-w-7xl mx-auto px-6">
-        <span className="label-mono text-primary block mb-3">
-          Our Community
-        </span>
         <h2 className="display-lg text-foreground mb-3">
           Beyond the Courtroom
         </h2>

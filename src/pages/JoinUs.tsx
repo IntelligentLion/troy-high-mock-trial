@@ -54,9 +54,6 @@ export default function JoinUs() {
       {/* Hero */}
       <header className="relative pt-32 pb-20 px-6 overflow-hidden border-b border-border">
         <div className="max-w-7xl mx-auto">
-          <span className="label-mono text-primary block mb-3">
-            2026–2027 Recruitment
-          </span>
           <h1 className="display-xl text-foreground mb-6">
             Join Troy Mock Trial
           </h1>
@@ -81,9 +78,6 @@ export default function JoinUs() {
         {/* Why Join Us */}
         <section className="py-20 border-t border-border" aria-labelledby="why-heading">
           <div className="max-w-7xl mx-auto px-6">
-            <span className="label-mono text-primary block mb-3">
-              The Case For Joining
-            </span>
             <h2 id="why-heading" className="display-lg text-foreground mb-12">
               Why Join Us?
             </h2>

@@ -74,9 +74,6 @@ export default function Gallery() {
       {/* Page Hero */}
       <header className="relative pt-32 pb-20 px-6 overflow-hidden border-b border-border">
         <div className="max-w-7xl mx-auto">
-          <span className="label-mono text-primary block mb-3">
-            Photo Gallery
-          </span>
           <h1 className="display-xl text-foreground mb-4">
             Every Season,{" "}
             <span className="gold-text">Documented</span>

@@ -6,6 +6,7 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import Index from "./pages/Index.tsx";
+import About from "./pages/About.tsx";
 import Team from "./pages/Team.tsx";
 import TeamRecruit from "./pages/TeamRecruit.tsx";
 import JoinUs from "./pages/JoinUs.tsx";
@@ -35,6 +36,7 @@ const App = () => (
         <ScrollToTop />
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/about" element={<About />} />
           <Route path="/team" element={<Team />} />
           <Route path="/team/2026-27" element={<TeamRecruit />} />
           <Route path="/join" element={<JoinUs />} />

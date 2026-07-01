@@ -27,9 +27,6 @@ export default function Team() {
       {/* Page Hero */}
       <header className="relative pt-32 pb-20 px-6 overflow-hidden border-b border-border">
         <div className="max-w-7xl mx-auto">
-          <span className="label-mono text-primary block mb-3">
-            {season} Season
-          </span>
           <h1 className="display-xl text-foreground mb-4">
             2025–2026 Team
           </h1>
@@ -43,7 +40,6 @@ export default function Team() {
         {/* Officers */}
         <section className="py-16 border-t border-border" aria-labelledby="officers-heading">
           <div className="max-w-7xl mx-auto px-6">
-            <span className="label-mono text-muted-foreground block mb-2">Leadership</span>
             <h2 id="officers-heading" className="display-lg text-foreground mb-10">Officers</h2>
 
             {isLoading ? (
@@ -108,7 +104,6 @@ export default function Team() {
         {/* Members */}
         <section className="py-16 border-t border-border" aria-labelledby="members-heading">
           <div className="max-w-7xl mx-auto px-6">
-            <span className="label-mono text-muted-foreground block mb-2">Roster</span>
             <h2 id="members-heading" className="display-lg text-foreground mb-10">Team Members</h2>
 
             {isLoading ? (
@@ -145,7 +140,6 @@ export default function Team() {
         {/* Coaches & Faculty Advisors */}
         <section className="py-16 border-t border-border" aria-labelledby="coaches-heading">
           <div className="max-w-7xl mx-auto px-6">
-            <span className="label-mono text-muted-foreground block mb-2">Program Support</span>
             <h2 id="coaches-heading" className="display-lg text-foreground mb-10">
               Coaches &amp; Faculty Advisors
             </h2>

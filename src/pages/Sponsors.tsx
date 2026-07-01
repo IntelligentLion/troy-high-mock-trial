@@ -88,9 +88,6 @@ export default function Sponsors() {
       {/* Page Hero */}
       <header className="relative pt-32 pb-24 px-6 overflow-hidden border-b border-border">
         <div className="max-w-7xl mx-auto">
-          <span className="label-mono text-primary block mb-3">
-            Partnership
-          </span>
           <h1 className="display-xl text-foreground mb-4">
             Invest in Tomorrow's
             <br />
@@ -109,7 +106,6 @@ export default function Sponsors() {
           <div className="max-w-7xl mx-auto px-6">
             <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-6">
               <div>
-                <span className="label-mono text-muted-foreground block mb-2">2025–26 Season</span>
                 <h2 id="prospectus-heading" className="display-lg text-foreground">Sponsorship Prospectus</h2>
               </div>
               <a
@@ -135,7 +131,6 @@ export default function Sponsors() {
         {/* Tiers */}
         <section className="py-20 border-t border-border" aria-labelledby="tiers-heading">
           <div className="max-w-7xl mx-auto px-6">
-            <span className="label-mono text-muted-foreground block mb-2">Sponsorship Levels</span>
             <h2 id="tiers-heading" className="display-lg text-foreground mb-12">Choose Your Tier</h2>
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -190,7 +185,6 @@ export default function Sponsors() {
           <div className="max-w-7xl mx-auto px-6">
             <div className="grid md:grid-cols-2 gap-12 items-start">
               <div>
-                <span className="label-mono text-muted-foreground block mb-2">Get in Touch</span>
                 <h2 id="sponsor-contact-heading" className="display-md text-foreground mb-4">Questions About Sponsorship?</h2>
                 <p className="text-muted-foreground text-sm leading-relaxed mb-6">
                   Reach out directly to discuss partnership opportunities, custom arrangements, or to learn more about our team's reach and impact.

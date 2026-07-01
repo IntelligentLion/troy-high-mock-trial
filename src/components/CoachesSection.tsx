@@ -12,9 +12,6 @@ export default function CoachesSection() {
         {/* Header */}
         <div className="flex items-end justify-between mb-12 flex-wrap gap-6">
           <div>
-            <span className="label-mono text-primary block mb-3">
-              Legal Leadership
-            </span>
             <h2 className="display-lg text-foreground">
               The Coaches
             </h2>

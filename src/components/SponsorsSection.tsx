@@ -4,9 +4,6 @@ export default function SponsorsSection() {
   return (
     <section id="sponsors" className="py-24 border-t border-border">
       <div className="max-w-7xl mx-auto px-6">
-        <span className="label-mono text-primary block mb-3">
-          Partner With Us
-        </span>
         <h2 className="display-lg text-foreground mb-3">
           Support Excellence
         </h2>

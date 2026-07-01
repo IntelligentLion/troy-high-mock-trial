@@ -15,9 +15,6 @@ export default function AboutSection() {
         {/* Header */}
         <div className="grid md:grid-cols-12 gap-12 mb-16">
           <div className="md:col-span-5">
-            <span className="label-mono text-primary block mb-4">
-              Who We Are
-            </span>
             <h2 className="display-md text-foreground">
               Troy High School
               <br />
@@ -63,7 +60,6 @@ export default function AboutSection() {
           className="mt-8 bg-card rounded-xl border border-border p-8"
           style={{ borderLeft: "3px solid var(--color-gold)" }}
         >
-          <span className="label-mono text-primary block mb-3">Competing In</span>
           <p className="text-foreground leading-relaxed max-w-3xl">
             The <strong>Constitutional Rights Foundation – Orange County (CRF-OC)</strong> Mock Trial program and the{" "}
             <strong>JSerra Catholic High School Mock Trial Tournament</strong> — competing annually against teams across Orange, Riverside, and Santa Clara counties.
