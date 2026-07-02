@@ -41,7 +41,7 @@ export default function About() {
       <Navbar />
 
       {/* Page Hero */}
-      <header className="relative pt-32 pb-20 px-6 overflow-hidden border-b border-border">
+      <header className="relative hero-py px-6 overflow-hidden border-b border-border">
         <div className="max-w-7xl mx-auto">
           <h1 className="display-xl text-foreground mb-4">
             About Troy Mock Trial
@@ -55,7 +55,7 @@ export default function About() {
 
       <main>
         {/* Mission */}
-        <section className="py-16 border-b border-border">
+        <section className="section-py border-b border-border">
           <div className="max-w-7xl mx-auto px-6">
             <div
               className="bg-card rounded-xl border border-border p-8 md:p-12"
@@ -72,7 +72,7 @@ export default function About() {
         </section>
 
         {/* Our Story */}
-        <section className="py-20 border-b border-border" aria-labelledby="story-heading">
+        <section className="section-py border-b border-border" aria-labelledby="story-heading">
           <div className="max-w-7xl mx-auto px-6">
             <div className="grid md:grid-cols-12 gap-12 items-start">
               <div className="md:col-span-7">
@@ -123,7 +123,7 @@ export default function About() {
         </section>
 
         {/* What We Do */}
-        <section className="py-20 border-b border-border" aria-labelledby="program-heading">
+        <section className="section-py border-b border-border" aria-labelledby="program-heading">
           <div className="max-w-7xl mx-auto px-6">
             <h2 id="program-heading" className="display-lg text-foreground mb-12">
               What We Do
@@ -144,7 +144,7 @@ export default function About() {
 
         {/* Coaching Staff */}
         {coaches.length > 0 && (
-          <section className="py-20 border-b border-border" aria-labelledby="coaches-heading">
+          <section className="section-py border-b border-border" aria-labelledby="coaches-heading">
             <div className="max-w-7xl mx-auto px-6">
               <div className="flex items-end justify-between mb-10 flex-wrap gap-4">
                 <div>
@@ -167,7 +167,16 @@ export default function About() {
                     key={i}
                     className="bg-card rounded-xl border border-border p-6 flex items-start gap-5"
                   >
-                    <MonogramAvatar name={coach.name} size={56} />
+                    {coach.photo ? (
+                      <img
+                        src={coach.photo}
+                        alt={coach.name}
+                        loading="lazy"
+                        className="w-24 h-24 rounded-full object-cover object-center shrink-0"
+                      />
+                    ) : (
+                      <MonogramAvatar name={coach.name} size={56} />
+                    )}
                     <div className="min-w-0">
                       <h3 className="font-playfair text-lg font-semibold text-foreground mb-0.5">
                         {coach.name}
@@ -189,7 +198,7 @@ export default function About() {
         )}
 
         {/* CTA */}
-        <section className="py-20">
+        <section className="section-py">
           <div className="max-w-7xl mx-auto px-6">
             <div className="grid sm:grid-cols-2 gap-6">
               <div className="bg-card rounded-xl border border-border p-8 flex flex-col gap-4">

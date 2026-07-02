@@ -36,7 +36,7 @@ export default function TeamLanding() {
       <Navbar />
 
       {/* Page Hero — background image will be placed here */}
-      <header className="pt-40 pb-24 px-6 border-b border-border">
+      <header className="hero-py px-6 border-b border-border">
         <div className="max-w-7xl mx-auto">
           <h1 className="display-xl text-foreground mb-3">The Team</h1>
           <p className="text-muted-foreground text-lg">
@@ -45,7 +45,7 @@ export default function TeamLanding() {
         </div>
       </header>
 
-      <main className="py-14">
+      <main className="py-10">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-5">
             {seasons.map((s) => (

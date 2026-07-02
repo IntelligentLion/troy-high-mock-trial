@@ -2,12 +2,12 @@ import { ArrowRight, Download, Mail } from "lucide-react";
 
 export default function SponsorsSection() {
   return (
-    <section id="sponsors" className="py-24 border-t border-border">
+    <section id="sponsors" className="section-py border-t border-border">
       <div className="max-w-7xl mx-auto px-6">
         <h2 className="display-lg text-foreground mb-3">
           Support Excellence
         </h2>
-        <p className="text-muted-foreground mb-12 max-w-xl">
+        <p className="text-muted-foreground mb-8 max-w-xl">
           Your sponsorship directly funds competition fees, travel, materials, and
           uniforms — giving students every opportunity to succeed.
         </p>

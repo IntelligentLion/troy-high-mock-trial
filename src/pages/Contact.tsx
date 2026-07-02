@@ -49,7 +49,7 @@ export default function Contact() {
       <Navbar />
 
       {/* Page Hero */}
-      <header className="relative pt-32 pb-20 px-6 overflow-hidden border-b border-border">
+      <header className="relative hero-py px-6 overflow-hidden border-b border-border">
         <div className="max-w-7xl mx-auto">
           <h1 className="display-xl text-foreground mb-4">
             Contact Us
@@ -60,7 +60,7 @@ export default function Contact() {
         </div>
       </header>
 
-      <main className="py-12">
+      <main className="py-8">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-12 items-start">
             {/* Contact info */}

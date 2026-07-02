@@ -7,10 +7,10 @@ export default function CoachesSection() {
   const coaches = data?.team?.coaches ?? [];
 
   return (
-    <section id="coaches" className="py-24 border-t border-border">
+    <section id="coaches" className="section-py border-t border-border">
       <div className="max-w-7xl mx-auto px-6">
         {/* Header */}
-        <div className="flex items-end justify-between mb-12 flex-wrap gap-6">
+        <div className="flex items-end justify-between mb-8 flex-wrap gap-6">
           <div>
             <h2 className="display-lg text-foreground">
               The Coaches
@@ -36,10 +36,10 @@ export default function CoachesSection() {
                     src={coach.photo}
                     alt={coach.name}
                     loading="lazy"
-                    className="w-16 h-16 rounded-full object-cover object-top shrink-0"
+                    className="w-24 h-24 rounded-full object-cover object-center shrink-0"
                   />
                 ) : (
-                  <MonogramAvatar name={coach.name} size={64} />
+                  <MonogramAvatar name={coach.name} size={96} />
                 )}
                 <div>
                   <h3 className="font-playfair text-xl font-bold text-foreground mb-1">

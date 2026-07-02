@@ -457,6 +457,23 @@
   .reveal-delay-3 { transition-delay: 300ms; }
   .reveal-delay-4 { transition-delay: 400ms; }
 
+  /*
+   * Viewport-proportional section spacing.
+   * clamp(min, preferred-vh, max) means:
+   *   – on a short laptop viewport (~700px) the padding is near the minimum
+   *   – on a tall monitor viewport (~1080px) it approaches but never exceeds the max
+   * This keeps the whitespace-to-content ratio consistent across screen sizes.
+   */
+  .section-py {
+    padding-top:    clamp(2rem, 4vh, 3rem);
+    padding-bottom: clamp(2rem, 4vh, 3rem);
+  }
+
+  .hero-py {
+    padding-top:    clamp(5.5rem, 9vh, 7rem);
+    padding-bottom: clamp(2rem, 3.5vh, 3rem);
+  }
+
   .sr-only {
     position: absolute;
     width: 1px;

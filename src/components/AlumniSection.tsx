@@ -11,40 +11,40 @@ export default function AlumniSection() {
   const founders = (data?.alumni ?? []).filter((a) => FOUNDER_NAMES.includes(a.name));
 
   return (
-    <section id="alumni" className="py-24 border-t border-border">
+    <section id="alumni" className="section-py border-t border-border">
       <div className="max-w-7xl mx-auto px-6">
         <h2 className="display-lg text-foreground mb-3">
           Our Founders
         </h2>
-        <p className="text-muted-foreground mb-12 max-w-xl">
+        <p className="text-muted-foreground mb-8 max-w-xl">
           Troy Mock Trial was founded in 2016 by two students whose vision built everything
           that followed.
         </p>
 
         {isLoading ? (
-          <div className="mb-8">
+          <div className="mb-6">
             <CardGridSkeleton count={2} gridClassName="grid sm:grid-cols-2 gap-6" compact />
           </div>
         ) : (
-        <div className="grid sm:grid-cols-2 gap-6 mb-8">
+        <div className="grid sm:grid-cols-2 gap-6 mb-6">
           {founders.map((a, i) => (
             <div
               key={i}
-              className="bg-card rounded-xl border border-border p-6 flex flex-col gap-4 group hover:border-primary/40 transition-colors"
+              className="bg-card rounded-xl border border-border p-6 flex flex-col gap-5 group hover:border-primary/40 transition-colors"
             >
-              <div className="flex items-center gap-3">
+              <div className="flex items-center gap-5">
                 {a.photo ? (
                   <img
                     src={a.photo}
                     alt={a.name}
                     loading="lazy"
-                    className="w-12 h-12 rounded-full object-cover object-top shrink-0"
+                    className="w-20 h-20 rounded-full object-cover object-top shrink-0"
                   />
                 ) : (
-                  <MonogramAvatar name={a.name} size={48} />
+                  <MonogramAvatar name={a.name} size={80} />
                 )}
                 <div>
-                  <h3 className="font-playfair text-lg font-semibold text-foreground group-hover:text-primary transition-colors">
+                  <h3 className="font-playfair text-xl font-semibold text-foreground group-hover:text-primary transition-colors">
                     {a.name}
                   </h3>
                   <span className="label-mono text-primary text-[0.65rem]">{a.role}</span>

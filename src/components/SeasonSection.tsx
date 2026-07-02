@@ -12,12 +12,12 @@ const leadership2627 = [
 
 export default function SeasonSection() {
   return (
-    <section id="season" className="py-24 border-t border-border">
+    <section id="season" className="section-py border-t border-border">
       <div className="max-w-7xl mx-auto px-6">
         <h2 className="display-lg text-foreground mb-1">
           2026–2027
         </h2>
-        <p className="text-muted-foreground mb-10 max-w-xl text-sm">
+        <p className="text-muted-foreground mb-6 max-w-xl text-sm">
           Incoming leadership for the 2026–27 season.
         </p>
 

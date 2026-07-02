@@ -16,12 +16,12 @@ export default function CommunitySection() {
   const instagramHandle = data?.contact?.instagramHandle ?? "@ths_mocktrial";
 
   return (
-    <section id="community" className="py-24 border-t border-border">
+    <section id="community" className="section-py border-t border-border">
       <div className="max-w-7xl mx-auto px-6">
         <h2 className="display-lg text-foreground mb-3">
           Beyond the Courtroom
         </h2>
-        <p className="text-muted-foreground mb-14 max-w-lg">
+        <p className="text-muted-foreground mb-10 max-w-lg">
           Competition is the headline. Community is what keeps members coming back.
         </p>
 

@@ -53,7 +53,7 @@ export default function Alumni() {
       <Navbar />
 
       {/* Page Hero */}
-      <header className="relative pt-32 pb-20 px-6 overflow-hidden border-b border-border">
+      <header className="relative hero-py px-6 overflow-hidden border-b border-border">
         <div className="max-w-7xl mx-auto">
           <h1 className="display-xl text-foreground mb-4">
             Those Who Came Before
@@ -65,7 +65,7 @@ export default function Alumni() {
         </div>
       </header>
 
-      <main className="py-12">
+      <main className="py-8">
         <div className="max-w-7xl mx-auto px-6">
           {/* Search */}
           <div className="relative mb-12 max-w-md">
@@ -131,10 +131,10 @@ export default function Alumni() {
                                     src={a.photo}
                                     alt={a.name}
                                     loading="lazy"
-                                    className="w-12 h-12 rounded-full object-cover object-top shrink-0"
+                                    className="w-16 h-16 rounded-full object-cover object-top shrink-0"
                                   />
                                 ) : (
-                                  <MonogramAvatar name={a.name} size={48} />
+                                  <MonogramAvatar name={a.name} size={64} />
                                 )}
                                 <div className="min-w-0">
                                   <h3 className="font-playfair text-base font-semibold text-foreground group-hover:text-primary transition-colors">

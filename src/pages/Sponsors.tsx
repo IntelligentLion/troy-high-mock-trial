@@ -86,7 +86,7 @@ export default function Sponsors() {
       <Navbar />
 
       {/* Page Hero */}
-      <header className="relative pt-32 pb-24 px-6 overflow-hidden border-b border-border">
+      <header className="relative hero-py px-6 overflow-hidden border-b border-border">
         <div className="max-w-7xl mx-auto">
           <h1 className="display-xl text-foreground mb-4">
             Invest in Tomorrow's
@@ -102,7 +102,7 @@ export default function Sponsors() {
 
       <main>
         {/* Sponsorship Prospectus */}
-        <section className="py-20 border-t border-border" aria-labelledby="prospectus-heading">
+        <section className="section-py border-t border-border" aria-labelledby="prospectus-heading">
           <div className="max-w-7xl mx-auto px-6">
             <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-6">
               <div>
@@ -129,7 +129,7 @@ export default function Sponsors() {
         </section>
 
         {/* Tiers */}
-        <section className="py-20 border-t border-border" aria-labelledby="tiers-heading">
+        <section className="section-py border-t border-border" aria-labelledby="tiers-heading">
           <div className="max-w-7xl mx-auto px-6">
             <h2 id="tiers-heading" className="display-lg text-foreground mb-12">Choose Your Tier</h2>
 
@@ -181,7 +181,7 @@ export default function Sponsors() {
         </section>
 
         {/* Contact strip + form */}
-        <section className="py-16 border-t border-border" aria-labelledby="sponsor-contact-heading">
+        <section className="section-py border-t border-border" aria-labelledby="sponsor-contact-heading">
           <div className="max-w-7xl mx-auto px-6">
             <div className="grid md:grid-cols-2 gap-12 items-start">
               <div>

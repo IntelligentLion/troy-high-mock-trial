@@ -13,6 +13,9 @@ export default {
       },
     },
     extend: {
+      maxWidth: {
+        '7xl': '1440px',
+      },
       colors: {
         // Shadcn/ui semantic tokens
         border: "hsl(var(--border))",

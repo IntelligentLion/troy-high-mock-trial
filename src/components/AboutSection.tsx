@@ -10,10 +10,10 @@ export default function AboutSection() {
   const team = data?.team;
 
   return (
-    <section id="about" className="py-24 border-t border-border">
+    <section id="about" className="section-py border-t border-border">
       <div className="max-w-7xl mx-auto px-6">
         {/* Header */}
-        <div className="grid md:grid-cols-12 gap-12 mb-16">
+        <div className="grid md:grid-cols-12 gap-10 mb-10">
           <div className="md:col-span-5">
             <h2 className="display-md text-foreground">
               Troy High School

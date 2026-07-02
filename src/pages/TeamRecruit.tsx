@@ -29,7 +29,7 @@ export default function TeamRecruit() {
       <Navbar />
 
       {/* Page Hero */}
-      <header className="relative pt-32 pb-20 px-6 overflow-hidden border-b border-border">
+      <header className="relative hero-py px-6 overflow-hidden border-b border-border">
         <div className="max-w-7xl mx-auto">
           <h1 className="display-xl text-foreground mb-4">
             2026–2027 Team
@@ -42,9 +42,9 @@ export default function TeamRecruit() {
 
       <main>
         {/* Leadership */}
-        <section className="py-16 border-t border-border" aria-labelledby="leadership-heading">
+        <section className="section-py border-t border-border" aria-labelledby="leadership-heading">
           <div className="max-w-7xl mx-auto px-6">
-            <h2 id="leadership-heading" className="display-lg text-foreground mb-10">
+            <h2 id="leadership-heading" className="display-lg text-foreground mb-6">
               Officers
             </h2>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -57,13 +57,13 @@ export default function TeamRecruit() {
                     <img
                       src={officer.photo}
                       alt={`Headshot of ${officer.name}`}
-                      width={56}
-                      height={56}
+                      width={80}
+                      height={80}
                       loading="lazy"
-                      className="w-14 h-14 rounded-full object-cover flex-shrink-0"
+                      className="w-20 h-20 rounded-full object-cover flex-shrink-0"
                     />
                   ) : (
-                    <MonogramAvatar name={officer.name} size={56} />
+                    <MonogramAvatar name={officer.name} size={80} />
                   )}
                   <div className="min-w-0">
                     <h3 className="font-playfair text-lg font-semibold text-foreground leading-tight">
@@ -78,7 +78,7 @@ export default function TeamRecruit() {
         </section>
 
         {/* Recruitment */}
-        <section className="py-16 border-t border-border" aria-labelledby="recruit-heading">
+        <section className="section-py border-t border-border" aria-labelledby="recruit-heading">
           <div className="max-w-7xl mx-auto px-6">
             <h2 id="recruit-heading" className="display-lg text-foreground mb-4">
               Join the Team
