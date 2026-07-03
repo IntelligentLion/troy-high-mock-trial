@@ -63,14 +63,15 @@ export default {
           ring: "hsl(var(--sidebar-ring))",
         },
         // "Chambers & Conviction" brand palette
-        navy:     "#0D1B2A",
-        gold:     "#C9A84C",
-        "gold-light": "#E8C97A",
-        cream:    "#F7F3EC",
-        slate:    "#3D5A73",
-        charcoal: "#1E2D3D",
-        "red-accent": "#8B1A1A",
-        "color-muted": "#8A9BB0",
+        navy:     "#12275E",
+        gold:     "#A16207",
+        "gold-fill": "#FFC53D",
+        "gold-light": "#FFD666",
+        cream:    "#F3ECD9",
+        slate:    "#44608C",
+        charcoal: "#FFFFFF",
+        "red-accent": "#C22F2F",
+        "color-muted": "#5C6B84",
       },
       fontFamily: {
         display:  ["'Cormorant Garamond'", "Georgia", "serif"],
@@ -102,7 +103,7 @@ export default {
         sm:   "0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)",
         md:   "0 4px 12px rgba(0,0,0,0.15), 0 2px 4px rgba(0,0,0,0.12)",
         lg:   "0 10px 40px rgba(0,0,0,0.2)",
-        gold: "0 4px 20px rgba(201,168,76,0.25)",
+        gold: "0 4px 20px rgba(255,197,61,0.25)",
       },
       keyframes: {
         "accordion-down": {

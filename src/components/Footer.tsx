@@ -19,20 +19,20 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-border py-16">
+    <footer className="py-16" style={{ background: "var(--color-navy)" }}>
       <div className="max-w-7xl xl:max-w-8xl mx-auto px-6">
         <div className="grid md:grid-cols-4 gap-12 mb-12">
           {/* Brand */}
           <div className="md:col-span-2">
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-7 h-7 flex items-center justify-center rounded-md bg-primary">
-                <Scale className="w-4 h-4 text-primary-foreground" strokeWidth={2} aria-hidden="true" />
+              <div className="w-7 h-7 flex items-center justify-center rounded-md bg-gold-fill">
+                <Scale className="w-4 h-4 text-navy" strokeWidth={2} aria-hidden="true" />
               </div>
-              <span className="font-sans font-semibold text-base text-foreground">
+              <span className="font-sans font-semibold text-base text-white">
                 Troy Mock Trial
               </span>
             </div>
-            <p className="text-muted-foreground text-sm leading-relaxed max-w-xs mb-4">
+            <p className="text-white/55 text-sm leading-relaxed max-w-xs mb-4">
               Preparing the next generation of lawyers, advocates, and critical thinkers
               at Troy High School, Fullerton CA — since 2016.
             </p>
@@ -43,7 +43,7 @@ export default function Footer() {
                   href={contact.instagram}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="label-mono text-muted-foreground hover:text-primary transition-colors text-[0.65rem]"
+                  className="label-mono text-white/55 hover:text-gold-fill transition-colors text-[0.65rem]"
                 >
                   Instagram
                 </a>
@@ -53,7 +53,7 @@ export default function Footer() {
                   href={contact.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="label-mono text-muted-foreground hover:text-primary transition-colors text-[0.65rem]"
+                  className="label-mono text-white/55 hover:text-gold-fill transition-colors text-[0.65rem]"
                 >
                   LinkedIn
                 </a>
@@ -63,13 +63,13 @@ export default function Footer() {
 
           {/* Quick links */}
           <div>
-            <span className="label-mono text-muted-foreground block mb-4">Navigation</span>
+            <span className="label-mono text-white/45 block mb-4">Navigation</span>
             <ul className="flex flex-col gap-2">
               {navLinks.map((l) => (
                 <li key={l.to}>
                   <Link
                     to={l.to}
-                    className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                    className="text-sm text-white/65 hover:text-gold-fill transition-colors"
                   >
                     {l.label}
                   </Link>
@@ -80,8 +80,8 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <span className="label-mono text-muted-foreground block mb-4">Contact</span>
-            <ul className="flex flex-col gap-2 text-sm text-muted-foreground">
+            <span className="label-mono text-white/45 block mb-4">Contact</span>
+            <ul className="flex flex-col gap-2 text-sm text-white/65">
               {contact?.address ? (
                 <li>{contact.address}</li>
               ) : (
@@ -96,7 +96,7 @@ export default function Footer() {
                     href={contact.instagram}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="hover:text-primary transition-colors"
+                    className="hover:text-gold-fill transition-colors"
                   >
                     {contact.instagramHandle ?? "@ths_mocktrial"}
                   </a>
@@ -106,11 +106,11 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-border pt-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-          <span className="label-mono text-muted-foreground text-[0.65rem]">
+        <div className="border-t border-white/10 pt-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+          <span className="label-mono text-white/45 text-[0.65rem]">
             © {currentYear} Troy High School Mock Trial Team — All rights reserved.
           </span>
-          <span className="label-mono text-muted-foreground text-[0.65rem]">
+          <span className="label-mono text-white/45 text-[0.65rem]">
             Founded 2016 · Legacy is Earned.
           </span>
         </div>

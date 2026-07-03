@@ -18,7 +18,8 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 40);
-    window.addEventListener("scroll", handleScroll);
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -29,11 +30,18 @@ export default function Navbar() {
       ? location.pathname === to || location.pathname.startsWith(to + "/")
       : location.pathname === to;
 
+  // Over the dark navy hero (home, unscrolled) the transparent navbar needs light text
+  const overDark = location.pathname === "/" && !scrolled;
+  const linkColor = (active: boolean) =>
+    active
+      ? overDark ? "text-gold-fill" : "text-primary"
+      : overDark ? "text-white/70" : "text-foreground/70";
+
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-background border-b border-border shadow-md" : "bg-transparent"
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 border-b transition-colors duration-150 ${
+        scrolled ? "bg-background border-border shadow-md" : "bg-transparent border-transparent"
+      } ${overDark ? "nav-over-hero" : ""}`}
     >
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
 
@@ -42,17 +50,17 @@ export default function Navbar() {
           <div className="w-7 h-7 flex items-center justify-center rounded-md bg-primary">
             <Scale className="w-4 h-4 text-primary-foreground" strokeWidth={2} />
           </div>
-          <span className="font-sans font-semibold text-base text-foreground tracking-wide">
+          <span className={`font-sans font-semibold text-base tracking-wide ${overDark ? "text-white" : "text-foreground"}`}>
             Troy Mock Trial
           </span>
         </Link>
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center divide-x divide-white/10" aria-label="Main navigation">
+        <nav className={`hidden md:flex items-center divide-x ${overDark ? "divide-white/10" : "divide-foreground/10"}`} aria-label="Main navigation">
           {/* Home */}
           <Link
             to="/"
-            className={`nav-link px-4 ${isActive("/", false) ? "text-primary" : "text-foreground/70"}`}
+            className={`nav-link px-4 ${linkColor(isActive("/", false))}`}
             aria-current={isActive("/", false) ? "page" : undefined}
           >
             Home
@@ -61,7 +69,7 @@ export default function Navbar() {
           {/* About Us — explicit so it sits between Home and Team */}
           <Link
             to="/about"
-            className={`nav-link px-4 ${isActive("/about", false) ? "text-primary" : "text-foreground/70"}`}
+            className={`nav-link px-4 ${linkColor(isActive("/about", false))}`}
             aria-current={isActive("/about", false) ? "page" : undefined}
           >
             About Us
@@ -72,7 +80,7 @@ export default function Navbar() {
             <Link
               key={l.to}
               to={l.to}
-              className={`nav-link px-4 ${isActive(l.to, l.prefix) ? "text-primary" : "text-foreground/70"}`}
+              className={`nav-link px-4 ${linkColor(isActive(l.to, l.prefix))}`}
               aria-current={isActive(l.to, l.prefix) ? "page" : undefined}
             >
               {l.label}
@@ -87,7 +95,7 @@ export default function Navbar() {
 
         {/* Mobile toggle */}
         <button
-          className="md:hidden text-foreground"
+          className={`md:hidden ${overDark ? "text-white" : "text-foreground"}`}
           onClick={() => setOpen(!open)}
           aria-label="Toggle menu"
           aria-expanded={open}

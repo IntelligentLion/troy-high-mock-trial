@@ -142,7 +142,7 @@ export default function Sponsors() {
                 >
                   {t.highlight && (
                     <span className="absolute top-4 right-4 label-mono text-[0.6rem] px-2 py-0.5 rounded-full text-primary"
-                      style={{ background: "rgba(201,168,76,0.12)", border: "1px solid rgba(201,168,76,0.25)" }}>
+                      style={{ background: "rgba(255,197,61,0.12)", border: "1px solid rgba(161,98,7,0.3)" }}>
                       Top Tier
                     </span>
                   )}

@@ -7,57 +7,61 @@
    ───────────────────────────────────────────── */
 @layer base {
   :root {
-    /* ── Shadcn/ui semantic tokens (navy/gold mapping) ── */
-    --background: 210 58% 10%;        /* --color-navy */
-    --foreground: 36 52% 95%;         /* near-cream */
+    /* ── Shadcn/ui semantic tokens (light paper/gold mapping) ── */
+    --background: 45 57% 97%;         /* warm paper */
+    --foreground: 223 68% 22%;        /* --color-navy (deep navy text) */
 
-    --card: 210 47% 16%;              /* --color-charcoal */
-    --card-foreground: 36 52% 95%;
+    --card: 0 0% 100%;                /* white cards */
+    --card-foreground: 223 68% 22%;
 
-    --popover: 210 47% 16%;
-    --popover-foreground: 36 52% 95%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 223 68% 22%;
 
-    --primary: 40 51% 54%;            /* --color-gold */
-    --primary-foreground: 210 58% 10%;
+    --primary: 36 92% 33%;            /* --color-gold (dark gold, AA as text) */
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 35% 20%;
-    --secondary-foreground: 36 52% 95%;
+    --secondary: 44 40% 92%;
+    --secondary-foreground: 223 68% 22%;
 
-    --muted: 210 35% 18%;
-    --muted-foreground: 210 22% 70%;  /* lifted for WCAG AA on navy */
+    --muted: 44 40% 92%;
+    --muted-foreground: 218 18% 44%;  /* WCAG AA on paper */
 
-    --accent: 40 51% 54%;
-    --accent-foreground: 210 58% 10%;
+    --accent: 44 40% 92%;
+    --accent-foreground: 223 68% 22%;
 
-    --destructive: 0 65% 32%;         /* --color-red-accent */
-    --destructive-foreground: 36 52% 95%;
+    --destructive: 0 61% 47%;         /* --color-red-accent */
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 210 30% 22%;
-    --input:  210 30% 22%;
-    --ring:   40 51% 54%;             /* gold focus ring */
+    --border: 220 20% 85%;
+    --input:  220 20% 85%;
+    --ring:   36 92% 33%;             /* gold focus ring */
 
     --radius: 0.5rem;
 
     /* ── Sidebar ── */
-    --sidebar-background: 210 58% 10%;
-    --sidebar-foreground: 36 52% 95%;
-    --sidebar-primary: 40 51% 54%;
-    --sidebar-primary-foreground: 210 58% 10%;
-    --sidebar-accent: 210 35% 18%;
-    --sidebar-accent-foreground: 36 52% 95%;
-    --sidebar-border: 210 30% 22%;
-    --sidebar-ring: 40 51% 54%;
+    --sidebar-background: 45 57% 97%;
+    --sidebar-foreground: 223 68% 22%;
+    --sidebar-primary: 36 92% 33%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 44 40% 92%;
+    --sidebar-accent-foreground: 223 68% 22%;
+    --sidebar-border: 220 20% 85%;
+    --sidebar-ring: 36 92% 33%;
 
-    /* ── Brand color palette (raw hex, for direct use) ── */
-    --color-navy:       #0D1B2A;
-    --color-gold:       #C9A84C;
-    --color-gold-light: #E8C97A;
-    --color-cream:      #F7F3EC;
-    --color-slate:      #3D5A73;
-    --color-charcoal:   #1E2D3D;
-    --color-red-accent: #8B1A1A;
+    /* ── Brand color palette (raw hex, for direct use) ──
+       Light theme splits gold into two roles:
+       --color-gold      = dark gold, safe as TEXT on light backgrounds
+       --color-gold-fill = bright amber, for FILLS with navy text on top */
+    --color-navy:       #12275E;
+    --color-gold:       #A16207;
+    --color-gold-fill:  #FFC53D;
+    --color-gold-light: #FFD666;
+    --color-cream:      #F3ECD9;
+    --color-slate:      #44608C;
+    --color-charcoal:   #FFFFFF;
+    --color-red-accent: #C22F2F;
     --color-white:      #FFFFFF;
-    --color-muted:      #8A9BB0;
+    --color-muted:      #5C6B84;
 
     /* ── Type scale ── */
     --text-xs:   0.75rem;
@@ -93,7 +97,7 @@
     --shadow-sm:   0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
     --shadow-md:   0 4px 12px rgba(0,0,0,0.15), 0 2px 4px rgba(0,0,0,0.12);
     --shadow-lg:   0 10px 40px rgba(0,0,0,0.2);
-    --shadow-gold: 0 4px 20px rgba(201,168,76,0.20);
+    --shadow-gold: 0 4px 20px rgba(255,197,61,0.22);
 
     /* ── Motion ── */
     --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
@@ -221,7 +225,7 @@
 @layer components {
   .btn-primary {
     @apply inline-flex items-center justify-center gap-2 px-7 py-3 font-semibold rounded-full text-sm transition-all;
-    background: var(--color-gold);
+    background: var(--color-gold-fill);
     color: var(--color-navy);
     font-family: 'DM Sans', sans-serif;
     box-shadow: var(--shadow-gold);
@@ -231,7 +235,7 @@
   .btn-primary:hover {
     background: var(--color-gold-light);
     transform: translateY(-1px);
-    box-shadow: 0 6px 24px rgba(201,168,76,0.35);
+    box-shadow: 0 6px 24px rgba(255,197,61,0.38);
   }
 
   .btn-outline {
@@ -243,14 +247,14 @@
   }
 
   .btn-outline:hover {
-    background: var(--color-gold);
+    background: var(--color-gold-fill);
     color: var(--color-navy);
     transform: translateY(-1px);
   }
 
   .btn-secondary {
     @apply inline-flex items-center justify-center gap-2 px-7 py-3 font-semibold rounded-full text-sm;
-    border: 1px solid rgba(201,168,76,0.5);
+    border: 1px solid rgba(161,98,7,0.4);
     color: var(--color-gold);
     background: transparent;
     font-family: 'DM Sans', sans-serif;
@@ -258,22 +262,22 @@
   }
 
   .btn-secondary:hover {
-    background: rgba(201, 168, 76, 0.08);
+    background: rgba(161, 98, 7, 0.08);
     border-color: var(--color-gold);
     transform: translateY(-1px);
   }
 
   .btn-ghost {
     @apply inline-flex items-center justify-center gap-2 px-7 py-3 font-semibold rounded-full text-sm;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    color: var(--color-white);
+    border: 1px solid rgba(18, 39, 94, 0.3);
+    color: var(--color-navy);
     background: transparent;
     font-family: 'DM Sans', sans-serif;
     transition: all var(--duration-base) var(--ease-out-expo);
   }
 
   .btn-ghost:hover {
-    border-color: rgba(201,168,76,0.6);
+    border-color: rgba(161,98,7,0.5);
     color: var(--color-gold);
     transform: translateY(-1px);
   }
@@ -284,6 +288,17 @@
     opacity: 0.6;
     pointer-events: none;
     transform: none;
+  }
+
+  /* Ghost buttons inside the dark navy hero need light styling */
+  .hero-dark .btn-ghost {
+    border-color: rgba(255, 255, 255, 0.25);
+    color: var(--color-white);
+  }
+
+  .hero-dark .btn-ghost:hover {
+    border-color: rgba(255, 197, 61, 0.6);
+    color: var(--color-gold-fill);
   }
 }
 
@@ -332,8 +347,8 @@
       -45deg,
       transparent,
       transparent 60px,
-      rgba(201, 168, 76, 0.02) 60px,
-      rgba(201, 168, 76, 0.02) 61px
+      rgba(255, 197, 61, 0.03) 60px,
+      rgba(255, 197, 61, 0.03) 61px
     );
   }
 }
@@ -368,6 +383,15 @@
     color: var(--color-gold);
   }
 
+  /* Over the dark home hero, hover/underline need the bright fill gold */
+  .nav-over-hero .nav-link:hover {
+    color: var(--color-gold-fill);
+  }
+
+  .nav-over-hero .nav-link::after {
+    background: var(--color-gold-fill);
+  }
+
   .nav-link.active::after,
   .nav-link:hover::after {
     width: 100%;
@@ -389,8 +413,8 @@
   }
 
   .season-pill.active {
-    background: var(--color-gold);
-    border-color: var(--color-gold);
+    background: var(--color-gold-fill);
+    border-color: var(--color-gold-fill);
     color: var(--color-navy);
   }
 }
@@ -404,7 +428,7 @@
     align-items: center;
     justify-content: center;
     background: var(--color-navy);
-    color: var(--color-gold);
+    color: var(--color-gold-fill);
     font-family: 'Cormorant Garamond', Georgia, serif;
     font-weight: 600;
     border-radius: 50%;
@@ -415,17 +439,17 @@
   .pill {
     @apply inline-flex items-center px-3 py-1 text-xs font-medium rounded-full;
     font-family: 'DM Sans', sans-serif;
-    background: rgba(201,168,76,0.10);
-    color: var(--color-gold-light);
-    border: 1px solid rgba(201,168,76,0.22);
+    background: rgba(255,197,61,0.15);
+    color: var(--color-gold);
+    border: 1px solid rgba(161,98,7,0.3);
   }
 
   .award-badge {
     @apply inline-flex items-center gap-1 px-3 py-1 text-xs font-medium;
     font-family: 'DM Sans', sans-serif;
-    background: rgba(139,26,26,0.12);
-    color: #E07070;
-    border: 1px solid rgba(139,26,26,0.25);
+    background: rgba(194,47,47,0.08);
+    color: var(--color-red-accent);
+    border: 1px solid rgba(194,47,47,0.3);
     border-radius: var(--radius-sm);
   }
 

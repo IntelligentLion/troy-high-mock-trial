@@ -57,18 +57,22 @@ Audience: prospective sponsors, alumni, competing students, judges, legal/academ
 
 ## Design System
 
-Aesthetic: **"Chambers & Conviction"** — dark navy courtroom gravity + sharp gold accents + clean serif type
+Aesthetic: **"Chambers & Conviction" (light)** — warm paper background + deep navy text + gold accents; the home hero and footer are dark navy bands that bookend the light body
 
 ### Colors
-- `--color-navy: #0D1B2A` — primary dark background
-- `--color-gold: #C9A84C` — prestige accent (use sparingly)
-- `--color-gold-light: #E8C97A` — hover/active
-- `--color-cream: #F7F3EC` — warm off-white background
-- `--color-slate: #3D5A73` — secondary text, dividers
-- `--color-charcoal: #1E2D3D` — card backgrounds
-- `--color-red-accent: #8B1A1A` — competition/achievement callouts
+- Page background is warm paper (`hsl(45 57% 97%)` ≈ `#FCFAF4`), cards are white — see semantic tokens in `src/index.css`
+- `--color-navy: #12275E` — deep navy: text, hero/footer backgrounds, monogram avatars
+- `--color-gold: #A16207` — dark gold, safe as **text** on light backgrounds (bright gold text fails WCAG on white)
+- `--color-gold-fill: #FFC53D` — bright amber for **fills only** (buttons, active pills, avatar initials) with navy text on top
+- `--color-gold-light: #FFD666` — fill hover state
+- `--color-cream: #F3ECD9` — deeper warm tint for alternate surfaces
+- `--color-slate: #44608C` — secondary text, dividers
+- `--color-charcoal: #FFFFFF` — card surfaces (legacy token name)
+- `--color-red-accent: #C22F2F` — competition/achievement callouts
 - `--color-white: #FFFFFF`
-- `--color-muted: #8A9BB0` — de-emphasized text
+- `--color-muted: #5C6B84` — de-emphasized text
+
+**Gold rule:** never use `--color-gold-fill` as a text color on light backgrounds, and never use `--color-gold` as text on navy — inside dark bands (`.hero-dark`, footer) use white text and `--color-gold-fill` accents.
 
 ### Fonts
 - Display: `Cormorant Garamond` (serif) — headlines, pull-quotes
