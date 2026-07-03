@@ -37,7 +37,7 @@ export default function TeamLanding() {
 
       {/* Page Hero — background image will be placed here */}
       <header className="hero-py px-6 border-b border-border">
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-7xl xl:max-w-8xl mx-auto">
           <h1 className="display-xl text-foreground mb-3">The Team</h1>
           <p className="text-muted-foreground text-lg">
             Troy High School Mock Trial — Fullerton, CA
@@ -46,7 +46,7 @@ export default function TeamLanding() {
       </header>
 
       <main className="py-10">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-7xl xl:max-w-8xl mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-5">
             {seasons.map((s) => (
               <Link

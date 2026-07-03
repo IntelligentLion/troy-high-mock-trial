@@ -34,7 +34,7 @@ export default function GallerySection() {
 
   return (
     <section id="gallery" className="py-24 border-t border-border">
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-7xl xl:max-w-8xl mx-auto px-6">
         <motion.span
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}

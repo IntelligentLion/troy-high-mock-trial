@@ -30,7 +30,7 @@ export default function TeamRecruit() {
 
       {/* Page Hero */}
       <header className="relative hero-py px-6 overflow-hidden border-b border-border">
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-7xl xl:max-w-8xl mx-auto">
           <h1 className="display-xl text-foreground mb-4">
             2026–2027 Team
           </h1>
@@ -43,7 +43,7 @@ export default function TeamRecruit() {
       <main>
         {/* Leadership */}
         <section className="section-py border-t border-border" aria-labelledby="leadership-heading">
-          <div className="max-w-7xl mx-auto px-6">
+          <div className="max-w-7xl xl:max-w-8xl mx-auto px-6">
             <h2 id="leadership-heading" className="display-lg text-foreground mb-6">
               Officers
             </h2>
@@ -79,7 +79,7 @@ export default function TeamRecruit() {
 
         {/* Recruitment */}
         <section className="section-py border-t border-border" aria-labelledby="recruit-heading">
-          <div className="max-w-7xl mx-auto px-6">
+          <div className="max-w-7xl xl:max-w-8xl mx-auto px-6">
             <h2 id="recruit-heading" className="display-lg text-foreground mb-4">
               Join the Team
             </h2>

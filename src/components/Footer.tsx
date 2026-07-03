@@ -20,7 +20,7 @@ export default function Footer() {
 
   return (
     <footer className="border-t border-border py-16">
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-7xl xl:max-w-8xl mx-auto px-6">
         <div className="grid md:grid-cols-4 gap-12 mb-12">
           {/* Brand */}
           <div className="md:col-span-2">

@@ -14,7 +14,8 @@ export default {
     },
     extend: {
       maxWidth: {
-        '7xl': '1440px',
+        '7xl': '1280px',
+        '8xl': '1440px',
       },
       colors: {
         // Shadcn/ui semantic tokens

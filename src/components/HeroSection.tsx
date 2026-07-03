@@ -14,7 +14,7 @@ export default function HeroSection() {
       style={{ background: "var(--color-navy)" }}
     >
       {/* Two-column layout */}
-      <div className="relative w-full max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+      <div className="relative w-full max-w-7xl xl:max-w-8xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
         {/* Left — text */}
         <div className="flex flex-col items-center text-center lg:items-start lg:text-left">

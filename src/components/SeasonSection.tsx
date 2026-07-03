@@ -13,7 +13,7 @@ const leadership2627 = [
 export default function SeasonSection() {
   return (
     <section id="season" className="section-py border-t border-border">
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-7xl xl:max-w-8xl mx-auto px-6">
         <h2 className="display-lg text-foreground mb-1">
           2026–2027
         </h2>

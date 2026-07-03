@@ -54,7 +54,7 @@ export default function Alumni() {
 
       {/* Page Hero */}
       <header className="relative hero-py px-6 overflow-hidden border-b border-border">
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-7xl xl:max-w-8xl mx-auto">
           <h1 className="display-xl text-foreground mb-4">
             Those Who Came Before
           </h1>
@@ -66,7 +66,7 @@ export default function Alumni() {
       </header>
 
       <main className="py-8">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-7xl xl:max-w-8xl mx-auto px-6">
           {/* Search */}
           <div className="relative mb-12 max-w-md">
             <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" aria-hidden="true" />

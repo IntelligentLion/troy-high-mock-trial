@@ -42,7 +42,7 @@ export default function About() {
 
       {/* Page Hero */}
       <header className="relative hero-py px-6 overflow-hidden border-b border-border">
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-7xl xl:max-w-8xl mx-auto">
           <h1 className="display-xl text-foreground mb-4">
             About Troy Mock Trial
           </h1>
@@ -56,7 +56,7 @@ export default function About() {
       <main>
         {/* Mission */}
         <section className="section-py border-b border-border">
-          <div className="max-w-7xl mx-auto px-6">
+          <div className="max-w-7xl xl:max-w-8xl mx-auto px-6">
             <div
               className="bg-card rounded-xl border border-border p-8 md:p-12"
               style={{ borderLeft: "3px solid var(--color-gold)" }}
@@ -73,7 +73,7 @@ export default function About() {
 
         {/* Our Story */}
         <section className="section-py border-b border-border" aria-labelledby="story-heading">
-          <div className="max-w-7xl mx-auto px-6">
+          <div className="max-w-7xl xl:max-w-8xl mx-auto px-6">
             <div className="grid md:grid-cols-12 gap-12 items-start">
               <div className="md:col-span-7">
                 <h2 id="story-heading" className="display-lg text-foreground mb-6">
@@ -124,7 +124,7 @@ export default function About() {
 
         {/* What We Do */}
         <section className="section-py border-b border-border" aria-labelledby="program-heading">
-          <div className="max-w-7xl mx-auto px-6">
+          <div className="max-w-7xl xl:max-w-8xl mx-auto px-6">
             <h2 id="program-heading" className="display-lg text-foreground mb-12">
               What We Do
             </h2>
@@ -145,7 +145,7 @@ export default function About() {
         {/* Coaching Staff */}
         {coaches.length > 0 && (
           <section className="section-py border-b border-border" aria-labelledby="coaches-heading">
-            <div className="max-w-7xl mx-auto px-6">
+            <div className="max-w-7xl xl:max-w-8xl mx-auto px-6">
               <div className="flex items-end justify-between mb-10 flex-wrap gap-4">
                 <div>
                   <h2 id="coaches-heading" className="display-lg text-foreground">
@@ -199,7 +199,7 @@ export default function About() {
 
         {/* CTA */}
         <section className="section-py">
-          <div className="max-w-7xl mx-auto px-6">
+          <div className="max-w-7xl xl:max-w-8xl mx-auto px-6">
             <div className="grid sm:grid-cols-2 gap-6">
               <div className="bg-card rounded-xl border border-border p-8 flex flex-col gap-4">
                 <h3 className="font-playfair text-2xl font-semibold text-foreground">

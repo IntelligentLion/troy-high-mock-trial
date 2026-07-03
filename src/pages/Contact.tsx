@@ -50,7 +50,7 @@ export default function Contact() {
 
       {/* Page Hero */}
       <header className="relative hero-py px-6 overflow-hidden border-b border-border">
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-7xl xl:max-w-8xl mx-auto">
           <h1 className="display-xl text-foreground mb-4">
             Contact Us
           </h1>
@@ -61,7 +61,7 @@ export default function Contact() {
       </header>
 
       <main className="py-8">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-7xl xl:max-w-8xl mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-12 items-start">
             {/* Contact info */}
             <div className="flex flex-col gap-8">

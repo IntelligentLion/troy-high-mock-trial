@@ -26,7 +26,7 @@ export default function Team() {
 
       {/* Page Hero */}
       <header className="relative hero-py px-6 overflow-hidden border-b border-border">
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-7xl xl:max-w-8xl mx-auto">
           <h1 className="display-xl text-foreground mb-4">
             2025–2026 Team
           </h1>
@@ -39,7 +39,7 @@ export default function Team() {
       <main>
         {/* Officers */}
         <section className="section-py border-t border-border" aria-labelledby="officers-heading">
-          <div className="max-w-7xl mx-auto px-6">
+          <div className="max-w-7xl xl:max-w-8xl mx-auto px-6">
             <h2 id="officers-heading" className="display-lg text-foreground mb-6">Officers</h2>
 
             {isLoading ? (
@@ -103,7 +103,7 @@ export default function Team() {
 
         {/* Members */}
         <section className="section-py border-t border-border" aria-labelledby="members-heading">
-          <div className="max-w-7xl mx-auto px-6">
+          <div className="max-w-7xl xl:max-w-8xl mx-auto px-6">
             <h2 id="members-heading" className="display-lg text-foreground mb-6">Team Members</h2>
 
             {isLoading ? (
@@ -139,7 +139,7 @@ export default function Team() {
 
         {/* Coaches & Faculty Advisors */}
         <section className="section-py border-t border-border" aria-labelledby="coaches-heading">
-          <div className="max-w-7xl mx-auto px-6">
+          <div className="max-w-7xl xl:max-w-8xl mx-auto px-6">
             <h2 id="coaches-heading" className="display-lg text-foreground mb-6">
               Coaches &amp; Faculty Advisors
             </h2>

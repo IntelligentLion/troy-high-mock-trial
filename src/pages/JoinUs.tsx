@@ -53,7 +53,7 @@ export default function JoinUs() {
 
       {/* Hero */}
       <header className="relative hero-py px-6 overflow-hidden border-b border-border">
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-7xl xl:max-w-8xl mx-auto">
           <h1 className="display-xl text-foreground mb-6">
             Join Troy Mock Trial
           </h1>
@@ -77,7 +77,7 @@ export default function JoinUs() {
       <main>
         {/* Why Join Us */}
         <section className="section-py border-t border-border" aria-labelledby="why-heading">
-          <div className="max-w-7xl mx-auto px-6">
+          <div className="max-w-7xl xl:max-w-8xl mx-auto px-6">
             <h2 id="why-heading" className="display-lg text-foreground mb-12">
               Why Join Us?
             </h2>
@@ -106,7 +106,7 @@ export default function JoinUs() {
 
         {/* CTA */}
         <section className="section-py border-t border-border">
-          <div className="max-w-7xl mx-auto px-6 text-center">
+          <div className="max-w-7xl xl:max-w-8xl mx-auto px-6 text-center">
             <h2 className="display-lg text-foreground mb-4">
               Ready to Make Your Case?
             </h2>

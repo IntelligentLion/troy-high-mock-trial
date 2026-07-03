@@ -73,7 +73,7 @@ export default function Gallery() {
 
       {/* Page Hero */}
       <header className="relative hero-py px-6 overflow-hidden border-b border-border">
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-7xl xl:max-w-8xl mx-auto">
           <h1 className="display-xl text-foreground mb-4">
             Every Season,{" "}
             <span className="gold-text">Documented</span>
@@ -87,7 +87,7 @@ export default function Gallery() {
       <main>
         {/* Sticky year tab bar */}
         <div className="sticky top-16 z-30 bg-background border-b border-border">
-          <div className="max-w-7xl mx-auto px-6 py-3 overflow-x-auto">
+          <div className="max-w-7xl xl:max-w-8xl mx-auto px-6 py-3 overflow-x-auto">
             <div className="flex gap-2 min-w-max" role="tablist" aria-label="Filter by season">
               <button
                 role="tab"
@@ -112,7 +112,7 @@ export default function Gallery() {
           </div>
         </div>
 
-        <div className="max-w-7xl mx-auto px-6 py-12">
+        <div className="max-w-7xl xl:max-w-8xl mx-auto px-6 py-12">
           {isLoading ? (
             <div
               className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3"

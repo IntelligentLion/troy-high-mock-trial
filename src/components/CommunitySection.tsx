@@ -17,7 +17,7 @@ export default function CommunitySection() {
 
   return (
     <section id="community" className="section-py border-t border-border">
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-7xl xl:max-w-8xl mx-auto px-6">
         <h2 className="display-lg text-foreground mb-3">
           Beyond the Courtroom
         </h2>

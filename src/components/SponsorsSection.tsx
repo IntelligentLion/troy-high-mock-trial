@@ -3,7 +3,7 @@ import { ArrowRight, Download, Mail } from "lucide-react";
 export default function SponsorsSection() {
   return (
     <section id="sponsors" className="section-py border-t border-border">
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-7xl xl:max-w-8xl mx-auto px-6">
         <h2 className="display-lg text-foreground mb-3">
           Support Excellence
         </h2>
