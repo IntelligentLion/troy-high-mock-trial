@@ -62,7 +62,7 @@ export default function AboutSection() {
         >
           <p className="text-foreground leading-relaxed max-w-3xl">
             The <strong>Constitutional Rights Foundation – Orange County (CRF-OC)</strong> Mock Trial program and the{" "}
-            <strong>JSerra Catholic High School Mock Trial Tournament</strong> — competing annually against teams across Orange, Riverside, and Santa Clara counties.
+            <strong>JSerra Catholic High School Mock Trial Tournament</strong> — competing annually against teams across Orange County.
           </p>
         </div>
       </div>
