@@ -125,14 +125,14 @@
 
   body {
     @apply bg-background text-foreground;
-    font-family: 'DM Sans', system-ui, sans-serif;
+    font-family: 'Onest', system-ui, sans-serif;
     font-size: var(--text-base);
     line-height: 1.65;
     min-height: 100vh;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-family: 'Onest', system-ui, sans-serif;
     font-style: normal;
     font-weight: 600;
     line-height: 1.15;
@@ -161,7 +161,7 @@
    ───────────────────────────────────────────── */
 @layer components {
   .display-xl {
-    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-family: 'Onest', system-ui, sans-serif;
     font-style: normal;
     font-size: clamp(2.6rem, 6vw, 4.5rem);
     font-weight: 600;
@@ -170,7 +170,7 @@
   }
 
   .display-lg {
-    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-family: 'Onest', system-ui, sans-serif;
     font-style: normal;
     font-size: clamp(1.9rem, 4vw, 3.2rem);
     font-weight: 600;
@@ -179,7 +179,7 @@
   }
 
   .display-md {
-    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-family: 'Onest', system-ui, sans-serif;
     font-style: normal;
     font-size: clamp(1.5rem, 2.8vw, 2.3rem);
     font-weight: 600;
@@ -188,7 +188,7 @@
   }
 
   .pull-quote {
-    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-family: 'Onest', system-ui, sans-serif;
     font-size: clamp(1.1rem, 2vw, 1.75rem);
     font-style: normal;
     font-weight: 500;
@@ -205,7 +205,7 @@
   }
 
   .stat-number {
-    font-family: 'DM Sans', system-ui, sans-serif;
+    font-family: 'Onest', system-ui, sans-serif;
     font-size: clamp(2rem, 4vw, 3rem);
     font-weight: 600;
     line-height: 1;
@@ -227,7 +227,7 @@
     @apply inline-flex items-center justify-center gap-2 px-7 py-3 font-semibold rounded-full text-sm transition-all;
     background: var(--color-gold-fill);
     color: var(--color-navy);
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'Onest', sans-serif;
     box-shadow: var(--shadow-gold);
     transition: all var(--duration-base) var(--ease-out-expo);
   }
@@ -242,7 +242,7 @@
     @apply inline-flex items-center justify-center gap-2 px-7 py-3 font-semibold rounded-full text-sm;
     border: 1.5px solid var(--color-gold);
     color: var(--color-gold);
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'Onest', sans-serif;
     transition: all var(--duration-base) var(--ease-out-expo);
   }
 
@@ -257,7 +257,7 @@
     border: 1px solid rgba(161,98,7,0.4);
     color: var(--color-gold);
     background: transparent;
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'Onest', sans-serif;
     transition: all var(--duration-base) var(--ease-out-expo);
   }
 
@@ -272,7 +272,7 @@
     border: 1px solid rgba(18, 39, 94, 0.3);
     color: var(--color-navy);
     background: transparent;
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'Onest', sans-serif;
     transition: all var(--duration-base) var(--ease-out-expo);
   }
 
@@ -358,10 +358,11 @@
    ───────────────────────────────────────────── */
 @layer components {
   .nav-link {
-    font-family: 'DM Sans', sans-serif;
-    font-size: var(--text-sm);
+    font-family: 'Onest', system-ui, sans-serif;
+    font-size: 0.75rem;
     font-weight: 500;
-    letter-spacing: 0.01em;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
     transition: color var(--duration-fast) ease;
     position: relative;
     padding-bottom: 2px;
@@ -399,7 +400,7 @@
 
   .season-pill {
     @apply inline-flex items-center whitespace-nowrap px-4 py-1.5 rounded-full text-sm font-medium;
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'Onest', sans-serif;
     letter-spacing: 0.01em;
     border: 1px solid var(--color-slate);
     color: var(--color-muted);
@@ -429,7 +430,7 @@
     justify-content: center;
     background: var(--color-navy);
     color: var(--color-gold-fill);
-    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-family: 'Onest', system-ui, sans-serif;
     font-weight: 600;
     border-radius: 50%;
     border: 2px solid var(--color-charcoal);
@@ -438,7 +439,7 @@
 
   .pill {
     @apply inline-flex items-center px-3 py-1 text-xs font-medium rounded-full;
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'Onest', sans-serif;
     background: rgba(255,197,61,0.15);
     color: var(--color-gold);
     border: 1px solid rgba(161,98,7,0.3);
@@ -446,7 +447,7 @@
 
   .award-badge {
     @apply inline-flex items-center gap-1 px-3 py-1 text-xs font-medium;
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'Onest', sans-serif;
     background: rgba(194,47,47,0.08);
     color: var(--color-red-accent);
     border: 1px solid rgba(194,47,47,0.3);
@@ -508,5 +509,183 @@
     clip: rect(0,0,0,0);
     white-space: nowrap;
     border-width: 0;
+  }
+}
+
+/* ═══════════════════════════════════════════════
+   BASELINE DESIGN LANGUAGE
+   Editorial layout + Onest oversized uppercase,
+   recolored to the mock-trial navy + gold identity.
+   Scoped to the home page via .bl-page.
+   ═══════════════════════════════════════════════ */
+@layer base {
+  :root {
+    /* Baseline palette, mapped onto navy + gold */
+    --bl-navy:      #12275E;   /* deep navy — hero / stats / footer bands */
+    --bl-navy-soft: #0F2450;
+    --bl-white:     #FFFFFF;
+    --bl-surface:   #F5F3EC;   /* warm off-white section band */
+    --bl-ink:       #12275E;   /* navy headings on light */
+    --bl-ink-soft:  #5C6B84;   /* muted body */
+    --bl-ghost:     #D9DDE8;   /* oversized ghost words */
+    --bl-hairline:  #E4E7EE;   /* subtle borders */
+    --bl-gold:      #A16207;   /* gold text on light */
+    --bl-gold-fill: #FFC53D;   /* gold fill / accents on navy */
+
+    --radius-card:    1.5rem;
+    --radius-card-lg: 2rem;
+    --radius-pill:    62.5rem;
+
+    /* Baseline spring-flavored easings (CSS stand-ins) */
+    --ease-expo:  cubic-bezier(0.16, 1, 0.3, 1);
+    --ease-quart: cubic-bezier(0.25, 1, 0.5, 1);
+  }
+}
+
+/* ── Onest typography ─────────────────────────── */
+@layer components {
+  .bl-page {
+    background: var(--bl-white);
+    color: var(--bl-ink);
+    font-family: 'Onest', system-ui, sans-serif;
+  }
+
+  /* Oversized uppercase display — the Baseline signature */
+  .bl-display {
+    font-family: 'Onest', system-ui, sans-serif;
+    font-weight: 500;
+    text-transform: uppercase;
+    line-height: 0.9;
+    letter-spacing: -0.02em;
+  }
+
+  .bl-headline {
+    font-family: 'Onest', system-ui, sans-serif;
+    font-weight: 500;
+    text-transform: uppercase;
+    line-height: 0.95;
+    letter-spacing: -0.015em;
+    font-size: clamp(2.25rem, 5vw, 3rem);
+  }
+
+  .bl-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: 'Onest', system-ui, sans-serif;
+    font-size: 0.75rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+  }
+
+  .bl-eyebrow::before {
+    content: '';
+    width: 0.375rem;
+    height: 0.375rem;
+    border-radius: var(--radius-pill);
+    background: var(--bl-gold);
+    flex-shrink: 0;
+  }
+
+  .bl-eyebrow.light { color: rgba(255, 255, 255, 0.7); }
+  .bl-eyebrow.light::before { background: var(--bl-gold-fill); }
+
+  /* Rounded "card band" sections framed by the white page inset */
+  .bl-band {
+    border-radius: var(--radius-card-lg);
+    overflow: hidden;
+    position: relative;
+  }
+  .bl-band.navy    { background: var(--bl-navy); color: var(--bl-white); }
+  .bl-band.surface { background: var(--bl-surface); color: var(--bl-ink); }
+  .bl-band.white   { background: var(--bl-white); color: var(--bl-ink); }
+
+  /* Frosted glass card for the dark hero */
+  .glass-navy {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 8px 30px rgba(9, 18, 46, 0.35);
+  }
+}
+
+/* ── Baseline pill button ─────────────────────── */
+@layer components {
+  .bl-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    border-radius: var(--radius-pill);
+    padding: 0.875rem 1.75rem;
+    font-family: 'Onest', system-ui, sans-serif;
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    transition: background 300ms var(--ease-expo), color 300ms var(--ease-expo),
+                transform 300ms var(--ease-expo);
+    cursor: pointer;
+  }
+  .bl-pill svg { transition: transform 300ms var(--ease-expo); }
+  .bl-pill:hover svg { transform: translateX(5px); }
+
+  .bl-pill.light  { background: var(--bl-gold-fill); color: var(--bl-navy); }
+  .bl-pill.light:hover  { background: var(--bl-gold-light, #FFD666); }
+  .bl-pill.solid  { background: var(--bl-ink); color: #fff; }
+  .bl-pill.solid:hover  { background: var(--bl-navy-soft); }
+  .bl-pill.outline { border: 1px solid currentColor; color: var(--bl-ink); background: transparent; }
+  .bl-pill.outline:hover { background: var(--bl-ink); color: #fff; }
+}
+
+/* ── Reveal primitives ────────────────────────────
+   .bl-inview springs from a hidden state to visible when
+   the parent gets .is-in (toggled by an IntersectionObserver
+   in <Reveal>). Per-item delay comes from inline style.
+   ─────────────────────────────────────────────── */
+@layer utilities {
+  .bl-inview {
+    opacity: 0;
+    transform: translateY(var(--bl-from-y, 1.75rem)) scale(var(--bl-from-scale, 1));
+    transition: opacity 900ms var(--ease-expo), transform 900ms var(--ease-expo);
+    will-change: opacity, transform;
+  }
+  .bl-inview.is-in {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+
+  /* Clip-mask word/line reveal */
+  .bl-clip {
+    display: inline-block;
+    overflow: hidden;
+    padding-bottom: 0.14em;
+    vertical-align: bottom;
+  }
+  .bl-clip-inner {
+    display: inline-block;
+    transform: translateY(115%);
+    opacity: 0;
+    transition: transform 1000ms var(--ease-expo), opacity 1000ms var(--ease-expo);
+    will-change: transform, opacity;
+  }
+  .is-in .bl-clip-inner { transform: translateY(0); opacity: 1; }
+
+  /* Word fade+rise (facilities body) */
+  .bl-word {
+    display: inline-block;
+    transform: translateY(18px);
+    opacity: 0;
+    transition: transform 700ms var(--ease-quart), opacity 700ms var(--ease-quart);
+  }
+  .is-in .bl-word { transform: translateY(0); opacity: 1; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .bl-inview, .bl-clip-inner, .bl-word {
+      transition: none !important;
+      opacity: 1 !important;
+      transform: none !important;
+    }
   }
 }

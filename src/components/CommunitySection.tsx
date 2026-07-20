@@ -1,5 +1,6 @@
 import { Mail } from "lucide-react";
 import { useSiteContent } from "@/hooks/useSiteContent";
+import { Reveal, ClipLines, Eyebrow, ArrowRightGlyph } from "@/components/baseline";
 
 const pillars = [
   { title: "Mentorship", desc: "Senior members mentor newcomers, and alumni return each spring to share their paths." },
@@ -16,53 +17,97 @@ export default function CommunitySection() {
   const instagramHandle = data?.contact?.instagramHandle ?? "@ths_mocktrial";
 
   return (
-    <section id="community" className="section-py border-t border-border">
-      <div className="max-w-7xl xl:max-w-8xl mx-auto px-6">
-        <h2 className="display-lg text-foreground mb-3">
-          Beyond the Courtroom
-        </h2>
-        <p className="text-muted-foreground mb-10 max-w-lg">
-          Competition is the headline. Community is what keeps members coming back.
-        </p>
+    <section id="community" className="bl-band surface px-6 sm:px-10 py-20 sm:py-24">
+      <Reveal y={18}>
+        <Eyebrow>Beyond the courtroom</Eyebrow>
+      </Reveal>
+      <ClipLines
+        as="h2"
+        lines={["More than", "a competition"]}
+        className="bl-headline mt-4"
+        base={80}
+        stagger={120}
+        style={{ color: "var(--bl-ink)" }}
+      />
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-8 mb-14">
-          {pillars.map((p, i) => (
-            <div key={i} className="flex flex-col gap-2 border-t border-border pt-6">
-              <h3 className="font-playfair text-lg font-semibold text-foreground">{p.title}</h3>
-              <p className="text-muted-foreground text-sm leading-relaxed">{p.desc}</p>
+      {/* Numbered program list */}
+      <ul className="mt-14">
+        {pillars.map((p, i) => (
+          <Reveal
+            key={p.title}
+            as="li"
+            y={26}
+            delay={i * 80}
+            className="group"
+            style={{
+              borderTop: "1px solid var(--bl-hairline)",
+              borderBottom: i === pillars.length - 1 ? "1px solid var(--bl-hairline)" : undefined,
+            }}
+          >
+            <div className="flex items-center gap-5 sm:gap-8 py-6 sm:py-7">
+              <span
+                className="text-sm font-medium w-8 shrink-0"
+                style={{ color: "var(--bl-ink-soft)", fontFamily: "'Onest', sans-serif" }}
+              >
+                {`0${i + 1}`}
+              </span>
+              <div className="flex-1 min-w-0">
+                <h3
+                  className="text-2xl sm:text-3xl font-medium uppercase tracking-tight"
+                  style={{ fontFamily: "'Onest', sans-serif", color: "var(--bl-ink)" }}
+                >
+                  {p.title}
+                </h3>
+                <p className="text-sm mt-1 max-w-2xl" style={{ color: "var(--bl-ink-soft)" }}>
+                  {p.desc}
+                </p>
+              </div>
+              <span
+                className="w-11 h-11 rounded-full shrink-0 hidden sm:flex items-center justify-center transition-transform duration-300 group-hover:translate-x-2"
+                style={{ border: "1px solid var(--bl-hairline)", color: "var(--bl-ink)" }}
+              >
+                <ArrowRightGlyph className="w-4 h-4" />
+              </span>
             </div>
-          ))}
-        </div>
+          </Reveal>
+        ))}
+      </ul>
 
-        {/* CTA strip */}
-        <div className="bg-card rounded-xl border border-border p-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
-          <div>
-            <h3 className="font-playfair text-xl font-semibold text-foreground mb-2">
-              Interested in Joining?
-            </h3>
-            <p className="text-muted-foreground text-sm max-w-sm">
-              Open to all Troy High School students. No prior legal experience required.
-            </p>
-          </div>
-          <div className="flex flex-col gap-3 shrink-0 min-w-[180px]">
-            <a
-              href="mailto:contact@troymocktrial.org?subject=Joining Troy Mock Trial"
-              className="btn-secondary"
-            >
-              <Mail className="w-4 h-4" aria-hidden="true" />
-              Email Us
-            </a>
-            <a
-              href={instagram}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-secondary"
-            >
-              {instagramHandle}
-            </a>
-          </div>
+      {/* Join CTA strip */}
+      <Reveal
+        y={24}
+        className="mt-10 rounded-[1.5rem] p-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6"
+        style={{ background: "var(--bl-white)", border: "1px solid var(--bl-hairline)" }}
+      >
+        <div>
+          <h3
+            className="text-xl font-medium uppercase tracking-tight mb-2"
+            style={{ fontFamily: "'Onest', sans-serif", color: "var(--bl-ink)" }}
+          >
+            Interested in joining?
+          </h3>
+          <p className="text-sm max-w-sm" style={{ color: "var(--bl-ink-soft)" }}>
+            Open to all Troy High School students. No prior legal experience required.
+          </p>
         </div>
-      </div>
+        <div className="flex flex-col gap-3 shrink-0 sm:min-w-[200px]">
+          <a
+            href="mailto:contact@troymocktrial.org?subject=Joining Troy Mock Trial"
+            className="bl-pill solid justify-center"
+          >
+            <Mail className="w-4 h-4" aria-hidden="true" />
+            Email Us
+          </a>
+          <a
+            href={instagram}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bl-pill outline justify-center"
+          >
+            {instagramHandle}
+          </a>
+        </div>
+      </Reveal>
     </section>
   );
 }

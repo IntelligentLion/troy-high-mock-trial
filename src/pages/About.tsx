@@ -62,7 +62,7 @@ export default function About() {
               style={{ borderLeft: "3px solid var(--color-gold)" }}
             >
               <p className="text-foreground text-xl md:text-2xl leading-relaxed max-w-3xl"
-                style={{ fontFamily: "'Cormorant Garamond', Georgia, serif", fontWeight: 500 }}>
+                style={{ fontFamily: "'Onest', system-ui, sans-serif", fontWeight: 500 }}>
                 We give students real courtroom experience — not simulated, not abstract.
                 From cross-examination to closing arguments before attorney judges,
                 we build the habits of mind that set effective advocates apart.
@@ -112,7 +112,7 @@ export default function About() {
                   >
                     <span className="stat-number">{s.value}</span>
                     <span className="text-xs text-muted-foreground"
-                      style={{ fontFamily: "'DM Sans', sans-serif" }}>
+                      style={{ fontFamily: "'Onest', sans-serif" }}>
                       {s.label}
                     </span>
                   </div>

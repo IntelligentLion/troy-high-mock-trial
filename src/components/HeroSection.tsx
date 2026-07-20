@@ -1,129 +1,180 @@
-import { Scale, ChevronDown, Trophy } from "lucide-react";
+import { useEffect, useRef } from "react";
+import { Scale, Trophy } from "lucide-react";
 import { Link } from "react-router-dom";
+import { ClipWords, ClipLines, Reveal, Eyebrow, ArrowRightGlyph } from "@/components/baseline";
 
 const stats = [
-  { value: "10", label: "Seasons Active" },
+  { value: "10", label: "Seasons active" },
   { value: "2nd", label: "JSerra Championship" },
-  { value: "~20", label: "Members Per Season" },
+  { value: "~20", label: "Members / season" },
 ];
 
 export default function HeroSection() {
+  const plateRef = useRef<HTMLDivElement>(null);
+
+  // Light scroll parallax on the background plate (oversized + shifted so the
+  // translate never exposes an edge). Disabled for reduced-motion.
+  useEffect(() => {
+    const plate = plateRef.current;
+    if (!plate) return;
+    if (window.matchMedia?.("(prefers-reduced-motion: reduce)").matches) return;
+
+    let raf = 0;
+    const onScroll = () => {
+      cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(() => {
+        const shift = Math.min(window.scrollY * 0.12, 120);
+        plate.style.transform = `translateY(${shift}px)`;
+      });
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      cancelAnimationFrame(raf);
+    };
+  }, []);
+
   return (
     <section
-      className="hero-dark relative flex flex-col items-center justify-center pt-24 pb-20 px-6 min-h-screen overflow-hidden hero-texture"
-      style={{ background: "var(--color-navy)" }}
+      className="bl-band navy relative isolate flex flex-col"
+      style={{ minHeight: "calc(100svh - 1.5rem)", minBlockSize: "36rem" }}
     >
-      {/* Two-column layout */}
-      <div className="relative w-full max-w-7xl xl:max-w-8xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-
-        {/* Left — text */}
-        <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
-          {/* Eyebrow pill */}
-          <div
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-medium mb-8 label-mono"
-            style={{
-              background: "rgba(255, 197, 61, 0.12)",
-              border: "1px solid rgba(255, 197, 61, 0.3)",
-              color: "var(--color-gold-fill)",
-            }}
-          >
-            <Scale className="w-3 h-3" aria-hidden="true" />
-            Founded 2016 · Fullerton, CA
-          </div>
-
-          {/* Main headline */}
-          <h1 className="display-xl text-white mb-6">
-            Troy High
-            <br />
-            <span style={{ color: "var(--color-gold-fill)" }}>Mock Trial</span>
-          </h1>
-
-          {/* Description */}
-          <p
-            className="text-base md:text-lg mb-10 max-w-lg leading-relaxed"
-            style={{ color: "rgba(255,255,255,0.65)" }}
-          >
-            Competing in the Constitutional Rights Foundation's Mock Trial program
-            and preparing the next generation of advocates — since 2016.
-          </p>
-
-          {/* Buttons */}
-          <div className="flex flex-wrap gap-4 mb-16 justify-center lg:justify-start">
-            <Link to="/join" className="btn-primary">
-              Join Us
-            </Link>
-            <Link to="/team/2026-27" className="btn-ghost">
-              Meet the Team
-            </Link>
-          </div>
-
-          {/* Stats */}
-          <div className="flex gap-10">
-            {stats.map((s, i) => (
-              <div key={i} className="flex flex-col gap-1">
-                <span className="stat-number" style={{ color: "var(--color-gold-fill)" }}>{s.value}</span>
-                <span className="text-xs" style={{ color: "rgba(255,255,255,0.5)", fontFamily: "'DM Sans', sans-serif" }}>
-                  {s.label}
-                </span>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Right — trophy photo */}
-        <div className="relative">
-          {/* Gold corner accents */}
-          <div
-            className="absolute -top-3 -right-3 w-20 h-20 rounded-tr-2xl border-t border-r"
-            style={{ borderColor: "rgba(255,197,61,0.35)" }}
-            aria-hidden="true"
+      {/* Parallax background plate */}
+      <div className="absolute inset-0 -z-10 overflow-hidden">
+        <div
+          ref={plateRef}
+          className="absolute left-0 right-0"
+          style={{ top: "-16%", height: "132%", willChange: "transform" }}
+        >
+          <img
+            src="/assets/images/jserra-trophy.jpg"
+            alt="Troy Mock Trial team celebrating 2nd place at the JSerra Catholic Mock Trial Championship"
+            fetchPriority="high"
+            className="w-full h-full object-cover object-center"
           />
-          <div
-            className="absolute -bottom-3 -left-3 w-20 h-20 rounded-bl-2xl border-b border-l"
-            style={{ borderColor: "rgba(255,197,61,0.35)" }}
-            aria-hidden="true"
-          />
-
-          <div className="relative rounded-2xl overflow-hidden aspect-[4/3] border border-white/8 shadow-2xl">
-            <img
-              src="/assets/images/jserra-trophy.jpg"
-              alt="Troy Mock Trial team celebrating 2nd place at the JSerra Catholic Mock Trial Championship"
-              className="w-full h-full object-cover object-center"
-            />
-            {/* Subtle overlay gradient at bottom */}
-            <div
-              className="absolute bottom-0 left-0 right-0 h-16"
-              style={{ background: "linear-gradient(to top, rgba(18,39,94,0.55), transparent)" }}
-              aria-hidden="true"
-            />
-            {/* Achievement badge */}
-            <div
-              className="absolute bottom-4 left-4 right-4 flex items-center gap-3 px-4 py-2.5 rounded-xl backdrop-blur-sm"
-              style={{ background: "rgba(18,39,94,0.88)", border: "1px solid rgba(255,197,61,0.3)" }}
-            >
-              <span className="w-8 h-8 rounded-full flex items-center justify-center shrink-0"
-                style={{ background: "rgba(255,197,61,0.12)", border: "1px solid rgba(255,197,61,0.3)" }}>
-                <Trophy className="w-4 h-4" style={{ color: "var(--color-gold-fill)" }} aria-hidden="true" />
-              </span>
-              <div>
-                <p className="text-white text-xs font-semibold leading-tight">2nd Place — JSerra Championship</p>
-                <p className="text-xs" style={{ color: "var(--color-gold-fill)", opacity: 0.9, fontFamily: "'DM Sans', sans-serif" }}>March 2026</p>
-              </div>
-            </div>
-          </div>
         </div>
-
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(to bottom, rgba(18,39,94,0.72), rgba(18,39,94,0.45) 42%, rgba(18,39,94,0.86))",
+          }}
+        />
       </div>
 
-      {/* Scroll indicator */}
-      <button
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5 cursor-pointer bg-transparent border-0 p-2 transition-colors hover:text-white"
-        style={{ color: "rgba(255,255,255,0.3)" }}
-        onClick={() => document.getElementById("about")?.scrollIntoView({ behavior: "smooth" })}
-        aria-label="Scroll to next section"
-      >
-        <ChevronDown className="w-5 h-5" />
-      </button>
+      {/* Content column — full height */}
+      <div className="relative z-10 flex flex-1 flex-col px-6 sm:px-10 pt-28 sm:pt-32 pb-8 sm:pb-10">
+        {/* Eyebrow + giant title — centered */}
+        <div className="flex flex-col items-center text-center">
+          <Reveal y={16} delay={100}>
+            <Eyebrow tone="light">
+              <Scale className="w-3.5 h-3.5" aria-hidden="true" />
+              Founded 2016 · Fullerton, CA
+            </Eyebrow>
+          </Reveal>
+
+          {/* Giant title, word-by-word clip-mask */}
+          <h1
+            className="bl-display text-white mt-5"
+            style={{ fontSize: "clamp(2.75rem, 10.5vw, 8.5rem)" }}
+          >
+            <ClipWords
+              text="Troy High Mock Trial"
+              base={180}
+              stagger={130}
+              duration={1000}
+              goldWords={[2, 3]}
+            />
+          </h1>
+        </div>
+
+        {/* Bottom row */}
+        <div className="mt-auto flex flex-col gap-8 sm:flex-row sm:items-end sm:justify-between pt-14">
+          {/* Tagline */}
+          <ClipLines
+            lines={["Show Up,", "Speak Up"]}
+            className="bl-display"
+            base={380}
+            stagger={110}
+            style={{
+              fontSize: "clamp(1.75rem, 5vw, 2.6rem)",
+              color: "rgba(255,255,255,0.85)",
+              lineHeight: 0.95,
+            }}
+          />
+
+          {/* Right cluster: description, buttons, achievement card */}
+          <div className="flex flex-col gap-6 sm:items-end">
+            <Reveal
+              y={24}
+              delay={500}
+              className="max-w-md text-sm sm:text-base sm:text-right"
+              style={{ color: "rgba(255,255,255,0.7)", lineHeight: 1.6 }}
+            >
+              Competing in the Constitutional Rights Foundation's Mock Trial program
+              and preparing the next generation of advocates — since 2016.
+            </Reveal>
+
+            <Reveal y={24} delay={620} className="flex flex-wrap gap-3 sm:justify-end">
+              <Link to="/join" className="bl-pill light">
+                Join Us <ArrowRightGlyph className="w-4 h-4" />
+              </Link>
+              <Link
+                to="/team/2026-27"
+                className="bl-pill outline"
+                style={{ color: "#fff", borderColor: "rgba(255,255,255,0.4)" }}
+              >
+                Meet the Team
+              </Link>
+            </Reveal>
+
+            {/* Glass achievement card */}
+            <Reveal
+              y={28}
+              delay={760}
+              className="glass-navy w-full max-w-xs flex items-center gap-3 rounded-[1.5rem] p-3"
+            >
+              <span
+                className="w-11 h-11 rounded-full flex items-center justify-center shrink-0"
+                style={{ background: "rgba(255,197,61,0.14)", border: "1px solid rgba(255,197,61,0.3)" }}
+              >
+                <Trophy className="w-5 h-5" style={{ color: "var(--bl-gold-fill)" }} aria-hidden="true" />
+              </span>
+              <div className="min-w-0">
+                <p className="text-white text-xs font-medium leading-tight">
+                  2nd Place — JSerra Championship
+                </p>
+                <p className="text-[0.7rem]" style={{ color: "var(--bl-gold-fill)", opacity: 0.9 }}>
+                  March 2026
+                </p>
+              </div>
+            </Reveal>
+          </div>
+        </div>
+
+        {/* Stat strip */}
+        <Reveal
+          y={20}
+          delay={880}
+          className="mt-10 flex flex-wrap gap-x-10 gap-y-4 border-t pt-6"
+          style={{ borderColor: "rgba(255,255,255,0.15)" }}
+        >
+          {stats.map((s) => (
+            <div key={s.label} className="flex flex-col gap-1">
+              <span
+                className="bl-display leading-none"
+                style={{ fontSize: "clamp(1.75rem, 3.5vw, 2.5rem)", color: "var(--bl-gold-fill)" }}
+              >
+                {s.value}
+              </span>
+              <span className="text-[0.72rem]" style={{ color: "rgba(255,255,255,0.6)" }}>
+                {s.label}
+              </span>
+            </div>
+          ))}
+        </Reveal>
+      </div>
     </section>
   );
 }

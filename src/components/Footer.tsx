@@ -1,6 +1,7 @@
 import { Scale } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useSiteContent } from "@/hooks/useSiteContent";
+import { Reveal, ClipLines, Eyebrow, ArrowRightGlyph } from "@/components/baseline";
 
 const navLinks = [
   { label: "Home", to: "/" },
@@ -19,31 +20,59 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="py-16" style={{ background: "var(--color-navy)" }}>
-      <div className="max-w-7xl xl:max-w-8xl mx-auto px-6">
-        <div className="grid md:grid-cols-4 gap-12 mb-12">
+    <footer
+      className="px-6 sm:px-10 py-14 sm:py-16"
+      style={{ background: "var(--bl-navy, #12275E)", color: "#fff", fontFamily: "'Onest', system-ui, sans-serif" }}
+    >
+      <div className="max-w-7xl xl:max-w-8xl mx-auto">
+        {/* CTA band */}
+        <div
+          className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6 pb-14"
+          style={{ borderBottom: "1px solid rgba(255,255,255,0.15)" }}
+        >
+          <div>
+            <Eyebrow tone="light">Get started</Eyebrow>
+            <ClipLines
+              as="h2"
+              lines={["Ready to", "compete?"]}
+              className="bl-display mt-4 text-white"
+              base={80}
+              stagger={110}
+              style={{ fontSize: "clamp(2.5rem, 6vw, 4.5rem)" }}
+            />
+          </div>
+          <Reveal y={20} delay={150}>
+            <Link to="/join" className="bl-pill light">
+              Join the Team <ArrowRightGlyph className="w-4 h-4" />
+            </Link>
+          </Reveal>
+        </div>
+
+        {/* Columns */}
+        <div className="grid md:grid-cols-4 gap-10 md:gap-12 py-14">
           {/* Brand */}
-          <div className="md:col-span-2">
+          <div className="md:col-span-2 max-w-xs">
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-7 h-7 flex items-center justify-center rounded-md bg-gold-fill">
-                <Scale className="w-4 h-4 text-navy" strokeWidth={2} aria-hidden="true" />
+              <div
+                className="w-7 h-7 flex items-center justify-center rounded-md"
+                style={{ background: "var(--bl-gold-fill, #FFC53D)" }}
+              >
+                <Scale className="w-4 h-4" style={{ color: "var(--bl-navy, #12275E)" }} strokeWidth={2} aria-hidden="true" />
               </div>
-              <span className="font-sans font-semibold text-base text-white">
-                Troy Mock Trial
-              </span>
+              <span className="text-lg font-medium uppercase tracking-[0.2em] text-white">Troy Mock Trial</span>
             </div>
-            <p className="text-white/55 text-sm leading-relaxed max-w-xs mb-4">
-              Preparing the next generation of lawyers, advocates, and critical thinkers
-              at Troy High School, Fullerton CA — since 2016.
+            <p className="text-sm leading-relaxed mb-4" style={{ color: "rgba(255,255,255,0.6)" }}>
+              Preparing the next generation of lawyers, advocates, and critical thinkers at Troy High
+              School, Fullerton CA — since 2016.
             </p>
-            {/* Social links */}
-            <div className="flex gap-3">
+            <div className="flex gap-4">
               {contact?.instagram && (
                 <a
                   href={contact.instagram}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="label-mono text-white/55 hover:text-gold-fill transition-colors text-[0.65rem]"
+                  className="text-xs uppercase tracking-[0.14em] transition-colors hover:text-[var(--bl-gold-fill,#FFC53D)]"
+                  style={{ color: "rgba(255,255,255,0.6)" }}
                 >
                   Instagram
                 </a>
@@ -53,7 +82,8 @@ export default function Footer() {
                   href={contact.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="label-mono text-white/55 hover:text-gold-fill transition-colors text-[0.65rem]"
+                  className="text-xs uppercase tracking-[0.14em] transition-colors hover:text-[var(--bl-gold-fill,#FFC53D)]"
+                  style={{ color: "rgba(255,255,255,0.6)" }}
                 >
                   LinkedIn
                 </a>
@@ -61,15 +91,18 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Quick links */}
+          {/* Navigation */}
           <div>
-            <span className="label-mono text-white/45 block mb-4">Navigation</span>
-            <ul className="flex flex-col gap-2">
+            <span className="text-xs uppercase tracking-[0.2em] font-medium block mb-4" style={{ color: "rgba(255,255,255,0.5)" }}>
+              Navigation
+            </span>
+            <ul className="flex flex-col gap-3">
               {navLinks.map((l) => (
                 <li key={l.to}>
                   <Link
                     to={l.to}
-                    className="text-sm text-white/65 hover:text-gold-fill transition-colors"
+                    className="text-sm transition-colors hover:text-[var(--bl-gold-fill,#FFC53D)]"
+                    style={{ color: "rgba(255,255,255,0.75)" }}
                   >
                     {l.label}
                   </Link>
@@ -80,8 +113,10 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <span className="label-mono text-white/45 block mb-4">Contact</span>
-            <ul className="flex flex-col gap-2 text-sm text-white/65">
+            <span className="text-xs uppercase tracking-[0.2em] font-medium block mb-4" style={{ color: "rgba(255,255,255,0.5)" }}>
+              Contact
+            </span>
+            <ul className="flex flex-col gap-3 text-sm" style={{ color: "rgba(255,255,255,0.75)" }}>
               {contact?.address ? (
                 <li>{contact.address}</li>
               ) : (
@@ -96,7 +131,7 @@ export default function Footer() {
                     href={contact.instagram}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="hover:text-gold-fill transition-colors"
+                    className="transition-colors hover:text-[var(--bl-gold-fill,#FFC53D)]"
                   >
                     {contact.instagramHandle ?? "@ths_mocktrial"}
                   </a>
@@ -106,13 +141,13 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-white/10 pt-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-          <span className="label-mono text-white/45 text-[0.65rem]">
-            © {currentYear} Troy High School Mock Trial Team — All rights reserved.
-          </span>
-          <span className="label-mono text-white/45 text-[0.65rem]">
-            Founded 2016 · Legacy is Earned.
-          </span>
+        {/* Bottom bar */}
+        <div
+          className="pt-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 text-sm"
+          style={{ borderTop: "1px solid rgba(255,255,255,0.15)", color: "rgba(255,255,255,0.55)" }}
+        >
+          <span>© {currentYear} Troy High School Mock Trial Team — All rights reserved.</span>
+          <span className="uppercase tracking-[0.14em] text-xs">Founded 2016 · Legacy is Earned.</span>
         </div>
       </div>
     </footer>

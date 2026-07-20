@@ -1,6 +1,7 @@
-import { Scale, Menu, X } from "lucide-react";
+import { Scale, Menu } from "lucide-react";
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
+import MenuOverlay from "@/components/MenuOverlay";
 
 const navLinks = [
   { label: "Home",     to: "/",        prefix: false },
@@ -43,14 +44,14 @@ export default function Navbar() {
         scrolled ? "bg-background border-border shadow-md" : "bg-transparent border-transparent"
       } ${overDark ? "nav-over-hero" : ""}`}
     >
-      <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 pt-6 pb-4 sm:pt-8 sm:pb-5 flex items-center justify-between">
 
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2">
           <div className="w-7 h-7 flex items-center justify-center rounded-md bg-primary">
             <Scale className="w-4 h-4 text-primary-foreground" strokeWidth={2} />
           </div>
-          <span className={`font-sans font-semibold text-base tracking-wide ${overDark ? "text-white" : "text-foreground"}`}>
+          <span className={`font-onest font-medium text-base uppercase tracking-[0.18em] ${overDark ? "text-white" : "text-foreground"}`}>
             Troy Mock Trial
           </span>
         </Link>
@@ -89,61 +90,28 @@ export default function Navbar() {
         </nav>
 
         {/* CTA */}
-        <Link to="/sponsors" className="hidden md:block btn-primary text-xs px-5 py-2">
+        <Link to="/sponsors" className="hidden md:inline-flex bl-pill light" style={{ padding: "0.55rem 1.25rem", fontSize: "0.72rem" }}>
           Become a Sponsor
         </Link>
 
-        {/* Mobile toggle */}
+        {/* Mobile toggle — opens the fullscreen overlay */}
         <button
-          className={`md:hidden ${overDark ? "text-white" : "text-foreground"}`}
-          onClick={() => setOpen(!open)}
-          aria-label="Toggle menu"
+          className={`md:hidden grid place-items-center w-10 h-10 rounded-full ${
+            overDark ? "text-white" : "text-foreground"
+          }`}
+          style={overDark ? { background: "rgba(255,255,255,0.14)" } : { background: "rgba(18,39,94,0.06)" }}
+          onClick={() => setOpen(true)}
+          aria-label="Open menu"
           aria-expanded={open}
-          aria-controls="mobile-menu"
+          aria-controls="site-menu-overlay"
         >
-          {open ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+          <Menu className="w-5 h-5" />
         </button>
       </div>
 
-      {/* Mobile menu */}
-      {open && (
-        <nav
-          id="mobile-menu"
-          className="md:hidden bg-background border-b border-border px-6 py-6 flex flex-col gap-5"
-          aria-label="Mobile navigation"
-        >
-          <Link
-            to="/"
-            className={`nav-link ${isActive("/", false) ? "text-primary" : "text-foreground/80"}`}
-            aria-current={isActive("/", false) ? "page" : undefined}
-          >
-            Home
-          </Link>
-
-          <Link
-            to="/about"
-            className={`nav-link ${isActive("/about", false) ? "text-primary" : "text-foreground/80"}`}
-            aria-current={isActive("/about", false) ? "page" : undefined}
-          >
-            About Us
-          </Link>
-
-          {navLinks.slice(1).map((l) => (
-            <Link
-              key={l.to}
-              to={l.to}
-              className={`nav-link ${isActive(l.to, l.prefix) ? "text-primary" : "text-foreground/80"}`}
-              aria-current={isActive(l.to, l.prefix) ? "page" : undefined}
-            >
-              {l.label}
-            </Link>
-          ))}
-
-          <Link to="/sponsors" className="btn-primary text-center mt-2">
-            Become a Sponsor
-          </Link>
-        </nav>
-      )}
+      <div id="site-menu-overlay">
+        <MenuOverlay open={open} onClose={() => setOpen(false)} />
+      </div>
     </header>
   );
 }
