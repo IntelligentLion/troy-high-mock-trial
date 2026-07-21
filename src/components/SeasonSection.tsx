@@ -2,12 +2,12 @@ import { Link } from "react-router-dom";
 import MonogramAvatar from "@/components/MonogramAvatar";
 import { Reveal, ClipLines, Eyebrow, ArrowRightGlyph } from "@/components/baseline";
 
-const leadership2627 = [
+const leadership2627: { role: string; name: string; photo?: string }[] = [
   { role: "Co-President", name: "Reanne Elizabeth Del Valle" },
   { role: "Co-President", name: "Shri Krishna Sivakumar" },
   { role: "Vice President", name: "Yatee Nagpal" },
-  { role: "Secretary", name: "Ella Xu" },
-  { role: "Treasurer", name: "Annabelle Ye" },
+  { role: "Secretary", name: "Ella Xu", photo: "/assets/images/members/ella-xu.jpg" },
+  { role: "Treasurer", name: "Annabelle Ye", photo: "/assets/images/members/annabelle-ye.jpg" },
   { role: "Publicity Commissioner", name: "Anny Jiao" },
 ];
 
@@ -42,7 +42,18 @@ export default function SeasonSection() {
             className="rounded-[1.5rem] p-5 flex items-center gap-4"
             style={{ background: "var(--bl-surface)" }}
           >
-            <MonogramAvatar name={officer.name} size={48} />
+            {officer.photo ? (
+              <img
+                src={officer.photo}
+                alt={`Headshot of ${officer.name}`}
+                width={48}
+                height={48}
+                loading="lazy"
+                className="w-12 h-12 rounded-full object-cover flex-shrink-0"
+              />
+            ) : (
+              <MonogramAvatar name={officer.name} size={48} />
+            )}
             <div className="min-w-0">
               <h3
                 className="text-base font-medium"

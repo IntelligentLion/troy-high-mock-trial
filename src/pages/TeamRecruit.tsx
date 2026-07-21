@@ -11,7 +11,7 @@ const leadership: { role: string; name: string; photo?: string }[] = [
   { role: "Co-President", name: "Reanne Elizabeth Del Valle" },
   { role: "Co-President", name: "Shri Krishna Sivakumar" },
   { role: "Vice President", name: "Yatee Nagpal" },
-  { role: "Secretary", name: "Ella Xu" },
+  { role: "Secretary", name: "Ella Xu", photo: "/assets/images/members/ella-xu.jpg" },
   { role: "Treasurer", name: "Annabelle Ye", photo: "/assets/images/members/annabelle-ye.jpg" },
   { role: "Publicity Commissioner", name: "Anny Jiao" },
 ];
