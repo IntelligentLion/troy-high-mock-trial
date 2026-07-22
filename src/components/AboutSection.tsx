@@ -40,10 +40,17 @@ export default function AboutSection() {
         </div>
       </div>
 
-      {/* Oversized ghost wordmark (decorative) */}
+      {/* Full-bleed wordmark banner (decorative) */}
       <div
-        className="bl-display mt-14 sm:mt-20 select-none pointer-events-none"
-        style={{ fontSize: "clamp(2.5rem, 8.2vw, 8rem)", color: "var(--bl-ghost)", lineHeight: 1.0 }}
+        className="bl-display mt-14 sm:mt-20 select-none pointer-events-none text-center"
+        style={{
+          width: "100vw",
+          marginLeft: "50%",
+          transform: "translateX(-50%)",
+          fontSize: "8.6vw",
+          color: "var(--bl-ink)",
+          lineHeight: 1.0,
+        }}
         aria-hidden="true"
       >
         <ClipWords
@@ -52,6 +59,7 @@ export default function AboutSection() {
           stagger={90}
           duration={700}
           goldWords={[2]}
+          nowrap
         />
       </div>
 
