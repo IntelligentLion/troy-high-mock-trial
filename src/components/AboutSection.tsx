@@ -42,11 +42,13 @@ export default function AboutSection() {
 
       {/* Full-bleed wordmark banner (decorative) */}
       <div
-        className="bl-display mt-14 sm:mt-20 select-none pointer-events-none text-center"
+        className="bl-display mt-14 sm:mt-20 select-none pointer-events-none"
         style={{
           width: "100vw",
           marginLeft: "50%",
           transform: "translateX(-50%)",
+          display: "flex",
+          justifyContent: "center",
           fontSize: "8.6vw",
           color: "var(--bl-ink)",
           lineHeight: 1.0,
@@ -60,6 +62,7 @@ export default function AboutSection() {
           duration={700}
           goldWords={[2]}
           nowrap
+          style={{ marginRight: "-0.22em" }}
         />
       </div>
 
