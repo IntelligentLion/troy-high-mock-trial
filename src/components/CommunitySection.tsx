@@ -1,14 +1,15 @@
 import { Mail } from "lucide-react";
+import { Link } from "react-router-dom";
 import { useSiteContent } from "@/hooks/useSiteContent";
 import { Reveal, ClipLines, Eyebrow, ArrowRightGlyph } from "@/components/baseline";
 
 const pillars = [
-  { title: "Mentorship", desc: "Senior members mentor newcomers, and alumni return each spring to share their paths." },
-  { title: "Legal Outreach", desc: "We compete in the CRF Mock Trial program — one of the most respected high school legal competitions in California." },
-  { title: "Annual Banquet", desc: "Every season closes with a celebration of coaches, members, and graduates." },
-  { title: "Case Preparation", desc: "Members develop presentation skills and analytic ability through intensive preparation each season." },
-  { title: "Team Community", desc: "From team dinners to study sessions, we invest in the relationships that make us stronger in and out of the courtroom." },
-  { title: "Alumni Network", desc: "Our alumni span top universities and law programs — a lifelong community that opens doors." },
+  { title: "Mentorship", desc: "Senior members mentor newcomers, and alumni return each spring to share their paths.", href: "/about" },
+  { title: "Legal Outreach", desc: "We compete in the CRF Mock Trial program — one of the most respected high school legal competitions in California.", href: "/about" },
+  { title: "Annual Banquet", desc: "Every season closes with a celebration of coaches, members, and graduates.", href: "/about" },
+  { title: "Case Preparation", desc: "Members develop presentation skills and analytic ability through intensive preparation each season.", href: "/about" },
+  { title: "Team Community", desc: "From team dinners to study sessions, we invest in the relationships that make us stronger in and out of the courtroom.", href: "/about" },
+  { title: "Alumni Network", desc: "Our alumni span top universities and law programs — a lifelong community that opens doors.", href: "/alumni" },
 ];
 
 export default function CommunitySection() {
@@ -62,12 +63,14 @@ export default function CommunitySection() {
                   {p.desc}
                 </p>
               </div>
-              <span
-                className="w-11 h-11 rounded-full shrink-0 hidden sm:flex items-center justify-center transition-transform duration-300 group-hover:translate-x-2"
+              <Link
+                to={p.href}
+                aria-label={`Learn more about ${p.title}`}
+                className="w-11 h-11 rounded-full shrink-0 hidden sm:flex items-center justify-center transition-transform duration-300 group-hover:translate-x-2 hover:opacity-80"
                 style={{ border: "1px solid var(--bl-hairline)", color: "var(--bl-ink)" }}
               >
                 <ArrowRightGlyph className="w-4 h-4" />
-              </span>
+              </Link>
             </div>
           </Reveal>
         ))}

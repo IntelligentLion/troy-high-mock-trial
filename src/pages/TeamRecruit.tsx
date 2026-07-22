@@ -8,8 +8,8 @@ const FORM_URL =
   "https://docs.google.com/forms/d/e/1FAIpQLSd1R5LAGbsbXUDEIflfxjKfmNFpfs2NrOf9yQw2JLcFODozGA/viewform?usp=publish-editor";
 
 const leadership: { role: string; name: string; photo?: string }[] = [
-  { role: "Co-President", name: "Reanne Elizabeth Del Valle" },
-  { role: "Co-President", name: "Shri Krishna Sivakumar" },
+  { role: "Co-President", name: "Reanne Elizabeth Del Valle", photo: "/assets/images/members/reanne-del-valle.jpg" },
+  { role: "Co-President", name: "Shri Krishna Sivakumar", photo: "/assets/images/members/shri-krishna-sivakumar.jpg" },
   { role: "Vice President", name: "Yatee Nagpal" },
   { role: "Secretary", name: "Ella Xu", photo: "/assets/images/members/ella-xu.jpg" },
   { role: "Treasurer", name: "Annabelle Ye", photo: "/assets/images/members/annabelle-ye.jpg" },

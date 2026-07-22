@@ -3,8 +3,8 @@ import MonogramAvatar from "@/components/MonogramAvatar";
 import { Reveal, ClipLines, Eyebrow, ArrowRightGlyph } from "@/components/baseline";
 
 const leadership2627: { role: string; name: string; photo?: string }[] = [
-  { role: "Co-President", name: "Reanne Elizabeth Del Valle" },
-  { role: "Co-President", name: "Shri Krishna Sivakumar" },
+  { role: "Co-President", name: "Reanne Elizabeth Del Valle", photo: "/assets/images/members/reanne-del-valle.jpg" },
+  { role: "Co-President", name: "Shri Krishna Sivakumar", photo: "/assets/images/members/shri-krishna-sivakumar.jpg" },
   { role: "Vice President", name: "Yatee Nagpal" },
   { role: "Secretary", name: "Ella Xu", photo: "/assets/images/members/ella-xu.jpg" },
   { role: "Treasurer", name: "Annabelle Ye", photo: "/assets/images/members/annabelle-ye.jpg" },
