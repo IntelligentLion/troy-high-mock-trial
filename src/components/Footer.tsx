@@ -1,4 +1,3 @@
-import { Scale } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useSiteContent } from "@/hooks/useSiteContent";
 import { Reveal, ClipLines, Eyebrow, ArrowRightGlyph } from "@/components/baseline";
@@ -53,12 +52,13 @@ export default function Footer() {
           {/* Brand */}
           <div className="md:col-span-2 max-w-xs">
             <div className="flex items-center gap-3 mb-4">
-              <div
-                className="w-7 h-7 flex items-center justify-center rounded-md"
-                style={{ background: "var(--bl-gold-fill, #FFC53D)" }}
-              >
-                <Scale className="w-4 h-4" style={{ color: "var(--bl-navy, #12275E)" }} strokeWidth={2} aria-hidden="true" />
-              </div>
+              <img
+                src="/assets/images/logo-mark.png"
+                alt=""
+                width={28}
+                height={28}
+                className="w-7 h-7 rounded-md flex-shrink-0"
+              />
               <span className="text-lg font-medium uppercase tracking-[0.2em] text-white">Troy Mock Trial</span>
             </div>
             <p className="text-sm leading-relaxed mb-4" style={{ color: "rgba(255,255,255,0.6)" }}>

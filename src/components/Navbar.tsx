@@ -1,4 +1,4 @@
-import { Scale, Menu } from "lucide-react";
+import { Menu } from "lucide-react";
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import MenuOverlay from "@/components/MenuOverlay";
@@ -48,9 +48,13 @@ export default function Navbar() {
 
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2">
-          <div className="w-7 h-7 flex items-center justify-center rounded-md bg-primary">
-            <Scale className="w-4 h-4 text-primary-foreground" strokeWidth={2} />
-          </div>
+          <img
+            src="/assets/images/logo-mark.png"
+            alt=""
+            width={28}
+            height={28}
+            className="w-7 h-7 rounded-md flex-shrink-0"
+          />
           <span className={`font-onest font-medium text-base uppercase tracking-[0.18em] ${overDark ? "text-white" : "text-foreground"}`}>
             Troy Mock Trial
           </span>
