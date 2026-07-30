@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useSiteContent } from "@/hooks/useSiteContent";
-import { Reveal, ClipLines, Eyebrow, ArrowRightGlyph } from "@/components/baseline";
+import { Reveal, ClipLines, ArrowRightGlyph } from "@/components/baseline";
 
 const navLinks = [
   { label: "Home", to: "/" },
@@ -30,7 +30,6 @@ export default function Footer() {
           style={{ borderBottom: "1px solid rgba(255,255,255,0.15)" }}
         >
           <div>
-            <Eyebrow tone="light">Get started</Eyebrow>
             <ClipLines
               as="h2"
               lines={["Ready to", "compete?"]}

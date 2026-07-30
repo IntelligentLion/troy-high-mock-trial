@@ -109,8 +109,18 @@ async function main() {
       return !!r && r.children.length > 0;
     });
     await page.waitForSelector("main, footer", { timeout: 15000 });
-    // Let any opacity settle so we don't capture mid-transition styles.
+    // Let the data-driven content paint (react-query resolving window.__SITE_CONTENT__).
     await page.waitForTimeout(400);
+
+    // Reset scroll-reveal state before snapshotting: the IntersectionObserver has
+    // stamped `is-in` on every above-the-fold element by now, which would bake the
+    // *revealed* state into the static HTML. The hydrating client starts from
+    // `inView=false`, so that mismatch makes the title flash visible, hide, then
+    // replay the reveal. Capturing the pre-reveal (hidden) state instead matches
+    // the client's first render exactly — the reveal then plays once, cleanly.
+    await page.evaluate(() => {
+      document.querySelectorAll(".is-in").forEach((el) => el.classList.remove("is-in"));
+    });
 
     let html = await page.evaluate(() => "<!DOCTYPE html>\n" + document.documentElement.outerHTML);
     // Inline content so the client hydrates against identical markup.

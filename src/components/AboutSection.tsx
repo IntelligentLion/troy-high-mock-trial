@@ -1,6 +1,6 @@
 import { BookOpen, Users, GraduationCap } from "lucide-react";
 import { useSiteContent } from "@/hooks/useSiteContent";
-import { Reveal, ClipWords, ClipLines, Eyebrow } from "@/components/baseline";
+import { Reveal, ClipWords, ClipLines } from "@/components/baseline";
 
 const pillarIcons = [BookOpen, GraduationCap, Users];
 const pillarKeys = ["legalStudies", "competition", "skills"] as const;
@@ -15,9 +15,6 @@ export default function AboutSection() {
       {/* Header row */}
       <div className="grid md:grid-cols-12 gap-8 md:gap-10 items-end">
         <div className="md:col-span-6">
-          <Reveal y={18}>
-            <Eyebrow>About the team</Eyebrow>
-          </Reveal>
           <ClipLines
             as="h2"
             lines={["Built for", "the verdict"]}

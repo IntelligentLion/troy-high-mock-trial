@@ -1,7 +1,7 @@
 import { useSiteContent } from "@/hooks/useSiteContent";
 import MonogramAvatar from "@/components/MonogramAvatar";
 import { CardGridSkeleton } from "@/components/CardSkeleton";
-import { Reveal, ClipLines, Eyebrow } from "@/components/baseline";
+import { Reveal, ClipLines } from "@/components/baseline";
 
 export default function CoachesSection() {
   const { data, isLoading } = useSiteContent();
@@ -12,9 +12,6 @@ export default function CoachesSection() {
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
         <div>
-          <Reveal y={18}>
-            <Eyebrow>The coaching bench</Eyebrow>
-          </Reveal>
           <ClipLines
             as="h2"
             lines={["Trusted by", "serious advocates"]}

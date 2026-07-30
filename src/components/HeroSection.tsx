@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
-import { Scale, Trophy } from "lucide-react";
+import { Trophy } from "lucide-react";
 import { Link } from "react-router-dom";
-import { ClipWords, ClipLines, Reveal, Eyebrow, ArrowRightGlyph } from "@/components/baseline";
+import { ClipWords, ClipLines, Reveal, ArrowRightGlyph } from "@/components/baseline";
 
 const stats = [
   { value: "10", label: "Seasons active" },
@@ -67,13 +67,6 @@ export default function HeroSection() {
       <div className="relative z-10 flex flex-1 flex-col px-6 sm:px-10 pt-28 sm:pt-32 pb-8 sm:pb-10">
         {/* Eyebrow + giant title — centered */}
         <div className="flex flex-col items-center text-center">
-          <Reveal y={16} delay={100}>
-            <Eyebrow tone="light">
-              <Scale className="w-3.5 h-3.5" aria-hidden="true" />
-              Founded 2016 · Fullerton, CA
-            </Eyebrow>
-          </Reveal>
-
           {/* Giant title, word-by-word clip-mask */}
           <h1
             className="bl-display text-white mt-5"

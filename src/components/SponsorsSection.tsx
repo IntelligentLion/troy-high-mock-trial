@@ -1,14 +1,11 @@
 import { Download, Mail } from "lucide-react";
-import { Reveal, ClipLines, Eyebrow, ArrowRightGlyph } from "@/components/baseline";
+import { Reveal, ClipLines, ArrowRightGlyph } from "@/components/baseline";
 
 export default function SponsorsSection() {
   return (
     <section id="sponsors" className="bl-band navy px-6 sm:px-10 py-20 sm:py-24">
       <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-end">
         <div>
-          <Reveal y={18}>
-            <Eyebrow tone="light">Support excellence</Eyebrow>
-          </Reveal>
           <ClipLines
             as="h2"
             lines={["Invest in", "tomorrow's", "advocates"]}

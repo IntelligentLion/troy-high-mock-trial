@@ -1,7 +1,7 @@
 import { Mail } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useSiteContent } from "@/hooks/useSiteContent";
-import { Reveal, ClipLines, Eyebrow, ArrowRightGlyph } from "@/components/baseline";
+import { Reveal, ClipLines, ArrowRightGlyph } from "@/components/baseline";
 
 const pillars = [
   { title: "Mentorship", desc: "Senior members mentor newcomers, and alumni return each spring to share their paths.", href: "/about" },
@@ -19,9 +19,6 @@ export default function CommunitySection() {
 
   return (
     <section id="community" className="bl-band surface px-6 sm:px-10 py-20 sm:py-24">
-      <Reveal y={18}>
-        <Eyebrow>Beyond the courtroom</Eyebrow>
-      </Reveal>
       <ClipLines
         as="h2"
         lines={["More than", "a competition"]}

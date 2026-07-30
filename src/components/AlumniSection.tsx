@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { useSiteContent } from "@/hooks/useSiteContent";
 import MonogramAvatar from "@/components/MonogramAvatar";
 import { CardGridSkeleton } from "@/components/CardSkeleton";
-import { Reveal, ClipLines, Eyebrow, ArrowRightGlyph } from "@/components/baseline";
+import { Reveal, ClipLines, ArrowRightGlyph } from "@/components/baseline";
 
 const FOUNDER_NAMES = ["Ashley Fan", "Hayley Amo"];
 
@@ -14,9 +14,6 @@ export default function AlumniSection() {
     <section id="alumni" className="bl-band white px-6 sm:px-10 py-16 sm:py-24">
       <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
         <div>
-          <Reveal y={18}>
-            <Eyebrow>Where it began</Eyebrow>
-          </Reveal>
           <ClipLines
             as="h2"
             lines={["Our", "founders"]}

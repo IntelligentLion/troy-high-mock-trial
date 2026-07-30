@@ -1,4 +1,4 @@
-import { Reveal, ClipLines, Eyebrow } from "@/components/baseline";
+import { Reveal, ClipLines } from "@/components/baseline";
 
 const cells = [
   { value: "10", label: "Seasons competing" },
@@ -10,9 +10,6 @@ const cells = [
 export default function StatsSection() {
   return (
     <section className="bl-band navy px-6 sm:px-10 py-20">
-      <Reveal y={18}>
-        <Eyebrow tone="light">By the numbers</Eyebrow>
-      </Reveal>
       <ClipLines
         as="h2"
         lines={["A team that", "keeps score"]}

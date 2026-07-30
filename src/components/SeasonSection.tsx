@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import MonogramAvatar from "@/components/MonogramAvatar";
-import { Reveal, ClipLines, Eyebrow, ArrowRightGlyph } from "@/components/baseline";
+import { Reveal, ClipLines, ArrowRightGlyph } from "@/components/baseline";
 
 const leadership2627: { role: string; name: string; photo?: string }[] = [
   { role: "Co-President", name: "Reanne Elizabeth Del Valle", photo: "/assets/images/members/reanne-del-valle.jpg" },
@@ -16,9 +16,6 @@ export default function SeasonSection() {
     <section id="season" className="bl-band white px-6 sm:px-10 py-16 sm:py-24">
       <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
         <div>
-          <Reveal y={18}>
-            <Eyebrow>2026 – 2027 season</Eyebrow>
-          </Reveal>
           <ClipLines
             as="h2"
             lines={["Leading the", "next season"]}
