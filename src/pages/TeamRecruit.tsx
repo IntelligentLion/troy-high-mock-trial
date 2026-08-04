@@ -10,7 +10,7 @@ const FORM_URL =
 const leadership: { role: string; name: string; photo?: string }[] = [
   { role: "Co-President", name: "Reanne Elizabeth Del Valle", photo: "/assets/images/members/reanne-del-valle.jpg" },
   { role: "Co-President", name: "Shri Krishna Sivakumar", photo: "/assets/images/members/shri-krishna-sivakumar.jpg" },
-  { role: "Vice President", name: "Yatee Nagpal" },
+  { role: "Vice President", name: "Yatee Nagpal", photo: "/assets/images/members/yatee-nagpal.jpg" },
   { role: "Secretary", name: "Ella Xu", photo: "/assets/images/members/ella-xu.jpg" },
   { role: "Treasurer", name: "Annabelle Ye", photo: "/assets/images/members/annabelle-ye.jpg" },
   { role: "Publicity Commissioner", name: "Anny Jiao", photo: "/assets/images/members/anny-jiao.jpg" },
