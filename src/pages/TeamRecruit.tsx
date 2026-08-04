@@ -7,9 +7,11 @@ import { useSeo } from "@/hooks/useSeo";
 const FORM_URL =
   "https://docs.google.com/forms/d/e/1FAIpQLSd1R5LAGbsbXUDEIflfxjKfmNFpfs2NrOf9yQw2JLcFODozGA/viewform?usp=publish-editor";
 
-const leadership: { role: string; name: string; photo?: string }[] = [
-  { role: "Co-President", name: "Reanne Elizabeth Del Valle", photo: "/assets/images/members/reanne-del-valle.jpg" },
-  { role: "Co-President", name: "Shri Krishna Sivakumar", photo: "/assets/images/members/shri-krishna-sivakumar.jpg" },
+// photoPosition tunes the circular crop for full-length headshots whose subject
+// would otherwise sit against the top edge; omit it to keep the default center.
+const leadership: { role: string; name: string; photo?: string; photoPosition?: string }[] = [
+  { role: "Co-President", name: "Reanne Elizabeth Del Valle", photo: "/assets/images/members/reanne-del-valle.jpg", photoPosition: "50% 30%" },
+  { role: "Co-President", name: "Shri Krishna Sivakumar", photo: "/assets/images/members/shri-krishna-sivakumar.jpg", photoPosition: "50% 30%" },
   { role: "Vice President", name: "Yatee Nagpal", photo: "/assets/images/members/yatee-nagpal.jpg" },
   { role: "Secretary", name: "Ella Xu", photo: "/assets/images/members/ella-xu.jpg" },
   { role: "Treasurer", name: "Annabelle Ye", photo: "/assets/images/members/annabelle-ye.jpg" },
@@ -61,6 +63,7 @@ export default function TeamRecruit() {
                       height={80}
                       loading="lazy"
                       className="w-20 h-20 rounded-full object-cover flex-shrink-0"
+                      style={officer.photoPosition ? { objectPosition: officer.photoPosition } : undefined}
                     />
                   ) : (
                     <MonogramAvatar name={officer.name} size={80} />

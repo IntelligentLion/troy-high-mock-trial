@@ -2,9 +2,11 @@ import { Link } from "react-router-dom";
 import MonogramAvatar from "@/components/MonogramAvatar";
 import { Reveal, ClipLines, ArrowRightGlyph } from "@/components/baseline";
 
-const leadership2627: { role: string; name: string; photo?: string }[] = [
-  { role: "Co-President", name: "Reanne Elizabeth Del Valle", photo: "/assets/images/members/reanne-del-valle.jpg" },
-  { role: "Co-President", name: "Shri Krishna Sivakumar", photo: "/assets/images/members/shri-krishna-sivakumar.jpg" },
+// photoPosition tunes the circular crop for full-length headshots whose subject
+// would otherwise sit against the top edge; omit it to keep the default center.
+const leadership2627: { role: string; name: string; photo?: string; photoPosition?: string }[] = [
+  { role: "Co-President", name: "Reanne Elizabeth Del Valle", photo: "/assets/images/members/reanne-del-valle.jpg", photoPosition: "50% 30%" },
+  { role: "Co-President", name: "Shri Krishna Sivakumar", photo: "/assets/images/members/shri-krishna-sivakumar.jpg", photoPosition: "50% 30%" },
   { role: "Vice President", name: "Yatee Nagpal", photo: "/assets/images/members/yatee-nagpal.jpg" },
   { role: "Secretary", name: "Ella Xu", photo: "/assets/images/members/ella-xu.jpg" },
   { role: "Treasurer", name: "Annabelle Ye", photo: "/assets/images/members/annabelle-ye.jpg" },
@@ -47,6 +49,7 @@ export default function SeasonSection() {
                 height={48}
                 loading="lazy"
                 className="w-12 h-12 rounded-full object-cover flex-shrink-0"
+                style={officer.photoPosition ? { objectPosition: officer.photoPosition } : undefined}
               />
             ) : (
               <MonogramAvatar name={officer.name} size={48} />
