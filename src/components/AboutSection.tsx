@@ -1,8 +1,6 @@
-import { BookOpen, Users, GraduationCap } from "lucide-react";
 import { useSiteContent } from "@/hooks/useSiteContent";
 import { Reveal, ClipWords, ClipLines } from "@/components/baseline";
 
-const pillarIcons = [BookOpen, GraduationCap, Users];
 const pillarKeys = ["legalStudies", "competition", "skills"] as const;
 const pillarTitles = ["Legal Studies", "Competition", "Advocacy & Communication"];
 
@@ -46,7 +44,12 @@ export default function AboutSection() {
           transform: "translateX(-50%)",
           display: "flex",
           justifyContent: "center",
-          fontSize: "8.6vw",
+          // The wordmark is one nowrap line whose rendered width tracks the font
+          // size at a fixed ~11.4:1 ratio, so sizing it off (viewport - gutters)
+          // keeps a 24px breathing gap at every width instead of running into the
+          // screen edge on phones. Matches the section's px-6 gutter, and lands
+          // within ~2px of the previous 8.6vw on desktop.
+          fontSize: "calc((100vw - 48px) / 11.4)",
           color: "var(--bl-ink)",
           lineHeight: 1.0,
         }}
@@ -67,7 +70,6 @@ export default function AboutSection() {
       {team?.coreValues && (
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-14 sm:mt-20">
           {pillarKeys.map((key, i) => {
-            const Icon = pillarIcons[i];
             return (
               <Reveal
                 key={key}
@@ -77,26 +79,20 @@ export default function AboutSection() {
                 className="group rounded-[1.5rem] p-6 flex flex-col gap-4"
                 style={{ background: "var(--bl-surface)" }}
               >
-                <div className="flex items-center gap-3">
+                <div className="flex items-baseline gap-3">
                   <span
-                    className="text-sm font-medium"
+                    className="text-sm font-medium flex-shrink-0"
                     style={{ color: "var(--bl-ink-soft)", fontFamily: "'Onest', sans-serif" }}
                   >
                     {`0${i + 1}`}
                   </span>
-                  <span
-                    className="w-10 h-10 rounded-xl flex items-center justify-center"
-                    style={{ background: "var(--bl-white)", border: "1px solid var(--bl-hairline)" }}
+                  <h3
+                    className="text-xl font-medium uppercase tracking-tight"
+                    style={{ fontFamily: "'Onest', sans-serif", color: "var(--bl-ink)" }}
                   >
-                    <Icon className="w-5 h-5" style={{ color: "var(--bl-gold)" }} strokeWidth={1.6} aria-hidden="true" />
-                  </span>
+                    {pillarTitles[i]}
+                  </h3>
                 </div>
-                <h3
-                  className="text-xl font-medium uppercase tracking-tight"
-                  style={{ fontFamily: "'Onest', sans-serif", color: "var(--bl-ink)" }}
-                >
-                  {pillarTitles[i]}
-                </h3>
                 <p className="text-sm leading-relaxed" style={{ color: "var(--bl-ink-soft)" }}>
                   {team.coreValues[key]}
                 </p>
