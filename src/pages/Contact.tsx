@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Instagram, Linkedin, Mail, MapPin, Loader2 } from "lucide-react";
+import { Loader2 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { useSiteContent } from "@/hooks/useSiteContent";
@@ -71,9 +71,6 @@ export default function Contact() {
                 <div className="flex flex-col gap-5">
                   {/* Email */}
                   <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-xl bg-card border border-border flex items-center justify-center shrink-0">
-                      <Mail className="w-4 h-4 text-primary" aria-hidden="true" />
-                    </div>
                     <div>
                       <span className="label-mono text-muted-foreground text-[0.65rem] block mb-1">Email</span>
                       <a
@@ -88,9 +85,6 @@ export default function Contact() {
                   {/* Advisor */}
                   {contact?.advisorName && (
                     <div className="flex items-start gap-4">
-                      <div className="w-10 h-10 rounded-xl bg-card border border-border flex items-center justify-center shrink-0">
-                        <Mail className="w-4 h-4 text-primary" aria-hidden="true" />
-                      </div>
                       <div>
                         <span className="label-mono text-muted-foreground text-[0.65rem] block mb-1">Faculty Advisor</span>
                         <span className="text-foreground text-sm block">{contact.advisorName}</span>
@@ -108,9 +102,6 @@ export default function Contact() {
 
                   {/* Address */}
                   <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-xl bg-card border border-border flex items-center justify-center shrink-0">
-                      <MapPin className="w-4 h-4 text-primary" aria-hidden="true" />
-                    </div>
                     <div>
                       <span className="label-mono text-muted-foreground text-[0.65rem] block mb-1">School</span>
                       <span className="text-foreground text-sm">{contact?.address ?? "Troy High School, 2200 Dorothy Ln, Fullerton, CA 92831"}</span>
@@ -120,9 +111,6 @@ export default function Contact() {
                   {/* Instagram */}
                   {contact?.instagram && (
                     <div className="flex items-start gap-4">
-                      <div className="w-10 h-10 rounded-xl bg-card border border-border flex items-center justify-center shrink-0">
-                        <Instagram className="w-4 h-4 text-primary" aria-hidden="true" />
-                      </div>
                       <div>
                         <span className="label-mono text-muted-foreground text-[0.65rem] block mb-1">Instagram</span>
                         <a
@@ -140,9 +128,6 @@ export default function Contact() {
                   {/* LinkedIn */}
                   {contact?.linkedin && (
                     <div className="flex items-start gap-4">
-                      <div className="w-10 h-10 rounded-xl bg-card border border-border flex items-center justify-center shrink-0">
-                        <Linkedin className="w-4 h-4 text-primary" aria-hidden="true" />
-                      </div>
                       <div>
                         <span className="label-mono text-muted-foreground text-[0.65rem] block mb-1">LinkedIn</span>
                         <a

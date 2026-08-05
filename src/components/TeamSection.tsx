@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { useSiteContent } from "@/hooks/useSiteContent";
-import MonogramAvatar from "@/components/MonogramAvatar";
 
 export default function TeamSection() {
   const { data } = useSiteContent();
@@ -42,7 +41,14 @@ export default function TeamSection() {
                 transition={{ duration: 0.6, delay: i * 0.04 }}
                 className="bg-card rounded-xl border border-border p-5 flex items-center gap-3 hover:border-primary/40 transition-colors"
               >
-                <MonogramAvatar name={m.name} size={40} />
+                {m.photo && (
+                  <img
+                    src={m.photo}
+                    alt={m.name}
+                    loading="lazy"
+                    className="w-10 h-10 rounded-full object-cover shrink-0"
+                  />
+                )}
                 <div>
                   <h3 className="font-playfair text-sm font-semibold text-foreground">{m.name}</h3>
                 </div>

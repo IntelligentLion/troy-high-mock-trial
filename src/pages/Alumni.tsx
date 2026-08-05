@@ -2,7 +2,6 @@ import { useState, useMemo } from "react";
 import { Search, ChevronDown } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import MonogramAvatar from "@/components/MonogramAvatar";
 import { CardGridSkeleton } from "@/components/CardSkeleton";
 import { useSiteContent } from "@/hooks/useSiteContent";
 import { useSeo } from "@/hooks/useSeo";
@@ -126,15 +125,13 @@ export default function Alumni() {
                               className="bg-card rounded-xl border border-border p-5 flex flex-col gap-3 hover:border-primary/40 transition-colors group"
                             >
                               <div className="flex items-center gap-3">
-                                {a.photo ? (
+                                {a.photo && (
                                   <img
                                     src={a.photo}
                                     alt={a.name}
                                     loading="lazy"
                                     className="w-16 h-16 rounded-full object-cover object-top shrink-0"
                                   />
-                                ) : (
-                                  <MonogramAvatar name={a.name} size={64} />
                                 )}
                                 <div className="min-w-0">
                                   <h3 className="font-playfair text-base font-semibold text-foreground group-hover:text-primary transition-colors">

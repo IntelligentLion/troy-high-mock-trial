@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import { useSiteContent } from "@/hooks/useSiteContent";
-import MonogramAvatar from "@/components/MonogramAvatar";
 import { CardGridSkeleton } from "@/components/CardSkeleton";
 import { Reveal, ClipLines, ArrowRightGlyph } from "@/components/baseline";
 
@@ -43,15 +42,13 @@ export default function AlumniSection() {
               style={{ background: "var(--bl-surface)" }}
             >
               <div className="flex items-center gap-5">
-                {a.photo ? (
+                {a.photo && (
                   <img
                     src={a.photo}
                     alt={a.name}
                     loading="lazy"
                     className="w-20 h-20 rounded-[1rem] object-cover object-top shrink-0"
                   />
-                ) : (
-                  <MonogramAvatar name={a.name} size={80} />
                 )}
                 <div>
                   <h3

@@ -1,5 +1,4 @@
 import { useEffect, useRef } from "react";
-import { Trophy } from "lucide-react";
 import { Link } from "react-router-dom";
 import { ClipWords, ClipLines, Reveal, ArrowRightGlyph } from "@/components/baseline";
 
@@ -128,12 +127,6 @@ export default function HeroSection() {
               delay={760}
               className="glass-navy w-full max-w-xs flex items-center gap-3 rounded-[1.5rem] p-3"
             >
-              <span
-                className="w-11 h-11 rounded-full flex items-center justify-center shrink-0"
-                style={{ background: "rgba(255,197,61,0.14)", border: "1px solid rgba(255,197,61,0.3)" }}
-              >
-                <Trophy className="w-5 h-5" style={{ color: "var(--bl-gold-fill)" }} aria-hidden="true" />
-              </span>
               <div className="min-w-0">
                 <p className="text-white text-xs font-medium leading-tight">
                   2nd Place — JSerra Championship

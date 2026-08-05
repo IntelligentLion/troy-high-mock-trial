@@ -1,4 +1,4 @@
-import { ExternalLink, Scale, Users, Trophy, Mic, BookOpen, Briefcase } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { useSeo } from "@/hooks/useSeo";
@@ -8,32 +8,26 @@ const FORM_URL =
 
 const reasons = [
   {
-    icon: Scale,
     title: "Real Legal Experience",
     body: "Work with actual case law, craft opening statements, examine witnesses, and argue before attorney judges — the closest thing to a real courtroom available in high school.",
   },
   {
-    icon: Mic,
     title: "Public Speaking & Advocacy",
     body: "Build the confidence to speak persuasively under pressure. Every practice sharpens your ability to think on your feet and communicate with clarity.",
   },
   {
-    icon: Trophy,
     title: "Competitive Achievement",
     body: "Compete in the CRF-OC Mock Trial Tournament and the JSerra Catholic High School Tournament, earning recognition that stands out in college applications.",
   },
   {
-    icon: BookOpen,
     title: "Critical Thinking",
     body: "Analyze evidence, anticipate opposing arguments, and construct airtight legal reasoning — skills that translate directly to STEM, business, and the humanities.",
   },
   {
-    icon: Users,
     title: "A Tight-Knit Community",
     body: "Join a team that practices together, competes together, and supports each other. Alumni go on to top universities and often credit Mock Trial as a defining high school experience.",
   },
   {
-    icon: Briefcase,
     title: "Career Pathways",
     body: "Whether you're interested in law, policy, business, or any field that demands persuasion — Mock Trial gives you a head start that few extracurriculars can match.",
   },
@@ -83,23 +77,17 @@ export default function JoinUs() {
             </h2>
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {reasons.map((r, i) => {
-                const Icon = r.icon;
-                return (
-                  <div
-                    key={i}
-                    className="bg-card rounded-xl border border-border p-6 flex flex-col gap-4 hover:border-primary/40 transition-colors"
-                  >
-                    <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
-                      <Icon className="w-5 h-5 text-primary" aria-hidden="true" />
-                    </div>
-                    <div>
-                      <h3 className="font-playfair text-lg font-semibold text-foreground mb-2">{r.title}</h3>
-                      <p className="text-muted-foreground text-sm leading-relaxed">{r.body}</p>
-                    </div>
+              {reasons.map((r, i) => (
+                <div
+                  key={i}
+                  className="bg-card rounded-xl border border-border p-6 flex flex-col gap-4 hover:border-primary/40 transition-colors"
+                >
+                  <div>
+                    <h3 className="font-playfair text-lg font-semibold text-foreground mb-2">{r.title}</h3>
+                    <p className="text-muted-foreground text-sm leading-relaxed">{r.body}</p>
                   </div>
-                );
-              })}
+                </div>
+              ))}
             </div>
           </div>
         </section>

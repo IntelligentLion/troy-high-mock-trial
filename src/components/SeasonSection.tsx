@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import MonogramAvatar from "@/components/MonogramAvatar";
 import { Reveal, ClipLines, ArrowRightGlyph } from "@/components/baseline";
 
 // photoPosition tunes the circular crop for full-length headshots whose subject
@@ -41,7 +40,7 @@ export default function SeasonSection() {
             className="rounded-[1.5rem] p-5 flex items-center gap-4"
             style={{ background: "var(--bl-surface)" }}
           >
-            {officer.photo ? (
+            {officer.photo && (
               <img
                 src={officer.photo}
                 alt={`Headshot of ${officer.name}`}
@@ -51,8 +50,6 @@ export default function SeasonSection() {
                 className="w-12 h-12 rounded-full object-cover flex-shrink-0"
                 style={officer.photoPosition ? { objectPosition: officer.photoPosition } : undefined}
               />
-            ) : (
-              <MonogramAvatar name={officer.name} size={48} />
             )}
             <div className="min-w-0">
               <h3

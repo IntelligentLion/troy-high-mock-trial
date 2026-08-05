@@ -1,7 +1,6 @@
 import { Trophy } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import MonogramAvatar from "@/components/MonogramAvatar";
 import { CardGridSkeleton } from "@/components/CardSkeleton";
 import { useSiteContent } from "@/hooks/useSiteContent";
 import { useSeo } from "@/hooks/useSeo";
@@ -53,15 +52,13 @@ export default function Team() {
                   >
                     <div className="flex items-center gap-4">
                       <div className="relative">
-                        {m.photo ? (
+                        {m.photo && (
                           <img
                             src={m.photo}
                             alt={m.name}
                             loading="lazy"
                             className="w-24 h-24 rounded-full object-cover object-top shrink-0 ring-2 ring-primary/60"
                           />
-                        ) : (
-                          <MonogramAvatar name={m.name} size={96} />
                         )}
                       </div>
                       <div className="flex flex-col gap-0.5 min-w-0">
@@ -115,7 +112,14 @@ export default function Team() {
                     key={i}
                     className="bg-card rounded-xl border border-border p-4 flex items-center gap-3 hover:border-primary/40 transition-colors"
                   >
-                    <MonogramAvatar name={m.name} size={52} />
+                    {m.photo && (
+                      <img
+                        src={m.photo}
+                        alt={m.name}
+                        loading="lazy"
+                        className="w-[52px] h-[52px] rounded-full object-cover object-top shrink-0"
+                      />
+                    )}
                     <div className="min-w-0">
                       <h3 className="font-playfair text-sm font-semibold text-foreground truncate">{m.name}</h3>
                       <span className="label-mono text-primary text-[0.6rem]">{m.role}</span>
@@ -151,17 +155,19 @@ export default function Team() {
                 {coaches.map((coach, i) => (
                   <article
                     key={i}
-                    className="bg-card rounded-xl border border-border p-6 flex items-start gap-5 hover:border-primary/40 transition-colors"
+                    className={`bg-card rounded-xl border border-border p-6 flex items-start gap-5 hover:border-primary/40 transition-colors${
+                      coaches.length % 2 === 1 && i === coaches.length - 1
+                        ? " md:col-span-2 md:max-w-[calc(50%-0.75rem)] md:mx-auto"
+                        : ""
+                    }`}
                   >
-                    {coach.photo ? (
+                    {coach.photo && (
                       <img
                         src={coach.photo}
                         alt={coach.name}
                         loading="lazy"
                         className="w-24 h-24 rounded-full object-cover object-center shrink-0"
                       />
-                    ) : (
-                      <MonogramAvatar name={coach.name} size={96} />
                     )}
                     <div>
                       <h3 className="font-playfair text-xl font-bold text-foreground mb-1">{coach.name}</h3>

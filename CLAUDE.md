@@ -32,8 +32,7 @@ Audience: prospective sponsors, alumni, competing students, judges, legal/academ
 │   │   ├── GalleryLightbox.tsx
 │   │   ├── YearTabBar.tsx
 │   │   ├── StatsCounter.tsx
-│   │   ├── SponsorTierCard.tsx
-│   │   └── MonogramAvatar.tsx
+│   │   └── SponsorTierCard.tsx
 │   ├── styles/
 │   │   ├── tokens.css      # CSS custom properties (colors, type, spacing)
 │   │   └── global.css      # Base styles, animations
@@ -52,7 +51,8 @@ Audience: prospective sponsors, alumni, competing students, judges, legal/academ
 
 - **All dynamic content** (names, bios, awards, photos) loaded via `useSiteContent()` hook fetching `/data/site-content.json`
 - **No hallucinated data** — if a value is unknown, leave a `{/* TODO: ADD [FIELD] */}` comment
-- **Photo fallback**: missing photos → `<MonogramAvatar>` component (initials on `--color-navy` circle with `--color-gold` text)
+- **No monogram/initials avatar logos for people.** When someone has no photo, render their name/role/bio as plain text with no image slot — do not substitute an initials circle (e.g. "CH" for Coach Harold) or any other abbreviated stand-in graphic. That pattern reads as vibecoded.
+- **Photo fallback**: missing photos → no image at all (card layout reflows to text-only); never a placeholder graphic
 - Hard-coding in JSX is only acceptable for permanent structural copy (headlines, section descriptions)
 
 ## Design System
@@ -61,9 +61,9 @@ Aesthetic: **"Chambers & Conviction" (light)** — warm paper background + deep 
 
 ### Colors
 - Page background is warm paper (`hsl(45 57% 97%)` ≈ `#FCFAF4`), cards are white — see semantic tokens in `src/index.css`
-- `--color-navy: #12275E` — deep navy: text, hero/footer backgrounds, monogram avatars
+- `--color-navy: #12275E` — deep navy: text, hero/footer backgrounds
 - `--color-gold: #A16207` — dark gold, safe as **text** on light backgrounds (bright gold text fails WCAG on white)
-- `--color-gold-fill: #FFC53D` — bright amber for **fills only** (buttons, active pills, avatar initials) with navy text on top
+- `--color-gold-fill: #FFC53D` — bright amber for **fills only** (buttons, active pills) with navy text on top
 - `--color-gold-light: #FFD666` — fill hover state
 - `--color-cream: #F3ECD9` — deeper warm tint for alternate surfaces
 - `--color-slate: #44608C` — secondary text, dividers

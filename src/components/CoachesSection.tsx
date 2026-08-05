@@ -1,5 +1,4 @@
 import { useSiteContent } from "@/hooks/useSiteContent";
-import MonogramAvatar from "@/components/MonogramAvatar";
 import { CardGridSkeleton } from "@/components/CardSkeleton";
 import { Reveal, ClipLines } from "@/components/baseline";
 
@@ -38,18 +37,20 @@ export default function CoachesSection() {
               key={i}
               y={26}
               delay={i * 90}
-              className="rounded-[1.5rem] p-6 flex items-start gap-5"
+              className={`rounded-[1.5rem] p-6 flex items-start gap-5${
+                coaches.length % 2 === 1 && i === coaches.length - 1
+                  ? " md:col-span-2 md:max-w-[calc(50%-0.5rem)] md:mx-auto"
+                  : ""
+              }`}
               style={{ background: "var(--bl-white)", border: "1px solid var(--bl-hairline)" }}
             >
-              {coach.photo ? (
+              {coach.photo && (
                 <img
                   src={coach.photo}
                   alt={coach.name}
                   loading="lazy"
                   className="w-24 h-24 rounded-[1rem] object-cover object-center shrink-0"
                 />
-              ) : (
-                <MonogramAvatar name={coach.name} size={96} />
               )}
               <div>
                 <h3

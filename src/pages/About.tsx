@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import MonogramAvatar from "@/components/MonogramAvatar";
 import { useSiteContent } from "@/hooks/useSiteContent";
 import { useSeo } from "@/hooks/useSeo";
 
@@ -165,17 +164,19 @@ export default function About() {
                 {coaches.map((coach, i) => (
                   <div
                     key={i}
-                    className="bg-card rounded-xl border border-border p-6 flex items-start gap-5"
+                    className={`bg-card rounded-xl border border-border p-6 flex items-start gap-5${
+                      coaches.length % 2 === 1 && i === coaches.length - 1
+                        ? " md:col-span-2 md:max-w-[calc(50%-0.75rem)] md:mx-auto"
+                        : ""
+                    }`}
                   >
-                    {coach.photo ? (
+                    {coach.photo && (
                       <img
                         src={coach.photo}
                         alt={coach.name}
                         loading="lazy"
                         className="w-24 h-24 rounded-full object-cover object-center shrink-0"
                       />
-                    ) : (
-                      <MonogramAvatar name={coach.name} size={56} />
                     )}
                     <div className="min-w-0">
                       <h3 className="font-playfair text-lg font-semibold text-foreground mb-0.5">

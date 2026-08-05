@@ -1,7 +1,6 @@
 import { ExternalLink } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import MonogramAvatar from "@/components/MonogramAvatar";
 import { useSeo } from "@/hooks/useSeo";
 
 const FORM_URL =
@@ -55,7 +54,7 @@ export default function TeamRecruit() {
                   key={i}
                   className="bg-card rounded-xl border border-primary/30 p-6 flex items-center gap-4 hover:border-primary/60 transition-colors"
                 >
-                  {officer.photo ? (
+                  {officer.photo && (
                     <img
                       src={officer.photo}
                       alt={`Headshot of ${officer.name}`}
@@ -65,8 +64,6 @@ export default function TeamRecruit() {
                       className="w-20 h-20 rounded-full object-cover flex-shrink-0"
                       style={officer.photoPosition ? { objectPosition: officer.photoPosition } : undefined}
                     />
-                  ) : (
-                    <MonogramAvatar name={officer.name} size={80} />
                   )}
                   <div className="min-w-0">
                     <h3 className="font-playfair text-lg font-semibold text-foreground leading-tight">
