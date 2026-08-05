@@ -1,8 +1,6 @@
 import { Link } from "react-router-dom";
-import { ArrowRight } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { useSiteContent } from "@/hooks/useSiteContent";
 import { useSeo } from "@/hooks/useSeo";
 
 const pillars = [
@@ -25,9 +23,6 @@ const pillars = [
 ];
 
 export default function About() {
-  const { data } = useSiteContent();
-  const coaches = data?.team?.coaches ?? [];
-
   useSeo({
     title: "About — Troy High School Mock Trial",
     description:
@@ -53,23 +48,6 @@ export default function About() {
       </header>
 
       <main>
-        {/* Mission */}
-        <section className="section-py border-b border-border">
-          <div className="max-w-7xl xl:max-w-8xl mx-auto px-6">
-            <div
-              className="bg-card rounded-xl border border-border p-8 md:p-12"
-              style={{ borderLeft: "3px solid var(--color-gold)" }}
-            >
-              <p className="text-foreground text-xl md:text-2xl leading-relaxed max-w-3xl"
-                style={{ fontFamily: "'Onest', system-ui, sans-serif", fontWeight: 500 }}>
-                We give students real courtroom experience — not simulated, not abstract.
-                From cross-examination to closing arguments before attorney judges,
-                we build the habits of mind that set effective advocates apart.
-              </p>
-            </div>
-          </div>
-        </section>
-
         {/* Our Story */}
         <section className="section-py border-b border-border" aria-labelledby="story-heading">
           <div className="max-w-7xl xl:max-w-8xl mx-auto px-6">
@@ -140,63 +118,6 @@ export default function About() {
             </div>
           </div>
         </section>
-
-        {/* Coaching Staff */}
-        {coaches.length > 0 && (
-          <section className="section-py border-b border-border" aria-labelledby="coaches-heading">
-            <div className="max-w-7xl xl:max-w-8xl mx-auto px-6">
-              <div className="flex items-end justify-between mb-10 flex-wrap gap-4">
-                <div>
-                  <h2 id="coaches-heading" className="display-lg text-foreground">
-                    The Coaches
-                  </h2>
-                </div>
-                <Link
-                  to="/team"
-                  className="inline-flex items-center gap-2 text-sm text-primary hover:text-primary/80 transition-colors font-medium"
-                >
-                  Full Team Roster
-                  <ArrowRight className="w-4 h-4" aria-hidden="true" />
-                </Link>
-              </div>
-
-              <div className="grid md:grid-cols-2 gap-6">
-                {coaches.map((coach, i) => (
-                  <div
-                    key={i}
-                    className={`bg-card rounded-xl border border-border p-6 flex items-start gap-5${
-                      coaches.length % 2 === 1 && i === coaches.length - 1
-                        ? " md:col-span-2 md:max-w-[calc(50%-0.75rem)] md:mx-auto"
-                        : ""
-                    }`}
-                  >
-                    {coach.photo && (
-                      <img
-                        src={coach.photo}
-                        alt={coach.name}
-                        loading="lazy"
-                        className="w-24 h-24 rounded-full object-cover object-center shrink-0"
-                      />
-                    )}
-                    <div className="min-w-0">
-                      <h3 className="font-playfair text-lg font-semibold text-foreground mb-0.5">
-                        {coach.name}
-                      </h3>
-                      <span className="label-mono text-primary text-[0.65rem] block mb-2">
-                        {coach.role}
-                      </span>
-                      {coach.bio && (
-                        <p className="text-muted-foreground text-sm leading-relaxed">
-                          {coach.bio}
-                        </p>
-                      )}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </section>
-        )}
 
         {/* CTA */}
         <section className="section-py">
