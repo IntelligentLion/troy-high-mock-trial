@@ -10,7 +10,7 @@ const FORM_URL =
 // photoPosition tunes the circular crop for full-length headshots whose subject
 // would otherwise sit against the top edge; omit it to keep the default center.
 const leadership: { role: string; name: string; photo?: string; photoPosition?: string }[] = [
-  { role: "Co-President", name: "Reanne Elizabeth Del Valle", photo: "/assets/images/members/reanne-del-valle.jpg", photoPosition: "50% 30%" },
+  { role: "Co-President", name: "Reanne Elizabeth Del Valle", photo: "/assets/images/members/reanne-del-valle.jpg", photoPosition: "50% 25%" },
   { role: "Co-President", name: "Shri Krishna Sivakumar", photo: "/assets/images/members/shri-krishna-sivakumar.jpg", photoPosition: "50% 30%" },
   { role: "Vice President", name: "Yatee Nagpal", photo: "/assets/images/members/yatee-nagpal.jpg" },
   { role: "Secretary", name: "Ella Xu", photo: "/assets/images/members/ella-xu.jpg" },
