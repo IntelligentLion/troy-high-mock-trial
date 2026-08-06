@@ -57,9 +57,8 @@ export default function Alumni() {
           <h1 className="display-xl text-foreground mb-4">
             Those Who Came Before
           </h1>
-          <p className="text-muted-foreground max-w-xl text-lg">
-            A permanent record of every student who shaped this program since 2016.
-            Their names belong on these walls.
+          <p className="text-muted-foreground text-lg whitespace-normal sm:whitespace-nowrap">
+            The ones who shaped this program. Their names belong on these walls.
           </p>
         </div>
       </header>

@@ -1,12 +1,6 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, type CSSProperties } from "react";
 import { Link } from "react-router-dom";
 import { ClipWords, ClipLines, Reveal, ArrowRightGlyph } from "@/components/baseline";
-
-const stats = [
-  { value: "10", label: "Seasons active" },
-  { value: "2nd", label: "JSerra Championship" },
-  { value: "~20", label: "Members / season" },
-];
 
 export default function HeroSection() {
   const plateRef = useRef<HTMLDivElement>(null);
@@ -37,14 +31,26 @@ export default function HeroSection() {
   return (
     <section
       className="bl-band navy relative isolate flex flex-col"
-      style={{ minHeight: "calc(100svh - 1.5rem)", minBlockSize: "36rem" }}
+      style={
+        {
+          "--hero-h": "max(36rem, calc(100svh - 1.5rem))",
+          minHeight: "var(--hero-h)",
+        } as CSSProperties
+      }
     >
-      {/* Parallax background plate */}
+      {/* Parallax background plate — sized off --hero-h (the section's nominal
+          height) rather than a percentage of the section's actual box, so the
+          image crop stays stable even if content height nudges the section
+          taller than --hero-h at some breakpoint. */}
       <div className="absolute inset-0 -z-10 overflow-hidden">
         <div
           ref={plateRef}
           className="absolute left-0 right-0"
-          style={{ top: "-16%", height: "132%", willChange: "transform" }}
+          style={{
+            top: "calc(var(--hero-h) * -0.16)",
+            height: "calc(var(--hero-h) * 1.32)",
+            willChange: "transform",
+          }}
         >
           <img
             src="/assets/images/jserra-trophy.jpg"
@@ -64,8 +70,11 @@ export default function HeroSection() {
 
       {/* Content column — full height */}
       <div className="relative z-10 flex flex-1 flex-col px-6 sm:px-10 pt-28 sm:pt-32 pb-8 sm:pb-10">
-        {/* Eyebrow + giant title — centered */}
-        <div className="flex flex-col items-center text-center">
+        {/* Eyebrow + giant title — centered, and flex-1 so it always claims the
+            bulk of the hero's vertical space in the same proportion, instead of
+            sitting pinned near the top with a variable empty gap below it that
+            grows or shrinks with viewport height. */}
+        <div className="flex flex-1 flex-col items-center justify-center text-center">
           {/* Giant title, word-by-word clip-mask */}
           <h1
             className="bl-display text-white mt-5"
@@ -79,10 +88,23 @@ export default function HeroSection() {
               goldWords={[2, 3]}
             />
           </h1>
+
+          <Reveal
+            y={20}
+            delay={500}
+            className="mt-12 sm:mt-16 font-medium whitespace-normal sm:whitespace-nowrap"
+            style={{
+              color: "rgba(255,255,255,0.9)",
+              fontSize: "clamp(1rem, 1.6vw, 1.25rem)",
+              lineHeight: 1.4,
+            }}
+          >
+            Preparing the next generation of advocates — since 2016.
+          </Reveal>
         </div>
 
         {/* Bottom row */}
-        <div className="mt-auto flex flex-col gap-8 sm:flex-row sm:items-end sm:justify-between pt-14">
+        <div className="flex flex-col gap-8 sm:flex-row sm:items-end sm:justify-between pt-14">
           {/* Tagline */}
           <ClipLines
             lines={["Show Up,", "Speak Up"]}
@@ -96,18 +118,8 @@ export default function HeroSection() {
             }}
           />
 
-          {/* Right cluster: description, buttons, achievement card */}
+          {/* Right cluster: buttons */}
           <div className="flex flex-col gap-6 sm:items-end">
-            <Reveal
-              y={24}
-              delay={500}
-              className="max-w-md text-sm sm:text-base sm:text-right"
-              style={{ color: "rgba(255,255,255,0.7)", lineHeight: 1.6 }}
-            >
-              Competing in the Constitutional Rights Foundation's Mock Trial program
-              and preparing the next generation of advocates — since 2016.
-            </Reveal>
-
             <Reveal y={24} delay={620} className="flex flex-wrap gap-3 sm:justify-end">
               <Link to="/join" className="bl-pill light">
                 Join Us <ArrowRightGlyph className="w-4 h-4" />
@@ -120,46 +132,8 @@ export default function HeroSection() {
                 Meet the Team
               </Link>
             </Reveal>
-
-            {/* Glass achievement card */}
-            <Reveal
-              y={28}
-              delay={760}
-              className="glass-navy w-full max-w-xs flex items-center gap-3 rounded-[1.5rem] p-3"
-            >
-              <div className="min-w-0">
-                <p className="text-white text-xs font-medium leading-tight">
-                  2nd Place — JSerra Championship
-                </p>
-                <p className="text-[0.7rem]" style={{ color: "var(--bl-gold-fill)", opacity: 0.9 }}>
-                  March 2026
-                </p>
-              </div>
-            </Reveal>
           </div>
         </div>
-
-        {/* Stat strip */}
-        <Reveal
-          y={20}
-          delay={880}
-          className="mt-10 flex flex-wrap gap-x-10 gap-y-4 border-t pt-6"
-          style={{ borderColor: "rgba(255,255,255,0.15)" }}
-        >
-          {stats.map((s) => (
-            <div key={s.label} className="flex flex-col gap-1">
-              <span
-                className="bl-display leading-none"
-                style={{ fontSize: "clamp(1.75rem, 3.5vw, 2.5rem)", color: "var(--bl-gold-fill)" }}
-              >
-                {s.value}
-              </span>
-              <span className="text-[0.72rem]" style={{ color: "rgba(255,255,255,0.6)" }}>
-                {s.label}
-              </span>
-            </div>
-          ))}
-        </Reveal>
       </div>
     </section>
   );

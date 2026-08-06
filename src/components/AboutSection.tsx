@@ -1,5 +1,5 @@
 import { useSiteContent } from "@/hooks/useSiteContent";
-import { Reveal, ClipWords, ClipLines } from "@/components/baseline";
+import { Reveal, ClipWords } from "@/components/baseline";
 
 const pillarKeys = ["legalStudies", "competition", "skills"] as const;
 const pillarTitles = ["Legal Studies", "Competition", "Advocacy & Communication"];
@@ -10,34 +10,9 @@ export default function AboutSection() {
 
   return (
     <section id="about" className="bl-band white px-6 sm:px-10 py-16 sm:py-24">
-      {/* Header row */}
-      <div className="grid md:grid-cols-12 gap-8 md:gap-10 items-end">
-        <div className="md:col-span-6">
-          <ClipLines
-            as="h2"
-            lines={["Built for", "the verdict"]}
-            className="bl-headline mt-4"
-            base={80}
-            stagger={120}
-            style={{ color: "var(--bl-ink)" }}
-          />
-        </div>
-        <div className="md:col-span-6">
-          <Reveal
-            y={20}
-            delay={120}
-            className="text-sm sm:text-base"
-            style={{ color: "var(--bl-ink-soft)", lineHeight: 1.7 }}
-          >
-            {team?.description ??
-              "Troy Mock Trial is aimed at introducing students to the field of law, offering real-life trial experience, and fostering effective communication skills."}
-          </Reveal>
-        </div>
-      </div>
-
       {/* Full-bleed wordmark banner (decorative) */}
       <div
-        className="bl-display mt-14 sm:mt-20 select-none pointer-events-none"
+        className="bl-display select-none pointer-events-none"
         style={{
           width: "100vw",
           marginLeft: "50%",
