@@ -117,7 +117,7 @@ export default function JoinUs() {
         </section>
       </main>
 
-      <Footer />
+      <Footer hideCta />
     </div>
   );
 }

@@ -120,7 +120,7 @@ export default function HeroSection() {
 
           {/* Right cluster: buttons */}
           <div className="flex flex-col gap-6 sm:items-end">
-            <Reveal y={24} delay={620} className="flex flex-wrap gap-3 sm:justify-end">
+            <div className="flex flex-wrap gap-3 sm:justify-end">
               <Link to="/join" className="bl-pill light">
                 Join Us <ArrowRightGlyph className="w-4 h-4" />
               </Link>
@@ -131,7 +131,7 @@ export default function HeroSection() {
               >
                 Meet the Team
               </Link>
-            </Reveal>
+            </div>
           </div>
         </div>
       </div>

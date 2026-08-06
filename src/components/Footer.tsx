@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useSiteContent } from "@/hooks/useSiteContent";
-import { Reveal, ClipLines, ArrowRightGlyph } from "@/components/baseline";
+import { Reveal, ClipLines } from "@/components/baseline";
 
 const navLinks = [
   { label: "Home", to: "/" },
@@ -13,7 +13,7 @@ const navLinks = [
   { label: "Contact", to: "/contact" },
 ];
 
-export default function Footer() {
+export default function Footer({ hideCta = false }: { hideCta?: boolean }) {
   const { data } = useSiteContent();
   const contact = data?.contact;
   const currentYear = new Date().getFullYear();
@@ -25,26 +25,28 @@ export default function Footer() {
     >
       <div className="max-w-7xl xl:max-w-8xl mx-auto">
         {/* CTA band */}
-        <div
-          className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6 pb-14"
-          style={{ borderBottom: "1px solid rgba(255,255,255,0.15)" }}
-        >
-          <div>
-            <ClipLines
-              as="h2"
-              lines={["Ready to", "compete?"]}
-              className="bl-display mt-4 text-white"
-              base={80}
-              stagger={110}
-              style={{ fontSize: "clamp(2.5rem, 6vw, 4.5rem)" }}
-            />
+        {!hideCta && (
+          <div
+            className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6 pb-14"
+            style={{ borderBottom: "1px solid rgba(255,255,255,0.15)" }}
+          >
+            <div>
+              <ClipLines
+                as="h2"
+                lines={["Ready to", "compete?"]}
+                className="bl-display mt-4 text-white"
+                base={80}
+                stagger={110}
+                style={{ fontSize: "clamp(2.5rem, 6vw, 4.5rem)" }}
+              />
+            </div>
+            <Reveal y={20} delay={150}>
+              <Link to="/join" className="bl-pill light">
+                Join the Team
+              </Link>
+            </Reveal>
           </div>
-          <Reveal y={20} delay={150}>
-            <Link to="/join" className="bl-pill light">
-              Join the Team <ArrowRightGlyph className="w-4 h-4" />
-            </Link>
-          </Reveal>
-        </div>
+        )}
 
         {/* Columns */}
         <div className="grid md:grid-cols-4 gap-10 md:gap-12 py-14">
