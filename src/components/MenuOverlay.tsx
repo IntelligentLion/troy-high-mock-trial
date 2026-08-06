@@ -14,7 +14,7 @@ const links = [
 
 const socials: { label: string; href: string }[] = [
   { label: "Instagram", href: "https://www.instagram.com/ths_mocktrial/" },
-  { label: "LinkedIn", href: "https://www.linkedin.com/company/troy-high-school-mock-trial" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/troy-high-mock-trial-46743241b/" },
 ];
 
 /**
