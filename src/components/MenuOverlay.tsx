@@ -81,9 +81,9 @@ export default function MenuOverlay({
             <img
               src="/assets/images/logo-mark.png"
               alt=""
-              width={28}
-              height={28}
-              className="w-7 h-7 rounded-md flex-shrink-0"
+              width={34}
+              height={34}
+              className="w-[34px] h-[34px] rounded-md flex-shrink-0"
             />
             <span className="text-base font-medium uppercase tracking-[0.18em] text-white">
               Troy Mock Trial

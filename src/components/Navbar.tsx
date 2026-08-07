@@ -51,9 +51,9 @@ export default function Navbar() {
           <img
             src="/assets/images/logo-mark.png"
             alt=""
-            width={28}
-            height={28}
-            className="w-7 h-7 rounded-md flex-shrink-0"
+            width={34}
+            height={34}
+            className="w-[34px] h-[34px] rounded-md flex-shrink-0"
           />
           <span className={`font-onest font-medium text-base uppercase tracking-[0.18em] ${overDark ? "text-white" : "text-foreground"}`}>
             Troy Mock Trial
