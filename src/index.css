@@ -609,6 +609,131 @@
     backdrop-filter: blur(12px);
     box-shadow: 0 8px 30px rgba(9, 18, 46, 0.35);
   }
+
+  /* Program pillars: a compact, menu-led slider that keeps the focus on one
+     idea at a time while retaining direct access to every panel. */
+  .pillar-slider {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    height: 100%;
+    min-height: 0;
+    min-width: 0;
+  }
+
+  .pillar-slider-viewport {
+    position: relative;
+    display: flex;
+    flex: 1;
+    height: 100%;
+    min-height: 0;
+    min-width: 0;
+    width: 100%;
+    overflow: hidden;
+    border-radius: var(--radius-card-lg);
+    background: var(--bl-navy);
+  }
+
+  .pillar-slider-track {
+    display: flex;
+    flex: 0 0 100%;
+    height: 100%;
+    min-width: 0;
+    width: 100%;
+    transition: transform 700ms var(--ease-expo);
+    will-change: transform;
+  }
+
+  .pillar-slider-slide {
+    position: relative;
+    display: flex;
+    flex: 0 0 100%;
+    height: 100%;
+    width: 100%;
+    min-width: 0;
+    overflow: hidden;
+    background:
+      linear-gradient(130deg, var(--bl-navy) 0%, var(--bl-navy-soft) 100%);
+  }
+
+  .pillar-slider-slide::after {
+    content: '';
+    position: absolute;
+    right: -10%;
+    bottom: -35%;
+    width: 70%;
+    aspect-ratio: 1;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 50%;
+    box-shadow: 0 0 0 3rem rgba(255, 255, 255, 0.025),
+                0 0 0 6rem rgba(255, 255, 255, 0.02);
+  }
+
+  .pillar-slider-control {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 4rem;
+    height: 4rem;
+    border: 1px solid rgba(255, 255, 255, 0.32);
+    border-radius: 50%;
+    background: rgba(18, 39, 94, 0.48);
+    color: var(--bl-white);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    transition: color 250ms var(--ease-expo), background 250ms var(--ease-expo),
+                border-color 250ms var(--ease-expo), transform 250ms var(--ease-expo);
+  }
+
+  .pillar-slider-control:hover {
+    border-color: var(--bl-gold-fill);
+    background: var(--bl-gold-fill);
+    color: var(--bl-navy);
+    transform: translateX(-2px);
+  }
+
+  .pillar-slider-control.is-next {
+    background: var(--bl-gold-fill);
+    border-color: var(--bl-gold-fill);
+    color: var(--bl-navy);
+  }
+
+  .pillar-slider-control.is-next:hover { transform: translateX(2px); }
+
+  .pillar-slider-control:disabled,
+  .pillar-slider-control:disabled:hover {
+    border-color: var(--bl-hairline);
+    background: var(--bl-surface);
+    color: var(--bl-ink-soft);
+    cursor: not-allowed;
+    opacity: 0.42;
+    transform: none;
+  }
+
+  .pillar-slider-controls {
+    position: absolute;
+    z-index: 20;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1.25rem;
+    pointer-events: none;
+  }
+
+  .pillar-slider-controls .pillar-slider-control {
+    pointer-events: auto;
+  }
+
+  .pillar-slider-control:focus-visible {
+    outline: 3px solid var(--bl-gold-fill);
+    outline-offset: 3px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .pillar-slider-track,
+    .pillar-slider-control { transition: none; }
+  }
 }
 
 /* ── Baseline pill button ─────────────────────── */
